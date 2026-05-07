@@ -1,0 +1,42 @@
+---
+title: Alice est distraite
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-7-alice-is-forgetful/question.yml";
+import Answer from "../../docs/challenge-questions/level-7-alice-is-forgetful/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-alice-is-forgetful" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Tous les 2 sont joués sur les stacks.
+- Il n'y a 0 clue disponible.
+- Alice a un red 3 globalement connu dans sa main.
+- Alice oublie de jouer son red 3 et défausse plutôt son chop.
+- Quelles notes Bob doit-il écrire ? Que doit faire Bob à son tour ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice n'est pas distraite, elle a délibérément défaussé au lieu de jouer sa carte connue jouable.
+- Alice effectue un [_Scream Discard Chop Move_](../level-7.mdx#the-scream-discard-chop-move-sdcm).
+- En défaussant au lieu de jouer sa carte connue jouable, Alice crie à Bob que son chop est critique ou jouable.
+- Bob doit déplacer son chop de manière permanente d'une position, et écrire "cm" sur son slot 4 pour le marquer comme _Chop Moved_.
+- Bob n'est pas autorisé à défausser à ce tour. À la place, il **doit** donner une clue.
+
+<Answer />
+
+</TabItem>
+</Tabs>

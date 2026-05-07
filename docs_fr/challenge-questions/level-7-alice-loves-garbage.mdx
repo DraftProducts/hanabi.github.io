@@ -1,0 +1,42 @@
+---
+title: Alice adore les déchets
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-7-alice-loves-garbage/question.yml";
+import Answer from "../../docs/challenge-questions/level-7-alice-loves-garbage/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-alice-loves-garbage" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Tous les 2 sont joués sur les stacks.
+- Il n'y a 0 clue disponible.
+- Alice a un yellow 2 globalement connu dans sa main.
+- Alice décide de garder son trash et défausse plutôt son chop.
+- Quel signal Alice envoie-t-elle ? Que doit faire Bob ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice effectue un [_Scream Discard Chop Move (With Known-Trash)_](../level-7.mdx#the-scream-discard-chop-move-with-known-trash).
+- Normalement, les joueurs sont censés défausser leurs cartes known-trash avant de défausser leur chop.
+- En défaussant son chop au lieu de la carte known-trash, Alice signale que quelque chose ne va vraiment pas — plus précisément, que le chop de Bob est critique ou jouable.
+- Bob doit déplacer son chop de manière permanente d'une position, et écrire "cm" sur son slot 4 pour le marquer comme _Chop Moved_.
+- Bob n'est pas autorisé à défausser à ce tour. À la place, il **doit** donner une clue.
+
+<Answer />
+
+</TabItem>
+</Tabs>

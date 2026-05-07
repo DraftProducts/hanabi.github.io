@@ -1,0 +1,22 @@
+---
+title: Dual-Color (6 Suits)
+---
+
+Ces conventions s'appliquent à la variante "Dual-Color (6 Suits)".
+
+### The Negative Prompt
+
+- Dans cette variante, comme l'information négative de couleur véhicule autant d'information que l'information positive, vous devez en tenir compte au moment de décider quelle carte jouer dans un _Prompt_.
+- Par exemple :
+  - Alice a une carte red en slot 1 et une carte red en slot 2.
+  - Alice est _Prompted_ pour un mahogany 2. (Mahogany est composé de red et de black.)
+  - Normalement, Alice jouerait slot 1, puisque les _Prompts_ promettent la carte la plus à gauche.
+  - Cependant, la carte en slot 1 d'Alice n'a aucun clue négatif, et sa carte en slot 2 a un clue yellow négatif.
+  - Ainsi, c'est un _Negative Prompt_ et Alice joue slot 2 au lieu de slot 1.
+
+### Order Chop Move Change
+
+- Normalement, les _Order Chop Moves_ sont "désactivés" quand deux 1 différents ont des clues positifs différents.
+  - Par exemple, les _Order Chop Moves_ seraient "désactivés" dans la situation où Alice a un 1 avec un clue positif 1, et un autre 1 avec un clue positif 1 et un clue positif red.
+- Dans la variante "Dual Color (6 Suit)", les _Order Chop Moves_ ne sont jamais désactivés quand il y a deux 1 différents, peu importe les clues positifs ou négatifs de couleur sur eux.
+- La seule exception est quand l'identité exacte du 1 est connue (par exemple par "complétion" totale). Dans cette situation, les _Order Chop Moves_ sont désactivés.

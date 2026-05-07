@@ -1,0 +1,107 @@
+---
+title: Special-Ones
+---
+
+import PlayClueNumber from "../../docs/variant-specific/special-ones/play-clue-number.yml";
+import ColorPlayClueLie from "../../docs/variant-specific/special-ones/color-play-clue-lie.yml";
+import ColorPromiseFinesse from "../../docs/variant-specific/special-ones/color-promise-finesse.yml";
+import ColorPromptException from "../../docs/variant-specific/special-ones/color-prompt-exception.yml";
+
+Ces conventions s'appliquent aux variantes "Special-Ones" (par exemple "Pink-Ones", "Rainbow-Ones", etc.).
+
+## Deceptive Ones
+
+### Prompting 1's
+
+- Dans cette variante, il est possible d'avoir des 1 dans la main d'un joueur qui sont "misranked".
+- Les _Finesses_ dans cette variante fonctionnent comme dans une variante pink ordinaire : jouer la _Finesse Position_ au lieu d'un 1 potentiellement misranked.
+
+## Pink Ones
+
+### Play Clues on 1's with Number 2, Number 3, or Number 4
+
+- Dans cette variante, il n'est pas possible de cluer number 1 à un joueur.
+- Ainsi, les joueurs donneront généralement un _Play Clue_ à un 1 avec un clue de couleur.
+- Alternativement, un joueur peut aussi donner un _Play Clue_ à un 1 avec un clue number 2, un clue number 3 ou un clue number 4.
+- Dans cette situation, le joueur sait jouer la carte ciblée et garder le reste des cartes pour plus tard.
+- Cette interprétation ne s'applique que s'il n'est pas possible que ce soit une _Finesse_. (Les _Self-Finesses_ ne comptent pas.)
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue number 3 à Bob, touchant deux 3 en slot 1 + slot 2 comme _Play Clue_.
+  - Bob voit que Cathy n'a pas de carte jouable en _Finesse Position_. (Si elle en avait, alors Bob devrait attendre de voir ce que fait Cathy.)
+  - Bob sait que c'est juste un _Play Clue_ sur un 1. Bob joue sa carte en slot 1. C'est un red 1 et il joue avec succès.
+  - Bob sait que sa carte en slot 2 peut être soit un autre bon 1, soit un 3.
+
+<PlayClueNumber />
+
+### Prompting 1's
+
+- Dans cette variante, il est possible d'avoir des 1 dans la main d'un joueur qui sont "misranked".
+- Les _Finesses_ dans cette variante fonctionnent comme dans une variante pink ordinaire : jouer la _Finesse Position_ (si elle peut correspondre) au lieu d'un 1 potentiellement misranked.
+
+## Omni Ones
+
+- Omni Ones hérite de toutes les conventions des Pink Ones.
+
+### Red Fix Clue
+
+- Normalement, quand des cartes sont re-cluéées avec un clue de couleur red, cela serait interprété comme un _Tempo Clue_. Cependant, dans une variante omni-ones, c'est plutôt interprété comme un _Fix Clue_.
+- Nous choisissons arbitrairement red puisque c'est la couleur la plus à gauche.
+
+## Rainbow Ones
+
+### Color Promise
+
+- Lors de l'octroi d'un clue de couleur à un rainbow-one, vous êtes censé utiliser la couleur qui correspond à la carte.
+- Il y a quelques exceptions, listées ci-dessous.
+
+### The Color Play Clue Lie
+
+- Voir d'abord la section sur le _[Pink Play Clue Lie](pink.mdx#the-pink-play-clue-lie-ppcl-with-a-mismatched-play-clue-that-touches-other-cards)_ (pour les variantes pink).
+- De même que le _Pink Play Clue Lie_ viole le _Pink Promise_, vous pouvez faire un _Color Play Clue Lie_ pour violer le _Color Promise_ de la même manière.
+- En d'autres termes, vous pouvez briser le _Color Promise_ si et seulement si :
+  - utiliser une "mauvaise" couleur permettrait de récupérer des cartes supplémentaires (par exemple un 2-pour-1 au lieu d'un 1-pour-1)
+  - la carte jouera immédiatement ou très bientôt
+  - personne d'autre ne serait confus
+- Par exemple, dans une partie à 3 joueurs :
+  - La variante est "Rainbow-Ones".
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue red à Bob, touchant un blue 1 en slot 1 et un red 3 en slot 2.
+  - Bob suppose que c'est red 1 et le joue. C'est en fait le blue 1 et il joue avec succès.
+  - Bob raisonne qu'Alice a menti sur l'identité de couleur du 1 pour pouvoir "récupérer" la carte sur son slot 2 "gratuitement".
+
+<ColorPlayClueLie />
+
+### The Color Promise Finesse
+
+- Voir d'abord la section sur le _[Color Play Clue Lie](#the-color-play-clue-lie)_.
+- Habituellement, quand le _Color Promise_ est violé, c'est un _Color Play Clue Lie_. Mais que se passe-t-il si le _Color Promise_ est violé et que le clue n'est qu'un 1-pour-1 ? Le donneur de clue doit essayer de communiquer quelque chose de plus.
+- Dans cette situation, le joueur suivant doit blind-play sa carte en _Finesse Position_ comme une _Color Promise Finesse_.
+- Par exemple, dans une partie à 3 joueurs :
+  - La variante est "Rainbow-Ones".
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue red à Cathy, touchant un blue 1 en slot 2.
+  - Bob voit que la main de Cathy n'a pas d'autres cartes blue, donc il n'y a aucune bonne raison pour qu'Alice n'ait pas simplement clue blue à Cathy et satisfait le _Color Promise_. Alice doit essayer de communiquer quelque chose de plus.
+  - Bob sait que c'est une _Color Promise Finesse_ et blind-play sa _Finesse Position_. C'est un red 1 et il joue avec succès.
+  - Cathy sait qu'Alice a effectué une _Finesse_ et que Cathy doit avoir le red 2 qui se connecte au red 1 qui a été blind-play.
+  - Cathy joue la carte red et c'est blue 1. Il joue avec succès.
+  - Cathy sait maintenant qu'Alice a effectué une _Color Promise Finesse_ au lieu d'une _Finesse_ normale.
+
+<ColorPromiseFinesse />
+
+- Notez que la _Color Promise Finesse_ ne peut être effectuée que si la carte qui est blind-play se connecte au clue qui a été donné. Sinon, Cathy pensera qu'un _Bluff_ s'est produit et ne jouera pas la carte cluéée.
+
+### The Color Prompt Exception (for Rainbow-Ones)
+
+- Voir d'abord la section sur la _[Pink Prompt Rank Exception](pink.mdx#the-pink-prompt-rank-exception)_ (pour les variantes pink).
+- Comme il y a une _Pink Prompt Rank Exception_ pour les cartes pink, il y a aussi une _Color Prompt Exception_ pour les rainbow-ones.
+- En d'autres termes, les cartes dans la main d'un joueur qui sont cluéées avec un seul clue de couleur ne sont pas traitées comme des potentiels 1.
+- Par exemple, dans une partie à 3 joueurs :
+  - La carte en slot 2 de Bob a un clue green dessus (et aucun autre clue positif ou négatif).
+  - Alice clue red à Cathy, touchant un red 2 comme _Play Clue_.
+  - Bob sait que si la carte green dans sa main est red 1, alors ce serait un _Prompt_.
+  - Bob sait que si la carte green dans sa main n'est pas red 1, alors ce serait une _Finesse_.
+  - Bob sait que normalement, les _Prompts_ sont censés avoir la priorité sur les _Finesses_. Cependant, dans ce cas, comme sa carte green n'a qu'un seul clue de couleur dessus, la _Color Prompt Exception_ s'applique, donc il doit supposer une _Finesse_.
+  - Bob blind-play sa carte en _Finesse Position_. C'est un red 1 et il joue avec succès.
+
+<ColorPromptException />

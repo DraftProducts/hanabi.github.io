@@ -1,0 +1,44 @@
+---
+title: Focus quand Chop Moved
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-4-focus-when-chop-moved/question.yml";
+import Answer from "../../docs/challenge-questions/level-4-focus-when-chop-moved/answer.yml";
+
+<ChallengeQuestionProgress level={4} id="level-4-focus-when-chop-moved" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Tous les 1 sont joués sur les stacks.
+- Alice clue numéro 1 à Cathy, touchant une carte en slot 3. (C'est un _Trash Chop Move_.)
+- Bob clue blue à Cathy, touchant _toutes_ les cartes de la main de Bob.
+- Quelles notes doivent être écrites sur les cartes de Cathy ?
+- Que doit faire Cathy ensuite ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Après le _Trash Chop Move_ d'Alice, le chop de Cathy s'est déplacé au slot 2.
+- La clue de Bob a un _Chop Focus_ normal, et est focused sur le slot 2.
+- Il n'y a pas de cartes blue dans la pile de défausse, donc c'est un _Play Clue_ sur un blue 2.
+- Le blue 1 en slot 3 reste du trash.
+- Les autres cartes blue, par le _Good Touch Principle_, sont supposées être blue 3, 4 et 5, mais l'ordre n'est pas connu.
+- Les slots 4 et 5 ne sont plus _Chop Moved_, car ils ont maintenant été touchés par une clue.
+- Cathy doit jouer le blue 2.
+
+<Answer />
+
+</TabItem>
+</Tabs>

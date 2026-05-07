@@ -1,0 +1,41 @@
+---
+title: Le Critical Save (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CriticalSaveQuestion1 from "../../docs/beginner/critical-save-question-1/critical-save-question-1.yml";
+import CriticalSaveAnswer1 from "../../docs/beginner/critical-save-question-1/critical-save-answer-1.yml";
+
+<BeginnersGuideProgress id="critical-save-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue number 3 à Bob, touchant une carte sur le slot 3.
+- Est-ce une _[Play Clue](./play-clues.mdx)_ ou une _[Save Clue](./save-clues.mdx)_ ?
+- Quelle _[card note](./card-notes.mdx)_ Bob écrit-il ?
+
+<CriticalSaveQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob sait que ce pourrait être une _Play Clue_ sur :
+  - un yellow 3 (directement jouable)
+  - un red 3 (en tant que _[Delayed Play Clue](./delayed-play-clues.mdx)_ via le red 2 de Cathy)
+- Cependant, puisqu'elle a touché sa [chop](./chop.mdx), ce pourrait aussi être une _Save Clue_. Puisque le green 3 est dans la trash, une clue de chiffre 3 correspond à cela, donc ce pourrait être le green 3 correspondant.
+- Bob ne sait pas si c'est une _Play Clue_ ou une _Save Clue_, mais il doit la traiter comme une _Save Clue_ pour le moment, jusqu'à obtenir plus d'informations.
+- Bob écrit une _card note_ « r3, y3, g3 ».
+
+<CriticalSaveAnswer1 />
+
+</TabItem>
+</Tabs>

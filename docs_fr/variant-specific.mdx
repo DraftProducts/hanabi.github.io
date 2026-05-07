@@ -1,0 +1,138 @@
+---
+title: Introduction
+---
+
+import LoadedPlayClue from "../docs/variant-specific/hard/loaded-play-clue.yml";
+import LoadedException from "../docs/variant-specific/hard/loaded-exception.yml";
+import LoadedException2 from "../docs/variant-specific/hard/loaded-exception-2.yml";
+import AlwaysLoadedGray1 from "../docs/variant-specific/hard/always-loaded-gray-1.yml";
+import AlwaysLoadedGray2 from "../docs/variant-specific/hard/always-loaded-gray-2.yml";
+
+[Hanab Live](https://hanab.live) est programmé par des passionnés qui ont joué des milliers de parties. Pour garder le jeu intéressant, le serveur permet de créer des parties avec de nombreuses variantes. Les variantes implémentées sont [décrites dans un document séparé](https://github.com/Hanabi-Live/hanabi-live/blob/main/docs/variants.md).
+
+### Hard Variants & Easy Variants
+
+- Certaines variantes exigent une efficacité énorme. Comme nos conventions normales engendrent un jeu prudent, nous nous accordons pour modifier notre façon de jouer dans certaines variantes spécifiques afin de gagner plus régulièrement.
+- Nous définissons toute variante qui nécessite une efficacité supérieure ou égale à 1.33 comme une variante "hard". (L'efficacité requise peut être consultée en jeu via l'interface de Hanab Live. Notez qu'une variante peut être considérée comme facile à 4 joueurs, mais difficile à 5 joueurs, par exemple.)
+- De plus, les variantes suivantes sont considérées comme des variantes hard même si leur efficacité requise peut être inférieure à 1.33 :
+  - Color Mute
+  - Number Mute
+  - Cow & Pig
+  - Duck
+  - Throw It in a Hole
+  - Up or Down
+
+#### Convention Changes for All Hard Variants
+
+- Les joueurs ne sont pas autorisés à _Double Discard Avoid_.
+  - Tout clue donné dans une situation de _Double Discard_ sera plutôt traité comme un clue donné en situation hors _Double Discard_.
+- Les joueurs ne sont pas autorisés à _5 Stall_ pendant l'_Early Game_.
+  - Tout clue qui ressemble à un _5 Stall_ est plutôt traité comme un _5's Chop Move_ ou un _5 Pull_.
+- Les joueurs ne sont pas obligés de donner un clue pendant l'_Early Game_ ; ils ont le droit d'amorcer le _Mid-Game_ quand bon leur semble.
+- Les _Loaded Play Clues_, comme définis ci-dessous, sont activés.
+
+### The Early Save
+
+- On dit qu'un joueur est _Loaded_ s'il a une carte jouable globalement connue ou un défausse sûr globalement connu.
+- Les joueurs ont le droit de donner un _Save Clue_ à une carte sur le chop, même si le joueur cluéé est _Loaded_.
+- Si un _Save Clue_ est donné dans ce type de situation, on parle d'un _Early Save_. Le clue est considéré comme "early" parce que le joueur _Loaded_ va presque certainement jouer sa carte jouable ou défausser son trash connu avant de défausser son chop.
+- Dans notre groupe, les _Early Saves_ sont normaux et ne déclenchent rien de particulier. (Autoriser les _Early Saves_ est utile parce que cela permet la _Discard Modulation_.)
+
+### The Loaded Play Clue (in Hard Variants) (LPC)
+
+- Voir d'abord la section sur l'_[Early Save](#the-early-save)_.
+- Dans les [_Hard Variants_](#hard-variants--easy-variants), les _Early Saves_ ne sont pas légaux. À la place, si un _Early Save_ est donné à un joueur _Loaded_, il est traité comme un _Play Clue_ sur cette carte.
+- On appelle cela un _Loaded Play Clue_ pour le distinguer d'un _Play Clue_ plus ordinaire.
+- Par exemple, dans une partie à 3 joueurs d'une variante _Hard_ :
+  - Tous les 2 sont joués sur les stacks. Le blue 4 est dans le trash.
+  - Alice clue number 3 à Cathy, touchant un 3 comme _Play Clue_.
+  - Bob clue number 4 à Cathy, touchant un 4 sur le chop. Est-ce un _Play Clue_ ou un _Save Clue_ ?
+  - Cathy sait que normalement, le clue number 4 de Bob pourrait être un _Early Save_ sur un blue 4 (qui est actuellement critique).
+  - Cependant, Cathy sait aussi que les _Early Saves_ sont désactivés dans les _Hard Variants_. Comme Cathy est loaded avec son 3 jouable, le clue de Bob doit être un _Loaded Play Clue_.
+  - Cathy joue le 3. C'est un red 3 et il joue avec succès.
+  - Cathy sait maintenant que son 4 doit être le red 4 (qui se connecte au red 3).
+
+<LoadedPlayClue />
+
+#### Chop Moves
+
+- Comme évoqué précédemment, les _Loaded Play Clues_ s'appliquent aux _Early Saves_, qui sont une forme de _Save Clue_.
+- Par conséquent, les _Loaded Play Clues_ ne s'appliquent jamais aux _Chop Moves_, puisque les _Chop Moves_ sont un type référentiel de clue et n'appartiennent pas à la catégorie de coups appelée _Save Clues_.
+- En d'autres termes, un _Chop Move_ est toujours un _Chop Move_, qu'un joueur soit _Loaded_ ou non.
+
+#### Exceptions
+
+- Les _Loaded Play Clues_ **ne** s'appliquent **pas** dans l'_Early Game_ - ils ne sont "activés" qu'au _Mid-Game_.
+- Les _Loaded Play Clues_ **ne** s'appliquent **pas** dans les situations de _Double Discard_. (Même si le _Double Discard Avoidance_ est "désactivé" dans les variantes hard en général, les joueurs sont toujours autorisés à éviter un _Double Discard_ en donnant des _Early Saves_ aux cartes.)
+- Les _Loaded Play Clues_ **s'appliquent** dans les situations de stall (par exemple les situations de stall à 8 clues), mais seulement s'il y a d'autres choses à faire de [priorité égale ou inférieure](level-9.mdx#allowable-stall-clues-stall-table).
+- Les _Loaded Play Clues_ **ne** s'appliquent **pas** aux clues number 5 pendant la _Low Score Phase_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Nous sommes en _Low Score Phase_.
+  - Le red 3 est joué sur les stacks.
+  - Bob a un red 4 connu dans sa main en slot 5.
+  - Alice clue number 5 à Bob, touchant un 5 en slot 3.
+  - Bob sait qu'il est _Loaded_, parce qu'il a un red 4 à jouer. Bob sait que normalement, personne d'autre ne devrait donner de _Save Clue_ aux joueurs _Loaded_ (et qu'ils devraient être transformés en _Play Clues_).
+  - Cependant, Bob sait que cette règle ne s'applique pas aux clues number 5 pendant la _Low Score Phase_.
+  - Ainsi, Bob marque sa carte en slot 4 comme étant _Chop Moved_ et joue le red 4.
+
+<LoadedException />
+
+- Par exemple, dans une partie à 3 joueurs (similaire au dernier exemple) :
+  - Nous sommes en _Low Score Phase_.
+  - Le red 3 est joué sur les stacks.
+  - Bob a un red 4 connu dans sa main en slot 4.
+  - Alice clue number 5 à Bob, touchant un 5 en slot 5 (le chop de Bob).
+  - Bob sait qu'il est _Loaded_, parce qu'il a un red 4 à jouer. Bob sait que normalement, personne d'autre ne devrait donner de _Save Clue_ aux joueurs _Loaded_ (et qu'ils devraient être transformés en _Play Clues_).
+  - Cependant, Bob sait que cette règle ne s'applique pas aux clues number 5 pendant la _Low Score Phase_.
+  - Ainsi, Bob sait qu'Alice exécute un simple _5 Save_ et joue le red 4.
+
+<LoadedException2 />
+
+### The Always Loaded Principle (ALP)
+
+- Dans certaines variantes, un type spécifique de clue ressemble toujours à un _Save Clue_ quelles que soient les cartes dans la pile de défausse.
+- Par exemple :
+  - Dans une variante avec un dark prism, un clue 3 ou 4 sur le chop ressemble toujours à un _Save Clue_ sur un prism 3 ou un prism 4.
+  - Dans une variante brown, un clue brown sur le chop ressemble toujours à un _Save Clue_ sur un brown 2, un brown 5, ou une autre carte brown critique.
+- Dans de tels cas, nous nous accordons pour considérer que ce type spécifique de clue, s'il est donné à un joueur [_Loaded_](#the-early-save), doit toujours être traité comme un _Play Clue_. (Ceci inclut pendant l'_Early Game_ et dans les _Double Discard Situations_.)
+- Par exemple, dans une partie à 3 joueurs avec une suite gray :
+  - Le gray 1 et le blue 1 sont joués sur les stacks.
+  - La main de Bob est entièrement non-cluéée.
+  - Alice clue un gray 3 avec un clue rank 3 à Cathy, qui est actuellement _Loaded_ avec un blue 2.
+  - Normalement, Bob supposerait que c'est un _Early Save_. Mais à cause de l'_Always Loaded Principle_, ce doit être un _Loaded Play Clue_.
+  - Bob joue sa carte en _Finesse Position_. C'est un gray 2 et il joue avec succès.
+  - Comme Bob a joué, Cathy marque sa carte comme étant le gray 3.
+
+<AlwaysLoadedGray1 />
+
+- Une conséquence de ce principe est que, dans certains cas, on peut l'utiliser pour faire jouer des cartes qui n'appartiennent pas à une suite spéciale.
+- Par exemple, dans une partie à 3 joueurs avec une suite gray :
+  - Le gray 1 et le blue 1 sont joués sur les stacks.
+  - La main de Bob est entièrement non-cluéée.
+  - Alice clue un blue 3 critique avec un clue rank 3 à Cathy, qui est actuellement _Loaded_ avec un gray 2.
+  - Normalement, Bob supposerait que c'est un _Early Save_. Mais à cause de l'_Always Loaded Principle_, ce doit être un _Loaded Play Clue_.
+  - Si Bob ne fait rien, Cathy supposera que c'est un _Loaded Play Clue_ sur le gray 3.
+  - Ainsi, Bob joue sa carte en _Finesse Position_. C'est un blue 2 et il joue avec succès.
+  - Comme Bob a joué, Cathy marque sa carte comme étant le blue 3.
+
+<AlwaysLoadedGray2 />
+
+- La seule exception à ALP concerne le clue number 5 dans une variante avec une suite white. ALP ne s'applique jamais aux clues number 5. (Le tempo sur les white 5 n'est pas aussi important que la confusion que cela causerait avec les _Save Clues_ normaux.)
+
+### The Ambiguous Tempo Clue
+
+- Dans certaines variantes, il existe différentes cartes indiscernables par les clues, c'est-à-dire qu'elles répondent à tous les mêmes clues de nombre et de couleur.
+- Les variantes pink, light pink, omni, brown et muddy rainbow ont chacune leurs propres conventions pour gérer cela.
+- Si un joueur a deux cartes indiscernables cluéées, il est difficile de donner un _Tempo Clue_ à la carte la plus à droite. Ainsi, nous nous accordons sur ce qui suit :
+  - un _Tempo Clue_ de couleur doit cibler la carte la plus à droite.
+  - un _Tempo Clue_ de rank doit cibler la carte la plus à gauche.
+
+### 2-Player
+
+- Dans le _H-Group_, nous jouons généralement uniquement des parties à 3 à 5 joueurs. Si vous êtes intéressé par les parties à 2 joueurs, voir la [page 2-player](https://github.com/hanabi/hanabi.github.io/blob/main/misc/2-player.md).
+
+### Empty Clues
+
+- Les _Empty Clues_ sont des clues qui ne touchent aucune carte d'une main. Sur Hanab Live, chaque partie a l'option d'autoriser les _Empty Clues_. Dans notre groupe, nous désactivons généralement cette option car elle rend le jeu trop facile.
+- Si les _Empty Clues_ sont activés, cela ouvre un canal de transfert d'informations beaucoup plus large. Nous avons développé tout un cadre conventionnel autour de ce canal et c'est trop compliqué à couvrir dans une seule section ici.
+- Si vous souhaitez en apprendre davantage sur les conventions étendues d'_Empty Clue_, elles sont documentées [sur une page séparée](https://github.com/hanabi/hanabi.github.io/blob/main/misc/empty-clues.md).

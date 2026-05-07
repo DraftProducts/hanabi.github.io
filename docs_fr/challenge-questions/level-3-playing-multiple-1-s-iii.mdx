@@ -1,0 +1,39 @@
+---
+title: Jouer plusieurs 1, III
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-3-playing-multiple-1-s-iii/question.yml";
+import Answer from "../../docs/challenge-questions/level-3-playing-multiple-1-s-iii/answer.yml";
+
+<ChallengeQuestionProgress level={3} id="level-3-playing-multiple-1-s-iii" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est le premier tour de la partie.
+- Alice clue numéro 1 à Cathy, touchant deux cartes en slot 3 et 4.
+- Immédiatement, Bob clue numéro 1 à Cathy, touchant les deux mêmes cartes.
+- Quelles notes Cathy doit-elle écrire sur ses cartes ? Que doit-elle faire ensuite ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- La clue d'Alice dit à Cathy de jouer les 1 de droite à gauche.
+- La clue de Bob est une _Fix Clue (That Gives No Additional Information)_.
+- Cela signifie que Cathy ne devrait _pas_ jouer la carte attendue (slot 4), mais sauter au slot 3 et jouer cette carte à la place.
+
+<Answer />
+
+</TabItem>
+</Tabs>

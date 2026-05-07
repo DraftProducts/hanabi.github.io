@@ -1,0 +1,36 @@
+---
+title: Number Blind
+---
+
+import MismatchFinesse from "../../docs/variant-specific/number-blind/mismatch-finesse.yml";
+
+Ces conventions s'appliquent aux variantes "Number Blind".
+
+### Number Clues --> Slot Numbers
+
+- Les clues de couleur signifient la même chose qu'à la normale.
+- Tous les clues de nombre signifient de jouer le slot correspondant.
+- S'il n'y a que quatre cartes en main et qu'un clue number 5 est utilisé, cela signifie _Chop Move_.
+
+### The Mismatch Finesse
+
+- Si un joueur a deux exemplaires de la même carte jouable dans sa main, les joueurs sont censés donner un _Play Clue_ positionnel à celle de gauche.
+- Si un joueur donne plutôt un _Play Clue_ positionnel à celle de droite, c'est qu'il essaie de communiquer quelque chose de plus.
+- Cela signifie que le joueur suivant doit blind-play sa _Finesse Position_ comme une carte jouable non liée.
+- Les _Mismatch Finesses_ peuvent rarement aussi donner à un joueur un défausse sûr.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Cathy a un red 1 en slot 1 et un autre red 1 en slot 2.
+  - Alice clue number 2 à Cathy, donnant un _Play Clue_ sur le slot 2 de Cathy.
+  - Bob sait que puisque Cathy avait une carte dupliquée en slot 1 et slot 2, Alice était censée récupérer la carte la plus à gauche, le slot 1.
+  - Alice doit donc effectuer le _Mismatch Finesse_. Bob blind-play sa _Finesse Position_ et c'est un blue 1.
+  - Cathy suppose qu'Alice a fait une _Finesse_ - à cause du blind-play de Bob, elle doit avoir le blue 2 dans son slot 2. Cathy joue son slot 2, et il s'avère que c'est un red 1.
+  - Cathy sait maintenant que ce n'était pas du tout une _Finesse_ normale - c'était plutôt une _Mismatch Finesse_, parce qu'il n'y a aucune autre explication à ce que Bob blind-play à partir d'un _Play Clue_ sur un red 1.
+  - Cathy sait aussi qu'elle doit avoir un autre red 1 dans sa main. Comme il n'y a qu'une seule carte à gauche de son slot 2, elle sait que le red 1 doit être exactement dans son slot 1 (au moment du clue).
+  - À cause de cela, quand Cathy aura besoin de défausser, elle défaussera sans regarder son slot 2 (puisque son slot 1 a glissé vers le slot 2 après qu'elle a joué le red 1).
+
+<MismatchFinesse />
+
+### Advanced Conventions
+
+- Dans les variantes Number Blind, les _Ejections_ et _Discharges_ fonctionnent assez différemment. Voir les [Conventions spécifiques aux variantes No Positive Clues](no-positive-clues.mdx).

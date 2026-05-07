@@ -1,0 +1,63 @@
+---
+title: Color Blind
+---
+
+import MismatchFinesse from "../../docs/variant-specific/color-blind/mismatch-finesse.yml";
+
+Ces conventions s'appliquent aux variantes "Color Blind".
+
+### Color Clues --> Slot Numbers
+
+- Les clues de nombre signifient la même chose qu'à la normale.
+- Tous les clues de couleur ont une signification spéciale :
+  - Red signifie jouer slot 1 (parce que c'est la 1re stack en partant de la gauche).
+  - Yellow signifie jouer slot 2 (parce que c'est la 2e stack en partant de la gauche).
+  - Green signifie jouer slot 3.
+  - Blue signifie jouer slot 4.
+  - Purple signifie jouer slot 5 (dans une partie à 2 ou 3 joueurs).
+- En outre, tous les clues de couleur doivent être traités comme de potentielles _Delayed Play Clues_, _Prompts_, et _Reverse Finesses_.
+
+### 4 Suit Exceptions
+
+- Il n'y a pas assez de couleurs pour couvrir tous les slots dans une partie à 2 ou 3 joueurs avec 4 suites, donc les joueurs ne peuvent simplement pas cluer le slot 5 avec un clue de couleur.
+
+### 3 Suit Exceptions
+
+- Il n'y a pas assez de couleurs pour couvrir tous les slots dans une partie à 2 ou 3 joueurs avec 3 suites, donc les attributions de couleurs sont personnalisées :
+  - Red signifie jouer slot 2.
+  - Green signifie jouer slot 3.
+  - Blue signifie jouer slot 4.
+- Il n'y a pas assez de couleurs pour couvrir tous les slots dans une partie à 4 ou 5 joueurs avec 3 suites, donc les joueurs ne peuvent simplement pas cluer le slot 4 avec un clue de couleur.
+
+### Extra Color --> Chop Move
+
+- S'il y a une couleur supplémentaire qui ne correspond à aucun slot (par exemple purple dans une variante "Color Blind (5 Suits)" à 4 joueurs), alors elle est utilisée pour signifier que le receveur du clue doit _Chop Move_ une carte.
+
+### 2nd Extra Color --> Double Finesse
+
+- S'il y a une seconde couleur supplémentaire qui ne correspond à aucun slot (par exemple teal dans une variante "Color Blind (6 Suits)" à 4 joueurs), alors elle est utilisée pour signifier que deux personnes doivent blind-play leur _Finesse Position_.
+- Les deux blind-plays ne doivent pas nécessairement venir de deux joueurs consécutifs - ils peuvent venir de n'importe qui.
+- Le clue doit toujours être donné à la personne qui réalise le second blind-play.
+
+### The Mismatch Finesse
+
+- Si un joueur a deux exemplaires de la même carte jouable dans sa main, les joueurs sont censés donner un _Play Clue_ positionnel à celle de gauche.
+- Si un joueur donne plutôt un _Play Clue_ positionnel à celle de droite, c'est qu'il essaie de communiquer quelque chose de plus.
+- Cela signifie que le joueur suivant doit blind-play sa _Finesse Position_ en tant que carte jouable non liée.
+- Les _Mismatch Finesses_ peuvent rarement aussi donner à un joueur un défausse sûr.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Cathy a un red 1 en slot 1 et un autre red 1 en slot 2.
+  - Alice clue yellow à Cathy, donnant un _Play Clue_ sur le slot 2 de Cathy.
+  - Bob sait que puisque Cathy avait une carte dupliquée en slot 1 et slot 2, Alice était censée récupérer la carte la plus à gauche, le slot 1.
+  - Alice doit donc effectuer le _Mismatch Finesse_. Bob blind-play sa _Finesse Position_ et c'est un blue 1.
+  - Cathy suppose qu'Alice a fait une _Finesse_ - à cause du blind-play de Bob, elle doit avoir le blue 2 dans son slot 2. Cathy joue son slot 2, et il s'avère que c'est un red 1.
+  - Cathy sait maintenant que ce n'était pas du tout une _Finesse_ normale - c'était plutôt une _Mismatch Finesse_, parce qu'il n'y a aucune autre explication à ce que Bob blind-play à partir d'un _Play Clue_ sur un red 1.
+  - Cathy sait aussi qu'elle doit avoir un autre red 1 dans sa main. Comme il n'y a qu'une seule carte à gauche de son slot 2, elle sait que le red 1 doit être exactement dans son slot 1 (au moment du clue).
+  - À cause de cela, quand Cathy aura besoin de défausser, elle défaussera sans regarder son slot 2 (puisque son slot 1 a glissé vers le slot 2 après qu'elle a joué le red 1).
+
+<MismatchFinesse />
+
+### Advanced Conventions
+
+- Dans les variantes Color Blind, les _Ejections_ et _Discharges_ fonctionnent assez différemment. Voir les [Conventions spécifiques aux variantes No Positive Clues](no-positive-clues.mdx).

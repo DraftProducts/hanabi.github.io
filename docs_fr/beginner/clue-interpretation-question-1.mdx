@@ -1,0 +1,45 @@
+---
+title: Interprétation des Clues (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ClueInterpretationQuestion1 from "../../docs/beginner/clue-interpretation-question-1/clue-interpretation-question-1.yml";
+import ClueInterpretationAnswer1 from "../../docs/beginner/clue-interpretation-question-1/clue-interpretation-answer-1.yml";
+
+<BeginnersGuideProgress id="clue-interpretation-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Cathy a une main complètement non-cluée.
+- Alice clue green à Cathy, touchant les slots 3 et 4.
+
+1. Quel slot est focalisé ?
+1. Est-ce une _[Play Clue](./play-clues.mdx)_ ou une _[Save Clue](./save-clues.mdx)_ ?
+1. Quelle _[card note](./card-notes.mdx)_ Cathy écrit-elle sur la carte focalisée ?
+
+<ClueInterpretationQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Le slot 4 est focalisé (i.e. la carte [chop](./chop.mdx)).
+1. Puisque le green 2 est joué sur les stacks, la carte sur le slot 4 doit être soit un green 3, soit un green 4, soit un green 5.
+   - Si c'est un green 3, alors ce serait une _Chop-Focus Play Clue_. C'est légal.
+   - Si c'est un green 4, alors cela n'aurait aucun sens, car le green 4 n'est ni jouable ni critique. (Toutes les clues doivent être soit des _Play Clues_, soit des _Save Clues_.)
+   - Si c'est un green 5, alors cela n'aurait aucun sens, car le green 5 n'est pas jouable. Le green 5 est critique, mais il doit être sauvegardé avec une clue de chiffre 5 en tant que _[5 Save](./5-save.mdx)_.
+   - Ainsi, ce doit être une _Chop-Focus Play Clue_ sur le green 3.
+1. Cathy écrit une _card note_ « g3 » sur sa carte du slot 4.
+
+<ClueInterpretationAnswer1 />
+
+</TabItem>
+</Tabs>

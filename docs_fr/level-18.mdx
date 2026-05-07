@@ -1,0 +1,224 @@
+---
+title: Level 18 - Elimination
+---
+
+import EliminationNotes from "../docs/level-18/elimination-notes.yml";
+import EliminationBlindPlay from "../docs/level-18/elimination-blind-play.yml";
+import EliminationPlayClue from "../docs/level-18/elimination-play-clue.yml";
+import EliminationSingleOutNegative from "../docs/level-18/elimination-single-out-negative.yml";
+import EliminationFinesse1 from "../docs/level-18/elimination-finesse-1.yml";
+import EliminationFinesse2 from "../docs/level-18/elimination-finesse-2.yml";
+import TrashTouchElimination1 from "../docs/level-18/trash-touch-elimination-1.yml";
+import TrashTouchElimination2 from "../docs/level-18/trash-touch-elimination-2.yml";
+import TrashTouchEliminationInteraction from "../docs/level-18/trash-touch-elimination-interaction.yml";
+
+## Conventions
+
+### Elimination & Elimination Notes
+
+- Normalement, vos coéquipiers ne vous laisseraient jamais défausser quoi que ce soit d'important. Donc quand vous défaussez une carte playable (ou un 2 nécessaire) **et** que cette carte n'est pas dans la main de quelqu'un d'autre, vous pourriez penser que l'équipe a fait une erreur.
+- Une excellente raison pour laquelle ils vous laisseraient défausser une carte importante est que vous avez l'autre copie dans votre main. (Pour satisfaire le _[Good Touch Principle](beginner/good-touch-principle.mdx)_, ils ont dû attendre que vous la défaussiez pour ne pas dupliquer la carte.)
+- Ainsi, quand vous obtenez un clue de suivi, vous saurez exactement quelle carte c'est.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 3 est joué sur les stacks.
+  - Alice a une main complètement non-cluée.
+  - Alice défausse son chop (slot 5). C'est un red 4 (playable).
+  - Alice soupire de surprise – elle sait que tout le monde dans l'équipe s'accorde à ne pas se laisser défausser des cartes playable (_[Save Principle](beginner/save-principle.mdx)_).
+  - Alice sait que l'équipe n'était pas dans une situation désespérée ou quoi que ce soit, donc la seule explication est qu'elle doit avoir l'autre copie du red 4.
+  - Alice écrit une note de « r4? » sur les slots 2, 3, 4, et 5. (Ça ne peut pas être sur le slot 1, puisque c'est la carte qu'elle vient de tirer.)
+  - Bob clue à Alice rouge, ce qui touche une carte au slot 1 et slot 2.
+  - Normalement, Alice jouerait la carte la plus à gauche (slot 1) comme red 4. Cependant, à cause de ses notes, elle sait que le red 4 doit en réalité être au slot 2.
+  - Alice joue avec succès red 4 du slot 2. Puisque le red 5 est la seule bonne carte rouge restante, Alice peut supposer que son autre carte rouge est red 5 (du _Good Touch Principle_), et elle peut le jouer au tour suivant.
+
+<EliminationNotes />
+
+- Dans cet exemple, les notes « r4? » qu'Alice écrit sont appelées des _Elimination Notes_. Les _Elimination Notes_ sont des notes qui représentent les slots possibles pour une carte spécifique.
+- Dans cet exemple, la « chose » qui a déclenché l'écriture des _Elimination Notes_ était la défausse d'une carte, donc c'est appelé _Discard Elimination_.
+- Notez que les joueurs ne devraient pas toujours faire des _Elimination Notes_ quand ils défaussent une carte playable. Dans certains cas, les parties peuvent être extrêmement chargées, ne laissant aucun moyen raisonnable d'obtenir la carte playable. Les joueurs doivent utiliser leur meilleur jugement et tenir compte de cela.
+
+### Double Discard Elimination
+
+- Quand un joueur qui est dans une situation _Double Discard_ défausse quand même avec un clue évident à donner (comme un _5 Stall_), cela implique qu'il **voit** l'autre copie de la carte, et qu'il ne faisait pas du tout du _Double Discarding_.
+- Ainsi, quand cela se produit, vous devriez écrire des _Elimination Notes_ sur toute votre main pour cette carte.
+- C'est presque exactement la même chose que _Discard Elimination_, sauf que c'est déclenché par la défausse d'un autre joueur.
+
+### 2 Elimination
+
+- Selon le _Save Principle_, tout le monde sait que tous les 2 doivent être sauvegardés. Ainsi, si quelqu'un d'autre dans l'équipe laisse défausser un 2, c'est très étrange.
+- S'il n'y a pas quelque chose de spécial qui se passe, alors cela devrait être un signal que quelqu'un d'autre a l'autre copie du 2, et devrait déclencher l'écriture d'_Elimination Notes_ sur sa main.
+
+## Mouvements Spéciaux
+
+### Le Elimination Blind-Play
+
+- D'abord, voyez la section sur [Elimination](#elimination--elimination-notes).
+- Dans l'exemple pour _Discard Elimination_, l'équipe a clué la deuxième copie du red 4 directement. Mais dans d'autres situations, l'équipe **n'aura pas** besoin de cluer quoi que ce soit. Le joueur avec les _Elimination Notes_ peut éliminer les possibilités une par une. Quand il ne reste qu'une possibilité, il peut blind-play la carte comme un _Elimination Blind-Play_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 3 est joué sur les stacks.
+  - Alice a une main complètement non-cluée.
+  - Alice défausse son chop (slot 5). C'est un red 4 (playable).
+  - Alice sait que l'équipe n'était pas dans une situation désespérée ou quoi que ce soit, donc la seule explication est qu'elle doit avoir l'autre copie du red 4.
+  - Alice écrit des _Elimination Notes_ « r4? » sur les slots 2, 3, 4, et 5. (Ça ne peut pas être sur le slot 1, puisque c'est la carte qu'elle vient de tirer.)
+  - Bob clue à Alice blue, ce qui touche les slots 1, 2, 3, et 4. (C'est un _[Play Clue](beginner/play-clues.mdx)_ sur le slot 1.)
+  - Alice écrit une note de « b1 » sur le slot 1.
+  - Alice efface ses _Elimination Notes_ pour le red 4 des slots 2, 3, et 4.
+  - La seule carte restante avec une _Elimination Note_ est le slot 5.
+  - Alice peut maintenant blind-play le red 4 quand cela arrivera à son tour comme un _Elimination Blind-Play_.
+
+<EliminationBlindPlay />
+
+### Le Elimination Play Clue
+
+- Un clue qui touche plusieurs cartes n'a qu'un focus. Comme vous le savez probablement, si la carte chop n'a pas été touchée, alors le focus est la carte la plus à gauche.
+- Cependant, cette règle ne s'applique pas si un clue isole une carte immédiatement playable de l'_Elimination_. Dans ce cas, le clue ne se focalise que sur la carte d'_Elimination_, et toutes les autres cartes touchées ne sont pas nécessairement playable maintenant.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 et blue 1 sont joués sur les stacks.
+  - Alice défausse son chop, et il est révélé être le red 2.
+  - Alice est surprise, et écrit des _Discard Elimination Notes_ pour red 2 sur les slots 2, 3, 4, et 5.
+  - Bob donne un clue de nombre 2 à Alice qui touche une carte au slot 1, slot 3 et slot 4.
+  - Normalement, Alice traiterait cela comme un _Play Clue_ sur le 2 dans son slot 1. Cependant, elle sait de ses _Elimination Notes_ que ce n'est pas le red 2, donc le focus du clue se déplace vers la droite. Donc, slot 3 est exactement red 2 (et elle peut le jouer maintenant).
+  - Alice sait que le but du clue n'était que d'obtenir le red 2. Ses cartes aux slots 1 et 4 peuvent être n'importe quels 2 dans la partie et ne sont pas nécessairement playable maintenant.
+
+<EliminationPlayClue />
+
+- Un _Elimination Play Clue_ ne peut pas être un _Delayed Play Clue_, un _[Prompt](beginner/prompt.mdx)_, ou un _[Finesse](beginner/finesse.mdx)_.
+
+### Interaction Entre Elimination & Chop-Focus
+
+- Parfois, les joueurs auront deux _Elimination Notes_ ou plus sur des cartes dans leur main. Ces joueurs peuvent recevoir des clues de suivi qui isolent l'identité de la carte d'_Elimination_.
+- Les clues peuvent isoler la carte d'_Elimination_ en utilisant une _information positive_ ou en utilisant une _information négative_.
+
+#### Exemple d'un Elimination Single-Out Utilisant un Clue Avec Information Positive
+
+- Voyez la section sur le _[Elimination Play Clue](#le-elimination-play-clue)_ :
+  - Dans l'exemple pour _Elimination Play Clue_, Alice reçoit un clue 2.
+  - Après avoir reçu le clue 2, Alice supprime les _Elimination Notes_ sur son slot 2, slot 4, et slot 5.
+  - Ainsi, Alice a complètement réduit l'identité du red 2 pour être au slot 3.
+
+#### Exemple d'un Elimination Single-Out Utilisant un Clue Avec Information Négative
+
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 est joué sur les stacks.
+  - Alice défausse red 2. Elle écrit des _Elimination Notes_ pour red 2 sur slot 2, slot 3, slot 4, et slot 5.
+  - Bob clue nombre 3 à Alice, touchant trois 3 sur slot 2, slot 3, et slot 4.
+  - Après avoir reçu le clue de nombre 3, Alice supprime les _Elimination Notes_ sur son slot 2, slot 3, et slot 4.
+  - Ainsi, Alice a complètement réduit l'identité du red 2 pour être au slot 5.
+
+#### Chop-Focus Se Produit **Avant** que les Clues Soient Donnés
+
+- Quand un clue est donné qui isole une carte d'_Elimination_ avec _information négative_, alors le focus du clue devrait être évalué normalement.
+- En d'autres termes, le slot focalisé devrait être évalué **avant** que le clue soit donné, tout comme tout autre clue fonctionne.
+- Par exemple, en continuant l'exemple précédent :
+  - Alice sait aussi que le clue de nombre 3 de Bob doit être un _Play Clue_ sur le red 3 (puisque red 1 est sur le seul 1 actuellement joué et qu'il n'y a pas de 3 dans le trash).
+  - Mais quel slot le clue de Bob focalise-t-il ? En d'autres termes, quel slot est promis être red 3 ?
+  - Le clue est focalisé soit sur le slot 2 (la plus récente des cartes cluées) soit sur le slot 4 (le « nouveau » chop après que le red 2 est compté).
+  - Alice sait que vous évaluez où est le chop **avant** que les clues soient donnés, donc le clue doit être focalisé sur le slot 2.
+
+<EliminationSingleOutNegative />
+
+### Le Elimination Riding Deduction
+
+- D'abord, voyez la section sur [la définition du riding](level-7.mdx#la-définition-du-riding).
+- Si :
+  - il ne reste que deux cartes dans la main d'un joueur avec des _Elimination Notes_ **et**
+  - les joueurs précédents ont laissé la carte chop _Rider_ **et**
+  - les joueurs précédents n'étaient pas occupés, **alors**
+- La carte avec l'_Elimination Note_ ne peut pas être sur le chop ! (Sinon, l'un des joueurs précédents l'aurait clué avec soit un _Play Clue_ soit un _[Save Clue](beginner/save-clues.mdx)_ pour empêcher qu'il soit défaussé.)
+- Dans une telle situation, le joueur avec les _Elimination Notes_ peut « sauter en avant » et immédiatement blind-play la plus récente des deux cartes.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 a été joué sur le stack rouge.
+  - Alice a une main complètement non-cluée.
+  - Alice défausse son chop (slot 5). C'est un red 2 (playable).
+  - Alice sait que l'équipe n'était pas occupée, donc elle doit avoir l'autre copie de red 2.
+  - Alice écrit des _Elimination Notes_ sur les slots 2, 3, 4, et 5.
+  - Alice ne reçoit aucun clue au prochain tour de table. Elle défausse, et a maintenant des _Elimination Notes_ sur les slots 3, 4, et 5.
+  - Alice ne reçoit aucun clue au prochain tour de table. Elle défausse, et a maintenant des _Elimination Notes_ sur les slots 4 et 5.
+  - Alice ne reçoit aucun clue au prochain tour de table. Ses coéquipiers ne laisseraient pas l'autre copie de red 2 être défaussée, donc elle doit être au slot 4. Alice blind-play red 2 du slot 4.
+
+### Le Riding Deduction Bluff
+
+- Typiquement, quand un joueur a deux cartes avec des _Elimination Notes_ et que la « vraie » copie de la carte est sur le chop, vous devez la cluer pour le lui faire savoir.
+- Cependant, si l'autre carte est aussi playable, vous pouvez choisir de ne rien cluer.
+- Ensuite, le joueur devrait effectuer un _Elimination Riding Deduction_, et jouer la carte sans rapport.
+- Après cela, il ne restera qu'une carte avec une _Elimination Note_, donc il continuera à jouer la « vraie » carte à son tour suivant.
+
+### Le Elimination Self-Chop Move
+
+- Parfois, un joueur aura réduit ses _Elimination Notes_ à une carte spécifique. Ainsi, même si la carte se trouve n'avoir aucun clue positif dessus, le joueur connaîtra l'identité exacte de la carte.
+- Dans cette situation, le joueur devrait _Self-Chop Move_ la carte. En d'autres termes, puisque les _Elimination Notes_ étaient globalement connues, il n'y a pas besoin que quelqu'un dans l'équipe gaspille un clue pour empêcher la défausse de la carte.
+
+### Le Elimination Finesse
+
+- Normalement, si un joueur est _Finessed_, il est censé jouer sa carte de _Finesse Position_. Cependant, que se passe-t-il s'il a des _Elimination Notes_ sur sa main pour la carte spécifique qui est _Finessed_ ?
+- Dans la plupart des situations, il n'y aura pas d'_Elimination Note_ sur le slot 1 (e.g. la _Finesse Position_). Cela signifie que jouer le slot 1 dans le _Finesse_ n'aurait aucun sens.
+  - Cependant, dans le cas rare où il y a une _Elimination Note_ sur sa _Finesse Position_, alors le joueur devrait **toujours** ne pas jouer la _Finesse Position_ ; lisez la suite.
+- Ici, le joueur est censé jouer la **plus ancienne** des cartes avec les _Elimination Notes_ dessus (sans compter les cartes _[Chop Moved](level-4.mdx#chop-moves)_, le cas échéant).
+- Par exemple, dans une partie à 3 joueurs :
+  - Blue 2 est joué sur les stacks.
+  - Alice a une main complètement non-cluée.
+  - Alice défausse un blue 3. Blue 3 était playable, et rien d'urgent ne se passe actuellement, donc elle écrit des _Elimination Notes_ sur sa main pour l'autre blue 3 sur les slots 2, 3, 4, et 5.
+  - Bob clue à Cathy blue, ce qui touche un blue 4 comme _Play Clue_.
+  - Cathy défausse.
+  - Alice sait que c'est une sorte de _Reverse Finesse_, car il appelle le blue 3. Cependant, le blue 3 ne peut pas être dans sa _Finesse Position_ (slot 1), car elle sait des _Elimination Notes_ qu'il doit être soit sur slot 2, 3, 4, ou 5. Donc ce doit être à la place un _Reverse Elimination Finesse_.
+  - L'_Elimination Finesse_ promet que c'est sa carte la plus ancienne, donc elle joue slot 5 comme blue 3.
+
+<EliminationFinesse1 />
+
+- Comme mentionné ci-dessus, les cartes _Chop Moved_ devraient être sautées en trouvant la cible d'_Elimination Finesse_. S'il y a deux cartes ou plus avec des _Elimination Notes_ dessus et qu'elles sont toutes _Chop Moved_, alors la plus ancienne carte _Chop Moved_ devrait être jouée.
+- Les _Elimination Finesses_ s'appliquent à **tous** les types de situations avec des _Elimination Notes_ (y compris les _Double Discard Elimination Notes_). Par la suite, vous pouvez plus spécifiquement décrire un _Elimination Finesse_ comme un _Discard Elimination Finesse_ ou un _Double Discard Elimination Finesse_.
+- Notez que les _Finesses_ normaux ont la priorité sur les _Self-Elimination Finesses_. Par exemple, dans une partie à 3 joueurs :
+  - Red 2 et blue 2 sont joués sur les stacks.
+  - La main de Bob est complètement non-cluée. Bob a des _Elimination Notes_ sur slot 3, 4 et 5 pour blue 3.
+  - Alice clue un nombre 4 dans le slot 1 de Bob comme _Self-Finesse_.
+  - Si le 4 de Bob est un red 4, alors ce serait un _Self-Finesse_ normal, et Bob devrait blind-play red 3 du slot 2.
+  - Si le 4 de Bob est un blue 4, alors ce serait un _Elimination Self-Finesse_, et Bob devrait blind-play blue 3 du slot 5.
+  - Bob sait que dans cette situation, vous êtes toujours censé supposer un _Finesse_ normal, donc il blind-play red 3 du slot 2.
+
+<EliminationFinesse2 />
+
+### Trash Touch Elimination (TTE)
+
+- Les joueurs choisissent soigneusement entre l'utilisation d'un clue de couleur et d'un clue de nombre afin d'éviter de violer le _Good Touch Principle_. Parfois, quand à la fois un clue de couleur **et** un nombre violeraient le _Good Touch Principle_, les joueurs sont forcés de choisir entre le moindre de deux maux.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 3 et blue 1 sont joués sur les stacks.
+  - La main de Bob est, du plus récent au plus ancien : `red 4, red 3, blue 4, blue 4, blue 1`
+  - Si Alice doit cluer le red 4 **maintenant** pour une raison, elle serait dans le pétrin. Si elle clue rouge, elle dupliquerait le red 3. Si elle clue nombre 4, elle dupliquerait le blue 4. Les deux sont mauvais.
+  - Donc, Alice doit choisir entre le moindre de deux maux et choisit de cluer nombre 4 comme _Play Clue_ sur le red 4.
+  - Bob joue le red 4.
+  - Maintenant, Cathy doit interpréter ce qui s'est passé. Normalement, qu'Alice duplique le blue 4 signifierait qu'elle fait une erreur ou que quelque chose d'autre de spécial se passe. Cependant, dans cette situation, Cathy sait qu'Alice a dû choisir entre deux maux, donc le clue de nombre 4 est considéré comme ordinaire.
+
+<TrashTouchElimination1 />
+
+- Dans certaines situations, les joueurs peuvent voir qu'il **est** possible d'utiliser un clue de couleur ou de nombre pour toucher uniquement une cible de clue sans « ramasser » des cartes mauvaises supplémentaires. Donc si un clue est donné qui le fait quand même, il transmet un message spécial supplémentaire.
+- Quand cela se produit, et qu'il y a exactement une carte « manquante », les joueurs devraient écrire une _Elimination Note_ dans leur main pour la carte manquante. C'est appelé _Trash Touch Elimination_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 3 et tous les autres 1 sont joués sur les stacks.
+  - La main de Bob est, du plus récent au plus ancien : `red 4, red 1, blue 1, green 1, yellow 1`.
+  - La main de Cathy contient un red 5, à son insu.
+  - Alice veut donner un _Play Clue_ au red 4. Tout le monde dans l'équipe (autre que Bob) peut voir qu'elle peut donner soit nombre 4 soit rouge.
+    - Si Alice clue nombre 4, alors il touchera uniquement le red 4 (ce qui satisfera le _Good Touch Principle_).
+    - Si Alice clue rouge, alors il touchera le red 4 et le red 1 (ce qui **violera** le _Good Touch Principle_).
+  - Alice clue rouge à Bob. Puisque rien ne l'empêchait de cluer nombre 4, c'est très étrange.
+  - Bob joue le red 4.
+  - Il n'y a qu'une carte rouge « manquante » – le red 5. Cathy sait que normalement, Bob penserait que son red 1 est le red 5 (du _Good Touch Principle_). Cela doit signifier que Cathy a le red 5. Cathy écrit des _Trash Touch Elimination Notes_ sur sa main pour le red 5.
+
+<TrashTouchElimination2 />
+
+#### Interaction Entre Trash Touch Elimination & Trash Potentiellement Inconnu
+
+- D'abord, voyez la section sur le _[Trash Chop Move](level-4.mdx#le-trash-chop-move-tcm)_.
+- Normalement, quand une carte trash est cluée pour initier un _Trash Chop Move_, la carte est globalement connue comme trash au moment où le clue est donné.
+- Cependant, il est aussi possible qu'un joueur ne sache pas déjà que la carte cluée est trash.
+- Quand la carte cluée est défaussée, ce joueur réalise qu'un _Trash Chop Move_ s'est produit, assisté par la présence de la/des dernière(s) carte(s) non-trash dans sa main.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 4, green 1, et blue 1 sont joués sur les stacks.
+  - La main de Bob est complètement non-cluée et est, du plus récent au plus ancien : `blue 1, blue 1, red 4, blue 3, green 3`.
+  - La main de Cathy contient un red 5, à son insu.
+  - Alice clue rouge à Bob, touchant son red 4 au slot 3.
+  - Bob sait que du _Good Touch Principle_, la seule bonne carte rouge est red 5. Puisque Bob voit le red 5 dans la main de Cathy, sa carte rouge doit être trash. Ainsi, Alice doit avoir l'intention d'un _Trash Chop Move_.
+  - Bob défausse sa carte rouge et marque ses cartes du slot 4 et slot 5 comme étant _Chop Moved_.
+  - Cathy est surprise de voir que Bob n'a pas misplay le red 4 comme red 5.
+  - La seule explication est que Cathy a le red 5 dans sa main. Puisqu'il ne reste qu'une copie d'une carte rouge utile, Cathy sait que la règle « 1 copie restante » de _Trash Touch Elimination_ s'applique. Par la suite, Cathy écrit des _Elimination Notes_ sur toute sa main pour le red 5.
+  - Alternativement, s'il y avait deux « bonnes » copies ou plus de cartes rouges existantes, Cathy serait censée blind-play comme un _[Trash Finesse](level-14.mdx#le-trash-finesse)_ à la place.
+
+<TrashTouchEliminationInteraction />

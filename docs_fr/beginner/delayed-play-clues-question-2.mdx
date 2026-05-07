@@ -1,0 +1,42 @@
+---
+title: Delayed Play Clues (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import DelayedPlayCluesQuestion2 from "../../docs/beginner/delayed-play-clues-question-2/delayed-play-clues-question-2.yml";
+import DelayedPlayCluesAnswer2 from "../../docs/beginner/delayed-play-clues-question-2/delayed-play-clues-answer-2.yml";
+
+<BeginnersGuideProgress id="delayed-play-clues-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Précédemment, Cathy a été cluée sur des 1, et va finir par jouer les deux.
+- Alice clue number 3 à Bob, touchant une carte sur le slot 1. (C'est une _[Play Clue](./play-clues.mdx)_.)
+- Bob écrit une _[card note](./card-notes.mdx)_ avec l'identité de la carte.
+
+1. Quelle _card note_ Bob écrit-il ? (Soyez précis.)
+1. Est-ce une _[Delayed Play Clue](./delayed-play-clues.mdx)_ ?
+1. Quelle action Bob doit-il effectuer ?
+
+<DelayedPlayCluesQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Bob écrit une _card note_ « b3, p3 ».
+1. Non, ce n'est pas une _Delayed Play Clue_. Le 3 de Bob ne peut pas se connecter au red 1 ou au green 1 de Cathy parce que personne d'autre n'a de 2 connectant.
+1. Bob devrait probablement jouer le 3 immédiatement (à moins qu'il ait une bonne clue à donner).
+
+<DelayedPlayCluesAnswer2 />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,51 @@
+---
+title: Single Card Focus
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import LeftMostFocus from "../../docs/beginner/single-card-focus/leftmost-focus.yml";
+import ChopFocus from "../../docs/beginner/single-card-focus/chop-focus.yml";
+
+<BeginnersGuideProgress id="single-card-focus" />
+
+- Jusqu'à présent, nous avons appris les deux types de clues : les _[Play Clues](./play-clues.mdx)_ et les _[Save Clues](./save-clues.mdx)_.
+- Mais toutes les _Play Clues_ et _Save Clues_ que nous avons vues jusqu'ici n'ont « touché » qu'une seule carte.
+- Évidemment, il est aussi possible de donner une clue qui touche **deux ou plusieurs** cartes.
+- Nous nous accordons sur le fait que si une clue touche deux ou plusieurs cartes, la clue ne délivre un message qu'à propos d'**une carte spécifique**. C'est ce qu'on appelle le _focus_ de la clue.
+- À chaque clue, une seule **carte est focalisée**. Rien de spécifique n'est impliqué sur les cartes non focalisées (sauf qu'elles seront utiles à un moment donné plus tard).
+- Par exemple, si Alice donne une _Play Clue_ à Bob qui touche deux cartes, alors Bob ne peut **jouer que la carte focalisée**. Il doit conserver la carte non focalisée pour plus tard.
+
+### Nouvelles Cartes
+
+- Pour déterminer le focus d'une clue, il faut chercher les cartes « nouvelles ».
+- Les nouvelles cartes sont précisément définies comme **les cartes touchées par une clue qui n'avaient aucune clue dessus auparavant**.
+
+### Déterminer le Focus : 4 Étapes
+
+Donc, quand deux cartes ou plus sont touchées par une clue, quelle carte est focalisée ?
+
+1. Si aucune carte n'est nouvelle, alors **le focus est sur la carte re-touchée la plus à gauche**.
+1. Si une seule carte est nouvelle, alors **le focus est sur la nouvelle carte**.
+1. Si deux cartes ou plus sont nouvelles, et que l'une d'elles était sur la [chop](./chop.mdx), alors **le focus est sur la chop**.
+1. Si deux cartes ou plus sont nouvelles, et qu'aucune n'était sur la chop, alors **le focus est sur la nouvelle carte la plus à gauche**.
+
+### Exemple 1 : Leftmost Focus
+
+- Dans l'exemple ci-dessous, Alice clue red à Bob. Ce doit être une _Play Clue_.
+- Avant cette clue, la main de Bob était complètement non-cluée. Donc, avec cette clue, **deux nouvelles cartes ont été introduites** – la carte rouge sur le slot 2 et la carte rouge sur le slot 4.
+- Bob sait que dans cette situation, le focus de la clue est la plus à gauche des deux nouvelles cartes. Ce doit être une _Play Clue_ sur la prochaine carte rouge.
+
+<LeftMostFocus />
+
+### Exemple 2 : Chop-Focus
+
+- Dans l'exemple ci-dessous, aucune carte n'a été défaussée et Alice clue red à Bob. Ce doit être une _Play Clue_.
+- Avant cette clue, la main de Bob était complètement non-cluée. Donc, avec cette clue, **trois nouvelles cartes ont été introduites** – slot 1, slot 2 et slot 5.
+- Avant cette clue, la chop de Bob était le slot 5. Donc, puisque la clue a touché sa chop et que le _Chop-Focus_ a la priorité, ce doit être une _Chop-Focus Play Clue_ sur la prochaine carte rouge.
+
+<ChopFocus />
+
+- Notez que même si elle touche la carte chop de Bob, Bob sait que cela ne peut pas être une _Save Clue_. Plus précisément :
+  - Cela ne peut pas être un _[5 Save](./5-save.mdx)_ sur un red 5, car Alice aurait clué number 5 pour cela.
+  - Cela ne peut pas être un _[2 Save](./2-save.mdx)_ sur un red 2, car Alice aurait clué number 2 pour cela.
+  - Cela ne peut pas être un _[Critical Save](./critical-save.mdx)_, car il n'y a pas encore de carte rouge dans la trash.

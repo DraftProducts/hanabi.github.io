@@ -1,0 +1,41 @@
+---
+title: Trouver la meilleure clue, III
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-2-find-the-best-clue-iii/question.yml";
+import Answer from "../../docs/challenge-questions/level-2-find-the-best-clue-iii/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-find-the-best-clue-iii" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Bob a un 5 inconnu dans sa main.
+- Cathy a une carte purple inconnue dans sa main.
+- Quelle est la meilleure clue qu'Alice puisse donner ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- La clue la plus précieuse d'Alice est numéro 4 à Bob. Ce serait un _Play Clue_ sur le red 4 et initierait une [_Self-Finesse_](../level-2.mdx#the-self-finesse).
+- Alice peut s'attendre à ce que Bob joue dans la _Self-Finesse_ car :
+  - Bob saura que la clue numéro 4 ne peut pas être un _Save Clue_. (Aucun 4 n'est actuellement critique.)
+  - Bob saura que la clue numéro 4 ne peut pas être un _Play Clue_ direct, puisqu'il n'y a pas de 4 immédiatement jouables.
+  - Bob saura que la clue numéro 4 ne peut pas être une [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse), car Cathy n'a aucune carte jouable sur sa _Finesse Position_ qui se connecte à un 4.
+- Alice pourrait aussi cluer numéro 3 à Bob comme un _Play Clue_ sur le red 3, mais cela ne ferait que "récupérer" une seule nouvelle carte au lieu de deux.
+
+<Answer />
+
+</TabItem>
+</Tabs>

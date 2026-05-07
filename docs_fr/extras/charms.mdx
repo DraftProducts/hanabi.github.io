@@ -1,0 +1,91 @@
+---
+title: Charms
+---
+
+import FourCharmInteractionDoubleBluff from "../../docs/extras/charms/4-charm-interaction-double-bluff.yml";
+import FourCharmInteractionHardDoubleBluff from "../../docs/extras/charms/4-charm-interaction-hard-double-bluff.yml";
+import FourCharmInteractionOOO from "../../docs/extras/charms/4-charm-interaction-ooo.yml";
+import UnknownTrashCharm from "../../docs/extras/charms/unknown-trash-charm.yml";
+import JunkCharm from "../../docs/extras/charms/junk-charm.yml";
+
+- Un *Charm* fait référence à un blind-play dans lequel quelqu'un joue une carte non liée depuis sa *Fourth Finesse Position*. Par exemple, si la main d'un joueur est complètement non cluée, sa *Fourth Finesse Position* est le slot 4.
+- Tout comme un *Bluff*, un *Charm* ne peut être effectué que sur le tout prochain joueur.
+
+### Le 4 Charm
+
+- Le _4 Charm_ est introduit au [niveau 23](../level-23.mdx#the-4-charm).
+- Certaines interactions spécifiques du _4 Charm_ s'appliquent lorsqu'on joue au niveau max, qui sont détaillées ci-dessous.
+
+#### Interaction entre le 4 Charm et les Double Bluffs où Cathy a une carte one-away-from-playable
+
+- Comme indiqué dans la section [niveau 23](../level-23.mdx#the-4-charm), les _Double Bluffs_ ont précédence sur les _4 Charms_. Cependant, il y a une petite exception.
+- Les _Double Bluffs_ n'ont pas précédence dans la situation où Bob voit que Cathy a une carte _one-away-from-playable_ sur sa _Finesse Position_.
+- Ici, il est techniquement possible que Bob blind-play la carte exacte qui rend la _Finesse Position_ de Cathy jouable. Mais puisque c'est si peu probable, nous convenons que les joueurs dans cette situation devraient revenir à une interprétation de _4 Charm_ si Bob a une _Fourth Finesse Position_ et que les exigences pour un _4 Charm_ sont remplies.
+- Par exemple, dans une partie à 4 joueurs :
+  - Le red 1 est joué sur les stacks.
+  - Alice clue bleu à Donald, touchant un blue 4 comme _Play Clue_. (Le blue 4 est actuellement three-away-from-playable.)
+  - Bob voit que Cathy a un red 3 sur sa _Finesse Position_.
+  - Si Bob a exactement un red 2 sur sa _Finesse Position_, alors il sait que le clue d'Alice fonctionnerait comme un _4's Double Bluff_.
+  - Cependant, puisque le red 3 sur la _Finesse Position_ de Cathy est _one-away-from-playable_, Bob sait que les _4 Charms_ devraient avoir précédence.
+  - Bob blind-play sa carte _Fourth Finesse Position_. C'est un green 1.
+
+<FourCharmInteractionDoubleBluff />
+
+- Même quand la carte de Cathy est one-away-from-playable, il y a encore certaines situations dans lesquelles un _4 Charm_ est invalide, et donc un _Double Bluff_ peut quand même être exécuté. Deux de ces situations sont décrites ci-dessous.
+  - Dans le cas où Bob n'a pas de _Fourth Finesse Position_, alors un _4 Charm_ n'a pas de sens. Donc, un _Double Bluff_ peut quand même être déclenché dans ce cas.
+  - Par exemple, dans une partie à quatre joueurs :
+    - C'est le premier tour et rien n'est joué sur les stacks.
+    - Bob et Cathy ont un red 1 et un red 2 sur leur _Finesse Position_, respectivement.
+    - Alice clue numéro 4 à Donald, focusing un green 4.
+    - Bob voit que Donald a un green 2 sur _Finesse Position_. Ainsi, le green 4 est seulement two away et un _4 Charm_ n'est pas légal.
+    - Bob blind-play donc sa _Finesse Position_.
+    - Cathy voit que le green 4 était à plus d'un slot d'être jouable, et donc n'était pas une cible valide de _Bluff_ pour un seul _Bluff_. Donc, Cathy blind-play aussi sa _Finesse Position_.
+    - Donald marque son 4 comme n'importe quel 4.
+
+<FourCharmInteractionHardDoubleBluff />
+
+#### Interaction entre le 4 Charm et la Out-of-Order Finesse
+
+- Tout d'abord, voir la section sur la _[Out-of-Order Finesse](../level-20.mdx#the-out-of-order-finesse)_.
+- La _Out-of-Order Finesse_ a toujours précédence sur un _4 Charm_ ou un _4's Double Bluff_, en raison du _Bob's Truth Principle_.
+- Par exemple, dans une partie à 4 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - La main de Donald est, du plus récent au plus ancien : `blue 3, red 4, red 1, blue 3`
+  - Alice clue rouge à Donald, touchant le red 4 sur slot 1 et le red 1 sur slot 2. C'est un _Play Clue_.
+  - Bob sait que cela pourrait être la vérité comme une _Out-of-Order Finesse_. Si c'est le cas, il devrait cluer numéro 4 à Donald, lui permettant de jouer le red 1. Ensuite, Bob peut blind-play le red 2 et le red 3 (dans le red 4 jouable).
+  - Bob sait que cela pourrait aussi être un _4 Charm_, puisque le red 4 est _three-away-from-playable_ et Bob ne voit pas d'autres cartes rouges sur _Finesse Position_.
+  - Cependant, Bob sait qu'il devrait toujours supposer la vérité plutôt qu'un mensonge, donc il suppose qu'Alice a l'intention d'une _Out-of-Order Finesse_.
+
+<FourCharmInteractionOOO />
+
+### Le Unknown Trash Charm (UTC)
+
+- Tout d'abord, voir la section sur le _[Unknown Trash Discharge](../level-16.mdx#the-unknown-trash-discharge-1-for-1-form-utd)_.
+- Normalement, après un _Unknown Trash Discharge_, les cartes non focused sont connues comme "bonnes".
+- Cependant, que se passe-t-il si un joueur effectue un _Unknown Trash Discharge_ où **toutes** les cartes non focused sont trash ? Un _Discharge_ signalerait incorrectement que les cartes non focused sont utiles.
+- À la place, cela devrait signaler un _Charm_ sur le tout prochain joueur.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 2 sont joués sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 1 sur slot 1 et un red 2 sur slot 2.
+  - Normalement, Bob traiterait ce clue comme un _Unknown Trash Discharge_. Cependant, s'il _Discharge_, alors Cathy défaussera le red 1 et marquera le red 2 comme étant soit un red 3, un red 4, ou un red 5, ce qui serait un _Lie_.
+  - À la place, Bob sait que cela signale un _Unknown Trash Charm_, donc il blind-play sa _Fourth Finesse Position_. C'est un blue 3 et il joue avec succès.
+
+<UnknownTrashCharm />
+
+### Le Junk Charm (pour les 1)
+
+- Parfois, lorsqu'on donne un _Play Clue_ numéro 1 pour les 1, un _Bad Touch_ est inévitable. Mais que se passe-t-il si un joueur fait cela alors qu'un clue de couleur aurait évité un _Bad Touch_ ?
+- Si tous les 1 non focused sont trash, le clue doit appeler quelque chose en plus - un _Charm_ sur le tout prochain joueur.
+- Après que le _Charm_ se produit, le joueur clué saura que **seul** le focus du clue 1 est jouable.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le green 1 est joué sur les stacks.
+  - Alice clue numéro 1 à Cathy, touchant un red 1 sur slot 5 et un green 1 sur slot 2.
+  - La main de Cathy est, du plus récent au plus ancien : `yellow 2, green 1, blue 3, purple 5, red 1`
+  - Bob peut voir qu'Alice aurait pu cluer rouge pour ne toucher que le red 1 et éviter un _Bad Touch_.
+  - Bob sait que cela signale un blind-play :
+    - Un blind-play _Finesse Position_ ressemblerait à une _Trash Finesse_, ce qui serait un _Lie_.
+    - Un blind-play _Second Finesse Position_ ressemblerait à un _Trash Push Ejection_, ce qui serait un _Lie_.
+    - Un blind-play _Third Finesse Position_ ressemblerait à un _Unknown Trash Discharge_, ce qui serait un _Lie_.
+  - Ainsi, Bob sait que cela doit être un _Junk Charm_ et blind-play sa _Fourth Finesse Position_. C'est un blue 1 et il joue avec succès.
+
+<JunkCharm />

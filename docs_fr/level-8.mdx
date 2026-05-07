@@ -1,0 +1,113 @@
+---
+title: Level 8 - End-Game
+---
+
+import PositionalDiscard from "../docs/level-8/positional-discard.yml";
+import PositionalMisplay from "../docs/level-8/positional-misplay.yml";
+
+## Conventions
+
+### L'End-Game
+
+- Vers la fin de la partie, la stratégie de l'équipe changera. Dans la plupart des parties, vous arrêtez d'être préoccupé par l'efficacité et devenez plus préoccupé par le _Tempo_ – chaque carte doit jouer **maintenant** avant que la partie ne se termine !
+- Ainsi, puisque les clues peuvent signifier des choses différentes selon que vous êtes dans le _Mid-Game_ ou l'_End-Game_, vous devez être capable de garder une trace de quand l'_End-Game_ est arrivé.
+- _Pace_ est utilisé pour déterminer le statut _End-Game_. Si pace est **inférieur au nombre de joueurs**, l'_End-Game_ est arrivé.
+  - Sur [Hanab Live](https://hanab.live), pace deviendra jaune quand cela se produit.
+- Si pace est **inférieur au nombre de joueurs / 2**, vous devriez être très prudent avec les défausses. Cela pourrait toujours être la meilleure chose à faire, mais s'il y a assez de clues dans la banque, c'est généralement mieux de _Burn_ un clue (signifiant gaspiller délibérément un clue).
+- Si pace est 0, plus aucune défausse ne peut se produire pour obtenir le score maximum.
+- Si pace est en dessous de 0, il est impossible d'obtenir le score maximum.
+
+### Pas de Chop Moves dans l'End-Game
+
+- Dans l'_Early Game_ et le _Mid-Game_, il est souvent utile de _[Chop Move](level-4.mdx#chop-moves)_ une carte pour plus tard. Le but stratégique d'un _Chop Move_ est qu'il sauvegarde une carte potentiellement importante pour plus tard.
+- Dans l'_End-Game_, cela n'a aucun sens de sauvegarder une carte pour plus tard, parce qu'il n'y a pas de « plus tard » – l'équipe a manqué de temps ! Pour cette raison, les _Chop Moves_ sont « désactivés » dans l'_End-Game_.
+- Si un joueur donne un clue qui ressemble à un _Chop Move_ dans l'_End-Game_, alors les joueurs devraient le réinterpréter comme la prochaine interprétation possible la plus simple. En pratique, cela signifie habituellement un _Stall Clue_.
+
+## Mouvements Spéciaux
+
+### Le Positional Discard (Indiquer un Jeu avec une Défausse)
+
+- Normalement, quand les joueurs défaussent, ils défaussent leur carte chop, parce que défausser autre chose pourrait perdre une carte importante.
+- Cependant, cela ne s'applique pas à la fin de la partie. À la fin de la partie, si un joueur peut voir chaque carte, alors il peut déduire que toutes les cartes inconnues dans sa main sont juste du trash. Par la suite, les joueurs dans cette situation peuvent défausser n'importe quelle carte qu'ils veulent, et cela ne fera pas de différence.
+- Ainsi, les joueurs dans cette situation peuvent communiquer des informations basées sur quelle carte ils défaussent. Nous nous accordons à dire que si un joueur défausse un slot bizarre, cela communique que le slot choisi correspond à un slot dans la main de quelqu'un d'autre qui devrait être blind-play. C'est appelé un _Positional Discard_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Toutes les cartes sauf le red 5 et yellow 5 sont jouées.
+  - Il reste 0 cartes dans le deck et Alice a 0 clue disponible.
+  - Bob a le yellow 5 clué dans sa main.
+  - Cathy a un red 5 non-clué sur son slot 2.
+  - Alice défausse son slot 2 comme _Positional Discard_.
+  - Cathy marque son slot 2 comme red 5, la carte finale.
+
+<PositionalDiscard />
+
+- Un _Positional Discard_ obtient un blind-play d'un autre joueur.
+- Après un _Positional Discard_, si deux joueurs ou plus ont une carte playable au même slot, alors le blind-play est toujours ciblé sur le dernier joueur avec la carte playable.
+
+### Le Positional Misplay (Indiquer un Jeu avec un Misplay)
+
+- Parfois, un joueur voudra effectuer un _Positional Discard_, mais cela ne fonctionnera pas parce que l'autre joueur l'interprétera comme une défausse normale.
+- Par exemple, dans une partie à 4 joueurs :
+  - Tous les 4 sont joués sur les stacks.
+  - Il reste 3 cartes dans le deck.
+  - Alice a 0 clue disponible.
+  - Alice voit que chaque carte nécessaire à l'équipe est actuellement présente dans les mains des autres joueurs.
+  - Alice n'a pas de cartes cluées dans sa main. Ainsi, son chop est slot 4.
+  - Donald a un red 5 non-clué sur son slot 4.
+- Dans cet exemple, si Alice essayait d'effectuer un _Positional Discard_ depuis le slot 4, cela ne fonctionnerait pas, parce que Donald s'attend à ce qu'Alice défausse le slot 4.
+- Pour communiquer plus fortement le message « jouez ce slot », les joueurs dans cette situation peuvent à la place misplay leur carte chop. Puisque le reste de l'équipe peut voir que la carte a misplay « sans raison », ils peuvent déduire que c'était un _Positional Misplay_.
+
+<PositionalMisplay />
+
+- Un _Positional Misplay_ obtient un blind-play d'un autre joueur (tant que le _Positional Misplay_ était nécessaire parce qu'un _Positional Discard_ n'aurait pas fonctionné).
+
+### Le Double Positional Misplay (Indiquer Deux Jeux avec un Misplay)
+
+- Normalement, le _Positional Misplay_ est utilisé en dernier recours quand un _Positional Discard_ ne fonctionnerait pas. Mais que se passe-t-il si un joueur fait un _Positional Misplay_ quand même, même si un _Positional Discard_ normal aurait fonctionné ? Le joueur doit essayer de communiquer quelque chose en plus.
+- Nous nous accordons à dire que le « message supplémentaire » est que deux cartes sont promises playable au lieu d'une seule.
+- Un _Positional Misplay_ obtient deux blind-plays de l'équipe (tant que c'était « inutile »).
+
+### Le Distribution Clue
+
+- Dans l'_End-Game_, quand un joueur a beaucoup de cartes playable, il y a un risque qu'il ne soit pas capable de jouer toutes les cartes avant la fin de la partie.
+- Ainsi, il pourrait être logique de dépenser un clue pour dupliquer l'une de ses cartes playable dans la main de quelqu'un d'autre. Cela violerait le _[Good Touch Principle](beginner/good-touch-principle.mdx)_, mais cela soulagerait le joueur avec la main chargée d'une partie du fardeau de jouer les cartes.
+- Puisque cela distribue les jeux plus uniformément à travers l'équipe, c'est appelé un _Distribution Clue_. Les _Distribution Clues_ satisfont mieux le _Team Distribution Principle_.
+
+## Principes Généraux
+
+### Team Distribution Principle
+
+- En général, c'est mieux pour les cartes utiles d'être distribuées **uniformément** à travers l'équipe. C'est particulièrement important dans les parties à 5 joueurs.
+- Ainsi, si l'un de vos coéquipiers a 3 cartes sur 4 cluées, il peut être mieux pour **lui** d'être celui qui donne les clues, et que vous soyez celui qui défausse – même si son chop est trash connu.
+- Il y a plusieurs raisons à cela. D'abord, vous ne voulez pas qu'il obtienne une _Locked Hand_, qui est généralement mauvaise. Ensuite, s'il continue à tirer des cartes playable, la partie peut se terminer avant qu'il n'ait une chance de toutes les jouer.
+
+### La Pace +1 Rule
+
+- Les joueurs peuvent utiliser _Pace_ pour déterminer s'il est sûr de défausser. En général, un groupe peut défausser jusqu'à pace 0 et toujours obtenir un score parfait.
+- Cependant, en règle générale, si pace est +1 et que l'un des joueurs de votre équipe **n'a pas** de cartes playable, alors vous ne pouvez pas défausser – **vous devez le laisser effectuer la défausse finale**.
+- Si vous et un autre joueur n'avez pas de cartes playable, alors vous pouvez faire la défausse finale – l'équipe ne pourra pas obtenir un score parfait de toute façon. Mais si vous **pourriez** avoir une carte playable inconnue dans votre main, alors vous devriez être très prudent avec la défausse, car cela pourrait ruiner un score parfait.
+
+### Burning (End-Game Stalling)
+
+- Dans l'_End-Game_, souvent il y a encore beaucoup de cartes à jouer. Ainsi, vous devez être très prudent avec la défausse, puisqu'en tirant une carte vous pouvez faire en sorte que la partie se termine avant que tout le monde ait une chance de jouer toutes les cartes.
+- S'il y a assez de clues disponibles, vous pouvez choisir de stall, en donnant un clue de basse valeur (ou même un clue complètement inutile). C'est appelé _Burner_ un clue.
+- La meilleure façon de donner un clue inutile est de re-cluer des cartes qui sont déjà connues comme playable.
+- Donnez un _Burn Clue_ si :
+  - Il y a une possibilité que la partie puisse être complétée sans que personne ne défausse à partir de maintenant.
+  - Vous avez deux ou plusieurs cartes utiles dans votre main, et vous voulez suivre le _Team Distribution Principle_.
+- Ne donnez pas de _Burn Clue_ si :
+  - L'_End-Game_ n'a pas encore commencé (voyez le _End-Game Threshold_).
+  - Vous savez que quelqu'un d'autre devra défausser dans le futur.
+
+### End-Game Strategy
+
+- Les trois sections précédentes introduisent l'_End-Game_ à un haut niveau. Quand l'_End-Game_ arrive, vous devriez probablement changer la façon dont vous jouez.
+- Cependant, donner des conseils spécifiques pour l'_End-Game_ est très difficile – les choses varient grandement selon la donne et il y a beaucoup de choses différentes à considérer.
+- Donc, vous devrez réfléchir à chaque _End-Game_ vous-même, une étape à la fois. Posez des questions comme :
+  - Quelles cartes restent dans le deck dont nous avons besoin ?
+  - Quelle est la probabilité de tirer ces cartes ?
+  - Qui devrait tirer ces cartes ?
+  - Stalling produit-il une line meilleure que jouer ?
+
+## Questions de Défi
+
+Si vous êtes nouveau au level 8, voyez si vous pouvez compléter [ces questions de défi](challenge-questions/level-8.mdx).

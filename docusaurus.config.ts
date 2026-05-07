@@ -26,6 +26,7 @@ const config: Config = {
       "classic",
       {
         docs: {
+          path: "docs_fr", // Serve the French translations as the default content.
           routeBasePath: "/", // Serve the docs at the site's root.
           sidebarPath: "./sidebars.ts",
           editUrl: "https://github.com/hanabi/hanabi.github.io/edit/main/",
@@ -47,25 +48,25 @@ const config: Config = {
       items: [
         {
           to: "beginner",
-          activeBasePath: "docs",
+          activeBasePath: "docs_fr",
           label: "Beginner",
           position: "left",
         },
         {
           to: "learning-path",
-          activeBasePath: "docs",
+          activeBasePath: "docs_fr",
           label: "Learning Path",
           position: "left",
         },
         {
           to: "reference",
-          activeBasePath: "docs",
+          activeBasePath: "docs_fr",
           label: "Reference",
           position: "left",
         },
         {
           to: "variant-specific",
-          activeBasePath: "docs",
+          activeBasePath: "docs_fr",
           label: "Variant-Specific",
           position: "left",
         },

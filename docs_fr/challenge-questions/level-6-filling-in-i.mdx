@@ -1,0 +1,42 @@
+---
+title: Remplir, I
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-6-filling-in-i/question.yml";
+import Answer from "../../docs/challenge-questions/level-6-filling-in-i/answer.yml";
+
+<ChallengeQuestionProgress level={6} id="level-6-filling-in-i" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Bob a deux cartes clued, mais autrement inconnues, dans sa main : une carte blue en slot 3 et une carte green en slot 4.
+- Alice clue numéro 3 à Bob, ce qui touche les deux cartes clued et les "remplit" pour qu'elles soient exactement blue et green 3.
+- Un blue 4 est dans la pile de défausse. L'autre blue 4 n'a pas encore été pioché parmi les cartes restantes disponibles.
+- Quelle est la signification de la clue ?
+- Quel est le focus de la clue ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Puisque les cartes de Bob avaient déjà été "récupérées" quand Alice a cluéd, ce doit être un [_Tempo Clue_](../level-6.mdx#the-tempo-clue).
+- La clue récupère exactement deux nouvelles cartes pour qu'elles deviennent jouables au prochain tour.
+- Comme le dernier blue 4 restant n'est pas comptabilisé, il n'est pas actuellement possible qu'un _Prompt_ permette de jouer la carte blue à ce moment.
+- En conséquence, même si elle ne respecte pas le [_Minimum Clue Value Principle_](../beginner/minimum-clue-value-principle), elle est toujours considérée comme "précieuse".
+- En tant que _Tempo Clue_, le focus de la clue est la carte la plus à gauche, le blue 3.
+
+<Answer />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,61 @@
+---
+title: Sudoku
+---
+
+import RankExplosion3p from "../../docs/variant-specific/sudoku/rank-explosion-3p.yml";
+import RankExplosion4p from "../../docs/variant-specific/sudoku/rank-explosion-4p.yml";
+
+Ces conventions s'appliquent aux variantes "Sudoku".
+
+## Rank Explosion
+
+- Cette convention ne s'applique qu'au tout premier tour de la partie.
+- Si Alice donne un clue de rang, c'est un _Play Clue_ normal sur la carte ciblée, et il véhicule aussi un sens supplémentaire.
+
+### 3 players
+
+- Le joueur cluéé blind-play toujours sa _Finesse Position_ comme un _Ignition_. (À son tour suivant, il peut jouer la cible du clue de rang.)
+- Le joueur non cluéé blind-play toujours le slot correspondant au clue de rang.
+- Par exemple :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue Cathy number 2, touchant un red 2 en slot 1.
+  - Bob blind-play slot 2. C'est un blue 3 et il joue avec succès sur les stacks.
+  - Cathy blind-play _Finesse Position_ (slot 2). C'est un green 4 et il joue avec succès sur les stacks.
+  - À son tour suivant, Cathy peut jouer la carte cluéée comme un red 2, yellow 2 ou un purple 2.
+
+<RankExplosion3p />
+
+### 4 or more players
+
+- Le sens supplémentaire est que les deux derniers joueurs à la table doivent blind-play. (Les deux derniers joueurs n'incluent pas la personne qui a reçu le clue de rang.)
+- Les deux joueurs qui blind-play doivent blind-play le slot correspondant au clue de rang qui a été donné.
+- Par exemple, dans une partie à 4 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue Donald number 2, touchant un red 2 en slot 1.
+  - Bob blind-play slot 2. C'est un blue 3 et il joue avec succès sur les stacks.
+  - Cathy blind-play slot 2. C'est un green 4 et il joue avec succès sur les stacks.
+  - Donald joue le red 2 qui a été initialement cluéé.
+
+<RankExplosion4p />
+
+## Safety Blind Play (SBP)
+
+- Cette convention ne s'applique qu'au tout premier tour de la partie.
+- Si Alice joue slot 1, Bob _Chop Move_ une fois.
+- Si Alice joue slot 2, Cathy _Chop Move_ une fois.
+- Si Alice joue slot 3 :
+  - Dans une partie à 3 joueurs --> Bob _Chop Move_ deux fois.
+  - Dans une partie à 4 joueurs --> Donald _Chop Move_ une fois.
+  - Dans une partie à 5 joueurs --> Donald _Chop Move_ une fois.
+- Si Alice joue slot 4 :
+  - Dans une partie à 3 joueurs --> Cathy _Chop Move_ deux fois.
+  - Dans une partie à 4 joueurs --> Bob _Chop Move_ deux fois.
+  - Dans une partie à 5 joueurs --> Emily _Chop Move_ une fois.
+- Si Alice joue slot 5 :
+  - Bob _Chop Move_ trois fois.
+
+## Last Color Ejection (LCE)
+
+- La convention _5 Color Ejection_ (5CE) est désactivée dans les variantes Sudoku.
+- Cependant, vous pouvez toujours effectuer le coup équivalent en donnant un clue de couleur à la dernière carte d'une stack.
+- LCE est intrinsèquement pire que 5CE, parce que 5CE est toujours sur une carte critique, et LCE n'est pas nécessairement sur une carte critique. Cependant, comme l'efficacité requise du Sudoku est faible, nous préférons toujours LCE à une _Finesse_ qui nécessite deux blind-plays ou plus de Bob.

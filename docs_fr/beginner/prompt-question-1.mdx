@@ -1,0 +1,39 @@
+---
+title: Le Prompt (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import PromptQuestion1 from "../../docs/beginner/prompt-question-1/prompt-question-1.yml";
+import PromptAnswer1 from "../../docs/beginner/prompt-question-1/prompt-answer-1.yml";
+
+<BeginnersGuideProgress id="prompt-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Bob a deux 2 inconnus précédemment clués dans sa main.
+- Cathy a un 5 inconnu et un 4 inconnu précédemment clués dans sa main.
+- Alice clue red à Cathy.
+- Quelle est l'interprétation de Bob de la clue d'Alice ?
+
+<PromptQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Puisque le red 3 est dans la trash, c'est un _[Critical Save](./critical-save.mdx)_ sur le red 3 (i.e. une _[Save Clue](./save-clues.mdx)_).
+- Bob ne doit donc réagir d'aucune manière.
+- Si le red 3 n'était pas dans la trash, alors ce serait un _[Prompt](./prompt.mdx)_ sur le 2 le plus à gauche de Bob.
+
+<PromptAnswer1 />
+
+</TabItem>
+</Tabs>

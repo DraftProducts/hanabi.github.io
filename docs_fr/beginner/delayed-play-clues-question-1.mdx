@@ -1,0 +1,42 @@
+---
+title: Delayed Play Clues (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import DelayedPlayCluesQuestion1 from "../../docs/beginner/delayed-play-clues-question-1/delayed-play-clues-question-1.yml";
+import DelayedPlayCluesAnswer1 from "../../docs/beginner/delayed-play-clues-question-1/delayed-play-clues-answer-1.yml";
+
+<BeginnersGuideProgress id="delayed-play-clues-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue red à Donald, touchant une carte sur le slot 2. (C'est une _[Play Clue](./play-clues.mdx)_.)
+- Bob clue red à Cathy, touchant une carte sur le slot 3. (C'est une _Play Clue_.)
+- Cathy écrit une _[card note](./card-notes.mdx)_ avec l'identité de la carte.
+
+1. Quelle _card note_ Cathy écrit-elle ?
+1. Est-ce une _[Delayed Play Clue](./delayed-play-clues.mdx)_ ?
+1. Quelle action Cathy doit-elle effectuer ?
+
+<DelayedPlayCluesQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Cathy écrit une _card note_ « r3 ».
+1. Oui, c'est une _Delayed Play Clue_ via le red 2.
+1. Puisque Cathy ne peut pas encore jouer le red 3, elle doit donner une clue non liée ou défausser.
+
+<DelayedPlayCluesAnswer1 />
+
+</TabItem>
+</Tabs>

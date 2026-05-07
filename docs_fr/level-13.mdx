@@ -1,0 +1,176 @@
+---
+title: Level 13 - Bluffs Intermédiaires
+---
+
+import BluffColorDisconnect from "../docs/level-13/bluff-color-disconnect.yml";
+import Number3WithSuitDisconnect from "../docs/level-13/number-3-with-suit-disconnect.yml";
+import ColorConnectNotValid from "../docs/level-13/color-connect-not-valid.yml";
+import ColorConnectWithRankDisconnect from "../docs/level-13/color-connect-with-rank-disconnect.yml";
+import Number3WithSuitConnect from "../docs/level-13/number-3-with-suit-connect.yml";
+import CriticalColorBluff from "../docs/level-13/critical-color-bluff.yml";
+import FinessePromptNotHardBluff from "../docs/level-13/finesse-prompt-not-hard-bluff.yml";
+import HardBluff from "../docs/level-13/hard-bluff.yml";
+import GoodTouchBluff from "../docs/level-13/good-touch-bluff.yml";
+import GoodTouchBluff2 from "../docs/level-13/good-touch-bluff-2.yml";
+
+## Mouvements Spéciaux
+
+### Le 3 Bluff
+
+- Typiquement, le joueur qui reçoit un clue qui cause un blind-play _[Bluff](level-11.mdx#le-bluff)_ sait que la carte qui a été cluée est _one-away-from-playable_.
+- Notre groupe joue avec une convention artificielle de _3 Bluffs_. Cela signifie qu'en plus d'être _one-away-from-playable_, nous nous accordons à dire qu'un _Bluff_ peut _aussi_ être n'importe quel 3 qui sera utile dans le futur. (Si vous êtes curieux, l'histoire de ce mouvement est sur une [page séparée](https://github.com/hanabi/hanabi.github.io/blob/main/misc/3-bluffs.md).)
+- Vous pouvez initier un _3 Bluff_ avec soit un 3 complètement non-clué soit un 3 déjà clué ; les mêmes règles connect/disconnect s'appliquent dans les deux cas.
+- Les _3 Bluffs_ sont principalement utilisés pour faire jouer des 1 au début de la partie. Cependant, similaire à un _Bluff_ normal, un _3 Bluff_ peut être utilisé pour obtenir n'importe quelle carte playable (tant que cela ne ressemble pas à un _[Finesse](beginner/finesse.mdx)_).
+- Voici quelques exemples qui couvrent les situations de _3 Bluff_ les plus communes.
+
+#### Exemple 1 - **Color Disconnect** (Valide)
+
+- Au premier tour de la partie, Alice clue à Cathy rouge, ce qui touche un red 3.
+- Bob blind-play blue 1.
+- Cathy sait que c'est soit un red 2 (si c'était un _Bluff_ normal) soit un red 3 (si c'était un _3 Bluff_). Elle marque les deux possibilités pour plus tard.
+
+<BluffColorDisconnect />
+
+#### Exemple 2 - **Number 3 avec Suit Disconnect** (Valide)
+
+- Au premier tour de la partie, Alice clue à Cathy nombre 3, ce qui touche un red 3.
+- Bob blind-play blue 1.
+- Cathy sait que c'était un _3 Bluff_, parce qu'un 1 joué ne se « connecte » pas au nombre 3.
+- Au-delà de cela, Cathy ne sait rien sur la carte, à part que c'est un 3 (puisqu'il a un clue nombre 3 dessus).
+
+<Number3WithSuitDisconnect />
+
+#### Exemple 3 - **Color Connect** (Pas Valide ; Ressemble à un Finesse)
+
+- Au premier tour de la partie, Alice clue à Cathy rouge, ce qui touche un red 3.
+- Bob blind-play red 1.
+- Cathy voit que Bob n'a pas red 2. Puisque rouge se connecte à rouge, Cathy suppose qu'elle a le red 2.
+- Cathy misplay le red 3 comme red 2.
+- Alternativement, si Cathy voyait que Bob avait à la fois red 1 et red 2 sur sa _Finesse Position_ au moment où le clue a été donné, elle saurait qu'elle a le red 2 **ou** le red 3. Par la suite, Bob est promis un red 2, puisque s'il ne blind-play pas une carte, Cathy continuera à misplay le red 3 comme red 2.
+
+<ColorConnectNotValid />
+
+#### Exemple 4 - **Color Connect Avec Rank Disconnect** (Pas Valide ; Ressemble à un Finesse)
+
+- C'est une partie à 4 joueurs.
+- Rien n'est joué sur les stacks.
+- Alice clue rouge à Donald, touchant un red 3 comme _[Play Clue](beginner/play-clues.mdx)_.
+- Bob blind-play le red 1.
+- Cathy remarque que la carte rouge de Donald a un clue 2 négatif dessus. Cela signifie que Donald ne continuera pas à misplay la carte comme red 2.
+- Cathy doit évaluer si le clue d'Alice est un _Finesse_ ou un _3 Bluff_. Si c'est un _Double Finesse_, alors Cathy doit blind-play le red 2. Si c'est un _Bluff_, alors Alice n'avait l'intention que pour Bob de blind-play.
+- Cathy sait que puisque **rouge se connecte à rouge**, ce doit être un _Double Finesse_, donc Cathy suppose qu'elle a le red 2 sur sa _Finesse Position_.
+- Cathy misplay blue 5.
+
+<ColorConnectWithRankDisconnect />
+
+#### Exemple 5 - **Number 3 Avec Suit Connect** (Valide)
+
+- Au premier tour de la partie, Alice clue à Cathy nombre 3, ce qui touche un red 3.
+- Bob blind-play red 1.
+- Cathy sait que c'était un _3 Bluff_, parce qu'un 1 joué ne se « connecte » pas au nombre 3.
+- Au-delà de cela, Cathy ne sait rien sur la carte, à part que c'est un 3 (puisqu'il a un clue nombre 3 dessus).
+- Même si red 1 et red 3 sont la même suite, Bob n'est pas promis un red 2.
+
+<Number3WithSuitConnect />
+
+#### Questions Génériques
+
+- Les _3 Bluffs_ peuvent être déroutants. Si vous ne voulez pas mémoriser les cinq exemples ci-dessus, vous pouvez simplement poser les questions suivantes :
+  1. Le clue se « connecte » au blind-play ?
+     - S'il se connecte, alors c'est un _Finesse_.
+     - S'il ne se connecte pas, alors c'est un _Bluff_.
+     - Rouge se connecte à rouge, mais rouge **ne** se connecte **pas** à blue.
+     - 2 se connecte à 3, mais 1 **ne** se connecte **pas** à 3.
+  1. Le joueur qui a reçu le clue continuera-t-il à misplay si rien d'autre n'est blind-played ?
+     - Si oui, alors c'est un _Finesse_.
+     - Si non, alors c'est un _Bluff_.
+
+### Le Critical Color Bluff (CCB)
+
+- En s'appuyant sur la convention _3 Bluffs_, nous nous accordons aussi à dire qu'il est possible pour une carte qui initie un _Bluff_ d'être n'importe quelle carte critique, mais seulement si **un clue de couleur** est utilisé, et seulement si **ce n'est pas un 5**.
+  - Notez que cela inclut le black 4 ou n'importe quel 4 « dark ».
+- Contrairement au [_3 Bluff_](#le-3-bluff), vous ne pouvez initier un _Critical Color Bluff_ qu'avec une carte critique complètement non-cluée.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 est joué sur les stacks. Red 4 est actuellement dans la pile de défausse.
+  - Alice clue à Cathy rouge, touchant un red 4 comme _Play Clue_.
+  - Bob blind-play un blue 1.
+  - Cathy marque sa carte rouge comme la carte rouge _one-away-from-playable_, le red 3.
+  - Cependant, Cathy sait aussi que les _Critical Color Bluffs_ sont une chose, donc elle marque _aussi_ sa carte rouge comme possiblement un red 4.
+
+<CriticalColorBluff />
+
+### Le Hard Bluff
+
+- D'abord, voyez la section sur _[Cathy's Connecting Principle](level-11.mdx#cathys-connecting-principle-partie-2)_.
+- Parfois, ce peut être ambigu si un joueur a blind-played une carte dans un _Bluff_, ou s'il a blind-played dans un _Finesse_ + _[Prompt](beginner/prompt.mdx)_. Dans cette situation, _Occam's Razor_ s'applique, donc les joueurs devraient aller avec l'interprétation _Bluff_, puisque c'est plus simple. Quand un tel _Bluff_ se produit, c'est appelé un _Hard Bluff_ pour le distinguer des situations où les _Bluffs_ se produisent sans ambiguïté.
+- Par exemple, c'est un _Finesse_ + _Prompt_ et **non** un _Hard Bluff_ :
+  - Seul red 1 est joué sur les stacks.
+  - Cathy a un 3 clué dans sa main (sans information de couleur dessus).
+  - Alice clue à Cathy à propos d'un nouveau 4.
+  - Bob blind-play red 2.
+  - Dans un _Bluff_ normal, une carte _one-away-from-playable_ est cluée. Cependant, Cathy voit que le stack le plus haut est le stack rouge, donc le 4 dans sa main doit être à deux slots.
+  - Ainsi, Cathy ne le lit **pas** comme un _Bluff_ ; elle est promise red 3 et red 4, donc elle joue le 3 inconnu comme _Self-Prompt_ pour le red 3.
+
+<FinessePromptNotHardBluff />
+
+- Par exemple, **c'est** un _Hard Bluff_ :
+  - Red 1 et blue 2 sont joués sur les stacks.
+  - Cathy a un 3 clué dans sa main (sans information de couleur dessus).
+  - Alice clue à Cathy à propos d'un nouveau 4.
+  - Bob blind-play red 2.
+  - Cela pourrait être un _Bluff_ si le 4 dans sa main est blue 4, puisque blue 4 est actuellement _one-away-from-playable_. Ainsi, Cathy **ne** suppose **pas** que son 4 est red 4, et par la suite, **ne** suppose **pas** que son 3 inconnu est un red 3. Cependant, ça pourrait **aussi** être le cas que le 4 est un red 4 (si le 3 dans sa main se trouve être red 3).
+  - Ainsi, Cathy marque les deux possibilités pour plus tard et ne joue rien maintenant.
+
+<HardBluff />
+
+### Le Hard 3 Bluff
+
+- Les joueurs peuvent utiliser un 3 pour _3 Bluff_ le 1 de la même suite.
+- C'est appelé un _Hard 3 Bluff_ pour le distinguer d'un _3 Bluff_ plus ordinaire.
+- Un exemple de _Hard 3 Bluff_ peut être trouvé ci-dessus comme exemple 5.
+
+### Le Known Bluff
+
+- Habituellement, quand un _Bluff_ se produit, le joueur qui blind-play n'a aucune idée que c'est un _Bluff_ – il suppose qu'il joue une carte spécifique dans un véritable _Finesse_.
+- Cependant, dans des situations rares, un clue sera donné qui ressemble à un _Finesse_, mais le joueur suivant saura avec certitude qu'il n'a pas la carte « connectante ».
+- Dans ces situations, si le joueur suivant ne peut pas voir une meilleure explication pour le clue, alors il devrait blind-play sa carte de _Finesse Position_ comme _Known Bluff_.
+- Par exemple :
+  - Le joueur pourrait voir toutes les copies de la carte qu'il est censé blind-play.
+  - Le joueur pourrait avoir des informations négatives sur toute sa main (e.g. blue négatif sur chaque carte quand il est censé blind-play un blue 2).
+  - Le joueur pourrait savoir qu'il blind-play un 1 dans un _3 Bluff_ (e.g. une carte a été cluée avec nombre 3 et il n'y a pas de cartes encore jouées).
+
+### Le Good Touch Bluff
+
+- Du soin doit être pris pour qu'un _Bluff_ ne ressemble pas à un _Finesse_.
+- Par exemple, dans une partie à 4 joueurs :
+  - Red 2 et blue 2 sont joués sur les stacks.
+  - Alice clue à Cathy nombre 4, ce qui touche un red 4.
+  - Bob blind-play un blue 3 depuis sa _Finesse Position_.
+  - Puisque 3 se connecte à 4, Cathy sait qu'elle a le blue 4, et continue à misplay red 4 comme blue 4.
+  - Ainsi, Alice n'aurait pas dû donner ce clue.
+
+<GoodTouchBluff />
+
+- Cependant, que se passe-t-il si quelqu'un d'autre dans l'équipe a déjà la carte connectante ? Dans cette situation, le clue peut être donné sans crainte : du _[Good Touch Principle](beginner/good-touch-principle.mdx)_, le destinataire du clue saura que c'est un _Bluff_ au lieu d'un _Finesse_.
+- Par exemple, dans une partie à 4 joueurs :
+  - Red 2 et blue 2 sont joués sur les stacks.
+  - Alice clue à Cathy nombre 4, ce qui touche un red 4.
+  - Bob blind-play un blue 3 depuis sa _Finesse Position_.
+  - La première pensée de Cathy est que puisque 3 se connecte à 4, elle doit avoir le blue 4. Cependant, Cathy voit que Donald a déjà un blue 4 clué dans sa main. (Le blue 4 a juste un clue blue dessus et la véritable identité de la carte n'est pas encore connue de Donald.)
+  - Cathy sait qu'elle ne **doit pas** avoir le blue 4, parce qu'alors le clue d'Alice aurait violé le _Good Touch Principle_. Cathy peut raisonner que son 4 est à la place un **autre** 4 _one-away-from-playable_. La seule autre cible valide de _Bluff_ est le red 4 (parce que le seul 4 _one-away-from-playable_ est red 4). Donc, Cathy marque sa carte de nombre 4 comme un red 4, et défausse.
+  - Donald est surpris par le clue d'Alice. De la perspective de Donald, Cathy aurait dû misplay le red 4 comme le blue 4, puisque 3 se connecte à 4.
+  - Puisque Cathy n'a pas misplay, Donald peut raisonner que **lui** doit avoir le blue 4. Donald marque la carte blue précédemment inconnue dans sa main comme blue 4.
+
+<GoodTouchBluff2 />
+
+## Principes Généraux
+
+### Cibles Légales de Bluff
+
+La liste complète des cibles légales de _Bluff_ est représentée dans la table suivante :
+
+| Type de Carte                       | Clue de Couleur | Clue de Nombre | Nom de la Convention   |
+| ----------------------------------- | --------------- | -------------- | ---------------------- |
+| n'importe quelle carte _one-away-from-playable_ | ✔️              | ✔️             | _Bluff_                |
+| n'importe quel 3 _two-away-from-playable_       | ✔️              | ✔️             | _3 Bluff_              |
+| n'importe quel critique non-5                   | ✔️              | ❌             | _Critical Color Bluff_ |

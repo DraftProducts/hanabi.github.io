@@ -1,0 +1,45 @@
+---
+title: Le Critical Save (Question 3)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CriticalSaveQuestion3 from "../../docs/beginner/critical-save-question-3/critical-save-question-3.yml";
+import CriticalSaveAnswer3 from "../../docs/beginner/critical-save-question-3/critical-save-answer-3.yml";
+
+<BeginnersGuideProgress id="critical-save-question-3" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue yellow à Bob, touchant une carte sur le slot 4.
+- Est-ce une _[Play Clue](./play-clues.mdx)_ ou une _[Save Clue](./save-clues.mdx)_ ?
+- Quelle _[card note](./card-notes.mdx)_ Bob écrit-il ? (Soyez précis.)
+
+<CriticalSaveQuestion3 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob sait que ce pourrait être une _Play Clue_ sur le yellow 1.
+- Cependant, puisqu'elle a touché sa [chop](./chop.mdx), ce pourrait aussi être une _Save Clue_ :
+  - Cela ne peut pas être un yellow 2, car un yellow 2 devrait être sauvegardé avec un _[2 Save](./2-save.mdx)_.
+  - Cela ne peut pas être un yellow 3, car il n'y a que deux copies de yellow 3 dans la pioche, et Bob voit qu'une copie est dans la trash et une copie est dans la main de Cathy.
+  - Cela pourrait être un yellow 4, car une copie de yellow 4 est dans la trash.
+  - Cela ne peut pas être un yellow 5, car un yellow 5 devrait être sauvegardé avec un _[5 Save](./5-save.mdx)_.
+- Bob ne sait pas si c'est une _Play Clue_ ou une _Save Clue_, mais il doit la traiter comme une _Save Clue_ pour le moment, jusqu'à obtenir plus d'informations.
+- Bob écrit une _card note_ qui inclut les identités suivantes :
+  - yellow 1 (en tant que _Play Clue_)
+  - yellow 4 (en tant que _[Critical Save](./critical-save.mdx)_)
+
+<CriticalSaveAnswer3 />
+
+</TabItem>
+</Tabs>

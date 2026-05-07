@@ -1,0 +1,35 @@
+---
+title: Minimum Clue Value Principle (MCVP)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import TempoClue from "../../docs/beginner/minimum-clue-value-principle/tempo-clue.yml";
+
+<BeginnersGuideProgress id="minimum-clue-value-principle" />
+
+### Pas de Clues Inutiles
+
+- D'habitude, les joueurs ne défaussent que lorsqu'ils n'ont rien d'autre à faire. Mais ne le prenez pas mal.
+- Les joueurs **n'ont pas le droit** de simplement cluer n'importe quelle carte :
+  - Les joueurs n'ont **le droit** de donner des _[Play Clues](./play-clues.mdx)_ qu'à de réelles cartes jouables.
+  - Les joueurs n'ont **le droit** de donner des _[Save Clues](./save-clues.mdx)_ qu'aux cartes spécifiques décrites dans la section _[Save Principle](./save-principle.mdx)_.
+- Si un joueur n'a pas de cartes à jouer et ne peut pas donner de _Play Clue_ ou de _Save Clue_ légale, alors il **doit défausser**.
+
+### Tempo Clues
+
+- De plus, les joueurs pourraient être tentés de **cluer à nouveau une carte qui a déjà une clue dessus** afin de la faire jouer immédiatement. On appelle ce type de clue une _Tempo Clue_.
+- Une _Tempo Clue_ est définie comme une _Play Clue_ qui ne « gagne » aucune nouvelle carte.
+- Les _Tempo Clues_ sont assez inefficaces – l'équipe utilise deux clues pour obtenir une carte. Puisque les _Tempo Clues_ sont si mauvaises, nous disons que les joueurs n'ont **le droit d'effectuer des _Tempo Clues_ que dans des situations spéciales**, comme quand un joueur est forcé de donner une clue.
+- Par exemple, dans une partie à 3 joueurs :
+  - Alice est dans une situation spéciale où elle ne peut pas défausser.
+  - Bob a un 2 dans sa main qui a été sauvegardé avec une clue _[2 Save](./2-save.mdx)_ plus tôt dans la partie. Il ne sait pas de quelle couleur il est mais suppose que c'est soit un red 2 (qui est jouable), soit un blue 2 (qui n'est pas jouable).
+  - Alice clue red à Bob, « complétant » le red 2. C'est une _Tempo Clue_ car aucune nouvelle carte n'est introduite. (Puisque c'est très inefficace, Alice ne ferait jamais cela à moins d'être dans une situation de blocage spéciale.)
+  - Bob peut maintenant jouer le red 2.
+
+<TempoClue />
+
+### Minimum Clue Value Principle (MCVP)
+
+- Donc, si un joueur n'a que l'option de donner une _Tempo Clue_ ou de défausser, alors il **doit défausser**.
+- Nous exprimons formellement ce concept en tant que _Minimum Clue Value Principle_ : **toutes les clues doivent permettre de jouer ou de sauvegarder au moins une carte précédemment non-cluée**.
+- Autrement dit, en tant que groupe, nous nous tenons à un haut standard, et nous ne donnons pas de clues inefficaces.

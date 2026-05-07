@@ -1,0 +1,287 @@
+---
+title: Level 11 - Bluffs
+---
+
+import Bluff from "../docs/level-11/bluff.yml";
+import SelfBluff from "../docs/level-11/self-bluff.yml";
+import BluffThroughClued from "../docs/level-11/bluff-through-already-clued-cards.yml";
+import TruthPrinciple from "../docs/level-11/truth-principle.yml";
+import ColorConnect from "../docs/level-11/color-connect.yml";
+import ColorDisconnect from "../docs/level-11/color-disconnect.yml";
+import RankConnect from "../docs/level-11/rank-connect.yml";
+import RankDisconnect from "../docs/level-11/rank-disconnect.yml";
+import RankDisconnectBluffImpossible from "../docs/level-11/rank-disconnect-bluff-impossible.yml";
+import RankConnectFinesseImpossible from "../docs/level-11/rank-connect-finesse-impossible.yml";
+import ColorConnectRainbow from "../docs/level-11/color-connect-rainbow.yml";
+import ColorConnectRainbowFinesseImpossible from "../docs/level-11/color-connect-rainbow-finesse-impossible.yml";
+import GuidePrinciple from "../docs/level-11/guide-principle.yml";
+import BluffPromptsPromptBluffs from "../docs/level-11/bluff-prompts-prompt-bluffs.yml";
+
+- Ce level introduit les _Bluffs_, une façon de raconter un _Fib_ au prochain joueur pour le faire blind-play.
+- Les _Bluffs_ peuvent être très amusants, car ils permettent beaucoup plus de blind-plays qu'auparavant possible.
+- Cependant, le fait que les joueurs ne se disent plus toujours la vérité les uns aux autres rend ce level beaucoup plus compliqué et difficile à intégrer que tous les levels précédents.
+- Assurez-vous d'être totalement à l'aise avec les levels antérieurs avant de tenter d'ajouter les _Bluffs_ au mélange. (Nous recommandons au moins 100-200 parties d'expérience.)
+
+## Mouvements Spéciaux
+
+### Le Bluff
+
+- Les _[Finesses](beginner/finesse.mdx)_ sont assez efficaces. Donc, quand vous voyez une carte playable dans le slot de _Finesse Position_ de quelqu'un, vous voudrez souvent « obtenir » la carte avec un _Finesse_ (au lieu de la cluer directement). Cependant, souvent, la carte « connectante » appropriée n'est pas sur la table.
+- Dans cette situation, les joueurs peuvent effectuer une stratégie alternative. En cluant une carte sans rapport, _one-away-from-playable_, le joueur suivant pensera que c'est un _Finesse_ et qu'il a la carte connectante. Puis, il blind-playera sa carte de _Finesse Position_. C'est appelé un _Bluff_.
+- Après que la carte est blind-played, le joueur qui a reçu le clue réalisera que quelque chose d'étrange s'est passé – le type de clue **ne s'est pas connecté** à la carte qui a été blind-played. Ainsi, la carte cluée n'est pas actuellement playable et doit être une carte _one-away-from-playable_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 2 sont joués sur les stacks.
+  - Alice clue à Cathy rouge, ce qui touche un red 4 comme _[Play Clue](beginner/play-clues.mdx)_.
+  - Ensuite, c'est le tour de Bob. Bob voit qu'avec ce clue rouge, Cathy vient juste de recevoir le signal qu'elle a le red 3.
+  - De la perspective de Bob, cela ressemble à un _Finesse_ – si Bob ne blind-play pas le red 3 maintenant, Cathy continuera à misplay le red 4 comme red 3.
+  - Bob blind-play sa carte du slot 1, s'attendant à ce que ce soit un red 3. Au lieu de ça, c'est un blue 3, et il joue avec succès sur les stacks. Bob sait maintenant qu'il a été _Bluffed_ par Alice.
+  - Ensuite, Cathy voit que Bob vient juste de blind-play un blue 3 immédiatement après ce clue rouge, donc elle sait qu'elle doit avoir une carte rouge _one-away-from-playable_ – le red 4. Cathy garde le red 4 pour plus tard et défausse.
+
+<Bluff />
+
+#### Le Bluff Seat
+
+- **Le _Bluffing_ n'est autorisé que quand vous êtes la personne directement avant le joueur qui blind-play une carte**.
+- Nous formalisons ce concept comme le _Bluff Seat_. Vous êtes assis en _Bluff Seat_ pour un joueur si vous êtes autorisé à le _Bluff_.
+- Par exemple :
+  - Si Alice est assise directement avant Bob, alors Alice est assise en _Bluff Seat_ pour Bob, et Alice est autorisée à _Bluff_ Bob.
+  - Alice **n'est pas autorisée** à _Bluff_ Cathy (ou quiconque d'autre que Bob, d'ailleurs).
+  - Bob est en _Bluff Seat_ pour Cathy, donc Bob est autorisé à _Bluff_ Cathy, et ainsi de suite.
+- Si un joueur fait blind-play une carte à quelqu'un d'autre, et qu'il n'est pas en _Bluff Seat_ pour lui, alors ce **doit** être un véritable _Finesse_ !
+
+#### Lie Principle
+
+- Importamment, **les _Bluffs_ ne sont autorisés que si le tout prochain joueur blind-playera au tout prochain tour.**
+- Nous formalisons ce concept comme le _Lie Principle_ :
+  - Si une carte est représentée comme étant quelque chose de différent de ce qu'elle est réellement, et que l'état de désinformation se résout immédiatement (i.e. au tout prochain tour), alors c'est appelé un _Fib_. _Fibber_ est ok.
+  - Si une carte est représentée comme étant quelque chose de différent de ce qu'elle est réellement, et que l'état de désinformation ne se résout pas immédiatement, c'est appelé un _Lie_. Les _Lies_ sont **illégaux**. Les joueurs ne devraient **jamais** supposer qu'on leur _Lie_.
+
+### Le Self-Bluff
+
+- De la même façon que vous pouvez faire un _Self-Finesse_, il est possible d'effectuer un _Self-Bluff_ en cluant quelqu'un afin d'obtenir sa propre carte de _Finesse Position_.
+- Les _Self-Bluffs_ doivent être donnés avec des clues de rang, car un _Self-Bluff_ avec un clue de couleur serait absurde.
+  - Pour les joueurs de niveau max, voyez la section sur le [Self Color Bluff](extras/special-bluffs.mdx#self-color-bluffs-1-for-1-form-scb).
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 2 est joué sur les stacks.
+  - Alice clue nombre 4 à Bob, ce qui touche un nouveau 4 comme _Play Clue_.
+  - Bob ne voit pas de cartes playable dans la main de quelqu'un d'autre.
+  - Le 4 le plus proche d'être playable est le red 4, donc Bob sait que le 4 dans sa main est probablement un red 4.
+  - Puisque Bob ne voit pas de red 3, Bob sait qu'il doit avoir le red 3, et il blind-play sa carte de _Finesse Position_. C'est un blue 1 et il joue avec succès.
+  - Bob sait maintenant qu'il a été _Bluffed_ par Alice et que le 4 dans sa main est exactement le red 4.
+
+<SelfBluff />
+
+### Bluffs Through Already-Clued Cards
+
+- Il est aussi permis de _Bluff_ « à travers » des cartes qui sont déjà cluées. Cela peut être mieux qu'un _Bluff_ normal, car en plus d'obtenir le blind-play, cela peut aussi donner de l'information au joueur avec la carte intermédiaire.
+- Par exemple, dans une partie à 4 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Bob n'a rien de clué dans sa main.
+  - Cathy a un red 3 clué dans sa main avec juste un nombre 3. Elle ne sait pas de quelle couleur c'est.
+  - Alice clue à Donald rouge, ce qui touche un red 4 comme _Play Clue_.
+  - Bob sait qu'il doit avoir le red 2. S'il blind-play le red 2 (comme _Finesse_), alors Cathy jouera le red 3 (comme _[Prompt](beginner/prompt.mdx)_), et Donald jouera le red 4.
+  - Bob joue sa carte de _Finesse Position_ comme red 2. Au lieu de ça, c'est un blue 2 et il joue avec succès.
+  - De la perspective de Cathy, elle sait que le red 4 est _two-away-from-playable_ au lieu de _one-away-from-playable_. Les _Bluffs_ sur des cartes _two-away-from-playable_ sont normalement illégaux. Ainsi, le 3 mystère de Cathy doit être exactement red 3, rendant le red 4 _one-away-from-playable_ après tout.
+  - Cathy défausse.
+  - De la perspective de Donald, puisque rouge (le type de clue qui a été donné) ne se connecte pas à blue (la carte qui a été blind-played), ce doit être un _Bluff_. Normalement, puisque le red 1 est actuellement joué sur les stacks, Donald penserait qu'il a le red 3 (e.g. la carte rouge _one-away-from-playable_).
+  - Cependant, Cathy a déjà un red 3 clué dans sa main. Si Donald avait aussi un red 3, alors le clue d'Alice violerait le _[Good Touch Principle](beginner/good-touch-principle.mdx)_. Ainsi, Donald doit avoir le red 4 à la place.
+
+<BluffThroughClued />
+
+- Parfois, le joueur qui a la carte intermédiaire pourrait avoir plus d'une carte cluée « correspondante ». Dans cette situation, le joueur est promis qu'il a la carte intermédiaire, mais il n'est pas promis la position – cela peut être n'importe laquelle des cartes cluées correspondantes.
+- Par exemple, dans la situation précédente, si Cathy avait deux cartes rouges différentes cluées dans sa main, alors l'une ou l'autre pourrait être le red 3 – elle n'est pas promise la position de la carte.
+
+## Principes Généraux
+
+### Bob's Truth Principle (Partie 1)
+
+- Parfois, un joueur donnera un clue qui ressemble à ce qu'il pourrait être soit un _Finesse_ soit un _Bluff_. Entre ces deux mouvements, lequel devrait avoir la précédence ?
+- Par exemple, dans une partie à 4 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Cathy a un blue 2 sur sa _Finesse Position_.
+  - Alice clue blue à Donald, touchant un blue 3. C'est un _Play Clue_.
+  - Maintenant, c'est le tour de Bob.
+
+<TruthPrinciple />
+
+- Quoi penser **dépend** si vous êtes Bob ou si vous êtes quelqu'un d'autre dans l'équipe.
+- D'abord, considérons le cas de Bob, le tout prochain joueur. Bob devrait **toujours supposer un _Finesse_ avant un _Bluff_**. De sa perspective :
+  - Bob sait que si c'est un _Finesse_, alors Cathy blind-playera le blue 2, et puis Donald saura qu'il a le blue 3. Si c'est le cas, Bob ne devrait rien faire de spécial.
+  - Bob sait aussi que si c'est un _Bluff_, alors Bob devrait blind-play sa carte de _Finesse Position_ immédiatement.
+  - Bob sait que s'il y a une façon que cela puisse être un _Finesse_ (la vérité), il devrait **supposer que la vérité est dite**. Ainsi, Bob sait que ce doit être un _Finesse_ sur Cathy et ne devrait rien blind-play.
+- C'est appelé _Bob's Truth Principle_, parce que Bob suppose toujours la vérité avant un _Fib_.
+- Cette convention est facile à retenir parce qu'au moment du blind-play, Bob n'a pas besoin de jouer différemment qu'au level 10. Il suppose simplement que la vérité est dite.
+
+### Cathy's Connecting Principle (Partie 2)
+
+- D'abord, voyez la section sur _[Bob's Truth Principle](#bobs-truth-principle-partie-1)_.
+- Précédemment, nous avons considéré le cas de Bob avant qu'il ne blind-play une carte.
+- Maintenant, nous pouvons considérer le cas de Bob **après** qu'il ait blind-played une carte, ce qui s'étend aussi à Cathy et chaque autre joueur dans l'équipe. Comment tout le monde sait-il si Alice a fait un _Finesse_ ou un _Bluff_ sur Bob ?
+- La façon de le savoir est de regarder **si la carte qui a été blind-played « se connecte » au clue qui a été donné**. Si le clue se connecte, alors c'est un _Finesse_. Si le clue ne se connecte pas, alors c'est un _Bluff_.
+- C'est appelé _Cathy's Connecting Principle_ afin de souligner que tout le monde doit supposer des choses différentes que Bob (avant qu'il ait blind-played quoi que ce soit).
+- Si c'est ambigu si la carte se connecte ou non, alors tout le monde devrait **supposer un _Bluff_ avant un _Finesse_**. Notez que c'est l'**opposé** de la précédence dans _Bob's Truth Principle_ !
+
+#### Exemple 1 : Color Connect --> _Finesse_
+
+- Red 1 est joué sur les stacks.
+- Alice clue à Cathy rouge, touchant une carte rouge comme _Play Clue_.
+- Bob blind-play un red 2.
+- Ce doit être un _Finesse_, parce que **rouge se connecte à rouge**. Donc Cathy devrait penser qu'elle a le red 3.
+- C'est un _Finesse_ classique ; cela ne peut pas devenir plus basique que ça.
+
+<ColorConnect />
+
+#### Exemple 2 : Color Disconnect --> _Bluff_
+
+- Red 1 est joué sur les stacks.
+- Alice clue à Cathy rouge, touchant une carte rouge comme _Play Clue_.
+- Bob blind-play un blue 1.
+- Ce doit être un _Bluff_, parce que **blue ne se connecte pas à rouge**. Donc Cathy devrait penser qu'elle a la carte rouge _one-away-from-playable_, le red 3.
+- C'est un _Bluff_ classique ; cela ne peut pas devenir plus basique que ça.
+
+<ColorDisconnect />
+
+#### Exemple 3 : Rank Connect --> _Finesse_
+
+- Red 2 est joué sur les stacks.
+- Alice clue à Cathy nombre 4, touchant un 4 comme _Play Clue_.
+- Bob blind-play le red 3.
+- Ce doit être un _Finesse_, parce que **3 se connecte à 4**. Donc Cathy devrait penser qu'elle a le red 4.
+
+<RankConnect />
+
+#### Exemple 4 : Rank Disconnect --> _Bluff_
+
+- Red 2 est joué sur les stacks.
+- Alice clue à Cathy nombre 4, touchant un 4 comme _Play Clue_.
+- Bob blind-play le blue 1.
+- Cela pourrait être un _Triple Finesse_ (sur blue 1 + blue 2 + blue 3 dans blue 4) ou cela pourrait être un _Bluff_ (sur juste blue 1 dans red 4).
+- Cependant, ce doit être un _Bluff_, parce que **1 ne se connecte pas à 4**. Donc Cathy devrait penser qu'elle a le 4 _one-away-from-playable_, le red 4.
+- Le but de cet exemple est de montrer que parce qu'un 2 se trouve être joué sur les stacks, le red 4 est une carte _one-away-from-playable_ et devient donc une cible légale de _Bluff_.
+
+<RankDisconnect />
+
+#### Exemple 5 : Rank Disconnect Où un _Bluff_ Est Impossible --> _Triple Finesse_
+
+- C'est une partie à 4 joueurs.
+- Rien n'est joué sur les stacks.
+- Alice clue à Donald nombre 4, touchant un 4 comme _Play Clue_.
+- Bob blind-play le red 1.
+- Cathy défausse.
+- Donald doit évaluer si le clue d'Alice est un _Finesse_ ou un _Bluff_ ou non. Cependant, il sait que cela **ne peut pas** être un _Bluff_, parce qu'il n'y a pas de 4 _one-away-from-playable_. Donc même si **1 ne se connecte pas à 4**, ce doit être un _Finesse_, parce qu'Alice n'est pas autorisée à effectuer un _Bluff_ avec n'importe quelle carte qu'elle veut.
+- Donald ne voit pas d'autres cartes rouges dans la main de Bob. Donc Donald devrait penser qu'il a le red 4, parce que cela se connecterait au blind-play d'un red 1. Par la suite, Donald doit avoir red 2 sur sa _Finesse Position_ et red 3 sur sa _Second Finesse Position_.
+
+<RankDisconnectBluffImpossible />
+
+#### Exemple 6 : Rank Connect Où un _Finesse_ Est Impossible --> _Bluff_
+
+- Red 2 et blue 2 sont joués sur les stacks.
+- Alice clue à Cathy nombre 4, touchant un 4 comme _Play Clue_.
+- Bob blind-play le blue 3.
+- Normalement, Cathy penserait que c'est un _Finesse_, parce que **3 se connecte à 4**, signifiant que le 4 de Cathy est le blue 4.
+- Cependant, Cathy remarque que son 4 a un clue blue négatif dessus. Ainsi, ça ne peut pas être le blue 4.
+- Ce doit être à la place un _Bluff_. Cathy marque son 4 comme red 4 (puisque red 4 est le seul autre 4 _one-away-from-playable_).
+
+<RankConnectFinesseImpossible />
+
+#### Exemple 7 : Color Connect Avec Rainbow --> _Finesse_
+
+- C'est une partie avec une suite rainbow. (Les autres exemples dans cette section supposent une partie « No Variant ».)
+- Rainbow 1 est joué sur les stacks.
+- Alice clue à Cathy rouge, touchant une carte rouge comme _Play Clue_.
+- Bob blind-play un rainbow 2.
+- Ce doit être un _Finesse_, parce que **rouge se connecte à rouge** (les cartes rainbow se connectent à chaque couleur). Donc Cathy devrait penser qu'elle a le rainbow 3.
+
+<ColorConnectRainbow />
+
+#### Exemple 8 : Color Connect Avec Rainbow Où un _Finesse_ Est Impossible --> _Bluff_
+
+- C'est une partie avec une suite rainbow. (Les autres exemples dans cette section supposent une partie « No Variant ».)
+- Rainbow 1 et red 2 sont joués sur les stacks.
+- Alice clue à Cathy rouge, touchant une carte rouge comme _Play Clue_.
+- Bob blind-play un rainbow 2.
+- Normalement, Cathy penserait que c'est un _Finesse_, parce que **rouge se connecte à rouge** (les cartes rainbow se connectent à chaque couleur), signifiant que la carte rouge de Cathy est le rainbow 3.
+- Cependant, Cathy remarque que sa carte rouge a un clue blue négatif dessus. Ainsi, ça ne peut pas être le rainbow 3.
+- Ce doit être à la place un _Bluff_. Cathy marque sa carte rouge comme red 4 (puisque le red 4 est la carte rouge _one-away-from-playable_).
+
+<ColorConnectRainbowFinesseImpossible />
+
+### Guide Principle
+
+- Une partie d'Hanabi implique de s'assurer que si vous effectuez une action, quelqu'un d'autre dans l'équipe ne défaussera rien d'important (e.g. _[Save Principle](beginner/save-principle.mdx)_). De plus, une partie d'Hanabi implique de tenir compte de toutes les possibilités (e.g. _Schrödinger's Cat Principle_).
+- Combinés, ces deux principes résultent habituellement en ce que les joueurs prennent l'approche la plus conservatrice possible, même si une certaine action aurait un risque très faible de perdre la partie.
+- Une exception aux règles ci-dessus est quand Bob joue dans soit un _Finesse_ soit un _Bluff_. Dans ce cas, Bob sait qu'Alice le « guide » et il n'a pas à se soucier de la carte chop de Cathy. Si Alice avait besoin que Bob sauvegarde la carte chop de Cathy, alors Alice attendrait plus tard pour effectuer le _Finesse_ ou _Bluff_.
+- Par exemple, dans une partie à 4 joueurs :
+  - Aucune carte n'est jouée sur les stacks.
+  - Alice clue rouge à Donald, touchant un red 2 comme _Play Clue_.
+  - Bob ne voit pas de red 1 dans la main de quelqu'un d'autre. Ainsi, Bob sait qu'Alice a l'intention pour lui de blind-play une carte.
+  - De la perspective de Bob, ça peut être soit un _Finesse_ (sur exactement red 1) soit un _Bluff_ (sur le 1 de n'importe quelle des autres suites).
+  - Cathy a un 5 critique sur le chop.
+  - Bob devrait-il risquer le blind-play ou devrait-il sauvegarder le 5 ?
+  - Normalement, Bob jouerait la sécurité et sauvegarderait le 5. Cependant, dans ce cas, il sait que le _Guide Principle_ s'applique, et qu'Alice le guide à jouer maintenant.
+  - Bob blind-play sa _Finesse Position_. C'est le red 1 et il joue avec succès.
+  - Cathy ne défausse pas puisqu'Alice a vu que Cathy avait quelque chose à cluer.
+
+<GuidePrinciple />
+
+### Clue Interpretation & Occam's Razor
+
+- D'abord, voyez la section sur [Schrödinger's Cat Principle](level-5.mdx#schrödingers-cat-principle).
+- Quand un clue pourrait avoir plusieurs interprétations, habituellement le _Schrödinger's Cat Principle_ est impliqué – les joueurs doivent attendre un tour de table et voir ce que leurs coéquipiers font afin de découvrir la vraie signification du clue. Mais que se passe-t-il si un clue pourrait avoir plusieurs interprétations et qu'un joueur **n'a pas** besoin d'attendre des informations de qui que ce soit d'autre ?
+- Par exemple :
+  - Alice donne un clue bizarre à Cathy.
+  - Bob ne voit pas de cartes « connectantes » dans les mains de qui que ce soit d'autre, donc il peut exclure un _Prompt_ et il peut exclure un _Reverse Finesse_.
+- Dans cette situation, nous dirions que Bob est le _reacting player_. Si un _reacting player_ ne « réagit » pas à un clue d'une certaine manière démontrable, alors quelqu'un d'autre dans l'équipe continuera à misplay une carte. Donc, le _reacting player_ doit immédiatement décider ce que le clue signifie et effectuer l'action résultante.
+  - Dans certaines situations, il peut y avoir deux _reacting players_ d'affilée. Par exemple, si Alice clue une carte _two-away-from-playable_, alors Bob doit réagir **et** Cathy doit réagir.
+- Donc comment un _reacting player_ comprend ce que le clue signifie ? Il devrait utiliser _Occam's Razor_ – toujours supposer l'interprétation la plus simple possible.
+
+1. Supposez un _Play Clue_ direct ou un _Delayed Play Clue_ (s'il pourrait être possible qu'aucun _Prompt_ et aucun blind-play ne soit impliqué).
+1. Supposez un _Prompt_ (s'il pourrait être possible qu'aucun blind-play ne soit impliqué).
+1. Supposez un _Finesse_ (ou un _Prompt_ + _Finesse_) avant un _Bluff_.
+1. Supposez le « mouvement » qui résulte en le moins de blind-plays.
+   - En général, cela signifie supposer un _Bluff_ à un blind-play avant un _Finesse_ à deux blind-plays. Mais gardez à l'esprit que seules certaines cartes sont des cibles légales de _Bluff_ – vous ne pouvez pas juste faire un _Bluff_ avec n'importe quelle carte.
+1. Supposez le « mouvement » qui résulte en le moins de _Prompts_.
+   - Cela signifie que si quelque chose pourrait être soit un _Finesse_ à un blind-play **ou** un _Finesse_ à un blind-play avec un _Prompt_ impliqué, alors le _Finesse_ pur est plus simple et vous devriez supposer cela.
+
+## Erreurs Communes
+
+### Le Pang of Guilt
+
+- D'abord, voyez la section sur le _[Bluff Seat](#le-bluff-seat)_.
+- Avant de cluer une carte directement, vous devriez d'abord considérer si la carte est sur _Finesse Position_. Si c'est le cas, et que vous la cluez directement, vous pourriez « voler » le _Finesse_ ou _Bluff_ de quelqu'un.
+- Ainsi, dans cette situation, il pourrait être mieux de défausser et de laisser le joueur en _Bluff Seat_ obtenir la carte. Si vous décidez de cluer la carte directement, vous devriez toujours sentir un _Pang of Guilt_.
+
+### Confondre un Layered Finesse pour un Bluff
+
+- D'abord, voyez la section sur le _[Layered Finesse](level-5.mdx#le-layered-finesse)_.
+- Parfois, les joueurs ne jouent qu'une seule carte dans un _Layered Finesse_, et puis s'arrêtent (alors qu'ils devraient à la place creuser pour la carte promise).
+- Puisque les _Bluffs_ ne sont autorisés que depuis _Bluff Seat_, si le donneur de clue n'est pas en _Bluff Seat_ alors un tel clue est **toujours** un _Layered Finesse_ et non un _Bluff_.
+- Cependant, les _Bluffs_ ont la précédence sur les _Layered Finesses_ depuis _Bluff Seat_.
+  - En d'autres termes, si Alice donne un clue qui fait que Bob blind-play une carte sans rapport immédiatement, alors Bob devrait supposer un _Bluff_ quand possible.
+  - En d'autres termes encore, les _Layered Finesses_ sont généralement « désactivés » depuis _Bluff Seat_.
+  - Bien sûr, cela ne s'applique que si le clue satisfait réellement les critères pour un _Bluff_ potentiel.
+    - En particulier, si Alice donne un clue à Bob mais que Bob ne blind-play pas immédiatement, alors selon le _Lie Principle_, le clue devrait toujours être interprété comme un _Layered Finesse_ car il ne peut possiblement pas être un _Bluff_ légal.
+    - En particulier, si Alice donne un clue à Bob qui n'est pas une cible légale de _Bluff_, le clue devrait toujours être interprété comme un _Layered Finesse_.
+
+### Bluff Prompts / Prompt Bluffs (Illégal)
+
+- Il est illégal de tromper les joueurs en leur faisant penser qu'ils sont _Prompted_. Les _Prompts_ **doivent** être la vérité.
+- Par exemple, dans une partie à 4 joueurs :
+  - Red 1 et blue 1 sont joués sur les stacks.
+  - Bob a une carte dans sa main avec un clue de nombre 2 dessus. Il ne connaît pas sa véritable identité.
+  - Alice clue rouge à Donald, touchant un red 3 comme _Play Clue_.
+  - Puisque red 1 est sur les stacks, Bob sait qu'Alice indique à l'équipe que quelqu'un a le red 2.
+  - Bob regarde autour et voit que personne d'autre n'a le red 2.
+  - Ainsi, Bob sait que ce doit être un _Prompt_, donc son 2 inconnu doit être un red 2. Bob joue le 2 inconnu. C'est à la place un blue 2, et il joue avec succès sur les stacks.
+  - Cathy est légèrement surprise que Bob ait joué le blue 2. Cependant, ce n'est pas complètement hors de l'ordinaire, car Bob aurait pu le comprendre d'une certaine manière.
+  - Cathy effectue la même analyse que Bob fait. À savoir, Cathy sait qu'Alice indique que quelqu'un dans l'équipe a le red 2, et Cathy ne voit pas le red 2 dans la main de quelqu'un d'autre.
+  - Ainsi, Cathy sait que le clue d'Alice à Donald doit être un _Finesse_, donc Cathy doit avoir le red 2 sur sa _Finesse Position_. Cathy joue sa carte de _Finesse Position_. C'est à la place le blue 5 et misplay.
+  - C'était la faute d'Alice, parce que les _Bluffs_ ne sont autorisés que s'ils peuvent être révélés immédiatement depuis un blind-play.
+
+<BluffPromptsPromptBluffs />
+
+### Queued Bluffs (Illégal)
+
+- D'abord, voyez la section sur le _[Queued Finesse](level-5.mdx#le-queued-finesse)_.
+- Les _Queued Finesses_ sont encouragés, car ils ont peu d'inconvénients.
+- Cependant, les joueurs ne devraient **jamais** mettre en file d'attente un _Bluff_ par-dessus un joueur qui est _Finessed_. C'est parce que le joueur qui blind-play supposera qu'un _Layered Finesse_ se produit et continuera à jouer la carte du premier _Finesse_. Cela signifie que le _Bluff_ ne sera pas résolu immédiatement, violant le _Lie Principle_. Cette erreur est vraiment mauvaise car elle cause une sévère _Information Desynchronization_.

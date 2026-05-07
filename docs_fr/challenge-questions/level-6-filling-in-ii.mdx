@@ -1,0 +1,42 @@
+---
+title: Remplir, II
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-6-filling-in-ii/question.yml";
+import Answer from "../../docs/challenge-questions/level-6-filling-in-ii/answer.yml";
+
+<ChallengeQuestionProgress level={6} id="level-6-filling-in-ii" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Bob a une carte clued, mais autrement inconnue, dans sa main : une carte green en slot 4.
+- Alice clue numéro 3 à Bob, ce qui touche sa carte en slot 4 et la "remplit".
+- Quelles actions Bob effectuera-t-il à son prochain tour ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Puisque la carte de Bob avait déjà été "récupérée" quand Alice a cluéd, ce doit être un [_Tempo Clue_](../level-6.mdx#the-tempo-clue).
+- La clue récupère une seule nouvelle carte pour qu'elle devienne jouable au prochain tour.
+- Ainsi, la clue n'est pas considérée comme assez "précieuse" ; elle doit avoir une signification plus profonde.
+- Bob sait qu'un _Tempo Clue_ non précieux _Chop Move_ en réalité la carte actuellement sur le chop.
+- Bob effectue les actions suivantes :
+  - Bob marque sa carte du slot 3 comme étant _Chop Moved_ avec une note "cm" sur la carte.
+  - Bob jouera la carte green 3 du slot 4 à son prochain tour.
+
+<Answer />
+
+</TabItem>
+</Tabs>

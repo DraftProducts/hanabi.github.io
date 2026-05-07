@@ -1,0 +1,118 @@
+---
+title: Level 15 - Double Bluffs
+---
+
+import DoubleBluff from "../docs/level-15/double-bluff.yml";
+import HardDoubleBluff from "../docs/level-15/hard-double-bluff.yml";
+import PestilentDoubleBluff from "../docs/level-15/pestilent-double-bluff.yml";
+
+## Mouvements Spéciaux
+
+### Le Double Bluff
+
+- Parfois, Bob et Cathy auront des cartes playable sur leur _Finesse Position_. Dans cette situation, vous pourriez être capable d'effectuer un _Double Finesse_ pour les faire blind-play immédiatement. Cependant, cela n'est possible que si les deux cartes sont liées, et que la carte « connectante » est disponible pour _[Play Clue](beginner/play-clues.mdx)_.
+- De la même manière que vous pouvez parfois effectuer un _[Bluff](level-11.mdx#le-bluff)_ quand un _[Finesse](beginner/finesse.mdx)_ n'est pas disponible, vous pouvez aussi parfois effectuer un _Double Bluff_ quand un _Double Finesse_ n'est pas disponible. Ceci est effectué en donnant un _Play Clue_ à une carte non-trash qui n'est pas une cible légale de _Bluff_.
+- Par exemple, dans une partie à 4 joueurs :
+  - Red 1 est actuellement joué sur les stacks.
+  - Alice clue rouge à Donald, ce qui touche un red 4 comme _Play Clue_.
+  - Puisque red 4 doit être playable maintenant, Bob pense qu'il a le red 2 et le red 3. Bob blind-play sa carte de _Finesse Position_, mais c'est en réalité un blue 1.
+  - Cathy voit que Bob a blind-played à cause du clue rouge. Cependant, le red 4 est une carte non-trash et n'est pas une cible légale de _Bluff_. Ainsi, Alice doit avoir l'intention d'un _Double Bluff_ au lieu d'un seul _Bluff_. Cathy blind-play sa carte de _Finesse Position_ et c'est un yellow 1.
+  - Au début, Donald pensait que la carte rouge dans sa main était red 2 (comme _Play Clue_).
+  - Après que Bob a blind-played, Donald pensait que la carte rouge dans sa main était red 3 (comme _Bluff_).
+  - Après que Cathy a blind-played, Donald sait que sa carte n'était pas une cible valide de _Bluff_ pour le blue 1, et donc il doit avoir le red 4 (comme _Double Bluff_).
+    - Pour les joueurs pas encore au level 16, Donald marquerait aussi la carte comme un potentiel red 5 en plus d'un red 4.
+
+<DoubleBluff />
+
+- Similaire à d'autres types de _Bluffs_, les _Double Bluffs_ ne peuvent être effectués que depuis _Bluff Seat_, et doivent être démontrés immédiatement. En d'autres termes, les deux blind-plays doivent se produire aux deux tours suivant directement le clue.
+- Les _Double Bluffs_ sont valides même si la carte que Bob blind-play se connecte à la carte qui est cluée par Alice.
+  - Par exemple, le scénario précédent fonctionne aussi bien si le blue 1 de Bob est remplacé par un red 2.
+  - Dans cette situation, Cathy ne saurait pas si le clue est un _Double Bluff_ ou un _Double Finesse_ avant qu'elle ne blind-play.
+- Quelques types plus spécifiques de _Double Bluffs_ sont listés ci-dessous.
+- Pour les joueurs de niveau max, sachez qu'il y a une [interaction spéciale](extras/charms/#interaction-between-the-4-charm-and-double-bluffs-where-cathy-has-a-one-away-from-playable-card) entre les _Double Bluffs_ et les _4 Charms_.
+
+### Le Triple Bluff (Illégal)
+
+- Nous nous accordons à dire que tous les clues de style _Bluff_ devraient se résoudre après deux blind-plays.
+- Ainsi, il n'y a pas de _Triple Bluff_.
+
+### Le Hard Double Bluff
+
+- Similaire à un _[Hard 3 Bluff](level-13.mdx#le-hard-3-bluff)_, il est aussi possible d'effectuer un _Hard Double Bluff_.
+- Par exemple, dans une partie à 4 joueurs :
+  - Aucune carte n'est jouée sur les stacks.
+  - Alice clue nombre 4 à Donald, touchant un red 4 comme _Play Clue_.
+  - Bob blind-play red 1 depuis sa _Finesse Position_.
+  - Cathy blind-play red 2 depuis sa _Finesse Position_.
+  - Même si red 1 et red 2 sont la même suite que le red 4, l'équipe sait que personne n'est promis le red 3, puisque deux blind-plays se sont produits immédiatement après le clue.
+  - Donald sait que sa carte cluée peut être n'importe quel 4.
+
+<HardDoubleBluff />
+
+### Le Pestilent Double Bluff (PDB)
+
+- Normalement, un _Double Bluff_ ne peut être initié qu'avec une carte qui n'est pas une cible légale de _Bluff_. Cependant, ce n'est pas toujours vrai.
+- Parfois, Alice peut cluer une cible légale de _Bluff_ pour faire blind-play Bob, puis « forcer » Cathy à blind-play également afin de resynchroniser l'information sur l'identité de la carte cluée.
+- C'est appelé un _Pestilent Double Bluff_ pour le distinguer du _Double Bluff_ plus normal où une cible non-légale de _Bluff_ est utilisée.
+- Par exemple, dans une partie à 4 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue nombre 2 à Donald, touchant un red 2 comme _Play Clue_.
+  - Bob blind-play un green 1 depuis sa _Finesse Position_.
+  - Cathy voit que maintenant, Donald supposera qu'il a le green 2 (parce qu'il se connecte directement au green 1 que Bob a blind-played). C'est mauvais, parce que la carte est en réalité un red 2.
+  - Cathy sait que parce que l'information n'est toujours pas synchronisée dans l'équipe, Alice doit avoir l'intention pour Cathy de blind-play une carte comme _Pestilent Double Bluff_.
+  - Cathy blind-play sa _Finesse Position_. C'est un blue 1 et il joue avec succès.
+  - Au début, Donald pensait que son 2 était soit un green 2 (comme _Finesse_ sur Bob) soit un blue 2 (comme _Finesse_ sur Cathy).
+  - Après que Bob a blind-played, Donald pensait que son 2 était un green 2 (comme _Finesse_ sur Bob).
+  - Après que Cathy a blind-played, Donald sait que quelque chose de bizarre s'est passé. Si son 2 était vraiment green 2, alors Cathy n'aurait rien blind-played, donc son 2 ne peut pas être green 2.
+  - Donald sait aussi que son 2 ne peut pas être blue 2 non plus, ou sinon Bob n'aurait rien blind-played. (Il aurait attendu que Cathy blind-play.)
+  - Ainsi, Donald marque son 2 comme n'étant ni le green ni le blue 2.
+
+<PestilentDoubleBluff />
+
+- Plus d'exemples de _Pestilent Double Bluff_ peuvent être trouvés [ici](examples/pestilent-double-bluff.mdx).
+
+## Principes Généraux
+
+### Différer un Bluff
+
+- Du _Urgency Principle_, nous savons que les joueurs sont autorisés à différer un _Finesse_ ou un _Bluff_ afin de faire un _Finesse_ ou _Bluff_ propre. Et en effet, quand les joueurs voient un très bon clue, ils devraient probablement différer le blind-play pour donner le clue. Mais il y a des limites.
+- Quand un joueur sait avec certitude qu'il est _Finessed_ (au lieu de _Bluffed_), alors différer un _Finesse_ (pour effectuer un autre _Finesse_ ou _Bluff_) est super ! Cela n'a presque aucun inconvénient, à part la perte évidente de _Tempo_. Tout le monde dans l'équipe est « au courant », pour ainsi dire.
+- Quand un joueur _pourrait_ être _Bluffed_, différer un _Bluff_ peut être extrêmement dangereux car cela cause une _Information Desynchronization_ dans toute l'équipe.
+- Différer un _Bluff_ pour effectuer un _Finesse_ peut être assez clair, selon la situation. Cela devrait être fait avec parcimonie.
+  - Notez que différer un _Bluff_ pour effectuer un _Finesse_ peut potentiellement faire perdre la partie si le clueur original effectue un _Double Bluff_. Donc il y a un certain risque impliqué.
+- Différer un _Bluff_ pour effectuer **un autre** _Bluff_ est bien pire. Puisque le _Bluff_ n'a pas été immédiatement résolu, l'état du jeu se « fracture » en deux états de jeu valides pour les destinataires de chaque clue (e.g. le joueur qui a reçu le clue qui a initié le premier _Bluff_, et le joueur qui a reçu le clue qui a initié le _Deferred Bluff_). Cela signifie que ces deux joueurs devront entretenir deux états de jeu hypothétiques entiers dans leur esprit et construire sur chaque hypothétique avec chaque nouvelle pièce d'information. Cela leur rend extrêmement difficile de planifier à l'avance ou de prendre des décisions correctes pendant leurs tours.
+- Ainsi, différer un _Bluff_ pour faire un autre _Bluff_ ne devrait **presque jamais être effectué**.
+- Voyez aussi la section ci-dessous sur _Différer un Double Bluff_.
+
+### Différer un Double Bluff
+
+- D'abord, voyez la section sur _[Différer un Bluff](#différer-un-bluff)_.
+- Si Bob suspecte qu'Alice effectue un _Double Bluff_, alors Bob ne devrait **jamais différer**. Il est très important que les _Double Bluffs_ se résolvent immédiatement.
+- De même, si Bob blind-play, et que Cathy ne peut pas exclure un _Double Bluff_, alors Cathy ne devrait **jamais différer**. (Si Cathy diffère, cela causera une _Information Desynchronization_ irrécupérable, parce que son futur blind-play ne sera pas interprété comme lié au _Double Bluff_.)
+
+### Une Table pour Différer les Bluffs
+
+| Alice diffère un                   | pour effectuer un | OK ?                          |
+| ---------------------------------- | ----------------- | ----------------------------- |
+| Finesse                            | Finesse           | Oui !                         |
+| Finesse                            | Bluff             | Oui !                         |
+| Bluff                              | Finesse           | Parfois, à utiliser avec parcimonie |
+| Bluff                              | Bluff             | Presque jamais faire ça       |
+| Double Bluff (premier blind-player) | Finesse           | Non, **jamais** faire ça      |
+| Double Bluff (premier blind-player) | Bluff             | Non, **jamais** faire ça      |
+| Double Bluff (second blind-player)  | Finesse           | Non, **jamais** faire ça      |
+| Double Bluff (second blind-player)  | Bluff             | Non, **jamais** faire ça      |
+
+### Interaction entre Bob's Truth Principle et Occam's Razor
+
+- D'abord, voyez les sections sur _[Bob's Truth Principle](level-11.mdx#bobs-truth-principle-partie-1)_ et _[Occam's Razor](level-11.mdx#clue-interpretation--occams-razor)_.
+- Normalement, Bob suit _Occam's Razor_ – il suppose que les clues signifient la chose avec le moins de blind-plays et de _[Prompts](beginner/prompt.mdx)_.
+- Cependant, parfois Bob peut voir qu'un clue est soit un _Double Bluff_ soit un _Finesse_, où le _Finesse_ a besoin de plus de blind-plays que le _Bluff_.
+- Dans cette situation, même si le _Finesse_ nécessite plus de blind-plays, nous nous accordons à dire que Bob devrait toujours supposer l'interprétation _Finesse_ à cause de _Bob's Truth Principle_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Au premier tour de la partie, Alice clue nombre 4, touchant la carte du slot 1 de Bob comme _Play Clue_.
+  - Bob voit que la carte de _Finesse Position_ de Cathy est un red 1 playable.
+  - Ainsi, Bob sait que le clue d'Alice peut être soit :
+    - un _Reverse Finesse_ sur un red 4, signifiant que Cathy blind-playera le red 1, et puis Bob blind-playera le red 2 et le red 3
+    - un _Double Bluff_, signifiant que Bob blind-playera une certaine carte playable et puis Cathy blind-playera le red 1
+  - Bob sait que dans cette situation, _Bob's Truth Principle_ s'applique, donc il sait que ce doit être un _Reverse Finesse_ au lieu d'un _Double Bluff_.

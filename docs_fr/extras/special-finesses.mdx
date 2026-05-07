@@ -1,0 +1,233 @@
+---
+title: Special Finesses
+---
+
+import AmbiguousFinessePassBack from "../../docs/extras/special-finesses/ambiguous-finesse-pass-back.yml";
+import CertainFinesseException from "../../docs/extras/special-finesses/certain-finesse-exception.yml";
+import PatchFinesse from "../../docs/extras/special-finesses/patch-finesse.yml";
+import SurreptitiousFinesse from "../../docs/extras/special-finesses/surreptitious-finesse.yml";
+import InvertedPriorityFinesse from "../../docs/extras/special-finesses/inverted-priority-finesse.yml";
+
+### La Hidden Finesse
+
+- La _Hidden Finesse_ est traitée au [niveau 5](../level-5.mdx#the-hidden-finesse).
+
+### La Layered Finesse
+
+- La _Layered Finesse_ est traitée au [niveau 5](../level-5.mdx#the-layered-finesse).
+
+### La Clandestine Finesse
+
+- La _Clandestine Finesse_ est traitée au [niveau 5](../level-5.mdx#the-clandestine-finesse).
+
+### La Queued Finesse
+
+- La _Queued Finesse_ est traitée au [niveau 5](../level-5.mdx#the-queued-finesse).
+
+### La Ambiguous Finesse
+
+- La _Ambiguous Finesse_ est traitée au [niveau 5](../level-5.mdx#the-ambiguous-finesse).
+
+### La Sarcastic Finesse
+
+- La _Sarcastic Finesse_ est traitée au [niveau 10](../level-10.mdx#the-sarcastic-finesse).
+
+### La Certain Finesse
+
+- La _Certain Finesse_ est traitée au [niveau 10](../level-10.mdx#the-certain-finesse--the-certain-discard).
+
+### La Composition Finesse
+
+- La _Composition Finesse_ est traitée au [niveau 10](../level-10.mdx#the-composition-finesse).
+
+### La Selfish Finesse
+
+- La _Selfish Finesse_ est traitée au [niveau 12](../level-12.mdx#the-selfish-finesse-a-finesse-through-your-own-hand).
+
+### La Trash Finesse
+
+- La _Trash Finesse_ est traitée au [niveau 14](../level-14.mdx#the-trash-finesse).
+
+### La Trash Push Finesse
+
+- La _Trash Push Finesse_ est traitée au [niveau 14](../level-14.mdx#the-trash-push-prompt--the-trash-push-finesse).
+
+### La Elimination Finesse
+
+- La _Elimination Finesse_ est traitée au [niveau 18](../level-18.mdx#the-elimination-finesse).
+
+### La 5 Pull Finesse
+
+- La _5 Pull Finesse_ est traitée au [niveau 19](../level-19.mdx#the-5-pull-prompt--the-5-pull-finesse).
+
+### La Occupied Finesse
+
+- La _Occupied Finesse_ est traitée au [niveau 20](../level-20.mdx#the-occupied-play-clue--the-occupied-finesse-opc).
+
+### La Out-of-Order Finesse
+
+- La _Out-of-Order Finesse_ est traitée au [niveau 20](../level-20.mdx#the-out-of-order-finesse).
+
+### La Suboptimal Finesse
+
+- La _Suboptimal Finesse_ est traitée au [niveau 20](../level-20.mdx#the-suboptimal-prompt--the-suboptimal-finesse--the-suboptimal-bluff).
+
+### La No-Information Finesse
+
+- La _No-Information Finesse_ est traitée au [niveau 20](../level-20.mdx#the-no-information-finesse).
+
+### La Priority Finesse
+
+- La _Priority Finesse_ est traitée au [niveau 25](../level-25.mdx#the-priority-prompt--the-priority-finesse).
+
+### La Trust Finesse
+
+- La _Trust Finesse_ est traitée au [niveau 25](../level-25.mdx#the-trust-finesse-a-priority-finesse-from-playing-an-unknown-card).
+
+### Le Ambiguous Finesse Pass-Back (AFPB)
+
+- Tout d'abord, voir la section sur la [_Ambiguous Finesse_](../level-5.mdx#the-ambiguous-finesse).
+- Quand une _Ambiguous Finesse_ se produit, le premier joueur ne jouera pas dans la _Finesse_, et fera quelque chose de non lié. À ce moment-là, il est généralement clair que **un autre joueur** dans l'équipe a **aussi** la carte de connexion. Normalement, cet autre joueur devrait alors **immédiatement blind-play**, résolvant l'_Ambiguous Finesse_ aussi rapidement que possible.
+- Cependant, dans certaines situations spécifiques, la deuxième personne **ne peut pas** blind-play la carte, sinon un misplay se produirait. Dans ces situations, la deuxième personne doit **aussi** ne pas jouer dans la _Finesse_. Cela "passe" le blind-play à la première personne à nouveau.
+- Par exemple, dans une partie à 4 joueurs :
+  - Le blue 1 est joué sur les stacks.
+  - Alice clue bleu à Donald, touchant un blue 4 comme _Play Clue_.
+  - Bob voit que Cathy a le blue 2 sur sa _Finesse Position_. De sa position, ce doit être une _Double Finesse_, avec Cathy blind-playing le blue 2, et Bob blind-playing le blue 3 depuis sa propre _Finesse Position_. Bob défausse.
+  - Cathy voit que Bob a le blue 2 sur sa _Finesse Position_ et le blue 3 sur sa _Second Finesse Position_.
+  - Cathy sait aussi que la seule raison pour laquelle Bob défausserait est si Cathy avait **aussi** le blue 2 sur sa _Finesse Position_. Ainsi, Bob attend qu'elle blind-play à ce tour, et c'est une _Ambiguous Finesse_.
+  - Normalement, Cathy blind-playerait le blue 2 elle-même. Cependant, dans cette situation, si elle blind-play le blue 2, alors Bob misplay l'autre blue 2, en pensant que c'est le blue 3.
+  - Ainsi, Cathy doit prétendre que la _Finesse_ n'est pas sur elle après tout, et forcer Bob à être celui qui blind-play en premier. Cathy défausse sa carte chop, repassant la _Finesse_ à Bob.
+  - Donald et Alice défaussent.
+  - Bob sait que Cathy était censée blind-play le blue 2, mais elle ne l'a pas fait. Il doit aussi avoir le blue 2. De plus, il doit aussi avoir le blue 3, car ce serait une excellente raison pour Cathy de lui repasser la _Finesse_. Bob va maintenant blind-play le blue 2 et le blue 3.
+
+<AmbiguousFinessePassBack />
+
+- En aparté, vous pourriez vous demander pourquoi dans l'exemple précédent Cathy ne blind-discard pas son blue 2 depuis sa _Finesse Position_ au lieu de défausser sa chop. C'est parce qu'il est possible que Cathy n'ait **pas** le blue 2 sur sa _Finesse Position_ et ait à la place une autre carte jouable non liée comme _Layered Finesse_. Ainsi, Cathy doit jouer la sécurité et défausser sa chop.
+
+### Potential Priority Duplication & La Certain Priority Finesse (ou Priority Certain Finesse)
+
+- Normalement, les joueurs peuvent effectuer n'importe quel type particulier de _Finesse_ soit en donnant un clue, soit en jouant une carte sans _Priority_. Par exemple, il est possible de faire à la fois une _Layered Finesse_ (en donnant un clue) et une _Layered Priority Finesse_ (en jouant une carte).
+- Une exception à cette règle est la _Certain Finesse_. Quand un joueur effectue une _Certain Finesse_, cela appelle un _Certain Discard_. Cependant, quand un joueur utilise la _Priority_ pour promettre une carte qui pourrait potentiellement être dans sa propre main, cela ne devrait **pas** induire un _Certain Discard_. Les autres joueurs dans cette situation devraient simplement ignorer la _Priority_ et défausser à la place leur carte chop. (Le faire de cette façon est beaucoup plus sûr car cela permet de potentielles _Layered Finesses_ ainsi qu'une certaine marge pour les erreurs.)
+
+### La Certain Finesse Clandestine Exception
+
+- Tout d'abord, voir la section sur la _[Certain Finesse](../level-10.mdx#the-certain-finesse--the-certain-discard)_.
+- Cette section décrit un cas limite spécifique et rare pour les _Certain Finesses_.
+- Nous convenons que les _Bluffs_ ont précédence sur les _Certain Finesses_. Cela signifie qu'une _Certain Finesse_ ne peut normalement pas être effectuée depuis le _Bluff Seat_.
+- Les _Certain Finesses_ **peuvent** être effectuées depuis le _Bluff Seat_ s'il est strictement impossible que ce soit un _Bluff_. En d'autres termes, cela signifie qu'il est illégal pour un joueur d'effectuer une _Clandestine Finesse_ sur le tout prochain joueur qui cible une carte potentiellement dupliquée si l'autre joueur peut exclure la possibilité d'un _Bluff_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 2 sont joués sur les stacks.
+  - Alice a un 3 inconnu dans sa main qui se trouve être le red 3.
+  - Alice clue numéro 4 à Cathy, touchant un red 4 comme _Play Clue_.
+  - Bob sait qu'Alice pourrait essayer d'effectuer une _Finesse_ sur un red 3. Normalement, il blind-discard sa carte _Finesse Position_ comme un _Certain Discard_ afin de repasser cette carte à Alice.
+  - Cependant, puisqu'Alice est dans le _Bluff Seat_ de Bob, Bob doit considérer si cela pourrait être un _Bluff_. Bob sait que puisque les stacks ont tous les 2, tout ce qu'il blind-play ici devrait être un 3. Ainsi, cela ne peut pas être un _Bluff_, car un 3 se connecterait à 4 et ressemblerait à une _Finesse_.
+  - La seule autre possibilité dont Bob doit s'inquiéter est une _Clandestine Finesse_. Par exemple, il pourrait blind-playing un blue 3 **et ensuite** un red 3 après ça. S'il blind-discardait, l'équipe perdrait la seule copie visible du blue 3, ce qui serait vraiment mauvais.
+  - Cependant, Bob sait **aussi** que vous n'êtes pas autorisé à effectuer une _Clandestine Finesse_ depuis le _Bluff Seat_ qui pourrait dupliquer une carte dans votre main. Ainsi, il peut écarter à la fois la possibilité d'un _Bluff_ **et** la possibilité d'une _Clandestine Finesse_.
+  - Bob effectue un _Certain Discard_ sur sa carte _Finesse Position_ et c'est le red 3, le repassant avec succès à Alice.
+
+<CertainFinesseException />
+
+- Si quelqu'un effectue un _Certain Discard_ et que vous avez deux cartes cluées ou plus qui pourraient être la cible, alors vous n'êtes pas promis l'ordre, seulement que vous avez la carte cluée quelque part dans votre main. (Cette partie fonctionne exactement de la même manière qu'un _Sarcastic Discard_ plus ordinaire.)
+
+### La Patch Finesse
+
+- Parfois, un joueur initiera une _Layered Finesse_ sur une carte qui est derrière une carte _one-away-from-playable_. Normalement, cela serait assez mauvais, car le joueur blind-playerait la carte _one-away-from-playable_, et elle misplay.
+- Cependant, puisque la cible de la _Finesse_ est considérée comme injouable par le reste de l'équipe, ils peuvent être trompés pour blind-playing la carte exacte qui rend la carte one-away réellement jouable. Cela "patch" le problème de _Layered Finesse_, et maintenant le layer peut être complètement déballé sans problèmes.
+- Par exemple, dans une partie à 5 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice clue rouge à Emily, ce qui est un _Play Clue_ sur un red 4.
+  - Donald a un blue 3 sur sa _Finesse Position_, suivi d'un red 2 et d'un red 3.
+  - Bob défausse. (Nous reviendrons à Bob à la fin.)
+  - Cathy voit qu'elle doit avoir le red 2 et le red 3 sur sa _Finesse Position_, parce que même si Donald a le red 2 et le red 3, ils sont derrière une carte injouable (blue 3).
+  - Cathy essaie de blind-play le red 2 et c'est plutôt un blue 2.
+  - Donald savait que le clue d'Alice le _Finessait_, puisque personne d'autre dans l'équipe n'a de carte rouge. Donc, il s'étouffe de surprise quand Cathy blind-play apparemment sans raison.
+  - Cependant, Donald sait qu'il devrait faire confiance à Alice et faire confiance à Cathy, donc il continue de supposer qu'il a le red 2.
+  - Donald essaie de blind-play le red 2 et c'est plutôt le blue 3. Donald sait maintenant que c'est une _Patch Finesse_.
+  - Emily voit le red 2 et le red 3 jouables dans la main de Donald, donc elle sait aussi que c'était une _Patch Finesse_. La carte rouge dans sa main est soit le red 3 soit le red 4.
+  - Nous avons sauté Bob - pourquoi a-t-il défaussé ? Normalement, Bob devrait penser la même chose que Cathy - qu'il a à la fois le red 2 et le red 3. Cependant, Bob peut anticiper et voir qu'une _Patch Finesse_ pourrait se produire, donc puisque tout fonctionnera parfaitement s'il ne fait rien, alors il devrait ne rien faire. Il est aussi possible que Bob ait le red 2 et le red 3, donc il devrait essayer de blind-play ceux-ci au prochain tour si personne d'autre ne tente de blind-play quoi que ce soit.
+
+<PatchFinesse />
+
+### La Known Patch Finesse (Illégal)
+
+- Les _Patch Finesses_ légales sont **toujours cachées**, ce qui signifie que la personne qui blind-play une carte pour "patch" ne saura **jamais** que c'est une _Patch Finesse_ avant **après** avoir blind-played.
+- En d'autres termes, si Alice effectue une _Patch Finesse_ légale, alors **personne d'autre dans l'équipe n'a même besoin de savoir que la convention _Patch Finesse_ existe** - tout fonctionnera correctement parce que tout le monde blind-play juste les cartes comme dans n'importe quelle autre _Layered Finesse_ ordinaire.
+  - L'exception est lorsque vient le moment pour le joueur patché de commencer à blind-play. Dans cette situation, le joueur patché peut être "effrayé" par le blind-play du patcher, parce qu'il ne comprendra pas pourquoi le blind-play s'est produit. Dans cette situation, les joueurs doivent avoir une confiance totale et ne pas être effrayés quand une autre personne dans l'équipe blind-play avec succès une carte de manière inattendue.
+
+### La Double Patch Finesse (Illégal)
+
+- En s'appuyant sur la _Patch Finesse_, il est théoriquement possible qu'une _Patch Finesse_ nécessite **deux** joueurs séparés pour patch en même temps.
+- Cependant, nous interdisons expressément cela parce que c'est trop confus. Les joueurs ne devraient **jamais** considérer la possibilité d'une _Patch Finesse_ avec deux _Patch Components_.
+
+### Le Patch Gentleman's Discard (Illégal)
+
+- Théoriquement, il pourrait être possible d'effectuer un _Gentleman's Discard_ qui contient un _Patch Component_.
+- Cependant, nous interdisons explicitement cela. Les _Gentleman's Discards_ **doivent** être pour des cartes qui sont en slot 1. Sinon, cela communiquerait un _Blaze Discard_.
+
+### La Surreptitious Finesse
+
+- Les _Clandestine Finesses_ sont quand un clue de couleur ou de rang "se connecte" à la carte d'un blind-play, mais le récepteur du clue doit attendre des cartes jouables de connexion **supplémentaires** pour blind-play. Une autre façon de dire cela est que les _Clandestine Finesses_ ont un _Misplay Component_ ; si le blind-player ne continue pas à blind-play des cartes, alors le récepteur du clue va misplay la carte cluée.
+- Une situation similaire peut aussi se produire quand un clue de rang "connecte" la carte d'un blind-play, mais le récepteur du clue voit des cartes de rang **non-connectantes** dans la main du blind-player qui sont actuellement jouables.
+- Si le récepteur du clue attend que ces cartes non-connectantes blind-play, et qu'elles **blind-play**, alors cela signifie que le clue original était sur une suite différente de ce qu'il semblait au premier abord. Cela s'appelle une _Surreptitious Self-Finesse_ pour la désambiguïser d'une _Clandestine Finesse_ plus ordinaire.
+- Les _Surreptitious Finesses_ ont un _Misplay Component_ presque exactement de la même façon que les _Clandestine Finesses_, mais elles impliquent juste des cartes de rang non-connectantes.
+- En général, cela signifie que lorsqu'un clue de **rang** initie une _Finesse_, le récepteur du clue doit toujours tenir compte de la possibilité que des cartes de rang non-connectantes ultérieures dans la main du blind-player (qui sont d'un rang **inférieur** au clue) puissent être prises dans la _Finesse_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 1 est joué sur les stacks.
+  - Alice clue numéro 3 à Cathy, ce qui touche un 3.
+  - Bob blind-play le red 2.
+  - Cathy sait que le red 2 "se connecte" au numéro 3, donc elle sait qu'elle a probablement le red 3.
+  - Cependant, Cathy voit aussi qu'avant que Bob blind-play le red 2, il avait un blue 1 dans le slot juste après.
+  - Ainsi, il est possible que le 3 de Cathy soit en fait le blue 3. Si c'est le cas, Bob blind-play le blue 1 et Cathy saura qu'elle a le blue 2 sur sa _Finesse Position_.
+  - Donc, Cathy défausse (au lieu de potentiellement jouer le red 3 à ce tour) pour permettre la possibilité d'une _Surreptitious Finesse_.
+
+<SurreptitiousFinesse />
+
+- Des exemples de _Surreptitious Finesse_ peuvent être trouvés [ici](../examples/surreptitious-finesse.mdx).
+
+### Inverted Priority Finesse
+
+- Les _Priority Finesses_ sont considérées comme "gratuites", puisqu'elles ne coûtent pas un clue à effectuer. Ainsi, il est extrêmement rare qu'un joueur refuse d'en effectuer une si c'était possible de le faire.
+- Si un joueur refuse d'effectuer une _Priority Finesse_, et qu'il n'y a rien d'autre de spécial qui se passe, alors il doit essayer de communiquer quelque chose en plus.
+- Il appelle plutôt une _Priority Finesse_ sur la carte qui avait la _Priority_. Cela s'appelle une _Inverted Priority Finesse_ parce qu'elle obtient un blind-play en jouant une carte avec _Priority_ (par opposition à obtenir un blind-play en jouant une carte sans _Priority_).
+- Après qu'une _Inverted Priority Finesse_ se produit, la présence d'une _Priority Finesse_ normale est maintenant connue de tout le monde dans l'équipe. Ainsi, la _Priority Finesse_ normale est préservée et devrait être jouée au prochain tour de table.
+- Par exemple, dans une partie à 3 joueurs :
+  - Alice a le choix entre jouer un red 1 et un blue 2. Les deux cartes sont entièrement connues, et personne d'autre n'a de cartes cluées, donc le red 1 a la _Priority_.
+  - Alice joue le red 1.
+  - Bob voit que si Alice avait joué le blue 2, elle aurait pu effectuer une _Priority Finesse_ sur la carte slot 1 de Cathy, le blue 3.
+  - Bob sait qu'il n'y avait aucune raison pour qu'Alice refuse la _Priority Finesse_, donc cela doit être une _Inverted Priority Finesse_. Bob blind-play sa carte slot 1, et c'est le red 2.
+  - Cathy sait que le red 1 avait la _Priority_, donc le jouer n'aurait pas dû faire blind-play quelque chose à Bob. Ainsi, Cathy sait que cela doit être une _Inverted Priority Finesse_, et elle sait qu'elle a un blue 3 sur son slot 1. Cathy défausse.
+  - Alice joue blue 2.
+  - Bob défausse.
+  - Cathy blind-play blue 3.
+
+<InvertedPriorityFinesse />
+
+- Notez que l'_Inverted Priority Finesse_ **ne fonctionnera que si les joueurs sont dans un certain ordre**. Sinon, le joueur tenant la carte priority refusée peut _Play Clue_ l'autre carte, ce qui détruirait le canal d'information. Cela signifie que dans la plupart des cas, les joueurs devraient simplement choisir l'option la plus sûre et la moins compliquée - la _Priority Finesse_ normale.
+
+### Finesses with a Lie Component
+
+- _[Lie Principle](../level-11.mdx#lie-principle)_ stipule que tous les _Fibs_ doivent se résoudre immédiatement. Une contre-vérité qui ne se résout pas immédiatement est un _Lie_.
+- Normalement, les _Lies_ sont expressément illégaux. Cependant, certains joueurs enfreignent occasionnellement les règles dans le but d'obtenir une _Finesse_. Nous appelons ces coups des _Finesses with a Lie Component_.
+- Typiquement, quand les joueurs _Lie_ en dehors du _Bluff Seat_, le jeu s'effondre rapidement ; les clues suivants auront des significations différentes pour différents joueurs et tout le monde deviendra "désynchronisé". Cela mène typiquement à une défaite.
+- Cela dit, il est parfois possible de construire des lignes **sûres** qui contiennent un _Lie Component_. Il y a habituellement des niveaux profonds de nuance impliqués dans ces lignes, donc ce genre de chose n'est recommandé que pour les joueurs avancés et experts.
+- L'_Out-of-Order Finesse_ mentionnée précédemment est un exemple spécifique d'une _Finesse_ avec un _Lie Component_. Un attribut clé de l'_Out-of-Order Finesse_ est que le joueur qui reçoit le _Fix Clue_ sait que **toutes** les cartes liées sont jouables, ou cela n'aurait pas valu le risque (et la confusion) d'effectuer une ligne avec un _Lie Component_ en premier lieu.
+- Ce concept peut être généralisé à toutes les _Finesses_ qui ont un _Lie Component_. Après qu'un joueur reçoit un _Fix Clue_ dans une telle situation, il devrait supposer que la _Finesse_ est "toujours en cours". Donc, selon la situation, soit ils savent que la carte initiale qui a été cluée est jouable (comme dans une _Out-of-Order Finesse_), soit ils continuent à blind-play des cartes pour accomplir la _Finesse_ initiale (si la carte cluée avec un _Fix Clue_ semble être non liée).
+- Notez que puisque nous voulons minimiser les _Lying_ autant que possible, les _Finesses with a Lie Component_ ont la **précédence la plus basse possible**. Par exemple, cela signifie que vous pouvez donner un _Delayed Play Clue_ à un joueur qui est encore en train de blind-play des cartes sans que cela ressemble à un _Fix Clue_.
+- Important, les _Finesses_ avec un _Lie Component_ ne sont autorisées **que** s'il n'y a pas de ligne alternative qui "obtiendrait" le même nombre de cartes sans aucun mensonge. Ainsi, si vous cherchez à faire une _Finesse_ avec un _Lie Component_, assurez-vous de considérer attentivement l'efficacité de toutes les alternatives possibles.
+
+### La Declined 5's Finesse
+
+- Le _5's Chop Move_ est typiquement utilisé pour sauver un 5 et un non-5 critique en même temps. C'est très efficace, parce que cela sauve les deux cartes avec un clue au lieu de devoir dépenser deux clues.
+- Donc, quand un joueur a cette stratégie disponible, mais refuse plutôt de la faire et clue la carte critique sur chop directement (sans toucher d'autres cartes), alors c'est assez étrange.
+- Dans cette situation, le joueur doit essayer de communiquer quelque chose en plus. Similaire à une _Occupied Finesse_, le joueur essaie de signaler que ce _Save Clue_ apparemment innocent est en fait un _Play Clue_ à la place. Quelqu'un dans l'équipe doit avoir les cartes pour rendre cette carte critique jouable.
+- Dans certaines situations, le blind-player peut devoir reporter de jouer dans la _Finesse_ et donner à la place un _5 Save_ au joueur avec la chop (maintenant) non sécurisée. S'ils le font, alors ce n'est pas un problème - le récepteur du clue peut rétroactivement déterminer qu'une _Declined 5's Finesse_ s'est produite et ne devrait pas _stomp_ sur la _Finesse_.
+
+### La Rank Choice Save Finesse / Le Rank Choice Save Bluff
+
+- Lors de la sauvegarde d'une carte, les joueurs doivent choisir soigneusement entre utiliser un clue de couleur ou un clue de rang. Cependant, dans certaines situations rares, cela ne fait absolument aucune différence quel clue est utilisé :
+  - À la fois la couleur et le rang ne toucheraient que la carte spécifique.
+  - À la fois la couleur et le rang communiqueraient l'identité exacte de la carte spécifique.
+  - À la fois la couleur et le rang ne donneraient aucune information négative utile aux autres cartes dans la main.
+- Dans ces situations, le joueur donnant le clue a un _Free Choice_ complet entre rang et couleur. Nous convenons que par défaut, les joueurs devraient utiliser la couleur pour sauver la carte.
+- Si les joueurs utilisent plutôt un clue de rang pour sauver la carte, cela communique une _Rank Choice Save Finesse_.
+- De la même manière, il est aussi possible d'effectuer un _Rank Choice Save Bluff_.

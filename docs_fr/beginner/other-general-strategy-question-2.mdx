@@ -1,0 +1,38 @@
+---
+title: Autre Stratégie Générale (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import OtherGeneralStrategyQuestion2 from "../../docs/beginner/other-general-strategy-question-2/other-general-strategy-question-2.yml";
+import OtherGeneralStrategyAnswer2 from "../../docs/beginner/other-general-strategy-question-2/other-general-strategy-answer-2.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est l'_[Early Game](./early-game.mdx)_.
+- Énumérez toutes les clues légales qu'Alice peut donner.
+- Parmi ces possibilités, quelle clue Alice doit-elle donner ?
+
+<OtherGeneralStrategyQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice peut cluer green à Cathy en tant que _[Play Clue](./play-clues.mdx)_ sur le green 3.
+- Alice peut cluer number 5 à Cathy en tant que _[5 Save](./5-save.mdx)_ sur le red 5.
+- Il est plus logique pour Alice de donner la _Play Clue_ plutôt que la _[Save Clue](./save-clues.mdx)_, puisque Cathy ne défaussera rien à son tour si elle est occupée à jouer une carte.
+
+<OtherGeneralStrategyAnswer2 />
+
+</TabItem>
+</Tabs>

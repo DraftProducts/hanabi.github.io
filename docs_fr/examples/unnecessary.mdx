@@ -1,0 +1,70 @@
+---
+title: Exemples de coups Unnecessary
+---
+
+import TrashPush1 from "../../docs/examples/unnecessary/trash-push-1.yml";
+import TrashPush2 from "../../docs/examples/unnecessary/trash-push-2.yml";
+import TrashPushFinesse from "../../docs/examples/unnecessary/trash-push-finesse.yml";
+import TrashBluff from "../../docs/examples/unnecessary/trash-bluff.yml";
+import UnknownTrashDischarge from "../../docs/examples/unnecessary/unknown-trash-discharge.yml";
+
+Les [_Unnecessary Moves_](/level-24.mdx) sont une convention de niveau 24.
+
+### L'Unnecessary Trash Push
+
+#### Exemple 1
+
+- Tous les 2 sont joués sur les piles.
+- Alice clue le 1 à Cathy, touchant un seul 1 sur sa chop. Comme tous les 1 sont déjà joués, il est globalement connu que cela doit être une forme de _Trash Push_.
+- Bob voit que la carte poussée est un red 3. Cathy n'a pas d'autres cartes red dans sa main, donc Alice aurait pu simplement clue red à Cathy au lieu de faire un _Trash Push_ compliqué.
+- Ainsi, Bob sait qu'il s'agit d'un _Unnecessary Trash Push_. Bob blind-play sa _Finesse Position_ comme une _Ignition_. C'est le blue 3 et il se joue avec succès.
+- Cathy pense que cela doit être un _Trash Push Finesse_ sur le blue 4. Cathy blind-play sa carte slot 4, mais c'est un red 3 à la place et il se joue avec succès.
+- Cathy sait maintenant que comme les deux cartes ne se sont pas connectées entre elles, cela devait être un _Unnecessary Trash Push_.
+
+<TrashPush1 />
+
+#### Exemple 2
+
+- Voir l'image d'exemple ci-dessous.
+- Alice peut clue red à Bob afin de faire jouer le red 3. Rien ne "bloque" le clue.
+- À la place, Alice clue green à Bob comme un _Trash Push_.
+- Bob sait qu'il s'agit d'un _Trash Push_, donc il blind-play sa carte slot 1. C'est un red 3 et il se joue avec succès.
+- Cathy voit que ce _Trash Push_ était _unnecessary_. Donc, Cathy blind-play sa _Finesse Position_ comme une _Ignition_. C'est un yellow 1 et il se joue avec succès.
+
+<TrashPush2 />
+
+### L'Unnecessary Trash Push Finesse
+
+- Voir l'image d'exemple ci-dessous.
+- Alice peut clue yellow à Cathy afin d'effectuer un _Finesse_ sur le yellow 3 menant au yellow 4.
+- À la place, Alice clue red à Cathy comme un _Trash Push_.
+- Bob sait qu'il s'agit d'un _Trash Push_ et que la carte _Trash Pushed_ est un yellow 4 _one-away-from-playable_. Ainsi, cela doit être un _Trash Push Finesse_ qui appelle le yellow 3.
+- Bob blind-play sa _Finesse Position_. C'est un yellow 3 et il se joue avec succès.
+- Cathy joue le yellow 4.
+- Donald voit que ce _Trash Push_ était _unnecessary_. Donc, Donald blind-play sa _Finesse Position_ comme une _Ignition_. C'est un green 4 et il se joue avec succès.
+
+<TrashPushFinesse />
+
+### L'Unnecessary Trash Bluff (avec un Trash Push)
+
+- Voir l'image d'exemple ci-dessous.
+- Alice clue le 1 à Donald sur un blue 1.
+- Bob sait que du point de vue de Donald, le clue d'Alice ressemble à un _Play Clue_ sur un 1 non joué. Donald va finir par misplay le blue 1.
+- Ainsi, Bob sait qu'il s'agit d'un _Trash Finesse_ ou d'un _Trash Bluff_. Il blind-play sa _Finesse Position_. C'est un blue 2 et il se joue avec succès.
+- Cathy sait que tous les _Trash Bluffs_ sont _unnecessary_. Elle voit également que le composant _unnecessary_ sera un _Trash Push_ au lieu d'un _Chop Move_ (puisque le blue 1 était sur la chop de Donald). Cathy joue son red 1 précédemment connu.
+- Donald sait également que les _Trash Bluffs_ doivent être traités comme _unnecessary_. Donald blind-play sa carte slot 1 pour remplir le composant "extra" de l'_Unnecessary Trash Bluff_. C'est un red 2 et il se joue avec succès.
+
+<TrashBluff />
+
+### L'Unnecessary Unknown Trash Discharge (avec un Trash Push)
+
+- Voir l'image d'exemple ci-dessous.
+- Alice peut clue le 4 à Bob afin de faire jouer le blue 4. Rien ne "bloque" le clue.
+- À la place, Alice clue red à Donald, touchant un red 1 trash.
+- Bob sait que du point de vue de Donald, le clue d'Alice ressemble à un _Play Clue_ sur le red 4. Donald va finir par misplay le red 1 comme un red 4.
+- Si Bob joue sa _Finesse Position_ et qu'elle se joue avec succès, cela ne résoudra pas la situation — Donald va alors finir par penser que la carte red est le red 5, ce qui n'est pas vrai.
+- Ainsi, Bob sait que cela doit être un _Unknown Trash Discharge_. Bob blind-play sa _Third Finesse Position_. C'est un blue 4 et il se joue avec succès.
+- Cathy voit que l'_Unknown Trash Discharge_ était _unnecessary_. Elle voit également que le composant _unnecessary_ sera un _Trash Push_ au lieu d'un _Chop Move_ (puisque le red 1 était sur la chop de Donald). Cathy joue son green 4 précédemment connu.
+- Donald voit également que l'_Unknown Trash Discharge_ était _unnecessary_. Donald blind-play sa carte slot 2 pour remplir le composant "extra" de l'_Unnecessary Unknown Trash Discharge_. C'est un yellow 1 et il se joue avec succès.
+
+<UnknownTrashDischarge />

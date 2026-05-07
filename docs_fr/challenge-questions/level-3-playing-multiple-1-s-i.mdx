@@ -1,0 +1,37 @@
+---
+title: Jouer plusieurs 1, I
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-3-playing-multiple-1-s-i/question.yml";
+import Answer from "../../docs/challenge-questions/level-3-playing-multiple-1-s-i/answer.yml";
+
+<ChallengeQuestionProgress level={3} id="level-3-playing-multiple-1-s-i" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est le premier tour de la partie.
+- Alice clue numéro 1 à Bob, touchant deux cartes en slot 2 et 5.
+- Dans quel ordre Bob doit-il jouer ces cartes ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob connaît la _Play Order Inversion in the Starting Hand_.
+- Il joue donc les cartes touchées de la **plus ancienne à la plus récente**.
+
+<Answer />
+
+</TabItem>
+</Tabs>

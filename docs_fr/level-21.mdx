@@ -1,0 +1,148 @@
+---
+title: Level 21 - Ignition
+---
+
+import ChopMoveIgnitionOneCard from "../docs/level-21/chop-move-ignition-one-card.yml";
+import ChopMoveIgnitionInteraction from "../docs/level-21/chop-move-ignition-interaction.yml";
+import ChopMoveIgnitionTwoCards from "../docs/level-21/chop-move-ignition-two-cards.yml";
+
+## Conventions
+
+### Ignition
+
+- Une _Ignition_ est un type de mouvement qui fait blind-play à quelqu'un une carte depuis sa _Finesse Position_.
+- Une _Ignition_ est différente d'un _[Finesse](beginner/finesse.mdx)_ et d'un _[Bluff](level-11.mdx#le-bluff)_ parce que le blind-play d'une _Ignition_ est :
+  - sans rapport avec le clue qui a été donné
+    - i.e. Il ne « connecte » pas, ce qui est différent d'un _Finesse_, mais comme un _Bluff_.
+  - sans rapport avec la _playability_ de la carte cluée
+    - i.e. Rien n'a besoin d'être « prouvé » au joueur qui a été clué, ce qui est différent d'un _Finesse_, et différent d'un _Bluff_.
+
+### Double Ignition (DI)
+
+- Plusieurs types de clues « inutiles » déclenchent une _Double Ignition_. Ces différents types sont listés ci-dessous.
+- Quand une _Double Ignition_ est déclenchée, cela signifie que deux joueurs dans l'équipe doivent blind-play leur _Finesse Position_ comme n'importe quelle carte playable.
+- Similaire à un _Ambiguous Finesse_, un _Ambiguous Double Ignition_ est possible. Spécifiquement, cela signifie que trois joueurs ou plus ont une carte playable sur _Finesse Position_. Dans cette situation, nous définissons fortement qui est censé blind-play :
+  - La première _Ignition_ **doit toujours être sur Bob**, à moins que Bob ait déjà une carte playable connue. Alors, ce serait sur le premier joueur qui n'a pas déjà une carte playable connue.
+  - La seconde _Ignition_ **doit toujours être sur le dernier joueur avec une carte playable**.
+
+## Mouvements Spéciaux
+
+### Le Replay Double Ignition (RDI)
+
+- Quand un joueur re-clue une carte playable globalement connue, c'est un clue « inutile ».
+- Habituellement, quand cela se produit, c'est parce qu'un joueur est dans une [situation stalling](level-9.mdx#allowable-stall-clues-stall-table) et ne peut pas défausser. (C'est plus courant dans [l'_End-Game_](level-8.mdx#burning-end-game-stalling).)
+- Si un joueur n'est pas dans une situation stalling, alors il doit essayer d'envoyer un message plus profond – une _Double Ignition_. C'est appelé un _Replay Double Ignition_ parce que vous redonnez un _[Play Clue](beginner/play-clues.mdx)_.
+- Le _Replay Double Ignition_ ne doit pas introduire de nouvelles cartes dans le cadre du clue.
+- Le _Replay Double Ignition_ peut être effectué tout au long de la partie. (Inversement, le _Trash Double Ignition_ ne peut être effectué que vers la fin de la partie.)
+- Voyez aussi la section sur [Replay Ejection](extras/ejections.mdx#the-replay-ejection).
+
+### Le Trash Double Ignition (TDI)
+
+- Si un joueur clue une ou plusieurs nouvelles cartes trash, **et que les cartes sont connues comme trash**, alors il y a habituellement 2 interprétations possibles :
+
+#### 1) Un _Trash Chop Move_
+
+- Parfois, les joueurs effectuent un _[Trash Chop Move](level-4.mdx#le-trash-chop-move-tcm)_ en cluant un trash connu dans la main d'un autre joueur (off chop).
+- Cependant, les joueurs peuvent savoir que _Trash Chop Move_ est impossible si :
+  - Ils ne sont pas le destinataire du clue et peuvent voir que la carte _Chop Moved_ est mauvaise.
+  - Ils sont le destinataire du clue et peuvent déterminer qu'il ne reste pas de cartes à _Chop Move_. (Signifiant que toutes les cartes sont comptées, ou que toutes les cartes restantes pourraient recevoir un _Play Clue_ direct ou un _[Save Clue](beginner/save-clues.mdx)_ direct.)
+
+#### 2) Un _Trash Push_ (ou un _Trash Push Finesse_)
+
+- Parfois, les joueurs effectuent un _[Trash Push](level-14.mdx#le-trash-push)_ (ou un _Trash Push Finesse_) en cluant un trash connu dans la main d'un autre joueur (sur le chop).
+- Cependant, les joueurs peuvent savoir qu'un _Trash Push_ est impossible si :
+  - Ils ne sont pas le destinataire du clue et peuvent voir que la carte « pushed » est mauvaise.
+  - Ils sont le destinataire du clue et peuvent déterminer qu'il ne reste plus de cartes à _Trash Push_.
+
+#### Sinon, un Trash Double Ignition
+
+- Si le clue de trash connu ne peut pas être l'une de ces deux choses, alors il communique un _Trash Double Ignition_.
+- Les joueurs devraient toujours supposer un _Trash Double Ignition_ avant un _Bad Trash Chop Move Ejection_, puisque ce dernier est très rare. (_Bad Trash Chop Move Ejection_ est un mouvement avancé qui est couvert plus tard.)
+- Voyez aussi la section sur [Trash Ejection](extras/ejections.mdx#the-trash-ejection).
+
+### Le Poke Double Ignition (PDI)
+
+- Quand un joueur re-clue une carte trash globalement connue, c'est un clue « inutile ».
+- Habituellement, quand cela se produit, c'est parce qu'un joueur est dans une [situation stalling](level-9.mdx#allowable-stall-clues-stall-table) et ne peut pas défausser.
+- Si un joueur n'est pas dans une situation stalling, alors il doit essayer d'envoyer un message plus profond – une _Double Ignition_. C'est appelé un _Poke Double Ignition_ parce qu'en re-touchant une carte trash, c'est comme si vous poussiez le joueur.
+- Le _Poke Double Ignition_ ne doit pas introduire de nouvelles cartes dans le cadre du clue.
+- Le _Poke Double Ignition_ peut être effectué tout au long de la partie. (Inversement, le _Trash Double Ignition_ ne peut être effectué que vers la fin de la partie.)
+- Voyez aussi la section sur [Poke Ejection](extras/ejections.mdx#the-poke-ejection).
+
+### Le Chop Move Ignition (CMI) (avec 1 carte Chop Moved)
+
+- Si une carte playable est sur le chop, la chose naturelle à faire est de lui donner un _Chop-Focus Play Clue_. Si un joueur _[Chop Move](level-4.mdx#chop-moves)_ la carte playable à la place, c'est très étrange. S'il n'y a pas de bonne raison de le faire, alors le clueur essaie de communiquer quelque chose en plus.
+- Dans cette situation, il a l'intention d'une _Ignition_ sur le joueur suivant. Puisqu'un _Chop Move_ cause un blind-play, le joueur _Chop Moved_ saura que la carte _Chop Moved_ est playable.
+- Par exemple, dans une partie à 4 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - La main de Cathy est, du plus récent au plus ancien : `blue 4, blue 4, blue 5, red 1`
+  - Alice clue nombre 5 à Cathy, touchant un blue 5 au slot 3.
+  - C'est maintenant le tour de Bob. Bob voit que puisqu'il y avait d'autres _Play Clues_ pour Alice à donner, Cathy interprétera cela comme un _[Early 5's Chop Move](level-19.mdx#le-early-5s-chop-move)_.
+  - Bob sait aussi qu'il est absurde de _Chop Move_ un red 1 playable – Alice aurait juste pu donner un _Chop-Focus Play Clue_ rouge au red 1.
+  - Ainsi, ce doit être un _Chop Move Ignition_. Bob blind-play sa carte de _Finesse Position_. C'est blue 1 et il joue avec succès.
+  - Au début, Cathy pensait que le clue d'Alice était un _Early 5's Chop Move_. Cependant, si c'était le cas, alors Bob n'aurait rien blind-played. Puisqu'il a blind-played sa carte de _Finesse Position_, ce doit être un _Chop Move Ignition_. Cathy blind-play sa carte du slot 4 (la carte à droite du 5 clué).
+
+<ChopMoveIgnitionOneCard />
+
+- Parfois, ça peut être utile de _Chop Move_ une carte playable. Quelque chose n'est un _Chop Move Ignition_ que s'il n'y a pas une autre bonne raison pour le _Chop Move_. Spécifiquement, le joueur pourrait vouloir :
+  - Éviter de violer le _[Good Touch Principle](beginner/good-touch-principle.mdx)_.
+  - Sauvegarder une carte _Delayed Playable_ qui est suivie d'une carte critique.
+  - Obtenir un blind-play depuis _[Elimination](level-18.mdx#elimination--elimination-notes)_ quand la duplicata est visible.
+- En général, les clues liés au _Chop Move_ sont désactivés dès qu'il ne reste plus de cartes à _Chop Move_. Spécifiquement, cela signifie des cartes _one-away-from-playable_ qui ne peuvent pas recevoir un _Play Clue_ direct ou un _Save Clue_. Ainsi, s'il ne reste pas de cartes à _Chop Move_, un _Chop Move Ignition_ se transformerait en autre chose, comme un _Play Clue_ ou une _Double Ignition_ d'une certaine sorte.
+
+#### Interaction Entre le Chop Move Ignition et les Clues de Rang 5
+
+- Normalement, un clue de rang nombre 5 à un 5 qui est à un slot du chop serait soit :
+  - un _5 Stall_
+  - un _[5's Chop Move](level-4.mdx#le-5s-chop-move-5cm)_
+  - un _Play Clue_ sur le 5
+- Si un _5 Stall_ est impossible (i.e. ce n'est pas une situation stalling), alors un _5's Chop Move_ sur une carte playable serait normalement traité comme un _Play Clue_ sur le 5.
+- Cependant, pour les joueurs de level 21, les _Play Clues_ comme cela sont **désactivés**. En d'autres termes, chaque clue de nombre 5 qui focalise un 5 qui est exactement à un slot du chop serait toujours un _5's Chop Move_. C'est appelé le _Chop Move Ignition Interaction_.
+- Le _Chop Move Ignition Interaction_ peut être délicat pour les joueurs, puisque les _Chop Move Ignitions_ peuvent ressembler à des _Finesses_ normaux. Les joueurs doivent se rappeler que le blind-play se rapporte à la carte étant _Chop Moved_, pas au 5 directement.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le _Mid-Game_.
+  - Red 3 est joué sur les stacks.
+  - La main de Cathy est, du plus récent au plus ancien : `blue 4, green 3, blue 4, blue 5, blue 1`
+  - Alice clue nombre 5 à Cathy, touchant le blue 5 au slot 4.
+  - Bob s'attendait à ce qu'Alice clue nombre 1 à Cathy. Ainsi, ce doit être un _Chop Move Ignition_. Bob blind-play sa carte de _Finesse Position_. C'est red 4 et il joue avec succès.
+  - De la perspective de Cathy, elle a d'abord pensé que le clue d'Alice était un _5's Chop Move_. Cependant, si c'était le cas, Bob n'aurait rien blind-played.
+  - De plus, Cathy sait que les _Play Clues_ sur les 5 à un slot du chop utilisant des clues de rang sont désactivés. Ainsi, le blind-play de Bob doit indiquer un _Chop Move Ignition_.
+  - Ainsi, le 5 de Cathy peut être de n'importe quelle couleur (y compris rouge). Cathy blind-play sa carte du slot 5.
+
+<ChopMoveIgnitionInteraction />
+
+- Importamment, cette interaction est **désactivée** dans l'_End-Game_.
+- Notez que parfois, les joueurs utiliseront un clue de rang 5 pour toucher un 5 réellement playable qui est exactement à un slot du chop. Peu importe si le 5 est playable ou non, le joueur suivant doit réagir comme s'il n'était pas playable. (C'est parce qu'il est convenu que toutes les interprétations _Play Clue_ sont désactivées.)
+
+### Le Chop Move Ignition (CMI) (avec 2+ cartes Chop Moved)
+
+- D'abord, voyez la section précédente sur le [_Chop Move Ignition_ avec une carte _Chop Moved_](#le-chop-move-ignition-cmi-avec-1-carte-chop-moved).
+- Il est aussi possible d'effectuer un _Chop Move Ignition_ qui _Chop Move_ deux cartes ou plus, mais c'est plus compliqué.
+- Ce type de _Chop Move Ignition_ n'est valide que si les deux conditions suivantes sont vraies :
+  1. La carte _Chop Moved_ la plus à gauche est playable.
+  2. La carte _Chop Moved_ la plus à droite est trash ou est une copie d'une carte non-cluée dans la même main.
+- Par exemple, dans une partie à 4 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - La main de Cathy est, du plus récent au plus ancien : `blue 4, blue 1, red 2, blue 4`
+  - Alice clue nombre 1 à Cathy, touchant un blue 1 au slot 2.
+  - C'est maintenant le tour de Bob. Bob voit que Cathy interprétera cela comme un _Trash Chop Move_ sur slot 3 et slot 4.
+  - Bob sait aussi qu'il est absurde de _Chop Move_ un red 2 playable – Alice aurait juste pu donner un _Play Clue_ rouge direct au red 2.
+  - Ainsi, ce doit être un _Chop Move Ignition_. Bob blind-play sa carte de _Finesse Position_. C'est blue 2 et il joue avec succès.
+  - Au début, Cathy pensait que le clue d'Alice était un _Trash Chop Move_. Cependant, si c'était le cas, alors Bob n'aurait rien blind-played. Puisqu'il a blind-played sa carte de _Finesse Position_, ce doit être un _Chop Move Ignition_. Cathy blind-play sa carte du slot 3 (la carte à droite du 1 clué). C'est un red 2 et il joue avec succès.
+  - En même temps que Cathy a marqué sa carte du slot 3 comme playable, elle a aussi marqué sa carte du slot 4 comme trash connu.
+  - Plus tard, Cathy défausse sa carte du slot 4, et découvre que c'est un blue 4. Puisque blue 4 n'était pas trash au moment où le _Chop Move Ignition_ a été donné, Cathy marque des _Elimination Notes_ dans sa main pour l'autre copie du blue 4. (Le reste de l'équipe marque aussi des _Elimination Notes_ de la même manière.)
+
+<ChopMoveIgnitionTwoCards />
+
+- Si trois cartes ou plus sont _Chop Moved_, rien n'est promis sur les cartes du milieu. (Les cartes du milieu, le cas échéant, ne sont pas _Chop Moved_, et peuvent avoir n'importe quelle identité.)
+
+### Bomb Double Ignition
+
+- Normalement, quand un joueur a une carte trash globalement connue dans sa main, il peut la défausser en toute sécurité.
+- Dans de rares cas, un joueur pourrait décider de misplay intentionnellement la carte trash comme moyen de communiquer un numéro de slot particulier comme _[Positional Misplay](level-8.mdx#le-positional-misplay-indiquer-un-jeu-avec-un-misplay)_. Ce type de chose se produit presque toujours soit au dernier tour de la partie, soit à l'avant-dernier tour de la partie.
+- Cependant, que se passe-t-il si un joueur misplay intentionnellement une carte trash avant ce moment-là ? Gaspiller un strike sans raison est « inutile » de la même manière que les types de clues qui causent une _Double Ignition_ le sont. Ainsi, nous nous accordons à dire que bombarder une carte de cette manière devrait déclencher deux blind-plays comme un _Bomb Double Ignition_.
+
+### Bomb Triple Ignition
+
+- Utiliser un clue au lieu d'utiliser un strike est presque toujours préférable. Ainsi, les joueurs devraient préférer utiliser les formes plus ordinaires de _Double Ignition_ (comme e.g. _Replay Double Ignition_) avant de recourir à un _Bomb Double Ignition_.
+- Si l'équipe peut voir qu'un joueur qui a initié un _Bomb Double Ignition_ aurait pu évidemment utiliser une forme de _Double Ignition_ basée sur un clue, alors cela signale un message supplémentaire : un _Triple Ignition_.

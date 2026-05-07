@@ -1,0 +1,43 @@
+---
+title: Une défausse inattendue
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-3-an-unexpected-discard/question.yml";
+import Answer from "../../docs/challenge-questions/level-3-an-unexpected-discard/answer.yml";
+
+<ChallengeQuestionProgress level={3} id="level-3-an-unexpected-discard" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Le red 2 et le blue 2 sont joués sur les stacks.
+- Alice a un blue 3 globalement connu dans sa main.
+- Bob et Cathy ont chacun deux 3 clued dans leurs mains.
+- À son tour, Alice défausse le blue 3.
+- Pourquoi Alice a-t-elle défaussé la carte au lieu de la jouer ?
+- Quelles notes Bob, Cathy et Donald devraient-ils écrire ? Sois précis.
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice a réalisé que son blue 3 a été dupliqué. Il est de sa responsabilité de _Sarcastic Discard_ la carte.
+- Cela signifie que quelqu'un d'autre a cette carte cluée dans sa main.
+- Il n'y a qu'une seule autre copie du blue 3. Tous les joueurs sauront donc exactement quel joueur a la carte.
+- Cathy ne voit le blue 3 nulle part, donc elle écrit `b3?` sur ses deux cartes. (Il n'est pas promis qu'il soit dans un slot particulier.)
+- Bob et Donald peuvent voir le blue 3 dans la main de Cathy. Ils devraient aussi écrire `b3?` sur les 3 de Cathy.
+
+<Answer />
+
+</TabItem>
+</Tabs>

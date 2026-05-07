@@ -1,0 +1,48 @@
+---
+title: Une situation délicate, I
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-5-a-tricky-spot-i/question.yml";
+import Answer from "../../docs/challenge-questions/level-5-a-tricky-spot-i/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-a-tricky-spot-i" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Le purple 1 est joué sur les stacks.
+- Alice peut voir que :
+  - Bob a un red 1 sur sa _Finesse Position_,
+  - La main de Cathy est, de la plus récente à la plus ancienne : `red 2, yellow 4, green 1, blue 3`
+  - Le green 1 de Cathy a été clued plus tôt avec une clue green et est globalement connu comme green 1.
+  - La main de Donald est, de la plus récente à la plus ancienne : `red 2, purple 4, green 4, blue 5`
+- Quelles clues sont disponibles pour Alice ?
+- Quelle est la meilleure clue à donner ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice a les clues suivantes disponibles :
+  - Elle peut faire un _5 Save_ sur le blue 5. C'est sûr, mais ne récupère aucune carte à jouer.
+  - Elle peut donner un _Play Clue_ sur le red 1 de Bob (avec red ou 1). Ce serait un 1-pour-1.
+  - Elle peut donner un _Play Clue_ sur le red 2 de Cathy (avec red ou 1). Cela provoquerait une _Finesse_ et serait un 2-pour-1.
+  - Elle peut donner un _Play Clue_ sur le red 2 de Donald (avec red ou 1). Cela provoquerait une _Finesse_ et serait un 2-pour-1.
+- Cependant, puisque les deux red 2 sont sur la _Finesse Position_, si Alice initie une _Finesse_ avec une clue red, Cathy et Donald marqueraient tous deux leur carte red comme étant possiblement le red 3, menant à une [_Ambiguous Finesse_](../level-5.mdx#the-ambiguous-finesse).
+- Ainsi, la bonne façon d'initier la _Finesse_ est avec une clue numéro 2, qui ne cause aucune ambiguïté.
+- Vaut-il mieux utiliser le red 2 de Cathy ou celui de Donald ? Puisque Cathy a déjà un green 1 à jouer et que Donald a une carte importante sur le chop, la meilleure clue pour Alice est de cluer numéro 2 à Donald pour déclencher une _Finesse_.
+
+<Answer />
+
+</TabItem>
+</Tabs>

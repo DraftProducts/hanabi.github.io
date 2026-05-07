@@ -1,0 +1,47 @@
+---
+title: Deux Finesses d'affilée
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-5-two-finesses-in-a-row/question.yml";
+import Answer from "../../docs/challenge-questions/level-5-two-finesses-in-a-row/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-two-finesses-in-a-row" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est le premier tour de la partie.
+- Alice clue blue à Donald, touchant un blue 3 en slot 2.
+- C'est une _Double Finesse_ sur Bob, donc Bob fait un blind-play de son slot 1 comme blue 1.
+- Ensuite, Cathy clue red à Donald, touchant un red 2 en slot 3.
+- Alice n'a aucune carte red dans sa main.
+- Quelles notes Bob doit-il écrire à partir de cette clue ?
+- Que doit faire Bob à son prochain tour ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Puisque Bob ne peut pas voir le red 1 manquant, il doit l'avoir.
+- Il est donc _Finessed_ à nouveau en tant que [_Queued Finesse_](../level-5.mdx#the-queued-finesse).
+- Il ne sait pas si la _Finesse_ blue originale était une [_Layered Finesse_](../level-5.mdx#the-layered-finesse) ou non.
+- Ainsi, il doit marquer sa carte du slot 2 comme étant le red 1 ou le blue 2.
+  - Si son slot 2 est un red 1, alors la clue d'Alice était une _Layered Finesse_, et la clue de Cathy était un _Play Clue_ "normal", ce qui signifie que Bob a un blue 2 en slot 3.
+  - Si son slot 2 est un blue 2, alors la clue d'Alice était une _Double Finesse_ régulière, et la clue de Cathy était une _Queued Finesse_, ce qui signifie que Bob a un red 1 en slot 1.
+- Dans tous les cas, Bob doit faire un blind-play de son slot 2 d'abord, et après avoir vu ce que c'est, mettre à jour ses notes en conséquence.
+- Notez qu'il est aussi possible que le slot 2 de Bob soit une carte jouable sans rapport, comme un yellow 1. Ce serait peu probable, mais si c'était le cas, cela signifierait qu'il a une autre carte jouable en slot 3. Cependant, par défaut, Bob sait qu'il n'a pas à considérer ce genre de chose. (Si cela arrive, il mettrait à jour ses notes rétroactivement.)
+
+<Answer />
+
+</TabItem>
+</Tabs>

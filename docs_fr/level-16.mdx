@@ -1,0 +1,138 @@
+---
+title: Level 16 - Ejections & Discharges
+---
+
+import FiveColorEjection from "../docs/level-16/five-color-ejection.yml";
+import IllegalTrashBluff from "../docs/level-16/illegal-trash-bluff.yml";
+import UnknownTrashDischarge from "../docs/level-16/unknown-trash-discharge.yml";
+import UnknownTrashDischargeTwoForOne from "../docs/level-16/unknown-trash-discharge-two-for-one.yml";
+import UnknownTrashDischargeTwoForOne2 from "../docs/level-16/unknown-trash-discharge-two-for-one-2.yml";
+import UnknownDupeDischarge from "../docs/level-16/unknown-dupe-discharge.yml";
+
+## Conventions
+
+### Ejections
+
+- _Ejection_ se réfère à un mouvement comme un _[Bluff](level-11.mdx#le-bluff)_, mais au lieu de jouer une carte sans rapport depuis _Finesse Position_, quelqu'un joue une carte sans rapport depuis sa _Second Finesse Position_. Par exemple, si la main d'un joueur est complètement non-cluée, sa _Second Finesse Position_ est slot 2.
+- Tout comme un _Bluff_, un _Ejection_ ne peut être effectué que sur le tout prochain joueur.
+- Plusieurs types différents de mouvements peuvent causer un _Ejection_. Le plus commun est le _5 Color Ejection_.
+
+### Discharges
+
+- _Discharge_ est similaire à _Ejection_, sauf qu'au lieu de blind-play la carte de _Second Finesse Position_, le joueur joue la carte de _Third Finesse Position_.
+- Tout comme un _Bluff_, un _Discharge_ ne peut être effectué que sur le tout prochain joueur.
+- Plusieurs types différents de mouvements peuvent causer un _Discharge_. Le plus commun est le _Unknown Trash Discharge_.
+
+## Mouvements Spéciaux
+
+### Le 5 Color Ejection (5CE)
+
+- Normalement, si un joueur donne un _[Play Clue](beginner/play-clues.mdx)_ de couleur à un 5 précédemment non-touché, cela signifierait que c'est un _[Finesse](beginner/finesse.mdx)_ sur le 5 et que toutes les cartes menant au 5 sont playable.
+- Si le tout prochain joueur voit qu'il n'aura qu'à **blind-play une carte** dans sa main pour remplir le _Finesse_, alors il devrait supposer que c'est un _Finesse_ et blind-play sa _Finesse Position_.
+- Si le tout prochain joueur voit qu'il devrait **blind-play deux cartes ou plus** dans sa main pour remplir le _Finesse_, alors un _Finesse_ est improbable. Au lieu de ça, les joueurs s'accordent à dire que cela signale un _Ejection_ et que le joueur suivant devrait jouer sa _Second Finesse Position_.
+  - Les _[Prompts](beginner/prompt.mdx)_ ne comptent pas dans la règle « deux blind-plays ou plus ». Les joueurs ne comptent que le nombre de blind-plays.
+- Après le blind-play, le joueur qui a reçu le clue saura qu'il doit avoir un 5.
+- Notez que _5 Color Ejection_ ne s'applique que si le 5 n'avait pas de clues dessus déjà. Si un 5 est re-clué, cela signale un _Finesse_ sur toutes les cartes menant au 5.
+  - Cependant, le clue « invisible » d'un _[Chop Move](level-4.mdx#chop-moves)_ ne compte pas. En d'autres termes, vous **pouvez** effectuer un _5 Color Ejection_ avec un 5 _Chop Moved_, tant que la carte n'a pas de clues positifs dessus.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 5 au slot 3.
+  - Bob sait que normalement, ce serait un _Finesse_ sur le 5, indiquant à Bob qu'il a le red 1, le red 2, le red 3, et le red 4. Cependant, puisque cela appelle plus d'une carte blind, il sait que _5 Color Ejection_ devrait avoir la précédence, donc il sait jouer sa carte de _Second Finesse Position_. C'est un red 1 et il joue avec succès.
+  - De la perspective de Cathy, si Bob avait joué sa carte de _Finesse Position_ en réponse au clue rouge, alors Cathy saurait que c'était un _Finesse_ ou un _Bluff_. Mais puisque Bob a blind-played sa carte de _Second Finesse Position_, ce doit être un _5 Color Ejection_. Cathy marque la carte rouge comme red 5.
+
+<FiveColorEjection />
+
+- Dans l'exemple précédent, un _5 Color Ejection_ a été effectué avec le 5 étant la seule nouvelle carte introduite avec le clue de couleur. Cependant, il est aussi possible d'effectuer un _5 Color Ejection_ avec plus d'une carte introduite.
+  - Pour les joueurs jouant au level 20, ce type de chose signalerait normalement un _[Out-of-Order Finesse](level-20.mdx#le-out-of-order-finesse)_, mais l'interprétation _5 Color Ejection_ a la précédence tant que le joueur suivant devrait blind-play deux cartes ou plus.
+
+### Le Unknown Trash Discharge (1-for-1 Form) (UTD)
+
+- En général, les _Bluffs_ fonctionnent parce que le blind-play dit à la personne qui a été cluée qu'elle a une carte _one-away-from-playable_.
+- En général, les _[Trash Bluffs](level-14.mdx#le-trash-bluff)_ fonctionnent parce que le blind-play dit à la personne qui a été cluée qu'elle a une carte trash.
+- Les joueurs doivent être prudents pour ne pas donner un _Trash Bluff_ qui ressemble à un _Bluff_ – cela désynchronisera l'équipe.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 1 comme _Play Clue_.
+  - Bob blind-play sa _Finesse Position_ et il joue avec succès comme blue 2.
+  - Cathy sait qu'un _Bluff_ s'est produit et marque sa carte rouge comme red 3 (la carte rouge _one-away-from-playable_).
+  - Bien sûr, ce n'est pas vrai, parce que la carte rouge de Cathy est en réalité un red 1. L'équipe obtiendra probablement un misplay à un certain moment dans le futur.
+
+<IllegalTrashBluff />
+
+- Si l'exemple ci-dessus se produit et qu'Alice ne fait pas une erreur, alors Alice doit essayer de communiquer quelque chose en plus. Cela devrait signaler un _Discharge_ sur le tout prochain joueur.
+- Puisque la carte de _Third Finesse Position_ a été jouée au lieu de la carte de _Finesse Position_, alors le joueur qui a reçu le clue saura que la carte est trash.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 1 comme _Play Clue_.
+  - Bob sait que s'il jouait sa _First Finesse Position_, alors Cathy écrirait une note de red 3 sur la carte (comme _Bluff_), ce qui serait un _Lie_.
+  - Bob sait que s'il jouait sa _Second Finesse Position_, alors Cathy écrirait une note de red 5 sur la carte (comme _5 Color Ejection_), ce qui serait un _Lie_.
+  - Bob blind-play sa _Third Finesse Position_. C'est un blue 2 et il joue avec succès.
+  - Cathy sait qu'un _Discharge_ s'est produit du clue rouge d'Alice. Ce doit être un _Unknown Trash Discharge_, donc le focus du clue doit être trash.
+  - Cathy marque sa carte rouge comme un red 1 (puisque c'est la seule carte rouge trash possible) et la défausse.
+
+<UnknownTrashDischarge />
+
+- En résumé :
+  - Pour un _Trash Bluff_ :
+    - L'empathy sur la carte cluée **ne contient que** des possibilités qui sont _Playable_, _Delayed Playable_, ou trash.
+    - Ainsi, un blind-play normal est suffisant pour prouver que c'est trash.
+  - Pour un _Unknown Trash Discharge_ :
+    - L'empathy sur la carte cluée contient une ou plusieurs possibilités qui sont utiles et actuellement unplayable.
+    - Ainsi, quelque chose de plus est nécessaire pour prouver que c'est trash.
+  - Autre que cela, n'utilisez pas de facteurs plus compliqués pour préférer un _Trash Bluff_ à un _Unknown Trash Discharge_ (comme Bob devant attendre une autre carte).
+
+### Le Unknown Trash Discharge (2-for-1 Form) (UTD)
+
+- Quand plusieurs cartes sont cluées avec un _Unknown Trash Discharge_, **seul le focus du clue est considéré comme trash**. Cela signifie que le _[Good Touch Principle](beginner/good-touch-principle.mdx)_ s'applique aux cartes non-focalisées.
+- Notez que c'est **l'opposé du _Trash Bluff_**. (Dans un _Trash Bluff_, quand plusieurs cartes sont cluées, toutes les cartes touchées sont considérées comme trash.)
+- Cela signifie que bien que la plupart des _Unknown Trash Discharges_ soient des clues 1-for-1, vous pouvez aussi effectuer un _Unknown Trash Discharge_ comme un 2-for-1, un 3-for-1, et ainsi de suite.
+- Par exemple, dans une partie à 3 joueurs :
+  - (C'est presque exactement le même que l'exemple précédent.)
+  - Tous les 1 sont joués sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 1 au slot 2 et un red 5 au slot 3. Le red 1 est focalisé. Cela ressemble à un _Play Clue_ sur le red 1.
+  - Bob sait que ce doit être un _Unknown Trash Discharge_, donc il blind-play sa _Third Finesse Position_. C'est un blue 2 et il joue avec succès.
+  - Cathy sait qu'un _Discharge_ s'est produit du clue rouge d'Alice. Ce doit être un _Unknown Trash Discharge_, donc le focus du clue doit être trash.
+  - Cathy marque sa carte du slot 2 comme un red 1 (puisque c'est la seule carte rouge trash possible) et la défausse.
+  - Cathy sait aussi que les cartes non-focalisées touchées dans un _Unknown Trash Discharge_ sont censées être utiles. Ainsi, Cathy marque sa carte du slot 3 comme un red 2, un red 3, un red 4, ou un red 5.
+
+<UnknownTrashDischargeTwoForOne />
+
+- Rarement, il est aussi possible d'effectuer un _Discharge_ en utilisant un clue qui ressemblerait normalement à un _Trash Bluff_, en cluant d'autres cartes non-trash.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sauf le red 1 sont joués sur les stacks.
+  - Alice clue nombre 1 à Cathy, touchant un green 1 au slot 1 et un red 1 au slot 2. Le focus est sur le green 1 comme _Play Clue_.
+  - De la perspective de Bob, cela ressemble à ce que ça pourrait être un _[Trash Finesse](level-14.mdx#le-trash-finesse)_. En d'autres termes, si Bob blind-playait sa _Finesse Position_, alors Cathy écrirait la note correcte sur le green 1. Cependant, un _Trash Finesse_ promet que toutes les cartes touchées sont trash. Dans ce cas, le red 1 n'est pas une carte trash, donc jouer le slot 1 mentirait à Cathy sur l'identité du red 1.
+  - Ainsi, Bob interprète le clue comme un _Unknown Trash Discharge_ et blind-play sa _Third Finesse Position_. C'est un blue 2 et il joue avec succès.
+
+<UnknownTrashDischargeTwoForOne2 />
+
+### Le Unknown Dupe Discharge (UDD)
+
+- D'abord, voyez la section sur _[Unknown Trash Discharge](#le-unknown-trash-discharge-1-for-1-form-utd)_.
+- Typiquement, les joueurs suivent étroitement le _Good Touch Principle_, puisque dupliquer des cartes est déroutant et gaspille de l'efficacité sur les _Fix Clues_ de suivi.
+- Cependant, il y a encore plein de situations où les joueurs dupliqueront intentionnellement une carte :
+  1. Quand c'est le premier tour de la partie (et qu'il n'y a rien d'autre à faire).
+  1. Quand l'équipe est à 8 clues (et qu'il n'y a rien d'autre à faire).
+  1. Quand un joueur est dans une _Double Discard Situation_ (et qu'il n'y a rien d'autre à faire).
+  1. Quand l'équipe perd et approche du _End-Game_ (et que le _Tempo_ sur les cartes playable est vraiment important).
+- Si un joueur utilise un clue pour dupliquer une carte, et que ces critères ne s'appliquent pas, alors il doit essayer d'envoyer un message supplémentaire.
+- Dans ce cas, il a l'intention d'un _Discharge_ pour communiquer la « mauvaise nature » de la carte focalisée. C'est appelé un _Unknown Dupe Discharge_ (et fonctionne d'une manière très similaire à l'_Unknown Trash Discharge_).
+- Après un _Unknown Dupe Discharge_, le focus du clue peut être n'importe quelle carte dupliquée inconnue. Le joueur ne saura quelle carte dupliquée spécifique c'est qu'après l'avoir défaussée.
+- Par exemple, dans une partie à 3 joueurs :
+  - Rien n'est joué sur les stacks.
+  - La main de Cathy est, du plus récent au plus ancien : `red 2, red 2, red 4, blue 4, green 1`
+  - Alice clue rouge à Cathy comme _Play Clue_, touchant le red 2 au slot 1, le red 2 au slot 2, et le red 4 au slot 3.
+  - Bob sait qu'Alice viole le _Good Touch Principle_ et duplique le red 2. Il ne semble pas y avoir une très bonne raison pour cela, donc ce doit être un _Unknown Dupe Discharge_.
+  - Bob blind-play sa _Third Finesse Position_. C'est un blue 1 et il joue avec succès sur les stacks.
+  - Normalement, Cathy penserait que c'était un _Unknown Trash Discharge_. Cependant, aucune carte rouge trash n'existe. Ainsi, ce doit avoir été un _Unknown Dupe Discharge_.
+  - Cathy défausse sa carte du slot 1 (le focus du clue). Il est révélé être un red 2. Maintenant, Cathy sait qu'elle a l'autre copie du red 2 dans soit son slot 2 soit son slot 3.
+
+<UnknownDupeDischarge />
+
+- Les _Unknown Dupe Discharges_ peuvent être initiés avec soit des clues de couleur soit des clues de nombre.
+- Les _Unknown Dupe Discharges_ ne s'appliquent que si **les deux cartes dupliquées sont dans la main de la même personne**.
+  - Il est explicitement illégal d'effectuer un _Unknown Dupe Discharge_ qui duplique une carte dans la main de quelqu'un d'autre. Si cela se produit, le clue doit avoir une autre signification.
+- Rappelez-vous qu'après un _Unknown Dupe Discharge_, le joueur qui a reçu le clue est censé _défausser le focus du clue_, même avant un autre trash connu à sa gauche.
+  - Cependant, dans le cas où seules deux nouvelles cartes sont touchées, alors le joueur qui a reçu le clue pourrait savoir que ces deux cartes doivent être les mêmes. Dans ce cas spécial, il peut défausser la carte non-focalisée pour causer un _Trash Order Chop Move_.
+  - Notez que si le _Unknown Dupe Discharge_ a été initié par un clue chop-focus, cela signifie que l'ordre de défausse attendu est donc différent de l'ordre habituel « gauche à droite », puisque dans ce cas, le focus du clue sera le plus à droite.
+  - Les joueurs sont aussi censés défausser focus-d'abord même dans le cas où il est globalement connu que les cartes cluées sont des cartes dupliquées. C'est parce qu'en général, ce peut être difficile de dire si le destinataire du clue sait qu'un _Unknown Dupe Discharge_ s'est produit, parce que ça aurait pu être un _Unknown Trash Discharge_, dans lequel cas seul le focus est défaussable. Défausser focus-d'abord dans tous les cas évite la désynchronisation sur si le destinataire du clue sait qu'il tient des dupes ou simplement du trash.

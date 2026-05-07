@@ -1,0 +1,47 @@
+---
+title: Brown
+---
+
+import BrownPositional from "../../docs/variant-specific/brown/brown-positional.yml";
+
+Ces conventions s'appliquent à toute variante avec une suite brown (non touchée par les rangs).
+
+### Brown Saves
+
+- Tout clue brown sur une carte chop est avant tout traité comme un _Save Clue_.
+- Par exemple, en début de partie, un clue brown sur une carte chop serait soit un _5 Save_ (sur un brown 5), soit un _2 Save_ (sur un brown 2).
+- Pour contourner cela (par exemple quand un brown 1 est sur le chop de quelqu'un), utilisez la _Brown Tempo Clue Inversion_ (couvert plus loin), les _Brown Loaded Play Clues_ (couvert plus loin) et les _Occupied Play Clues_.
+
+### Brown Tempo Clues are Valuable
+
+- Si un joueur donne un _Tempo Clue_ à une seule carte brown, il ne s'agit jamais d'un _Tempo Clue Chop Move_.
+- C'est parce qu'il est plutôt précieux de sortir les cartes brown de la main aussi tôt que possible au cas où des cartes bloquantes seraient piochées.
+
+### Brown Tempo Clue Inversion
+
+- Normalement, si un _Tempo Clue_ retouche deux cartes ou plus, seule la carte la plus à gauche doit jouer.
+- Quand un clue de couleur brown retouche deux cartes ou plus, seule la carte la plus à droite doit jouer.
+- Cette convention de "focus à droite" s'applique aussi quand des cartes brown sont re-cluéées pour réaliser une _Finesse_.
+
+### The Double Clue Inversion (Immediate Double Clue)
+
+- Si un joueur reçoit deux clues brown avant que ce soit son tour, cela signifie qu'il peut jouer **toutes** les cartes touchées par le clue, mais dans l'ordre inverse de la normale.
+  - Plus précisément, si la carte chop faisait partie des cartes cluéées, cela signifie qu'il faut jouer toutes les cartes de la 2e plus ancienne à la plus récente, et ensuite le chop en dernier.
+
+### The Brown Loaded Play Clue
+
+- Les [_Loaded Play Clues_](../variant-specific.mdx#the-loaded-play-clue-in-hard-variants-lpc) sont toujours "activés" pour les cartes brown, selon l'[_Always Loaded Principle_](../variant-specific.mdx#the-always-loaded-principle-alp).
+
+### Brown Positional Clues
+
+- Dans certaines situations, un joueur peut avoir plusieurs cartes brown dans sa main, dont une jouable. Si la carte brown jouable n'est pas la plus ancienne, il peut être difficile de "récupérer" la carte pour qu'elle joue.
+- Dans les cas où un clue de nombre est donné qui n'a aucune autre interprétation conventionnelle, c'est une indication au joueur ayant deux cartes brown ou plus du slot à jouer.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 2 sont joués.
+  - Bob a quatre cartes brown cluéées avec un clue de couleur brown en slots 2, 3, 4 et 5.
+  - Alice clue Bob number 2, touchant un blue 2 sur son slot 1.
+  - Bob sait que puisque tous les 2 sont déjà joués, ce 2-là, quel qu'il soit, doit être un 2 trash.
+  - Bob sait aussi que cela ne peut pas être un _Trash Chop Move_, un _Trash Push_, ni aucun des autres coups trash.
+  - Bob interprète plutôt cela comme un _Positional Clue_, et joue sa carte brown en slot 2.
+
+<BrownPositional />

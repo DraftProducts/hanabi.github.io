@@ -1,0 +1,80 @@
+---
+title: Ejection Extensions
+---
+
+import OutOfPositionEjection from "../../docs/extras/ejection-extensions/out-of-position-ejection.yml";
+import StackedEjection from "../../docs/extras/ejection-extensions/stacked-ejection.yml";
+import DoubleEjection from "../../docs/extras/ejection-extensions/double-ejection.yml";
+
+Ce sont des règles supplémentaires qui peuvent s'appliquer aux _Ejections_, _Discharges_, et _Charms_.
+
+### Le Out-of-Position Ejection
+
+- Normalement, les joueurs ne sont autorisés à effectuer une _Ejection_ que sur le tout prochain joueur (similaire à un _Bluff_).
+- Cependant, si une _Ejection_ est effectuée, et que le tout prochain joueur n'a pas de _Second Finesse Position_, alors il ne peut pas démontrer à l'équipe qu'une _Ejection_ se produit.
+- Dans cette situation, l'_Ejection_ est sur le prochain joueur avec une _Second Finesse Position_. Le joueur passé sait que le prochain joueur va blind-play, donc il peut soit défausser, soit donner un clue non lié. Après cela, le prochain joueur devrait blind-play sa carte immédiatement pour démontrer ce qui se passe.
+- Par exemple, dans une partie à 4 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Bob a trois 5 dans sa main en slot 2, slot 3, et slot 4. (Ils ont été clués avec numéro 5 comme un _5 Save_ plus tôt dans la partie.)
+  - Alice clue rouge à Donald, touchant un red 5 sur son slot 1 comme _Play Clue_.
+  - Bob ne voit pas de cartes rouges connectantes dans la main de personne. Puisque le red 5 est three-away-from-playable, Bob sait que cela doit être un _5 Color Ejection_.
+  - Cependant, Bob n'a pas de _Second Finesse Position_. (Il n'a qu'une seule carte non cluée dans sa main.)
+  - Ainsi, Bob sait que c'est un _Out-of-Position 5 Color Ejection_ sur Cathy.
+  - Bob défausse.
+  - Cathy blind-play sa _Second Finesse Position_ et il joue avec succès comme red 2.
+  - Donald sait que puisque Cathy a blind-play sa carte _Second Finesse Position_, cela doit être un _5 Color Ejection_ et que sa carte rouge est le red 5.
+
+<OutOfPositionEjection />
+
+- Notez que vous n'êtes pas autorisé à effectuer des _Out-of-Position Ejections_ en reverse, sauf s'il est super-évident ce qui se passe.
+- Rappelez-vous que juste parce que les _OOP Ejections_ sont techniquement légales dans certaines situations, cela ne signifie **pas** que les joueurs devraient les utiliser. Tout comme n'importe quel autre coup compliqué, n'utilisez les _OOP Ejections_ que lorsqu'il est super-clair pour le reste de l'équipe ce qui se passe. Sinon, une ligne plus simple devrait être choisie.
+
+### Le Out-of-Position Discharge/Charm
+
+- Tout d'abord, voir la section sur _[Out-of-Position Ejection](#the-out-of-position-ejection)_.
+- Tout comme l'OOP _Ejection_, il est possible de faire un OOP _Discharge_ ou un OOP _Charm_ exactement de la même manière.
+
+### Le Stacked Ejection
+
+- Normalement, vous n'êtes pas autorisé à effectuer un _Bluff_ sur un joueur qui est déjà "loaded" avec un blind-play pour une _Finesse_. (C'est parce que le prochain joueur permettra la possibilité d'une _Layered Finesse_, et le _Bluff_ ne se résoudra pas immédiatement.)
+- Similairement, puisque les _Ejections_ suivent la plupart des mêmes règles que les _Bluffs_, vous n'êtes pas autorisé à effectuer une _Ejection_ sur un joueur qui est déjà "loaded" avec un blind-play pour une _Finesse_.
+- Donc, si un 5 a été clué avec couleur dans cette situation, le prochain joueur supposerait une _Queued Finesse_ au lieu d'un _5 Color Ejection_. Ainsi, ils joueraient ensuite la carte de la _Finesse_ originale (ou ne joueraient rien si la carte de la _Finesse_ originale n'est pas encore jouable).
+- Cependant, que se passe-t-il si le prochain joueur peut savoir qu'une _Queued Finesse_ est impossible parce qu'il n'a pas assez de cartes possibles pour accomplir la _Finesse_ ? Dans ce cas, ce serait un _Known Stacked 5 Color Ejection_.
+- Quand cela se produit, les joueurs devraient immédiatement jouer leur _First Finesse Position_ (slot 2) au lieu de leur _Second Finesse_ position (slot 3).
+- Par exemple, dans une partie à 4 joueurs :
+  - Rien n'est joué sur les stacks et c'est le premier tour de la partie.
+  - Alice clue rouge à Donald, touchant un red 2. C'est une _Finesse_ sur le red 1 de Cathy (dans son slot 1).
+  - Bob clue bleu à Donald, touchant un blue 5.
+  - Maintenant, c'est le tour de Cathy. Cathy sait qu'elle a un red 1 jouable, puisque personne d'autre dans l'équipe n'a de red 1.
+  - De plus, Cathy pourrait penser que le clue de Bob était une _Queued Finesse_ sur le blue 5. Cependant, c'est impossible, parce que Cathy voit que personne d'autre dans l'équipe n'a de cartes bleues. Ainsi, pour qu'une _Queued Finesse_ soit le cas, Cathy devrait avoir red 1, blue 1, blue 2, blue 3, et blue 4, et Cathy n'a que 4 cartes dans sa main (puisque c'est une partie à 4 joueurs).
+  - Puisqu'une _Queued Finesse_ est impossible, Cathy sait que cela doit être un _Stacked 5 Color Ejection_.
+  - Le clue d'Alice a _Finessé_ Cathy. Donc après le clue d'Alice, la _Finesse Position_ de Cathy s'est déplacée vers son slot 2 et sa _Second Finesse Position_ s'est déplacée vers son slot 3.
+  - Normalement, _Ejection_ appelle la _Second Finesse Position_, mais dans ce cas, Cathy sait que les _Stacked 5 Color Ejections_ appellent la _First Finesse Position_ au lieu de la _Second Finesse Position_.
+  - Cathy blind-play slot 2 (au lieu de slot 3), et c'est le green 1.
+
+<StackedEjection />
+
+- Il n'est légal d'effectuer un _Stacked Ejection_ sur un joueur que s'il est _Finessé_ pour exactement une carte. Sinon, le clue serait considéré comme indéfini.
+
+### Le Stacked Discharge/Charm
+
+- Tout d'abord, voir la section sur _[Stacked Ejection](#the-stacked-ejection)_.
+- Tout comme le _Stacked Ejection_, il est possible de faire un _Stacked Discharge_ ou un _Stacked Charm_ exactement de la même manière.
+
+### Le Double Ejection
+
+- Si un _Play Clue_ et une _Ejection_ sont tous deux possibles comme un 1-pour-1, les joueurs sont toujours censés donner un _Play Clue_ direct. (Nous voulons garder les choses simples et réduire le vecteur pour que les erreurs se produisent.)
+- Que se passe-t-il si un joueur enfreint cette règle et fait une _Ejection_ quand même ? Il doit essayer d'envoyer un message supplémentaire.
+- Après que Bob _Eject_ dans cette situation, Cathy est censée savoir qu'Alice avait vraiment l'intention d'un _Double Ejection_. Ici, Cathy devrait aussi jouer sa _Second Finesse Position_.
+- Par exemple, dans une partie à 4 joueurs :
+  - Le red 1 est joué sur les stacks.
+  - Donald a un red 2 globalement connu dans sa main. (Il a reçu un _Play Clue_ plus tôt avec un clue numéro 2.)
+  - Alice donne un clue rouge à Donald, remplissant le 2 comme un red 2.
+  - Bob voit que puisque le red 2 allait _déjà_ jouer sur les stacks, Alice doit essayer de communiquer quelque chose en plus. Normalement, Bob penserait que c'est un _Replay Double Ignition_. Cependant, ça ne peut pas être ça, parce que Cathy a un red 1 sur sa _Finesse Position_, qui est trash.
+  - Ainsi, Bob sait qu'Alice doit plutôt avoir l'intention d'un _Replay Ejection_. Bob blind-play sa _Second Finesse Position_. C'est un blue 1 et il joue avec succès.
+  - Tout comme Bob, Cathy est capable de voir que le clue d'Alice était un _Replay Ejection_. Cependant, Cathy remarque aussi que le blue 1 n'était pas bloqué, ce qui signifie qu'Alice aurait pu juste donner un clue bleu à Bob comme un _Play Clue_ direct. Faire un _Replay Ejection_ dans cette situation n'a aucun sens.
+  - Cathy sait que dans cette situation, Alice a l'intention d'un _Double Ejection_. Cathy blind-play sa _Second Finesse Position_. C'est un blue 2 et il joue avec succès.
+
+<DoubleEjection />
+
+- Les situations qui appellent les _Double Ejections_ sont très similaires aux situations qui appellent les _Double Ignitions_. Notez que si la _Finesse Position_ de Cathy est une carte jouable ou one-away-from-playable, le _Double Ejection_ d'Alice ne fonctionnerait pas : Bob blind-playerait sa _Finesse Position_ comme un _Double Ignition_. Cependant, puisque Cathy n'a pas de jouable, Bob pense en lui-même : "Même si ce clue est assez bizarre, Alice fait probablement juste une _Ejection_ comme un 1-pour-1 ici parce que j'ai une carte bloquante dans ma main." Après que Bob blind-play sa _Second Finesse Position_, Cathy voit que le coup était _Unnecessary_. Mais contrairement à un coup _Unnecessary_ normal (où Cathy serait censée blind-play sa carte _Finesse Position_), ici Cathy sait qu'il est plus logique de blind-play sa carte _Second Finesse Position_ (puisque sa carte _First Finesse Position_ doit être injouable).

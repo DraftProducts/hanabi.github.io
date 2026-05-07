@@ -1,0 +1,44 @@
+---
+title: Le cri silencieux
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-7-the-silent-scream/question.yml";
+import Answer from "../../docs/challenge-questions/level-7-the-silent-scream/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-the-silent-scream" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Il y a 2 clues disponibles.
+- Le yellow 1, le green 2 et le blue 2 sont joués sur les stacks.
+- Alice a un green 3 jouable et un yellow 1 known-trash. Les deux sont globalement connus.
+- Bob a un blue 4 sur le chop.
+- Alice défausse le yellow 1 known-trash au lieu de jouer le green 3.
+- Ce coup est-il légal ? Si oui, comment s'appelle-t-il ?
+- Comment Bob doit-il réagir ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice a défaussé un trash connu au lieu de jouer sa carte connue jouable.
+- C'est un coup légal, même si la carte _Chop Moved_ n'est pas critique ou jouable et/ou s'il y a des clues disponibles.
+- Ce coup s'appelle un [_Shout Discard Chop Move_](../level-7.mdx#the-shout-discard-chop-move).
+- Bob doit déplacer son chop de manière permanente d'une position, et écrire "cm" sur son slot 4 pour le marquer comme _Chop Moved_.
+- Bob n'est pas autorisé à défausser à ce tour. À la place, il **doit** donner une clue.
+
+<Answer />
+
+</TabItem>
+</Tabs>

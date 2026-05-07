@@ -1,0 +1,78 @@
+---
+title: Muddy Rainbow & Cocoa Rainbow
+---
+
+import MudClue from "../../docs/variant-specific/muddy-rainbow-cocoa-rainbow/mud-clue.yml";
+import MudClueSkipping from "../../docs/variant-specific/muddy-rainbow-cocoa-rainbow/mud-clue-skipping.yml";
+
+Ces conventions s'appliquent à toute variante avec une suite muddy rainbow (touchée par tous les clues de couleur et aucun clue de rang) ou une suite cocoa rainbow (touchée par tous les clues de couleur et aucun clue de rang, avec chaque carte unique).
+
+### Inherited Conventions
+
+- Par défaut, les cartes muddy rainbow héritent de toutes les [conventions rainbow](rainbow.mdx) et de toutes les [conventions brown](brown.mdx).
+  - Ceci dit, certaines des conventions plus bas sur cette page écrasent certaines conventions rainbow/brown, donc lisez la suite.
+- De même, par défaut, les cartes cocoa rainbow héritent de toutes les [conventions rainbow](rainbow.mdx), de toutes les [conventions brown](brown.mdx) et de toutes les [conventions black](black.mdx).
+
+### Tempo Clues
+
+- Comme pour les cartes brown, si un joueur donne un _Tempo Clue_ à une seule carte muddy rainbow ou cocoa rainbow, ce n'est jamais un _Tempo Clue Chop Move_.
+  - C'est parce qu'il est plutôt précieux de sortir les cartes muddy rainbow et cocoa rainbow de la main aussi tôt que possible au cas où des cartes bloquantes seraient piochées.
+- Si un joueur donne un _Tempo Clue_ qui touche plusieurs cartes muddy rainbow ou cocoa rainbow, alors c'est un [_Mud Clue_](muddy-rainbow-cocoa-rainbow.mdx#mud-clues).
+
+### Muddy Rainbow Saves
+
+- Comme un muddy rainbow 2 ne peut pas être _2 Saved_ et qu'un muddy rainbow 5 ne peut pas être _5 Saved_, il faut un autre moyen de sauver ces cartes.
+- Tout clue de couleur red (la couleur la plus à gauche) sur une carte chop est traité comme un potentiel _Muddy Rainbow Save_ sur un muddy rainbow 2 ou un muddy rainbow 5.
+- Les muddy rainbow 2, 3 et 4 critiques peuvent être sauvés avec n'importe quel clue de couleur.
+- Comme pour les sauvegardes brown, l'_Always Loaded Principle_ s'applique aux sauvegardes muddy rainbow.
+- Dans le cas particulier d'une variante où une couleur "un exemplaire de chaque" est disponible, cette couleur doit être utilisée à la place du red.
+
+### Cocoa Rainbow Saves
+
+- Les cartes cocoa rainbow sont toujours sauvées avec red, la couleur la plus à gauche.
+- Dans le cas particulier d'une variante où une couleur "un exemplaire de chaque" est disponible, cette couleur doit être utilisée à la place du red.
+
+### Mud Clues
+
+- Dans les variantes avec une suite pink, la convention _[Pink Choice Tempo Clue](pink.mdx#the-pink-choice-tempo-clue)_ est "activée", car les joueurs ont souvent un _Free Choice_ pour cluer les cartes pink. Muddy rainbow et cocoa rainbow ont une convention similaire appelée _Mud Clue_.
+- Quand une ou plusieurs cartes muddy rainbow ou cocoa rainbow sont retouchées avec un clue de couleur, et qu'aucune "nouvelle" carte n'est introduite (ou si les seules "nouvelles" cartes introduites sont du trash), alors une information supplémentaire peut être véhiculée par la couleur choisie. La couleur choisie doit correspondre au slot qu'ils doivent jouer.
+- Cela s'appelle un _Muddy Rainbow Choice Tempo Clue_, ou simplement _Mud Clue_ pour faire court.
+- La position de la carte muddy rainbow ou cocoa rainbow, comptée **du plus ancien au plus récent**, correspond à l'ordre des couleurs **de droite à gauche**, en sautant les cartes non touchées par le clue de couleur (et les cartes connues comme injouables). De plus, les couleurs "wraparound" toujours vers la carte la plus ancienne.
+- Par exemple, dans une partie à 3 joueurs de la variante "Muddy Rainbow (6 Suits)" :
+  - Tous les 2 sont joués sur les stacks.
+  - Bob a deux cartes muddy rainbow cluéées dans sa main en slot 3 et slot 4. Il ne connaît le rang d'aucune des deux.
+  - Alice clue red à Bob, ce qui retouche les deux cartes muddy rainbow et rien d'autre.
+  - Bob sait que ce doit être un _Tempo Clue_ sur les cartes muddy rainbow, il doit donc maintenant déterminer quel slot Alice veut qu'il joue. Pour commencer, Bob sait que les couleurs disponibles dans cette variante sont red, yellow, green, blue et purple.
+  - En partant de la dernière couleur, un clue purple signifierait jouer slot 4, un clue blue signifierait jouer slot 3, un clue green signifierait jouer slot 4 (wraparound), un clue yellow signifierait jouer slot 3, et un clue red signifierait jouer slot 4 (un autre wraparound).
+  - Bob joue sa carte en slot 4 comme un muddy rainbow 3. Elle joue avec succès sur les stacks.
+
+<MudClue />
+
+- Les _Muddy Rainbow Choice Tempo Clues_ ne sont autorisés que pour récupérer des cartes muddy ou cocoa rainbow.
+  - Une exception à cette règle peut être faite pour les variantes extrêmement difficiles. Si l'équipe a besoin de récupérer une carte non-muddy pour un objectif spécifique (par exemple "déverrouiller" un autre joueur), et qu'il n'existait pas d'autre bonne façon de "récupérer" la carte, alors cela doit être clair pour tout le monde.
+
+### Mud Clues (Skipping Over Unplayable Cards)
+
+- Si des cartes connues comme injouables sont touchées dans le cadre d'un _Mud Clue_, alors elles doivent être ignorées.
+- Par exemple, dans une partie à 3 joueurs de la variante "Muddy Rainbow (6 Suits)" :
+  - Tous les 2 sont joués sur les stacks.
+  - Bob a deux cartes muddy rainbow cluéées dans sa main en slot 2 et slot 4. Il ne connaît le rang d'aucune des deux. Il a aussi un red 5 en slot 3 avec un clue 5 dessus.
+  - Alice clue red à Bob, ce qui retouche les deux cartes muddy rainbow et le red 5.
+  - Bob sait que ce doit être un _Tempo Clue_ sur les cartes muddy rainbow, il doit donc maintenant déterminer quel slot Alice veut qu'il joue. Pour commencer, Bob sait que les couleurs disponibles dans cette variante sont red, yellow, green, blue et purple.
+  - En partant de la dernière couleur, un clue purple signifierait jouer slot 4.
+  - Un clue blue signifierait normalement jouer slot 3, mais le red 5 est une carte connue comme injouable, donc Bob saute par-dessus. Ainsi, un clue blue signifierait jouer slot 2.
+  - Un clue green signifierait jouer slot 4 (wraparound).
+  - Un clue yellow signifierait jouer slot 2 (en sautant à nouveau le red 5).
+  - Un clue red signifierait jouer slot 4 (un autre wraparound).
+  - Bob joue slot 4 comme le muddy rainbow 3.
+
+<MudClueSkipping />
+
+### Positional Clues
+
+- Tout clue qui ressemble à l'un des suivants est plutôt considéré comme un _Muddy Positional Clue_ (qui promet le numéro du slot de la carte muddy rainbow à jouer) :
+  - _Double Play Ejection_ (re-cluéant une carte jouable)
+  - _Known-Trash Ejection_ (re-cluéant une carte connue comme trash)
+  - _Trash Pushes_ (cluéant pour la première fois une carte connue comme trash sur le chop)
+  - un clue de rang qui n'a pas d'interprétation conventionnelle
+- Notez que les _Trash Chop Moves_ sont toujours "activés".

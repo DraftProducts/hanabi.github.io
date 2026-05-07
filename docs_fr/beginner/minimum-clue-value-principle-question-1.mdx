@@ -1,0 +1,45 @@
+---
+title: Minimum Clue Value Principle (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import MinimumClueValuePrincipleQuestion1 from "../../docs/beginner/minimum-clue-value-principle-question-1/minimum-clue-value-principle-question-1.yml";
+import MinimumClueValuePrincipleAnswer1 from "../../docs/beginner/minimum-clue-value-principle-question-1/minimum-clue-value-principle-answer-1.yml";
+
+<BeginnersGuideProgress id="minimum-clue-value-principle-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice est dans une situation spéciale où elle ne peut pas défausser.
+- Le blue 4 de Bob a été précédemment touché avec une clue blue.
+- Le red 2 et le yellow 2 de Cathy ont été précédemment touchés avec une clue number 2.
+- Énumérez toutes les _[Tempo Clues](./minimum-clue-value-principle.mdx)_ légales qu'Alice peut donner.
+
+<MinimumClueValuePrincipleQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice peut donner une _Tempo Clue_ au blue 4 dans la main de Bob :
+  - Une clue number 4 serait légale, puisqu'elle ne toucherait que le slot 4. Cela « compléterait » le 4 pour qu'il soit un blue 4.
+  - Une clue blue serait légale, puisqu'elle ne toucherait que le slot 4. Cela ne « compléterait » pas la carte, mais la clue signifierait toujours « joue la carte », donc cela fonctionnerait quand même correctement.
+- Alice peut donner une _Tempo Clue_ au red 2 dans la main de Cathy :
+  - Une clue number 2 ne serait pas légale, puisqu'elle focaliserait le slot 1 au lieu du slot 4.
+  - Une clue red serait légale, puisqu'elle ne toucherait que le slot 4.
+- Alice ne peut pas donner de _Tempo Clue_ au yellow 2 dans la main de Cathy :
+  - Une clue number 2 ne serait pas légale, puisqu'elle focaliserait le slot 1 au lieu du slot 5.
+  - Une clue yellow ne serait pas légale, puisqu'elle focaliserait le slot 3 au lieu du slot 5.
+
+<MinimumClueValuePrincipleAnswer1 />
+
+</TabItem>
+</Tabs>

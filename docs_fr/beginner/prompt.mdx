@@ -1,0 +1,51 @@
+---
+title: Le Prompt
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Prompt1 from "../../docs/beginner/prompt/prompt-1.yml";
+import Prompt2 from "../../docs/beginner/prompt/prompt-2.yml";
+import Prompt3 from "../../docs/beginner/prompt/prompt-3.yml";
+import Prompt4 from "../../docs/beginner/prompt/prompt-4.yml";
+
+<BeginnersGuideProgress id="prompt" />
+
+- Dans l'exemple ci-dessous :
+  - Bob a une carte rouge cluée dans sa main, mais l'identité complète de la carte lui est encore inconnue. Dans cette situation, il sait qu'il est censé conserver la carte dans sa main et continuer à défausser des cartes non-cluées.
+  - Alice clue red à Cathy, ce qui touche un red 4. Ce doit être une _[Play Clue](./play-clues.mdx)_ sur le red 4.
+  - Bob voit que le red 4 est actuellement non-jouable, puisque le red 3 n'est pas encore joué. Ainsi, cette clue implique que quelqu'un a le red 3.
+  - Bob ne voit pas de red 3 clué dans la main de quelqu'un d'autre. Donc, Alice doit lui promettre que sa carte rouge inconnue est le red 3 et qu'il peut la jouer en toute sécurité.
+
+<Prompt1 />
+
+- On appelle ce coup un _Prompt_ parce qu'il « pousse » (prompts) un joueur à jouer une carte qu'il aurait sinon conservée plus longtemps.
+- De cette manière, les clues peuvent délivrer des messages à un joueur différent de celui qui a réellement reçu la clue.
+- Si un joueur est _Prompted_ et qu'il y a plusieurs cartes dans la main auxquelles le _Prompt_ pourrait s'appliquer, il doit jouer la plus à gauche.
+- Dans l'exemple ci-dessous :
+  - Bob est _Prompted_ pour un red 3 exactement de la même manière que dans l'exemple précédent.
+  - Bob a deux cartes différentes cluées comme rouge en slot 4 et slot 5.
+  - Puisque les deux cartes sont inconnues pour Bob, Bob doit choisir de jouer la carte du slot 4 puisqu'elle est la plus à gauche.
+
+<Prompt2 />
+
+- Dans l'exemple ci-dessous :
+  - Bob a un 3 inconnu dans sa main.
+  - Alice clue number 4 à Bob, ce qui touche un 4. Ce doit être une _Play Clue_ sur le 4.
+  - Il n'y a pas de 4 qui pourrait être jouable maintenant. Ainsi, ce doit être un _Self-Prompt_, ce qui signifie que le 3 de Bob doit être soit un green 3, soit un blue 3.
+  - Bob joue son 3, et c'est un blue 3. Ainsi, il sait que le 4 doit se connecter et être un blue 4.
+
+<Prompt3 />
+
+- Le _Prompt_ est une **promesse** que le joueur a la carte connectante. Par conséquent, si la carte la plus à gauche n'est pas la bonne, le joueur doit continuer à jouer ses cartes cluées (de gauche à droite) jusqu'à trouver la carte attendue. (C'est la responsabilité du joueur donnant la clue de s'assurer que toutes les cartes précédentes joueront avec succès.)
+- Dans l'exemple ci-dessous :
+  - Bob a trois 3 inconnus séparés dans sa main.
+  - Alice clue red à Cathy, ce qui touche un red 4. C'est une _Play Clue_ sur le red 4.
+  - Bob sait qu'il doit avoir le red 3 et que c'est un _Prompt_. Bob joue son 3 le plus à gauche depuis le slot 2.
+  - Cependant, après l'avoir joué, Bob voit que ce n'est pas le red 3 – c'était le blue 3 (qui s'est joué avec succès). Bob sait maintenant que le prochain 3 le plus à gauche doit être le red 3 (sur le slot 3).
+  - Cathy peut voir le red 3 clué dans la main de Bob. Ainsi, elle sait d'après le _[Good Touch Principle](./good-touch-principle.mdx)_ que sa carte rouge doit être le red 4.
+  - Cathy fait quelque chose de non lié.
+  - À son tour suivant, Bob essaie de jouer sa carte du slot 3 comme le red 3. Cependant, après l'avoir jouée, Bob voit que ce n'était pas le red 3 – c'était le green 3 (qui s'est joué avec succès). Bob sait maintenant que son dernier 3 doit être le red 3 (sur le slot 4).
+  - À son tour suivant, Bob joue sa carte du slot 4, et c'est le red 3.
+  - Cathy peut maintenant enfin jouer son red 4.
+
+<Prompt4 />

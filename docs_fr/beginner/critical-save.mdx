@@ -1,0 +1,23 @@
+---
+title: Le Critical Save
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import CriticalSave from "../../docs/beginner/critical-save/critical-save.yml";
+
+<BeginnersGuideProgress id="critical-save" />
+
+- Les cartes critiques sont définies comme la dernière carte d'une combinaison couleur+rang qui n'est pas encore défaussée. Par exemple :
+  - Si Alice a un red 2 dans sa main, et que l'autre copie du red 2 est dans la pioche, alors le red 2 d'Alice n'est pas critique.
+  - Si Alice a un red 2 dans sa main, et que l'autre copie du red 2 est déjà défaussée, alors le red 2 d'Alice est critique.
+  - Si Alice a un red 5 dans sa main, alors il est toujours critique. (Il n'y a qu'une seule copie de chaque 5 dans une pioche d'Hanabi.)
+- Évidemment, les cartes critiques doivent recevoir des _[Save Clues](./save-clues.mdx)_ pour ne pas être défaussées. (Si une carte critique était défaussée, le score maximum de la partie diminuerait.)
+- Tant que la carte critique n'est pas un 5, nous nous accordons sur le fait que les joueurs peuvent sauvegarder les cartes critiques avec **soit une clue de couleur, soit une clue de chiffre**.
+- Dans l'exemple ci-dessous :
+  - Alice clue blue à Bob, ce qui touche une carte sur le slot 4.
+  - Avant cette clue, la seule carte cluée dans la main de Bob était le 5 sur le slot 5.
+  - La première intuition de Bob est que ce pourrait être une _[Play Clue](./play-clues.mdx)_ sur le blue 2. Cependant, puisque la clue était focalisée sur sa [chop](./chop.mdx), ce pourrait aussi être une _Save Clue_.
+  - Bob regarde la pile de défausse et trouve qu'il y a un blue 4. Donc, ce pourrait être une _Save Clue_ sur le blue 4. Donc, Bob sait que pour le moment, il doit conserver la carte.
+  - Bob marque la carte soit comme un blue 2, soit comme un blue 4, pour pouvoir s'en souvenir plus tard. Puis, il défausse.
+
+<CriticalSave />

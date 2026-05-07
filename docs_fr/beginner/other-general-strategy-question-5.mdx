@@ -1,0 +1,39 @@
+---
+title: Autre Stratégie Générale (Question 5)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import OtherGeneralStrategyQuestion5 from "../../docs/beginner/other-general-strategy-question-5/other-general-strategy-question-5.yml";
+import OtherGeneralStrategyAnswer5 from "../../docs/beginner/other-general-strategy-question-5/other-general-strategy-answer-5.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-4" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Énumérez toutes les clues légales qu'Alice peut donner.
+- Parmi ces possibilités, quelle clue Alice doit-elle donner ?
+
+<OtherGeneralStrategyQuestion5 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice peut cluer green à Bob en tant que _[Play Clue](./play-clues.mdx)_ sur le green 3.
+  - Cela « obtiendrait » une carte.
+- Alice peut cluer number 3 à Bob en tant que _Play Clue_ sur le green 3.
+  - Cela « obtiendrait » deux cartes. (Bob jouerait le green 3 et conserverait le yellow 3 pour plus tard.)
+- Alice sait que normalement, les clues de couleur sont préférées aux clues de chiffre. Mais c'est uniquement quand la clue de couleur et la clue de chiffre sont plus ou moins « les mêmes ». Ici, il vaut beaucoup mieux obtenir deux cartes que d'en obtenir une, donc Alice doit cluer number 3.
+
+<OtherGeneralStrategyAnswer5 />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,45 @@
+---
+title: Trop peu de clues
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-7-too-few-clues/question.yml";
+import Answer from "../../docs/challenge-questions/level-7-too-few-clues/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-too-few-clues" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Tous les 2 sont joués sur les stacks.
+- Il n'y a 0 clue disponible.
+- Alice a un blue 3 globalement connu jouable.
+- Cathy a un purple 5 critique sur son chop.
+- Alice décide de défausser son chop au lieu de jouer le blue 3.
+- Pourquoi Alice a-t-elle défaussé ?
+- Quelles notes Bob doit-il écrire ?
+- Que doit faire Bob à son tour ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice a effectué une [_Generation Discard_](../level-7.mdx#the-generation-discard).
+- Si Alice avait joué son blue 3, Bob serait forcé de défausser, et alors Cathy pourrait décider de défausser le purple 5 critique.
+- En effectuant une _Generation Discard_, Alice donne à Bob un jeton de clue à dépenser.
+- Puisque Cathy a une carte critique ou jouable sur son chop, Bob doit utiliser cette clue pour _5 Save_ le purple 5 de Cathy.
+- Bob ne doit **pas** écrire de notes, car une _Generation Discard_ ne _Chop Move_ aucune carte.
+
+<Answer />
+
+</TabItem>
+</Tabs>

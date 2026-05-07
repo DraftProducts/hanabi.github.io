@@ -1,0 +1,41 @@
+---
+title: Bob est paresseux
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-5-bob-is-lazy/question.yml";
+import Answer from "../../docs/challenge-questions/level-5-bob-is-lazy/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-bob-is-lazy" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est le premier tour de la partie et rien n'est joué sur les stacks.
+- Alice clue numéro 2 à Cathy, touchant le slot 1 et le slot 4 de Cathy. (C'est un _Play Clue_ sur la carte du slot 1 de Cathy.)
+- Bob a un red 1 sur sa _Finesse Position_, donc Cathy sait que Bob pourrait en faire un blind-play, ce qui ferait de la clue d'Alice une _Finesse_ sur red 1 vers red 2.
+- Au lieu de cela, Bob clue numéro 1 à Alice, touchant un green 1 en slot 1.
+- Que doit faire Cathy ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob semble reporter le blind-play et donne plutôt une clue 1-pour-1 sur une carte qui aurait pu tout aussi facilement être récupérée par Cathy.
+- L'[_Urgency Principle_](../level-5.mdx#urgency-principle-playing-into-finesses-as-soon-as-possible) dit que les blind-plays doivent arriver **dès que possible**. Ainsi, l'_Urgency Principle_ signifie que Bob n'a jamais été _Finessed_ en premier lieu.
+- Cependant, la clue d'Alice doit être une _Finesse_ d'une certaine sorte, car la carte du slot 1 de Cathy a été indiquée comme jouable. Ainsi, ce serait classé comme une [_Self-Finesse_](../level-2.mdx#the-self-finesse) [_Ambiguous_](../level-5.mdx#the-ambiguous-finesse) sur Cathy, ce qui signifie que Cathy doit faire un blind-play de sa _Finesse Position_ comme n'importe quel 1 jouable.
+- Une fois que Cathy a fait un blind-play réussi de sa _Finesse Position_ comme yellow 1, elle sait que son 2 précédemment inconnu, qui était la cible de la _Finesse_, doit correspondre et doit être exactement yellow 2.
+
+<Answer />
+
+</TabItem>
+</Tabs>

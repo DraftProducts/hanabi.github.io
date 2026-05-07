@@ -1,0 +1,250 @@
+---
+title: Level 12 - Contexte
+---
+
+import AssumingAsymmetricInformation from "../docs/level-12/assuming-asymmetric-information.yml";
+import DuplicationResponsibility1 from "../docs/level-12/duplication-responsibility-1.yml";
+import DuplicationResponsibility2 from "../docs/level-12/duplication-responsibility-2.yml";
+import DuplicationResponsibility3 from "../docs/level-12/duplication-responsibility-3.yml";
+import DuplicationResponsibility4 from "../docs/level-12/duplication-responsibility-4.yml";
+import DuplicationResponsibility5 from "../docs/level-12/duplication-responsibility-5.yml";
+import SelfishClue from "../docs/level-12/selfish-clue.yml";
+import SelfishFinesse from "../docs/level-12/selfish-finesse.yml";
+import FocusInversion from "../docs/level-12/focus-inversion.yml";
+import CluingOnes1 from "../docs/level-12/cluing-ones-1.yml";
+import CluingOnes2 from "../docs/level-12/cluing-ones-2.yml";
+import CluingOnes3 from "../docs/level-12/cluing-ones-3.yml";
+import Stale1sClue from "../docs/level-12/stale-1s-clue.yml";
+import EgoClue from "../docs/level-12/ego-clue.yml";
+
+## Conventions
+
+### Assuming Asymmetric Information
+
+- Parfois, les joueurs détermineront des informations asymétriques sur les identités des cartes dans leur main.
+- Par exemple, dans une partie à 4 joueurs :
+  - C'est l'_Early Game_ et il y a 3 clues disponibles.
+  - Alice défausse, initiant le _Mid-Game_.
+  - Bob sait qu'il ne doit rien rester à cluer, ou Alice aurait été obligée de le cluer.
+  - Bob a trois 2 dans sa main qui ont été sauvegardés avec un clue _2 Save_ plus tôt.
+  - Bob voit que Cathy a un red 2 sur le chop. Puisqu'Alice ne l'a pas clué, Bob doit avoir l'autre copie dans sa main.
+  - Bob n'a pas défaussé depuis que le _2 Save_ lui a été donné plus tôt. Ainsi, il sait que l'un de ses trois 2 clués doit être l'autre copie du red 2, donc il marque les trois cartes comme « possible red 2 ».
+  - Cependant, ces notes sont asymétriques – Alice, Bob, et Donald écrivent les notes, mais Cathy ne le fait pas. (Cathy n'a aucune idée que cela se passe parce que Cathy ne peut pas voir son propre red 2 sur le chop.)
+  - Alice, Bob, et Donald devront garder cette désynchronisation d'information à l'esprit en allant de l'avant.
+
+<AssumingAsymmetricInformation />
+
+- Par défaut, les joueurs ne devraient jamais supposer que les autres joueurs ont des informations asymétriques. C'est parce qu'avoir des informations asymétriques est l'**exception** plutôt que la norme.
+- Dans l'exemple précédent, Bob pourrait effectuer une action plus tard dans la partie qui semble démontrer qu'il sait qu'il a le red 2. Mais Cathy ne devrait pas supposer qu'il l'a, à moins qu'il n'y ait **aucune autre explication** pour le clue.
+
+### Duplication Responsibility
+
+- Habituellement, si un 2 doit être sauvegardé, ce n'est pas la responsabilité d'un joueur avec des 2 déjà clués dans sa main, parce qu'il pourrait potentiellement violer le _[Good Touch Principle](beginner/good-touch-principle.mdx)_ en le cluant. Donc, il devrait s'effacer et laisser quelqu'un d'autre dans l'équipe le faire. (Le même concept général s'applique aussi à cluer des cartes playable sur le chop, par exemple.)
+- Cependant, si tous les joueurs ont un 2 clué dans leur main, alors quelqu'un doit prendre le risque de violer le _Good Touch Principle_ afin de satisfaire le _[Save Principle](beginner/save-principle.mdx)_. Qui devrait le faire ?
+- Dans cette situation, le joueur qui a le moins de cartes cluées correspondantes devrait prendre la responsabilité. Si 2+ joueurs sont à égalité, alors le joueur avec le type de clue le moins spécifique sur sa/ses carte(s) devrait prendre la responsabilité.
+- Si 2+ joueurs ont exactement le même nombre de cartes cluées et le même type de cartes cluées, alors n'importe lequel des deux joueurs devrait sauvegarder la carte.
+- Exemple 1 :
+  - Dans une partie à 3 joueurs, Alice a un blue 2 sur le chop qui doit être sauvegardé.
+  - Bob a deux 2 inconnus.
+  - Cathy a un 2 inconnu.
+  - Bob devrait laisser Cathy effectuer la sauvegarde, puisque 1 carte correspondante est moins que 2 cartes correspondantes.
+
+<DuplicationResponsibility1 />
+
+- Exemple 2 :
+  - Dans une partie à 3 joueurs, Alice a un blue 2 sur le chop qui doit être sauvegardé.
+  - Bob a deux 2 inconnus.
+  - Cathy a deux 2 inconnus.
+  - La responsabilité est partagée, donc Bob devrait effectuer le clue si Cathy a une bonne défausse, ou il peut défausser et laisser Cathy le faire.
+
+<DuplicationResponsibility2 />
+
+- Exemple 3 :
+  - Dans une partie à 3 joueurs, Alice a un blue 2 sur le chop qui doit être sauvegardé.
+  - Bob a deux cartes blue inconnues.
+  - Cathy a un 2 inconnu.
+  - Bob devrait laisser Cathy effectuer la sauvegarde, puisque 1 carte correspondante est moins que 2 cartes correspondantes.
+
+<DuplicationResponsibility3 />
+
+- Exemple 4 :
+  - Dans une partie à 3 joueurs, Alice a un blue 2 sur le chop qui doit être sauvegardé.
+  - Bob a deux cartes blue inconnues. Aucune carte blue n'est encore jouée, donc de la perspective de Bob, chaque carte blue a 1/9 chance d'être le blue 2.
+  - Cathy a deux 2 inconnus. Aucun 2 n'est encore joué, donc de la perspective de Cathy, chaque 2 a 1/9 chance d'être le blue 2.
+  - La responsabilité est partagée, donc Bob devrait effectuer le clue si Cathy a une bonne défausse, ou il peut défausser et laisser Cathy le faire.
+
+<DuplicationResponsibility4 />
+
+- Exemple 5 :
+  - Dans une partie à 3 joueurs, Alice a un blue 2 sur le chop qui doit être sauvegardé.
+  - Bob a deux cartes blue inconnues. Aucune carte blue n'est encore jouée, donc de la perspective de Bob, chaque carte blue a 1/9 chance d'être le blue 2.
+  - Cathy a deux 2 inconnus. Un 2 a déjà été joué, donc de la perspective de Cathy, chaque 2 a 1/8 chance d'être le blue 2.
+  - Ainsi, c'est la responsabilité de Bob de sauvegarder le blue 2.
+
+<DuplicationResponsibility5 />
+
+## Mouvements Spéciaux
+
+### Le Selfish Clue
+
+- Un _Selfish Clue_ est quand un joueur :
+  1. a une carte playable dans sa main (e.g. red 2)
+  1. donne un _[Play Clue](beginner/play-clues.mdx)_ à la prochaine carte connectante (e.g. red 3)
+- Dans presque tous les cas, il n'y a aucune raison de donner un _Selfish Clue_. Les joueurs peuvent simplement jouer leur carte playable et laisser quelqu'un d'autre dans l'équipe « obtenir » la carte suivante. Être _Selfish_ est typiquement associé à un mauvais travail d'équipe.
+- Cependant, dans de rares cas, donner un _Selfish Clue_ peut être bon.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice a un red 2 playable globalement connu dans sa main.
+  - La main de Bob est, du plus récent au plus ancien : `blue 1, red 3, red 4, red 5, blue 1`
+  - Bob et Cathy ont tous deux une défausse sûre.
+  - Alice sait qu'à ce tour, elle est censée jouer le red 2, à moins qu'elle ait un très bon clue à donner.
+  - Alice voit que si elle joue le red 2, alors Bob n'aura probablement rien à faire, et continuera à défausser le blue 1.
+  - À ce moment-là, le red 5 sera sur le chop, et il sera difficile pour l'équipe d'obtenir toutes les cartes rouges. Spécifiquement, quelqu'un devra probablement donner un clue de nombre 3 à Bob comme un 1-for-1 sur le red 3.
+  - Alice voit que si elle donne un clue rouge à Bob _maintenant_ (e.g. avant de jouer le red 2), alors elle pourra « verrouiller » un beau clue 3-for-1. Même si l'équipe perdra du _Tempo_, ce sera sans conséquence parce que Bob a une défausse sûre et Cathy a une défausse sûre.
+  - Alice clue rouge à Bob comme _Selfish Play Clue_.
+
+<SelfishClue />
+
+### Le Selfish Finesse (Un Finesse à Travers Votre Propre Main)
+
+- D'abord, voyez la section sur le _[Selfish Clue](#le-selfish-clue)_.
+- Une excellente raison de donner un _Selfish Clue_ est de « verrouiller » un _[Finesse](beginner/finesse.mdx)_ avant que les cartes ne sortent de _Finesse Position_. C'est appelé un _Selfish Finesse_.
+- Comme tout autre _Finesse_, les joueurs dans cette situation devraient juste marquer les cartes pour plus tard et attendre patiemment que le clueur joue sa carte.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue rouge à Bob, touchant un red 1 au slot 1 comme _Play Clue_. (C'est maintenant un red 1 globalement connu, puisque Cathy n'a pas de red 1 dans sa main.)
+  - Bob clue rouge à Cathy, touchant un red 3 au slot 1 comme _Play Clue_.
+  - Cathy voit qu'Alice a un red 2 sur sa _Finesse Position_, donc ce doit être un _Selfish Finesse_. Bob ne voulait pas jouer le red 1 parce qu'alors le _Finesse_ pourrait disparaître et il voulait le verrouiller. Cathy marque sa carte rouge comme potentiellement red 3 et défausse.
+  - Alice voit que Bob a donné un _Play Clue_ à un red 3. Bob sait avec certitude qu'il a le red 1, donc Alice doit avoir le red 2 sur sa _Finesse Position_. Alice marque sa carte de _Finesse Position_ comme red 2 et défausse.
+  - Bob joue red 1.
+  - Cathy défausse.
+  - Alice blind-play red 2.
+
+<SelfishFinesse />
+
+### Le Ego Clue (Erreur)
+
+- Quand vous avez une carte playable, c'est habituellement une erreur de différer le jeu de cette carte afin de « voler » un clue à un autre joueur pour le forcer à défausser.
+- Quand cela se produit, c'est appelé un _Ego Clue_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 est joué sur les stacks.
+  - Alice tient un blue 1 globalement connu.
+  - Bob a un red 2 sur le chop, suivi d'un autre red 2.
+  - Alice veut que Bob défausse pour qu'elle puisse cluer proprement le red 2 pour le faire jouer. Ainsi, Alice décide de donner un _Play Clue_ à Cathy sur un yellow 1, et espère que Bob n'a rien d'autre à faire.
+  - Bob défausse.
+  - Ici, Alice a fait une erreur, parce que la line avec un meilleur travail d'équipe était qu'Alice joue le blue 1 et que Bob clue le yellow 1. Accélérer le red 2 n'est pas aussi important que permettre à Bob de potentiellement cluer la main d'Alice.
+
+<EgoClue />
+
+- Les _Ego Clues_ ne sont habituellement pas bons parce que le clueur oublie qu'il ne peut pas voir sa propre main. Dans certains cas, c'est vraiment important de faire défausser Bob aussi vite que possible, mais c'est l'exception plutôt que la norme. Les bons joueurs Hanabi savent que les meilleures lines donnent du pouvoir à leurs coéquipiers, au lieu de les forcer à faire des actions qui ne sont bonnes que d'une perspective spécifique.
+- Les _Ego Clues_ ne s'appliquent que quand le clueur a une carte playable. Ils ne s'appliquent pas quand le clueur a une carte trash connue.
+- Les _Ego Clues_ sont différents des [_Selfish Clues_](#le-selfish-clue) parce que les _Ego Clues_ sont définis comme cluer des cartes d'une suite séparée (au lieu de la même suite).
+
+### Le Stale 1's Clue
+
+- Nous avons beaucoup de conventions qui spécifient ce qu'un clue signifie. Mais combiné avec cela, on s'attend toujours à ce que nous regardions le contexte de la partie.
+- Par exemple, parfois les joueurs recevront un clue qui semble juste étrange. Si ce bon clue aurait pu être donné il y a plusieurs tours, pourquoi est-il seulement donné maintenant ? Les autres joueurs ne faisaient-ils pas assez attention, et ne se mettent-ils qu'à cluer cette carte maintenant ?
+- Dans ces types de situations, vous pouvez supposer que l'équipe ne fait pas d'erreurs, ce qui signifie que la signification du clue devrait être altérée par rapport à la définition « du livre ». Nous appelons ces types de clues des _Context Clues_ parce qu'ils dépendent d'une lecture contextuelle de l'état de la partie.
+- Le _Context Clue_ le plus commun est donné aux 1 « stale » vers le début de la partie. Par exemple, dans une partie à 4 joueurs :
+  - Après que quelques clues ordinaires se produisent, Alice défausse, ce qui termine l'_Early Game_ et initie le _Mid-Game_. En faisant cela, elle implique qu'il n'y a rien à faire (parce que les joueurs sont mandatés à « épuiser » tous les _Play Clues_ et _[Save Clues](beginner/save-clues.mdx)_ disponibles dans l'_Early Game_).
+  - Bob clue ensuite immédiatement à Cathy à propos de deux 1.
+  - Normalement, du _Good Touch Principle_, Cathy supposerait que les deux 1 étaient « bons » et jouerait les deux.
+  - Cependant, Cathy sait aussi que si ces deux 1 étaient bons, alors Alice était obligée de les cluer avant de défausser.
+  - Ainsi, Cathy peut raisonner qu'un des 1 est mauvais. De plus, par convention, elle sait que le 1 le plus ancien (le plus à droite) est mauvais, parce que ce serait celui qu'elle jouerait ordinairement en premier.
+  - Donc, Cathy devrait sauter par-dessus le 1 le plus ancien (le plus à droite), et jouer l'autre 1. Cathy devrait aussi traiter l'autre 1 comme trash connu.
+
+<Stale1sClue />
+
+- Le _Stale 1's Clue_ est un exemple spécifique d'un concept plus général appelé _Focus Inversion_, qui est couvert ci-dessous.
+
+### Focus Inversion
+
+- Parfois, un _Play Clue_ est donné qui touche à la fois la carte chop et une ou plusieurs autres cartes. L'interprétation normale de cela est de le traiter comme un _Play Clue_ chop-focus, et de jouer le chop. Cependant, parfois un joueur peut savoir que le chop n'est en réalité pas playable. Cela peut être déterminé par :
+  - information explicite – clues négatifs présents sur la carte
+  - information implicite – information historique / contextuelle sur la carte dérivée des mouvements que les coéquipiers ont effectués plus tôt dans la partie
+- Quand cela se produit, le clue est censé être un _Play Clue_ sur la carte la plus à gauche **au lieu** de la carte chop.
+- Tout comme un _Play Clue_ « normal » qui touche plusieurs nouvelles cartes, la carte chop (et les autres nouvelles cartes introduites) ne sont pas nécessairement playable maintenant.
+- Par exemple, dans une partie à 3 joueurs :
+  - Alice clue 1 à Bob, ce qui introduit une carte au slot 1.
+  - Bob joue le 1. C'est un red 1 et il joue avec succès.
+  - Cathy clue blue à Bob, ce qui introduit deux cartes au slot 1 et slot 5.
+  - Normalement, Bob penserait que c'est un clue _Chop-Focus_, et jouerait le blue 1 du slot 5.
+  - Cependant, sa carte du slot 5 a un clue 1 négatif dessus (du clue de nombre 1 d'Alice plus tôt), donc cela ne peut explicitement pas être le blue 1.
+  - Ainsi, ce doit être un _Focus Inversion_ et le blue 1 doit être au slot 1. La carte blue au slot 5 peut être soit blue 2, blue 3, blue 4, ou blue 5.
+
+<FocusInversion />
+
+- Notez que **les _Self-Finesses_ avec rang ont toujours la précédence sur le _Focus Inversion_**, ce qui est un cas spécifique où _Occam's Razor_ ne s'applique pas. (Les _Self-Finesses_ avec rang sont assez courants, mais les _Self-Finesses_ avec couleur sont absurdes.)
+
+## Principes Généraux
+
+### Context
+
+- Si vous lisez cette section, vous êtes vraisemblablement un joueur Hanabi plus expérimenté qui a les fondamentaux. Donc, c'est un bon moment pour clarifier une potentielle idée fausse que vous pourriez avoir sur nos conventions.
+- Jusqu'à présent, vous pourriez avoir l'impression que le groupe a beaucoup de conventions, et que si vous mémorisez juste toutes les conventions, vous deviendrez un très bon joueur Hanabi. Ou, vous pourriez avoir l'impression que les conventions sont comme des lois et que vous devez toujours les suivre. Aucune de ces choses n'est vraie.
+- Le _Context_ est défini comme toutes les méta-informations sur l'état de la partie. Dans les parties intermédiaires et expertes, quand on détermine ce qu'un clue signifie, les joueurs doivent **toujours** prendre en compte le contexte complet de la partie. Cela signifie que comprendre ce qu'un clue signifie n'est jamais aussi facile que de suivre l'un des organigrammes listés sur le site.
+- En écrivant la documentation de stratégie, ce serait distrayant d'écrire constamment le mot « probablement » et d'écrire constamment « cela peut ne pas s'appliquer dans toutes les situations » partout. Pour les joueurs avancés, c'est évident – Hanabi est assez compliqué pour que chaque convention soit destinée à être brisée si la situation particulière le demande.
+- Ainsi, les joueurs doivent lire la documentation de référence avec **un grain de sel**, surtout quand elle dit le mot « toujours ». Même si ce site décrit la chose « correcte » à faire dans beaucoup de situations, ce ne sont pas des règles strictes. Plutôt, elles sont destinées à montrer le cas « par défaut » ou « commun ». Mémoriser les cas par défaut est vraiment utile, pour les joueurs intermédiaires et avancés également. Mais les joueurs doivent toujours se rappeler de garder leur cerveau pleinement engagé sur la situation particulière.
+
+### Choisir Entre des Cartes Playable
+
+- Typiquement, les joueurs n'auront qu'une seule carte à jouer à la fois. Dans ce cas, à moins qu'il y ait un très bon clue à donner, il n'y a pas de décisions à prendre – ils jouent juste leur seule carte playable.
+- Que se passe-t-il si un joueur a deux cartes playable ou plus à jouer ? Quelle carte devrait-il jouer en premier ?
+- Si l'une des cartes mène dans la main d'un coéquipier, alors il devrait jouer celle-là, parce que ce serait du bon travail d'équipe. Sinon, il peut jouer n'importe quelle carte qu'il veut.
+- Cependant, si un joueur ne joue pas ses cartes dans un certain ordre, rien de spécial ne se passe. En d'autres termes :
+  - Quand **vous** avez plusieurs cartes à jouer, essayez de penser à laquelle serait la meilleure en utilisant le bon sens. Et puis jouez celle-là.
+  - Quand **d'autres** personnes ont plusieurs cartes à jouer, essayez de prédire laquelle ils joueront. Mais s'ils jouent une carte inattendue, ne lisez pas trop dedans. Soit ils font une petite erreur soit ils ont un plan qui n'est pas encore visible pour vous.
+- Pour les joueurs de level 25, vous devez jouer les cartes dans un [ordre très spécifique](level-25.mdx).
+
+### Cluing 1's in the Early Game
+
+- Comme indiqué dans la [section de stratégie level 3](level-3.mdx#tempo), Hanabi est à propos d'équilibrer l'_Efficacité_ et le _Tempo_.
+- Comme indiqué dans la [section de stratégie level 6](level-6.mdx#la-valeur-des-cartes-one-away-from-playable), les cartes _one-away-from-playable_ sont précieuses.
+- Donc, les joueurs doivent équilibrer _Efficacité_, _Tempo_, et « verrouiller » un toucher sur les cartes _one-away-from-playable_.
+- Dans l'_Early Game_, il est très courant que les joueurs donnent un clue de nombre 1 quand ils voient une main qui a deux 1 ou plus dedans. Et ce type de clue est normalement assez bon. Mais à cause des considérations précédentes, parfois ce serait mieux d'obtenir les 1 avec plusieurs clues de couleur à la place.
+
+#### Exemple 1
+
+- Les joueurs ne devraient pas juste considérer à quel point leur clue individuel est bon – ils devraient aussi considérer comment leurs coéquipiers peuvent **construire** sur leur clue.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - La main de Bob est, du plus récent au plus ancien : `green 4, red 1, red 3, blue 2, blue 1`
+  - Alice voudrait obtenir le red 1 et le blue 1 joués depuis la main de Bob. (Personne d'autre n'a un red 1 ou blue 1.) Alice devrait-elle cluer nombre 1, rouge, ou blue ?
+  - Si Alice clue nombre 1, ce serait un clue 2-for-1. Mais ensuite l'équipe dépensera probablement un clue pour obtenir le blue 2. Cela résultera en une efficacité de 3-for-2. Et le red 3 finira probablement par être défaussé. Mauvais.
+  - Si Alice clue blue, ce serait un clue 2-for-1. Mais ensuite l'équipe ne pourra plus donner un clue rouge, parce que ce serait _Chop-Focused_ sur le red 3. Donc ils devraient cluer nombre 1, ce qui résulterait en une efficacité de 3-for-2. Mauvais.
+  - Ainsi, Alice devrait cluer rouge en premier, puis cluer blue plus tard, résultant en une efficacité de 4-for-2.
+
+<CluingOnes1 />
+
+#### Exemple 2
+
+- Quand les joueurs font le choix entre cluer nombre 1 ou cluer couleur, les cartes dans les mains des autres devraient aussi être considérées.
+- Par exemple, dans une partie à 4 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - La main de Cathy est, du plus récent au plus ancien : `red 1, green 4, blue 3, blue 1`
+  - Donald tient un red 2 cluable.
+  - Alice voudrait obtenir le red 1 et le blue 1 joués. (Personne d'autre n'a un red 1 ou un blue 1.) Devrait-elle cluer 1, rouge, ou blue ?
+  - Tout comme dans l'exemple précédent, cluer nombre 1 signifie que le red 2 devra être clué comme un 1-for-1, ce qui résulte en une efficacité de 3-for-2.
+  - Au lieu de ça, Alice clue rouge à Donald, effectuant le _[Finesse](beginner/finesse.mdx)_ comme un 2-for-1. Ensuite, Bob clue blue à Cathy comme un 2-for-1. Au total, c'est un 4-for-2.
+    - Ces deux clues pourraient aussi être donnés dans l'ordre inverse, mais c'est légèrement plus sûr pour Alice d'effectuer le _Finesse_, car elle pourrait tenir une carte bloquante.
+
+<CluingOnes2 />
+
+#### Exemple 3
+
+- Comme expliqué dans le [guide du débutant](beginner/other-general-strategy.mdx), c'est presque toujours mieux de donner un _Play Clue_ au lieu d'un _Save Clue_ si un joueur a une carte playable dans sa main.
+- Cependant, parfois c'est mieux de donner un _Save Clue_ d'abord et un _Play Clue_ plus tard.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - La main de Cathy est, du plus récent au plus ancien : `blue 4, blue 4, red 3, red 1, blue 5`
+  - Alice voudrait obtenir le red 1 joué. (Personne d'autre n'a un red 1 dans sa main.) Alice sait aussi que l'équipe doit éventuellement sauvegarder le blue 5.
+  - Si Alice clue nombre 1 d'abord pour obtenir le red 1, alors l'équipe devra donner un _5 Save_ pour sauvegarder le blue 5, résultant en une efficacité de 2-for-2.
+  - Au lieu de ça, Alice clue nombre 5 comme _5 Save_, ce qui permet à Bob de suivre avec un _Play Clue Chop-Focus_ rouge. Cela touche le red 3 comme un 2-for-1, permettant une efficacité globale de 3-for-2.
+
+<CluingOnes3 />
+
+#### Autres Considérations
+
+- Au cas où vous penseriez qu'Hanabi n'était pas assez difficile, il y a quelques autres facteurs à considérer en cherchant le meilleur clue :
+  - Donner un clue de couleur met-il une carte playable sur _Finesse Position_ ? Si oui, peut-être qu'un clue de couleur est meilleur.
+  - Donner un clue de nombre 1 donne-t-il au joueur la capacité d'effectuer un _Order Chop Move_ utile ? Si oui, peut-être qu'un clue de nombre 1 est meilleur.

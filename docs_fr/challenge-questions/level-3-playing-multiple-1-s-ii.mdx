@@ -1,0 +1,63 @@
+---
+title: Jouer plusieurs 1, II
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import QuestionPart1 from "../../docs/challenge-questions/level-3-playing-multiple-1-s-ii/question-part-1.yml";
+import QuestionPart2 from "../../docs/challenge-questions/level-3-playing-multiple-1-s-ii/question-part-2.yml";
+import QuestionPart3 from "../../docs/challenge-questions/level-3-playing-multiple-1-s-ii/question-part-3.yml";
+import Answer from "../../docs/challenge-questions/level-3-playing-multiple-1-s-ii/answer.yml";
+
+<ChallengeQuestionProgress level={3} id="level-3-playing-multiple-1-s-ii" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est le premier tour de la partie.
+- Alice clue numéro 1 à Bob.
+- L'ordre pour jouer ces 1 est de droite à gauche.
+
+<QuestionPart1 />
+
+- Bob joue celui le plus à droite. Il se joue avec succès comme red 1. (Bob pioche une nouvelle carte.)
+- Cathy fait quelque chose sans rapport.
+- Alice clue red à Bob. Cela touche le chop de Bob. Ce doit être un _Play Clue_ sur un red 2.
+
+<QuestionPart2 />
+
+- Bob joue son 1 du slot 5. Il se joue avec succès comme blue 1. (Bob pioche une nouvelle carte.)
+- Cathy fait quelque chose sans rapport.
+- Alice donne à Bob une clue numéro 1 à nouveau, touchant les deux nouvelles cartes de Bob ainsi que retouchant les 1 de sa starting hand.
+- Quelle carte Bob est-il censé jouer ?
+
+<QuestionPart3 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Parfois, des 1 fraîchement piochés sont touchés dans la même main que des 1 qui n'ont pas encore été joués.
+- Quand cela arrive, les notes d'ordre de jeu sur les 1 précédents sont effacées et l'ordre de jeu des 1 est recalculé.
+- Pour ce calcul, la précédence reste la même :
+  - Chop
+  - 1 fraîchement piochés (de gauche à droite)
+  - 1 de la Starting Hand (de droite à gauche)
+- Ainsi :
+  - Bob efface les notes sur ses 1.
+  - Le slot 2 de Bob est sur le chop, donc Bob écrit "1st" dessus.
+  - La carte du slot 1 de Bob est un 1 fraîchement piocé, il écrit "2nd" dessus.
+  - Les cartes du slot 4 et du slot 5 de Bob sont des 1 de sa starting hand. Il écrit "3rd" sur le slot 5 et "4th" sur le slot 4.
+  - De plus, Bob sait qu'il a quatre 1 dans sa main et que seuls trois 1 doivent être joués. Ainsi, par le _Good Touch Principle_, son 1 du slot 4 ne se jouera jamais, donc il le marque comme known-trash.
+  - Bob est censé jouer sa carte du slot 2. Elle se joue avec succès comme yellow 1.
+
+<Answer />
+
+</TabItem>
+</Tabs>

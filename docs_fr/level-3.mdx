@@ -1,0 +1,229 @@
+---
+title: Level 3 - Stratégie de Base
+---
+
+import PlayingMultiple1s1 from "../docs/level-3/playing-multiple-1s-1.yml";
+import PlayingMultiple1s2 from "../docs/level-3/playing-multiple-1s-2.yml";
+import PlayingMultiple1s3 from "../docs/level-3/playing-multiple-1s-3.yml";
+import FixClue1 from "../docs/level-3/fix-clue-1.yml";
+import FixClue2 from "../docs/level-3/fix-clue-2.yml";
+import FixClue3 from "../docs/level-3/fix-clue-3.yml";
+import FixClue4 from "../docs/level-3/fix-clue-4.yml";
+import SarcasticDiscard1 from "../docs/level-3/sarcastic-discard-1.yml";
+import SarcasticDiscard2 from "../docs/level-3/sarcastic-discard-2.yml";
+import InformationLock from "../docs/level-3/information-lock.yml";
+
+- À partir d'ici, vous pouvez passer au niveau suivant une fois que vous vous sentez à l'aise avec le précédent.
+- Pour les levels 3-10, une bonne règle générale est de 10-15 parties de pratique par level.
+- Pour les levels ultérieurs, une bonne règle générale est de 15-20 parties de pratique par level.
+- Ne vous précipitez pas pour passer au niveau suivant ! Si vous n'avez pas maîtrisé ce que vous savez déjà, cela peut être frustrant pour vos coéquipiers.
+
+## Conventions
+
+### Jouer Plusieurs 1
+
+#### Partie 1 - Inversion de l'Ordre de Jeu dans la Main de Départ
+
+- Si un ou plusieurs 1 dans votre main sont clués, **vous devriez supposer qu'ils sont tous playable**. (Cela ne s'applique qu'aux 1, et découle du _[Good Touch Principle](beginner/good-touch-principle.mdx)_.)
+- Nous nous accordons à dire que jouer les 1 au début de la partie est un cas spécial – vous devriez toujours **jouer les 1 dans votre main de départ du plus ancien au plus récent**. (C'est un cas spécial car normalement, les _[Play Clues](beginner/play-clues.mdx)_ signifient de jouer la carte la plus à gauche.)
+- Dans l'exemple ci-dessous :
+  - Au premier tour de la partie, Alice clue nombre 1 à Bob, ce qui touche trois 1 (au slot 2, slot 3, et slot 4).
+  - Du _Good Touch Principle_, Bob sait qu'il peut maintenant jouer ces trois cartes.
+  - Bob devrait jouer la carte du slot 4 en premier, puis la carte du slot 3, puis la carte du slot 2.
+
+<PlayingMultiple1s1 />
+
+- (La logique derrière cette convention est expliquée [dans le document des raisons des conventions](https://github.com/hanabi/hanabi.github.io/blob/main/misc/convention-reasons.md#play-order-of-multiple-1s).)
+
+#### Partie 2 - La Fresh 1's Rule
+
+- La section précédente s'applique quand tous les 1 clués étaient présents dans la main de départ. En d'autres termes, si un ou plusieurs 1 sont clués qui n'étaient pas dans la main de départ, alors vous les joueriez normalement du plus récent au plus ancien.
+- Cependant, que se passe-t-il s'il y a un **mélange** de 1 de la main de départ et de 1 hors de la main de départ ? Alors, les choses deviennent un peu plus compliquées.
+- Dans cette situation, nous appelons les 1 hors de la main de départ des 1 « fresh ». Il est logique que les fresh 1 soient plus importants que les non-fresh 1, parce que sinon les non-fresh 1 auraient pu être clués plus tôt.
+- Ainsi, les 1 fraîchement tirés devraient toujours être joués avant les 1 non-fresh.
+- Continuant l'exemple de la section précédente, imaginez que :
+  - Bob joue sa carte du slot 4. C'est un red 1 et il joue avec succès. (Il tire ensuite une carte, et toutes les autres cartes dans sa main glissent.)
+  - Alice clue 1 à Bob, ce qui touche une nouvelle carte au slot 1 et re-touche celles au slot 3 et slot 4.
+  - Bob sait que les fresh 1 ont la précédence, donc il joue la carte du slot 1 ensuite.
+  - Après cela, Bob reprend l'ordre de jeu d'avant, jouant la carte du slot 4, puis la carte du slot 3.
+
+<PlayingMultiple1s2 />
+
+#### Partie 3 - L'Exception du Chop-Focus
+
+- La _Fresh 1's Rule_ a une exception : le _Chop-Focus_ la **prévaut**.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 2 et blue 2 sont joués sur les stacks.
+  - Alice défausse un red 4 du slot 5.
+  - Bob clue nombre 1 à Alice, touchant quatre 1 aux slots 1, 2, 3, et 5.
+  - Alice sait que l'ordre correct pour jouer tous les 1 est 5, 1, 3, 2 :
+    - Alice sait que normalement, vous êtes censé jouer les 1 fraîchement tirés avant les 1 qui étaient présents dans votre main de départ. Cependant, le _Chop-Focus_ prévaut sur cette règle, donc elle sait que la carte du slot 5 (son chop) devrait jouer en premier.
+    - Après cela, elle utilise la _Fresh 1's Rule_, et sait jouer le 1 du slot 1 ensuite.
+    - Après cela, elle jouera le reste des 1 du plus ancien au plus récent (puisqu'ils étaient dans sa main de départ), donc elle jouera le slot 3 puis le slot 2.
+
+<PlayingMultiple1s3 />
+
+#### Focus
+
+- Du Guide du Débutant, nous savons que tous les clues qui touchent deux cartes ou plus [doivent avoir un focus unique](beginner/single-card-focus.mdx).
+- Dans un _Play Clue_ normal, seul le focus est promis playable. Mais dans un _Play Clue_ de nombre 1 au début de la partie, toutes les cartes sont promises playable (du _Good Touch Principle_). Donc trouver le focus de ce type de clues n'a presque jamais d'importance.
+- Cependant, dans certains cas, cela pourrait avoir de l'importance, par exemple si tous les 1 sont joués sauf un seul 1. Nous nous accordons à dire que de tels clues sont focalisés sur le 1 qui jouerait en premier (selon les règles ci-dessus).
+
+### Le Fix Clue
+
+- Presque tous les clues sont soit un _[Save Clue](beginner/save-clues.mdx)_ soit un _Play Clue_. Une exception est un _Fix Clue_, qui est une tentative de « réparer » une violation du _Good Touch Principle_.
+- Les _Fix Clues_ sont souvent nécessaires quand une carte dupliquée est touchée. Les cartes ne sont normalement pas dupliquées (ce qui découle du _Good Touch Principle_), mais parfois une erreur est faite, ou une séquence de cartes particulières rend la duplication nécessaire. Les cartes dupliquées mèneront à des misplays, donc c'est la responsabilité de l'équipe de réparer le problème et d'intervenir avant que cela ne se produise.
+- En général, les violations du _Good Touch Principle_ devraient être réparées dès que possible, peu importe si le misplay se produit immédiatement ou non.
+- Dans l'exemple ci-dessous :
+  - Avant que le clue soit donné, Bob avait une carte purple inconnue dans sa main.
+  - Alice sait que du _Good Touch Principle_, Bob conclura que la carte est un purple 5, et il misplayera probablement à son tour suivant.
+  - Alice clue nombre 3 à Bob, ce qui « remplit » la carte purple et révèle que c'est purple 3.
+  - Puisque Bob était sur le point de jouer cette carte, Bob sait que c'était un _Fix Clue_ et qu'il peut maintenant défausser le purple 3 en toute sécurité.
+
+<FixClue1 />
+
+### Le Fix Clue (Qui Touche Plusieurs Cartes)
+
+- **Un clue ne peut pas être un _Play Clue_ et un _Fix Clue_ en même temps.** Si vous recevez un _Fix Clue_ et qu'il touche d'autres cartes auxiliaires, aucune d'elles n'est nécessairement playable. La **seule** information qu'un _Fix Clue_ transmet est de réparer la violation du _Good Touch Principle_.
+- Dans l'exemple ci-dessous :
+  - Avant que le clue soit donné, Bob a un 1 inconnu dans sa main.
+  - Alice sait que du _Good Touch Principle_, Bob conclura que son 1 est un green 1, et il misplayera probablement à son tour suivant.
+  - Alice clue blue à Bob, ce qui « remplit » le 1 et révèle que c'est blue 1. Le clue blue touche aussi une carte blue au slot 1.
+  - Dans cette situation, Bob pourrait être tenté de penser qu'il s'agit d'un _Play Clue_ sur un blue 2 au slot 1, surtout en considérant que la carte du slot 1 était la seule nouvelle carte introduite dans le clue. (Et le focus d'un clue devrait toujours être sur la nouvelle carte introduite.)
+  - Cependant, le fait que le clue blue ait « réparé » une violation du _Good Touch Principle_ signifie qu'Alice n'avait peut-être pas le choix que de cluer blue, et elle n'essaie pas nécessairement de donner un _Play Clue_.
+  - Bob marque la carte blue au slot 1 comme étant soit blue 2, blue 3, blue 4, ou blue 5. Il défausse ensuite le blue 1.
+
+<FixClue2 />
+
+### Le Fix Clue (Qui Ne Donne Aucune Information Supplémentaire)
+
+- Habituellement, un _Fix Clue_ « remplira » la carte pour rendre explicitement connu que la carte est unplayable ou dupliquée. Cependant, il est aussi possible d'effectuer un _Fix Clue_ juste en cluant la carte à nouveau.
+- Dans l'exemple ci-dessous :
+  - Alice clue à Bob nombre 1 et il touche trois 1.
+  - Bob joue avec succès deux 1.
+  - Alice clue à Bob nombre 1 à nouveau, et tout ce que le clue fait est de re-toucher le 1 restant.
+  - Puisque Bob allait déjà jouer le 1 sans qu'Alice ne fasse rien, le clue doit avoir une autre signification. Ainsi, c'est un _Fix Clue_ : le 1 restant est mauvais, et Bob peut le défausser en toute sécurité.
+
+<FixClue3 />
+
+- Les _Fix Clues_ qui ne donnent aucune information supplémentaire ne « réparent » qu'une seule carte.
+- Dans l'exemple ci-dessous :
+  - Alice clue à Bob nombre 1 et il touche trois 1.
+  - Bob joue avec succès un 1.
+  - Alice clue à Bob nombre 1 à nouveau, et tout ce que le clue fait est de re-toucher les deux 1 restants.
+  - Puisque Bob allait déjà jouer ses 1 sans qu'Alice ne fasse rien, le clue doit avoir une autre signification. Ainsi, c'est un _Fix Clue_ : le 1 que Bob était sur le point de jouer est mauvais, et Bob peut le défausser en toute sécurité. Bob saute par-dessus le 1 qu'il était sur le point de jouer (au slot 4) et joue l'autre (au slot 3).
+
+<FixClue4 />
+
+- Les _Fix Clues_ de cette nature sont aussi appelés communément _Stop Clues_, parce que le message est « arrête de jouer la carte que tu es sur le point de jouer ! »
+- Pour les joueurs de level 6, notez que les _Fix Clues_ qui ne donnent aucune information supplémentaire (et ne « remplissent » pas la carte pour qu'elle soit explicitement connue comme mauvaise) ne fonctionnent typiquement que si la carte est sur le point de jouer sur les stacks. Sinon, cela ressemblerait à un _[Tempo Clue](level-6.mdx#the-tempo-clue)_.
+  - La raison est à cause du _Good Touch Principle_. En d'autres termes, nous supposons par défaut que toutes nos cartes sont « bonnes » à moins que ce soit explicitement démontré autrement. Les _Fix Clues_ qui ne donnent aucune information supplémentaire sont l'exception à cela, donc nous ne supposons un _Fix Clue_ de cette nature que s'il n'y a pas d'autre explication plus ordinaire pour le clue.
+
+## Mouvements Spéciaux
+
+### Le Sarcastic Discard (SD)
+
+- Occasionnellement, par une erreur (ou une situation compliquée), la même carte sera cluée dans deux mains différentes. Généralement, cela doit être évité, mais parfois cela arrive. Gérer cela peut être délicat.
+- Généralement, le **premier** joueur qui réalise pleinement qu'il a la carte dupliquée devrait la défausser (au lieu de la jouer ou de la garder). C'est appelé un _Sarcastic Discard_, et cela communique à l'autre joueur qu'il a 100% la carte défaussée. (C'est parce que normalement, du _Good Touch Principle_, nous ne défaussons jamais les cartes qui ont été cluées, donc si un joueur défausse une carte non-trash cluée, quelque chose de spécial doit se passer.)
+- Par exemple :
+  - Red 2 est joué sur les stacks.
+  - Alice a un red 3 clué dans sa main avec juste nombre 3. (Elle ne sait pas de quelle couleur c'est.)
+  - Alice clue nombre 3 à Bob, ce qui touche un 3. (C'est une erreur, parce que cela pourrait violer le _Good Touch Principle_.)
+  - Bob sait que le seul 3 playable est red 3. Il sait aussi qu'Alice a un red 3 clué déjà dans sa main. Ainsi, il sait qu'il a le red 3 et qu'Alice a fait une erreur.
+  - Bob effectue un _Sarcastic Discard_ pour repasser le red 3 à Alice.
+
+<SarcasticDiscard1 />
+
+- Le _Sarcastic Discard_ est similaire au _[Prompt](beginner/prompt.mdx)_, sauf qu'il est initié par une défausse au lieu d'un clue.
+- Cependant, contrairement à un _Prompt_, s'il y a plusieurs cartes auxquelles un _Sarcastic Discard_ pourrait s'appliquer, alors cela ne promet **pas** que c'est la carte la plus à gauche. Cela promet seulement qu'ils ont la carte quelque part. Par exemple :
+  - Alice fait un _Sarcastic Discard_ d'un red 3.
+  - Bob a deux cartes cluées avec nombre 3 dans sa main. Il n'a aucune information de couleur sur l'un ou l'autre des 3.
+  - Bob peut être certain que l'un des deux 3 est red 3, mais il ne sait pas encore lequel.
+
+<SarcasticDiscard2 />
+
+## Principes Généraux
+
+### Misplay Cost Principle
+
+- Lors d'un tour où un joueur misplay et accumule un strike pour l'équipe, il aurait pu défausser à la place et générer un clue.
+- Donc, si vous pouvez dépenser un clue pour empêcher un misplay, la valeur s'équilibre.
+- Ainsi, puisqu'il n'y a que 2 strikes autorisés et que l'accumulation de strikes limite la flexibilité, il vaut presque toujours la peine de dépenser un clue pour empêcher un strike.
+- S'il faudrait deux clues pour empêcher un misplay imminent, alors tant que le strike ne ferait pas perdre la partie, il vaut généralement mieux laisser le joueur misplay la carte et obtenir un strike.
+
+### Efficacité
+
+- Une grande partie d'Hanabi consiste à essayer d'être aussi efficace que possible. Cela signifie que les joueurs essaieront généralement d'« obtenir » autant de cartes que possible avec un seul clue.
+- Si vous utilisez un clue pour obtenir une carte, nous appelons cela un clue 1-for-1. Par exemple :
+  - Au premier tour de la partie, Alice clue à Bob nombre 1, touchant un 1 comme un 1-for-1.
+- Si vous utilisez un clue pour obtenir deux cartes, nous appelons cela un clue 2-for-1. Par exemple :
+  - Au premier tour de la partie, Alice clue à Bob nombre 1, touchant deux 1 comme un 2-for-1. (Bob jouera les deux.)
+- Les clues 3-for-1 sont encore meilleurs que les clues 2-for-1, et ainsi de suite. Il est même possible d'effectuer un clue 9-for-1 avec des techniques avancées.
+- Si un clue touche deux cartes mais qu'une seule jouera maintenant, cela **compte toujours** comme un 2-for-1. C'est parce que nous supposons que toutes les cartes touchées finiront par jouer du _Good Touch Principle_. Par exemple :
+  - Au premier tour de la partie, Alice clue à Bob rouge, touchant un red 1 au slot 1 et un red 5 au slot 2 comme un 2-for-1. (Bob ne jouera que le red 1 et sauvegardera l'autre carte rouge pour plus tard.)
+- Sur Hanab Live, l'efficacité future requise est affichée à droite de l'écran. L'efficacité future requise est calculée par la formule suivante :
+  - `nombre de cartes restant à cluer / nombre de clues restants`
+- **Si l'efficacité future requise est élevée, les joueurs ne devraient probablement pas effectuer de clues 1-for-1 !** Au lieu de cela, il vaut mieux défausser et essayer de laisser quelqu'un effectuer un _[Finesse](beginner/finesse.mdx)_.
+
+### Tempo
+
+- _Tempo_ est un terme utilisé pour décrire la vitesse à laquelle les cartes sont jouées. (C'est similaire à comment il est utilisé dans d'autres jeux comme les échecs.)
+- Hanabi peut être pensé comme une course pour faire jouer toutes les cartes avant que le temps ne s'écoule. Cela signifie que même si l'équipe est extrêmement efficace, ils peuvent toujours perdre la partie s'ils ne jouent pas leurs cartes assez vite. Ainsi, les joueurs doivent **équilibrer _Efficacité_ et _Tempo_**. Vous pouvez penser à _Efficacité_ et _Tempo_ comme le yin et le yang d'Hanabi.
+- Au début de la partie, il y a beaucoup de temps restant, donc les joueurs préféreront généralement les clues qui obtiennent beaucoup d'_Efficacité_ aux clues qui obtiennent beaucoup de _Tempo_.
+- À la fin de la partie, il n'y a presque plus de temps, donc les joueurs arrêtent de se soucier de l'_Efficacité_ et commencent à ne se soucier que du _Tempo_.
+- Sur Hanab Live, « Pace » est affiché à droite de l'écran. Pace est une mesure de combien de défausses peuvent encore se produire, donc cela vous indique essentiellement combien de temps il reste dans la partie. Le pace de départ est calculé par la formule suivante :
+  - `score actuel + cartes dans le deck + nombre de joueurs - score maximum`
+- Notez que même au début de la partie, les joueurs pourraient préférer un clue qui obtient du _Tempo_ à un clue plus efficace. Par exemple, ils pourraient valoriser le _Tempo_ parce que cela empêcherait la défausse d'une autre carte utile. Tout dépend du contexte de la partie !
+
+### Information Lock Principle
+
+#### Information Lock avec l'Identité Complète
+
+- Dès qu'un clue est donné à une carte, s'il est suffisant pour déterminer l'identité complète de la carte, alors l'identité supposée est dite verrouillée à la carte. (Sur Hanab Live, c'est habituellement représenté comme un joueur écrivant une « identity note » sur la carte.)
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue rouge à Bob, touchant une carte rouge au slot 1 comme _Play Clue_.
+  - Bob regarde la main de Cathy, sa _Finesse Position_ (slot 1) n'est pas red 1, donc ce n'est pas un _Finesse_.
+  - Bob clique-droit immédiatement sur la carte et écrit une note de « r1 ».
+  - Cette carte est maintenant « verrouillée » comme red 1. Aucun clue ou action future d'autres joueurs ne pourra jamais changer cela.
+
+#### Information Lock avec une Superposition
+
+- Une _[superposition](https://en.wikipedia.org/wiki/Quantum_superposition)_ est un terme de la [mécanique quantique](https://en.wikipedia.org/wiki/Quantum_mechanics) qui décrit comment quelque chose peut être deux choses différentes en même temps. Par exemple, un électron est un type de particule, et un électron peut être « spin up » ou « spin down ». Mais un électron pourrait aussi être dans une superposition à la fois de « spin up » et « spin down » en même temps, aussi étrange que cela puisse paraître. Si un électron rebondit sur quelque chose (i.e. est mesuré), alors la superposition « s'effondrera » et il sera **uniquement** dans un état « spin up » ou « spin down ». Les détails de la mécanique quantique ne sont pas importants – le point est que nous traitons les cartes Hanabi inconnues un peu comme des particules inconnues : même si elles ont **vraiment** une véritable identité, nous l'ignorons et les traitons comme étant toutes les possibilités en même temps.
+  - Même si cela n'a pas d'importance pour les besoins d'Hanabi, vous devriez savoir que l'analogie de l'électron est mauvaise parce que les électrons [n'ont **pas** réellement d'identité véritable comme les cartes Hanabi](https://www.lesswrong.com/posts/9cgBF6BQ2TRB3Hy4E/and-the-winner-is-many-worlds). Mais allons-y comme ça pour l'instant.
+- Dès qu'un clue est donné à une carte qui pourrait être deux ou plusieurs choses différentes, alors la superposition supposée de toutes les possibilités est verrouillée à la carte.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 et blue 1 sont joués sur les stacks.
+  - Alice clue nombre 2 à Bob, touchant un deux au slot 1 comme _Play Clue_.
+  - Bob regarde la main de Cathy. La _Finesse Position_ de Cathy n'est pas un 1. Ainsi, ce n'est pas un _Reverse Finesse_.
+  - Bob écrit une _card note_ de « r2, b2 » sur sa carte cluée.
+  - Cette carte est maintenant « verrouillée » comme cette superposition spécifique. Les clues et actions futurs peuvent restreindre les cartes dans la superposition ou complètement effondrer la superposition, mais de nouvelles cartes ne peuvent jamais être ajoutées à la superposition.
+
+#### Information Lock sur les Cartes Intermédiaires
+
+- Dès qu'un clue est donné à une carte qui n'est pas immédiatement playable, l'identité supposée est verrouillée à la carte **et** toutes les cartes intermédiaires.
+- Par exemple, dans une partie à 4 joueurs :
+  - Red 1 est joué sur les stacks.
+  - Bob a une carte dans sa main cluée avec nombre 2. (Elle est actuellement inconnue.)
+  - Cathy a une carte dans sa main cluée avec nombre 3. (Elle est actuellement inconnue.)
+  - Alice clue à Donald rouge, touchant un red 4 comme _Play Clue_.
+  - Bob est promis d'avoir le red 2. Il écrit une note « r2 » sur son 2 clué. Elle est maintenant verrouillée pour toujours comme cette carte.
+  - Cathy est promise d'avoir le red 3. Elle écrit une note « r3 » sur son 3 clué. Elle est maintenant verrouillée pour toujours comme cette carte.
+  - Donald sait que du _Good Touch Principle_, sa carte rouge ne peut pas être red 2, puisque Bob a cette carte cluée dans sa main.
+  - Donald sait que du _Good Touch Principle_, sa carte rouge ne peut pas être red 3, puisque Cathy a cette carte cluée dans sa main.
+  - Donald sait qu'il doit donc avoir le red 4. Il écrit une note « r4 » sur sa carte rouge. Elle est maintenant verrouillée pour toujours comme cette carte.
+
+<InformationLock />
+
+#### Briser l'Information Lock
+
+- Un conflit direct est la seule chose qui peut « briser » un information lock.
+- Par exemple, dans une partie à 3 joueurs :
+  - Bob a une carte dans sa main qui est touchée par un clue de nombre 2. (Elle n'a pas de clues de couleur dessus.)
+  - Bob a écrit une note « r2 » sur la carte, signifiant qu'elle a été « verrouillée » comme red 2. (Bob pensera en permanence que c'est un red 2.)
+  - Alice clue blue à Bob, ce qui « remplit » la carte comme blue 2.
+  - Il est maintenant impossible que cette carte soit un red 2 – Bob sait qu'on lui a menti plus tôt dans la partie. Bob efface sa note « r2 » sur la carte et l'_Information Lock_ est brisé.
+
+## Questions de Défi
+
+Si vous êtes nouveau au level 3, voyez si vous pouvez compléter [ces questions de défi](challenge-questions/level-3.mdx).

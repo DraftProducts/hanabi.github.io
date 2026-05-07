@@ -1,0 +1,38 @@
+---
+title: 3 cartes restantes
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-8-3-cards-left/question.yml";
+import Answer from "../../docs/challenge-questions/level-8-3-cards-left/answer.yml";
+
+<ChallengeQuestionProgress level={8} id="level-8-3-cards-left" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Il reste 3 cartes dans le deck, et aucune clue disponible. Toutes les cartes utiles restantes sont récupérées.
+- Bob connaît l'identité de toutes ses cartes clued.
+- Quelle action Alice doit-elle effectuer ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Il pourrait être tentant pour Alice de jouer son red 4 pour permettre à Bob de jouer son red 5. Cependant, faire cela perdra la partie.
+- C'est parce que le facteur limitant est la capacité de Bob à jouer tous ses 5 avant la fin de la partie. Pour que cela se produise, l'équipe a besoin de clues pour stall. Défausser redonne une clue, mais jouer le 4 non.
+- Ainsi, il est correct pour Alice de défausser à ce tour, en gardant le red 4 pour plus tard.
+
+<Answer />
+
+</TabItem>
+</Tabs>

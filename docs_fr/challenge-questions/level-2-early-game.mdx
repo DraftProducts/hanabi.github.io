@@ -1,0 +1,41 @@
+---
+title: Early Game
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-2-early-game/question.yml";
+import Answer from "../../docs/challenge-questions/level-2-early-game/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-early-game" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Nous sommes actuellement dans l'[_Early Game_](../beginner/early-game.mdx). Il reste 1 jeton de clue.
+- Liste toutes les actions légales qu'Alice peut effectuer. Parmi ces actions légales, laquelle est la meilleure ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Il y a deux choses légales qu'Alice peut faire :
+  - Premièrement, Alice peut effectuer un [_5 Stall_](../level-2.mdx#the-5-stall-cluing-off-chop-5s) sur Donald (en cluant le numéro 5 pour toucher le purple 5).
+  - Deuxièmement, Alice peut défausser.
+- Si Alice effectue un _5 Stall_, alors l'action de Bob serait de défausser (puisqu'il ne reste plus de jetons de clue).
+- Si Bob défaussait, il défausserait un green 1, ce qui est considéré comme une excellente défausse (car cette carte est déjà jouée et donc considérée comme du trash).
+- Alice pourrait avoir une carte plus précieuse sur son chop qu'un green 1, comme un yellow 3 ou un blue 3.
+- Ainsi, bien qu'il soit permis pour Alice soit de _5 Stall_, soit de défausser, sa meilleure action est d'effectuer un _5 Stall_, puisque son chop est plus précieux que celui de Bob.
+
+<Answer />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,24 @@
+---
+title: Play Clues
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import PlayClue1 from "../../docs/beginner/play-clues/play-clue-1.yml";
+import PlayClue2 from "../../docs/beginner/play-clues/play-clue-2.yml";
+
+<BeginnersGuideProgress id="play-clues" />
+
+- Le premier type de clue s'appelle une _Play Clue_.
+- Le but d'Hanabi est de jouer toutes les cartes sur les stacks. Ainsi, on se donne des _Play Clues_ pour communiquer que des cartes spécifiques sont jouables.
+- Ici, Alice clue red à Bob, touchant une carte sur le slot 2.
+- C'est un message « joue cette carte ». Ainsi, ce doit être le red 1 (puisqu'aucune carte rouge n'est encore jouée sur les stacks).
+- Après la clue, tous les joueurs notent sur la carte qu'il s'agit d'un red 1.
+
+<PlayClue1 />
+
+- Les _Play Clues_ peuvent être données soit avec une clue de couleur, soit avec une clue de chiffre.
+- Ici, Alice clue number 1 à Bob, touchant une carte sur le slot 3.
+- Comme avant, c'est un message « joue cette carte ». Ainsi, ce doit être un yellow 1 ou un blue 1 (puisque ce sont les deux seuls 1 qui ne sont pas encore joués).
+- Après la clue, tous les joueurs notent sur la carte qu'il s'agit d'un yellow 1 ou d'un blue 1.
+
+<PlayClue2 />

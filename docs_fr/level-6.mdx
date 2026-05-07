@@ -1,0 +1,107 @@
+---
+title: Level 6 - Tempo Clues
+---
+
+import TempoClueChopMovePart1 from "../docs/level-6/tempo-clue-chop-move-part-1.yml";
+import TempoClueChopMovePart2 from "../docs/level-6/tempo-clue-chop-move-part-2.yml";
+import DiscardModulation from "../docs/level-6/discard-modulation.yml";
+
+## Mouvements Spéciaux
+
+### Le Tempo Clue
+
+- Les _Tempo Clues_ sont définis comme des clues qui « obtiennent » aucune nouvelle carte. Le but d'un _Tempo Clue_ est de faire jouer une carte qui avait **déjà** un clue dessus.
+  - Si un clue est donné à une carte qui est **déjà** connue comme playable, alors cela **ne** compterait pas comme un _Tempo Clue_. Ce serait à la place un _Burn Clue_ (i.e. un clue qui n'accomplit rien).
+- Comme expliqué dans le guide du débutant, nous n'effectuons pas typiquement de _Tempo Clues_, parce qu'ils ne respectent pas le _[Minimum Clue Value Principle](beginner/minimum-clue-value-principle)_.
+- Quand un _Tempo Clue_ touche plusieurs cartes, le focus est sur la carte la plus à gauche. Les cartes non-focalisées ne sont pas promises playable.
+- Nous traitons les _Tempo Clues_ différemment selon qu'ils soient valuable ou non. Voyez les deux sections suivantes ci-dessous.
+
+### Le Valuable Tempo Clue
+
+- Dans certaines situations spéciales, les _Tempo Clues_ ont assez de valeur pour justifier de les donner :
+  1. Quand tout le monde sait que cela fait jouer deux cartes cluées ou plus (au total à travers toutes les mains).
+  1. Quand la carte cluée n'est pas un 5 et ne peut pas être _[Prompted](beginner/prompt.mdx)_ (parce qu'il y a une autre carte cluée unplayable dans la main qui misplayerait si le _Prompt_ était tenté à ce moment).
+  1. Quand jouer la carte cluée « débloquerait » la main de quelqu'un. (Pour les joueurs de level 9, voyez la section sur les _[Locked Hands](level-9.mdx#the-locked-hand-save-lhs)_.)
+- Si un _Tempo Clue_ est donné dans l'une de ces situations, il est considéré comme « valuable ».
+- Les _Valuable Tempo Clues_ peuvent être donnés à tout moment. Ils n'ont pas de règles spéciales associées et ils sont traités exactement de la même manière qu'un _[Play Clue](beginner/play-clues.mdx)_ « normal ».
+- Quand on détermine si un _Tempo Clue_ est _Valuable_, il devrait seulement être évalué au tour immédiatement après que le clue est donné. (Cela aide à garder les choses simples et à empêcher la désynchronisation.)
+- Notez que même si les 5 ne peuvent pas être _Prompted_ (puisqu'il n'y a pas de 6ème rang), les _Tempo Clues_ aux 5 ne sont pas considérés comme valuable.
+
+### Le Tempo Clue Stall (Un Tempo Clue Non-Valuable)
+
+- Si un joueur donne un _Tempo Clue_ qui **ne** respecte aucun des critères pour être « valuable », il est traité différemment et reçoit un nom différent.
+- Parfois, les joueurs sont dans des « situations stalling » où il serait illégal pour eux de défausser (comme quand ils ont une main qui est complètement cluée). Dans certaines situations stalling spécifiques, c'est ok de donner un _Tempo Clue_ qui ne respecte pas les critères pour être valuable. C'est appelé un _Tempo Clue Stall_. Puisque tout le monde voit que le joueur donnant le clue était dans une situation stalling, ils peuvent comprendre ce qui se passe.
+- Pour les joueurs de level 9, voyez la section _[Allowable Stall Clues](level-9.mdx#allowable-stall-clues-stall-table)_ pour les moments spécifiques où les _Tempo Clue Stalls_ sont ok à donner. Si vous êtes en dessous du level 9, les détails ne sont pas importants pour l'instant.
+- Évidemment, les joueurs sont **uniquement** autorisés à donner un _Tempo Clue Stall_ dans une situation stalling valide. Si un joueur donne un _Tempo Clue_ qui ne respecte pas les critères pour être valuable dans une situation autrement ordinaire, alors il doit avoir l'intention d'envoyer un message plus profond. Voyez la section _Tempo Clue Chop Moves_ ci-dessous.
+
+### Le Tempo Clue Chop Move (TCCM)
+
+- D'abord, voyez la section sur le _[Tempo Clue Stall](#le-tempo-clue-stall-un-tempo-clue-non-valuable)_.
+- Un _Tempo Clue Stall_ qui est donné dans une situation non-stalling ne peut pas être un stall – le clueur doit avoir l'intention d'envoyer un message plus profond.
+- Nous nous accordons à dire que les _Tempo Clues_ de cette nature causent un _Chop Move_ en plus de faire jouer le focus du clue.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue rouge à Bob, ce qui touche deux cartes au slot 1 et slot 2.
+  - Bob joue red 1 depuis le slot 1. La carte rouge au slot 2 pourrait être red 2, red 3, red 4, ou red 5.
+  - Cathy clue nombre 2 à Bob, ce qui n'introduit aucune nouvelle carte, mais cela « remplit » sa carte du slot 2.
+  - Bob sait maintenant qu'il a exactement red 2 au slot 2 et que c'était un _Tempo Clue_. Puisqu'il n'obtient aucune nouvelle carte et n'obtient que du _Tempo_ sur une carte au total, il sait qu'il devrait aussi _Chop Move_ sa carte du slot 5.
+
+<TempoClueChopMovePart1 />
+
+<TempoClueChopMovePart2 />
+
+- Si un clue ressemble à un _Tempo Clue_ et un [_Trash Chop Move_](level-4#the-trash-chop-move-tcm) en même temps, alors nous nous accordons à le traiter comme un _Tempo Clue_. (Les _Tempo Clues_ ont la précédence parce que ce sont les mouvements les plus naturels.)
+
+## Principes Généraux
+
+### Chop Moves & Tempo Clues
+
+- Les _Chop Moves_ interagissent avec les _Tempo Clues_ d'une manière potentiellement déroutante. Quand un _Play Clue_ est donné qui touche une carte _Chop Moved_ pour la première fois, ce **n'est pas** considéré comme un _Tempo Clue_, même si les cartes _Chop Moved_ sont imaginées avoir un clue « invisible » dessus. Au lieu de ça, ce serait catégorisé comme un _Play Clue_ normal.
+  - La raison en est un peu technique. Un _Tempo Clue_ est défini comme un 0-for-1 parce que toutes les cartes cluées joueront « automatiquement » sur les stacks du _[Good Touch Principle](beginner/good-touch-principle.mdx)_. Cependant, il n'y a pas de principe analogue pour les cartes _Chop Moved_ – elles ne joueront pas automatiquement sur les stacks. Ainsi, un _Play Clue_ à une carte _Chop Moved_ serait un 1-for-1.
+- Dans l'_Early Game_, les joueurs doivent épuiser tous les _Play Clues_ et _[Save Clues](beginner/save-clues.mdx)_ qui satisfont le _Minimum Clue Value Principle_. Puisque les clues aux cartes _Chop Moved_ playable comptent comme des _Play Clues_ normaux, il s'ensuit que les joueurs sont obligés de donner ce type de clues avant de terminer l'_Early Game_.
+
+### Focus Shifting
+
+- Parfois, la carte normalement focalisée d'un clue n'aurait pas de sens. Nous nous accordons à dire que :
+  - Quand deux cartes ou plus sont touchées dans le cadre d'un _Play Clue_,
+  - et que la carte normalement focalisée est déjà connue comme playable,
+  - et qu'une ou plusieurs des cartes touchées ne sont pas déjà connues comme playable,
+  - alors le focus se déplace toujours vers la prochaine carte la plus à gauche qui n'est pas déjà connue comme playable.
+
+### Discard Modulation
+
+- Souvent, soit vous, soit le joueur qui vient après vous peut effectuer un clue. Et le clue aurait le même résultat fait par l'un ou l'autre joueur. Donc qui devrait le faire ?
+- Une façon de décider est de regarder le chop du joueur suivant. Est-il de haute valeur, basse valeur, ou inutile ? S'il est de haute valeur, alors vous devriez défausser et le laisser donner le clue. S'il est de basse valeur ou inutile, alors vous devriez donner le clue et le laisser défausser.
+- « Voler » des clues de cette manière est appelé _Discard Modulation_. Si d'autres joueurs défaussent pour vous laisser donner tous les clues, vous pourriez avoir un chop de haute valeur.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - C'est le _Mid-Game_.
+  - Bob a un red 3 sur le chop. C'est une carte _one-away-from-playable_ qui est précieuse pour l'équipe. Cependant, il serait illégal de cluer la carte directement avec un _Play Clue_ ou un _Save Clue_.
+  - Cathy a un (playable) blue 2 dans sa main.
+  - Alice décide de défausser au lieu de donner un _Play Clue_ elle-même.
+  - Bob clue blue à Cathy comme _Play Clue_.
+  - Alice a habilement empêché la défausse du red 3, au moins pour un moment.
+
+<DiscardModulation />
+
+### La Valeur des Cartes One-Away-From-Playable
+
+- En général, les 3 sont d'assez haute valeur, et les 4 sont d'assez basse valeur.
+- Mais combiné avec cela, les cartes qui sont _one-away-from-playable_ sont d'assez haute valeur, et les cartes qui sont à deux slots (ou plus) sont d'assez basse valeur.
+- Ainsi, dans certaines situations, un 4 _one-away-from-playable_ peut être plus précieux qu'un 3 _two-away-from-playable_.
+- Selon nos conventions, il est illégal de cluer une carte _one-away-from-playable_ comme focus du clue sans que ce soit une sorte de mouvement spécial comme un _[Finesse](beginner/finesse.mdx)_. Cependant, parfois nous voulons toujours « sauvegarder » ces cartes. Ainsi, ce sont des cibles privilégiées pour les sauvegardes indirectes comme le _Trash Chop Move_ ou le _5's Chop Move_.
+- Cependant, dans la plupart des cas, _Chop Moving_ la carte précieuse ne sera juste pas possible. Donc en général, vous devriez essayer de construire des lignes qui protègent les cartes de haute valeur d'être défaussées le plus longtemps possible.
+
+### Clarity Principle
+
+- Dans le H-Group, nous aimons trouver le « meilleur » mouvement pour chaque tour dans la revue post-partie. C'est amusant et aide tout le monde à s'améliorer. Mais cela peut être pris trop loin.
+- Parfois, les joueurs donneront des clues qui sont très compliqués. Peut-être que le clue ressemble à ce qu'il pourrait être deux mouvements différents. Ou, peut-être que le clue dépend de facteurs contextuels non-évidents.
+- Souvent, ces types de clues compliqués finissent en misplays et parties perdues. Et dans la revue post-partie, la personne qui a donné le clue peut se mettre sur la défensive : « Si vous aviez juste joué parfaitement, alors mon clue aurait fonctionné ! »
+- C'est naturel pour les gens de se sentir ainsi, parce que normalement, si Alice effectue un _Finesse_, et que Bob ne fait pas attention et le manque, alors nous dirions que Bob est en faute.
+- D'un autre côté, les choses sont un peu différentes quand Alice donne un clue vraiment compliqué que Bob devrait _techniquement_ pouvoir comprendre, mais ne le fait pas. Dans ce cas, Bob partage un peu du blâme. **Mais c'est principalement Alice qui est en faute**.
+- Une partie d'être bon à Hanabi est de reconnaître quand vous **ne** devriez **pas** essayer de faire le clue le plus optimal pour le tour, parce que ce serait déroutant pour vos coéquipiers. La clarté des clues est vraiment importante et vous devriez la prioriser ! Dans la revue post-partie, vous pouvez toujours dire : « Au tour X, j'ai considéré ce clue plus efficace, mais il ne semblait pas très clair. Donc j'ai fait cet autre clue plus clair à la place. Qu'en pensez-vous ? » Cela donne à tout le monde une chance de discuter du mouvement théorique ensemble et de découvrir si c'était vraiment le meilleur mouvement, sans introduire une énorme chance d'échec dans la partie réelle.
+- **Ne donnez pas de clues déroutants.** Si vous décidez de donner un clue déroutant, et que ça ne fonctionne pas, alors **vous êtes en faute**. Ce principe est plus important que tous les autres principes.
+
+## Questions de Défi
+
+Si vous êtes nouveau au level 6, voyez si vous pouvez compléter [ces questions de défi](challenge-questions/level-6.mdx).

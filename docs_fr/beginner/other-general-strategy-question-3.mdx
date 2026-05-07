@@ -1,0 +1,40 @@
+---
+title: Autre Stratégie Générale (Question 3)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import OtherGeneralStrategyQuestion3 from "../../docs/beginner/other-general-strategy-question-3/other-general-strategy-question-3.yml";
+import OtherGeneralStrategyAnswer3 from "../../docs/beginner/other-general-strategy-question-3/other-general-strategy-answer-3.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-3" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Énumérez toutes les clues légales qu'Alice peut donner.
+- Parmi ces possibilités, quelle clue Alice doit-elle donner ?
+
+<OtherGeneralStrategyQuestion3 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice peut cluer yellow à Bob en tant que _[Play Clue](./play-clues.mdx)_ sur le yellow 3 (via le yellow 2 de Cathy).
+- Alice peut cluer number 3 à Bob en tant que _Play Clue_ sur le yellow 3 (via le yellow 2 de Cathy).
+- Alice peut cluer number 5 à Bob en tant que _[5 Save](./5-save.mdx)_ sur le blue 5.
+- Normalement, Alice préférerait donner une _Play Clue_ plutôt qu'une _[Save Clue](./save-clues.mdx)_. Cependant, dans ce cas, sa _Play Clue_ serait une _[Delayed Play Clue](./delayed-play-clues.mdx)_, car Bob ne pourrait pas encore jouer la carte. (Bob devrait attendre que Cathy joue le yellow 2.)
+- Donc, si Alice donnait une _Play Clue_ au yellow 3, Bob pourrait n'avoir rien à faire et défausser le blue 5 critique. Cela signifie qu'Alice doit effectuer une autre action.
+- Ainsi, Alice doit cluer number 5 à Bob en tant que _5 Save_.
+
+<OtherGeneralStrategyAnswer3 />
+
+</TabItem>
+</Tabs>

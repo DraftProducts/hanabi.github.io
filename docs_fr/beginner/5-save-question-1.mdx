@@ -1,0 +1,38 @@
+---
+id: 5-save-question-1
+title: Le 5 Save (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import FiveSaveQuestion1 from "../../docs/beginner/5-save-question-1/5-save-question-1.yml";
+import FiveSaveAnswer1 from "../../docs/beginner/5-save-question-1/5-save-answer-1.yml";
+
+<BeginnersGuideProgress id="5-save-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Quelle action Alice doit-elle effectuer ?
+
+<FiveSaveQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob a un 5 dans sa main. Cependant, il n'est pas en [chop](./chop.mdx).
+- Donald a deux 5 dans sa main. Cependant, aucun n'est en chop.
+- Alice sait qu'elle n'a **le droit** de donner des _[Save Clues](./save-clues.mdx)_ que sur des cartes en chop.
+- Ainsi, Alice n'a rien à faire et doit défausser.
+
+<FiveSaveAnswer1 />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,95 @@
+---
+title: Ejections
+---
+
+import RankChoice from "../../docs/extras/ejections/rank-choice.yml";
+import BadTrashFinesseEjection from "../../docs/extras/ejections/bad-trash-finesse-ejection.yml";
+
+- Une *Ejection* fait référence à un blind-play dans lequel quelqu'un joue une carte depuis sa *Second Finesse Position*.
+  - Par exemple, si la main d'un joueur est complètement non cluée, sa *Second Finesse Position* est le slot 2.
+- Tout comme un *Bluff*, une *Ejection* ne peut être effectuée que sur le tout prochain joueur.
+
+### Le 5 Color Ejection (5CE)
+
+- Le _5 Color Ejection_ est traité au [niveau 16](../level-16.mdx#the-5-color-ejection-5ce).
+
+### Le 5 Number Ejection (5NE)
+
+- Le _5 Number Ejection_ est traité au [niveau 19](../level-19.mdx#the-5-number-ejection-5ne).
+
+### Trash Push Ejection
+
+- Tout d'abord, voir la section sur le [Trash Push](../level-14.mdx#the-trash-push).
+- Normalement, lorsque du known-trash est touché comme focus du clue, et que le known-trash est sur chop, cela communique un _Trash Push_.
+- Cependant, que se passe-t-il si la carte _Trash Pushed_ est two-or-more-away-from-playable ? Cela serait normalement une _Trash Push Double Finesse_ sur Bob, mais c'est peu probable.
+- À la place, puisque aucun seul play ne pourrait jamais empêcher la carte _Pushed_ de misplay immédiatement, Bob interprète le clue comme une _Ejection_.
+- Après un _Trash Push Ejection_, le récepteur du clue devrait _Chop Move_ la carte two-or-more-away-from-playable.
+
+### Le Bad Chop Move Ejection (BCME)
+
+- Beaucoup de coups résultent en une ou plusieurs cartes devenant _Chop Moved_. Cependant, que se passe-t-il si un tel coup est utilisé quand les cartes _Chop Moved_ sont toutes du trash ? Les autres joueurs peuvent voir que ce coup doit avoir été fait pour une autre raison.
+- Dans cette situation, cela devrait signaler une _Ejection_ sur le tout prochain joueur.
+- **N'importe quel** coup qui résulte en un _Chop Move_ peut être utilisé pour initier une telle _Ejection_.
+- Les _Bad Chop Move Ejections_ ne s'appliquent pas toujours :
+  - En général, les clues liés au _Chop Move_ sont désactivés dès qu'il n'y a plus de cartes à _Chop Move_. Spécifiquement, cela signifie les cartes _one-away-from-playable_ qui ne peuvent pas recevoir un _Play Clue_ direct ou un _Save Clue_. Ainsi, s'il n'y a plus de cartes à _Chop Move_, un _Bad Chop Move Ejection_ se transformerait en autre chose, comme un _Double Ignition_ d'une certaine sorte.
+  - Parfois, les joueurs effectuent des _Chop Moves_ sur l'autre copie de cartes actuellement cluées. Cela peut être utile à des fins de distribution, pour que tout le monde ait une carte à jouer au tour final de la partie. Pour cette raison, un _Bad Chop Move Ejection_ ne peut être déclenché que lors du _Chop Moving_ de cartes qui ont déjà été jouées.
+  - Rappelez-vous que dans l'_End-Game_, un joueur qui donne un clue qui ressemble à un _Bad Chop Move Ejection_ pourrait simplement être en train de stall.
+
+### Le Bad Trash Finesse Ejection / Le Bad Trash Bluff Ejection
+
+- Puisque nous supposons que [les _Trash Finesses_ et les _Trash Bluffs_ sont toujours non nécessaires](../level-24.mdx#trash-finesses-and-trash-bluffs-are-always-unnecessary), il serait étrange qu'une _Trash Finesse_ résulte en un _Chop Move_ de tout trash.
+- Nous convenons que dans cette situation, le joueur réagissant ne devrait pas jouer sa _First Finesse Position_ (comme il le ferait dans une _Trash Finesse_ normale). À la place, il devrait _Eject_, comme une forme spéciale de _Bad Chop Move Ejection_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 2 et le yellow 1 sont sur les stacks.
+  - La main de Cathy est complètement non cluée et est, du plus récent au plus ancien : `green 2, red 3, yellow 5, yellow 1, red 2`.
+  - Alice clue numéro 1 à Cathy, ce qui sera vu comme un _Play Clue_ sur l'un des 1 non joués.
+  - Bob sait que peu importe la disposition de sa main, blind-playing depuis sa _First Finesse Position_ résulterait en Cathy _Chop Moving_ le red 2, qui est trash.
+  - Puisque cela serait un mauvais _Chop Move_, Bob sait qu'Alice doit plutôt avoir l'intention d'un _Bad Trash Finesse Ejection_. Bob blind-play sa carte _Second Finesse Position_. C'est un blue 1 et il joue avec succès.
+  - Cathy sait que son 1 clué doit être trash, et que la carte derrière est aussi maintenant globalement connue comme trash.
+
+<BadTrashFinesseEjection />
+
+### Le Trash Finesse Push Ejection / Le Trash Bluff Push Ejection
+
+- Tout d'abord, voir les sections sur le _[Trash Push Ejection](#trash-push-ejection)_ et sur le _[Bad Trash Finesse Ejection](#the-bad-trash-finesse-ejection--the-bad-trash-bluff-ejection)_.
+- Si un joueur effectue une _Trash Finesse_ en touchant une carte chop, cela résultera toujours en un _Trash Push_ (puisque les _[Trash Finesses et Trash Bluffs sont toujours non nécessaires](../level-24.mdx#trash-finesses-and-trash-bluffs-are-always-unnecessary)_.
+- Que se passe-t-il si une _Trash Finesse_ est donnée, mais que le joueur répondant voit que la carte poussée résultante ne pourrait jamais être jouable au moment où ce serait son tour ? En d'autres termes, que se passe-t-il si la carte poussée est two-or-more-away-from-playable ?
+- Dans cette situation, nous convenons que le joueur réagissant doit _Eject_ (au lieu de jouer la _First Finesse Position_ comme il le ferait dans une _Trash Finesse_ normale).
+- Après un _Trash Finesse Push Ejection_, le joueur clué devrait _Chop Move_ la carte poussée pour cela. (C'est similaire au fonctionnement du [5 Number Ejection](../level-19.mdx#the-5-number-ejection-5ne).)
+
+### Le Rank Choice Ejection (avec un numéro 2 ou un numéro 5) (RCE)
+
+- Typiquement, lorsqu'un clue numéro 2 ou un clue numéro 5 est effectué sur une carte chop, il sera traité comme un _2 Save_ ou un _5 Save_ et la carte ne jouera pas.
+- Si un joueur effectue un _2 Save_ ou un _5 Save_ sur une carte jouable et qu'il aurait pu facilement utiliser un _Play Clue_ couleur normal, c'est assez étrange. Il doit essayer de communiquer quelque chose en plus.
+- Dans cette situation, ils ont l'intention d'une _Ejection_ sur le tout prochain joueur.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 1 est joué sur les stacks.
+  - La main de Cathy est complètement non cluée et est, du plus récent au plus ancien : `blue 3, blue 3, blue 4, blue 4, red 2`
+  - Alice clue numéro 2 à Cathy, touchant le red 2 comme un _2 Save_.
+  - Bob voit que le clue évident à donner à Cathy était rouge, car cela ferait jouer le red 2 maintenant.
+  - Ce coup est si mauvais qu'il doit communiquer quelque chose en plus. Alice doit avoir l'intention d'un _Rank Choice Ejection_. Bob blind-play sa carte _Second Finesse Position_ et c'est un blue 1 et il joue avec succès.
+  - Cathy sait que puisqu'un clue numéro 2 a fait blind-play à Bob sa _Second Finesse Position_, cela doit être une _Ejection_. Le seul type d'_Ejection_ qui correspond à ce genre de clue est un _Rank Choice Ejection_, donc Cathy sait que son 2 doit être jouable et que son 2 doit être exactement le red 2. Cathy joue le red 2.
+
+<RankChoice />
+
+- Plus d'exemples de _Rank Choice Ejection_ peuvent être trouvés [ici](../examples/rank-choice-ejection.mdx).
+
+### Le Trash Ejection
+
+- Tout d'abord, voir la section sur le _[Trash Double Ignition](../level-21.mdx#the-trash-double-ignition-tdi)_.
+- Dans certaines situations, si un joueur clue une carte précédemment non touchée qui est globalement connue comme trash, cela déclenche un _Trash Double Ignition_.
+- Cependant, que se passe-t-il si le prochain joueur peut voir qu'un _Trash Double Ignition_ est impossible ? Dans cette situation, si le donneur de clue ne fait pas une erreur, il a plutôt l'intention d'une _Ejection_ sur le tout prochain joueur.
+
+### Le Replay Ejection
+
+- Tout d'abord, voir la section sur le _[Replay Double Ignition](../level-21.mdx#the-replay-double-ignition-rdi)_.
+- Normalement, si un joueur re-clue une carte qui est globalement connue comme jouable, cela déclenche un _Replay Double Ignition_.
+- Cependant, que se passe-t-il si le prochain joueur peut voir qu'un _Replay Double Ignition_ est impossible ? Dans cette situation, si le donneur de clue ne fait pas une erreur, il a plutôt l'intention d'une _Ejection_ sur le tout prochain joueur.
+- Dans la plupart des circonstances, les _Replay Ejections_ ne peuvent pas être effectués en re-cluant une carte dans la main de Bob. C'est parce que Bob l'interpréterait comme un _Fix Clue_, ce qui signifierait que la carte que Bob était sur le point de jouer est en fait mauvaise et qu'il devrait la défausser au lieu de la jouer.
+- Notez que le _Replay Ejection_ est "désactivé" dans l'_End-Game_. (C'est parce que les joueurs cluent souvent des cartes jouables comme un _Burn Clue_.)
+
+### Le Poke Ejection
+
+- Tout d'abord, voir la section sur le _[Poke Double Ignition](../level-21.mdx#the-poke-double-ignition-pdi)_.
+- Normalement, si un joueur re-clue du globally known-trash, cela déclenche un _Poke Double Ignition_.
+- Cependant, que se passe-t-il si le prochain joueur peut voir qu'un _Poke Double Ignition_ est impossible ? Dans cette situation, si le donneur de clue ne fait pas une erreur, il a plutôt l'intention d'une _Ejection_ sur le tout prochain joueur.

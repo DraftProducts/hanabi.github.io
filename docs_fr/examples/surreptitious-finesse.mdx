@@ -1,0 +1,38 @@
+---
+title: Exemples du Surreptitious Finesse
+---
+
+import Example1Part1 from "../../docs/examples/surreptitious-finesse/example-1-part-1.yml";
+import Example1Part2 from "../../docs/examples/surreptitious-finesse/example-1-part-2.yml";
+import Example1Part3 from "../../docs/examples/surreptitious-finesse/example-1-part-3.yml";
+
+Le [_Surreptitious Finesse_](/extras/special-finesses.mdx#the-surreptitious-finesse) est une stratégie avancée.
+
+### Exemple 1
+
+- Voir l'image d'exemple ci-dessous.
+- Alice clue le 3 à Bob, touchant un 3 comme un _Play Clue_.
+
+<Example1Part1 />
+
+- Bob doit déterminer la signification du clue de 3. Donald n'a pas de cartes jouables sur sa _Finesse Position_, mais Cathy oui, donc Bob sait que cela pourrait être un _Reverse Finesse_ sur une ou plusieurs cartes de Cathy.
+- Du point de vue de Bob, il pourrait s'agir de plusieurs possibilités :
+  - Cathy pourrait blind-play 0 cartes. Dans ce cas, ce serait un _Double Self-Finesse_ sur Bob pour un 1 et un 2, ce qui signifie que le 3 pourrait être n'importe quel 3 du jeu. (Mais Bob doit laisser une chance à Cathy de blind-play en premier avant de blind-play quoi que ce soit.)
+  - Cathy pourrait blind-play 1 carte. Dans ce cas, ce serait un _Double Finesse_ et Bob aurait le red 2 sur sa _Finesse Position_, ce qui signifie que le 3 serait le red 3 connectant.
+  - Cathy pourrait blind-play 2 cartes. Dans ce cas, ce serait un _Layered Finesse_ et Bob aurait le purple 2 sur sa _Finesse Position_, ce qui signifie que le 3 serait le purple 3 connectant.
+  - Cathy pourrait blind-play 3 cartes. Dans ce cas, ce serait un _Layered Finesse_ et Bob n'aurait rien à blind-play, ce qui signifie que le 3 serait le red 3 connectant. (Parmi toutes les possibilités, c'est la plus probable, car elle n'implique pas que Bob blind-play une carte.)
+  - Cathy pourrait blind-play 4 cartes. Dans ce cas, ce serait un _Surreptitious Finesse_ et Bob aurait le blue 2 sur sa _Finesse Position_, ce qui signifie que le 3 serait le blue 3 connectant.
+- Cela signifie que pour l'instant, Bob doit attendre et voir ce que Cathy fait. Bob clue green à Donald comme un _Play Clue_ sur le green 1.
+
+<Example1Part2 />
+
+- Cathy sait qu'elle a le blue 1 dans le cadre d'un _Double Finesse_. Elle blind-play sa _Finesse Position_. C'est le red 1 et il se joue avec succès. Cathy sait maintenant qu'un _Layered Finesse_ se produit et qu'elle a le blue 1 sur sa _Second Finesse Position_.
+- Au tour suivant de Bob, il est dans la même situation qu'avant. Il doit donner à Cathy un autre tour pour voir si le purple 1 se blind-play ou non. Bob fait quelque chose sans rapport, par exemple un _5 Save_ sur le 5 de Donald.
+- Cathy blind-play sa _Second Finesse Position_. C'est le purple 1 et il se joue avec succès. Cathy sait maintenant qu'un _Layered Finesse_ se produit toujours et qu'elle a le blue 1 sur sa _Third Finesse Position_.
+- Au tour suivant de Bob, il est (encore) dans la même situation qu'avant. Il doit donner à Cathy un autre tour pour voir si le red 2 se blind-play ou non. Bob fait quelque chose sans rapport.
+- Cathy blind-play sa _Third Finesse Position_. C'est le red 2 et il se joue avec succès. Au début, c'est déroutant pour Cathy, parce qu'elle réalise que "2" se connecte à "3", et que Bob pourrait maintenant penser qu'il a le red 3 connectant. Cependant, Cathy sait qu'un _Surreptitious Finesse_ se produit et qu'elle a le blue 1 sur sa _Fourth Finesse Position_.
+- Au tour suivant de Bob, il est (encore) dans la même situation qu'avant. Il doit donner à Cathy un autre tour pour voir si le blue 1 se blind-play ou non. Bob fait quelque chose sans rapport.
+- Cathy blind-play sa _Fourth Finesse Position_. C'est le blue 1 et il se joue avec succès.
+- Bob sait maintenant qu'un _Surreptitious Finesse_ se produit et qu'il doit blind-play le blue 2, et que le 3 dans sa main est le blue 3 connectant.
+
+<Example1Part3 />

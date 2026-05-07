@@ -1,0 +1,41 @@
+---
+title: Good Touch Principle (GTP)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import GoodTouchPrinciple1Illegal from "../../docs/beginner/good-touch-principle/good-touch-principle-1-illegal.yml";
+import GoodTouchPrinciple1Correct from "../../docs/beginner/good-touch-principle/good-touch-principle-1-correct.yml";
+import GoodTouchPrinciple2 from "../../docs/beginner/good-touch-principle/good-touch-principle-2.yml";
+import GoodTouchPrinciple3 from "../../docs/beginner/good-touch-principle/good-touch-principle-3.yml";
+
+<BeginnersGuideProgress id="good-touch-principle" />
+
+- Quand on clue des cartes, on suit le _Good Touch Principle_ – **on ne touche que des cartes qui finiront par être jouées**.
+  - Ce serait un _Bad Touch_ si quelqu'un touchait une carte qui était déjà jouée sur les stacks ou déjà cluée dans la main de quelqu'un d'autre.
+- Le _Good Touch Principle_ est une brique puissante pour la logique et le raisonnement. Si tout le monde ne touche que des bonnes cartes, alors les joueurs peuvent grandement réduire les possibilités pour les cartes cluées dans leur main !
+- Dans l'exemple ci-dessous :
+  - Alice veut donner une _[Play Clue](./play-clues.mdx)_ au red 2.
+  - Alice a le choix entre cluer red et cluer number 2.
+  - Si elle clue number 2, cela toucherait uniquement le red 2 sur le slot 1.
+  - Si elle clue red, alors cela toucherait les slots 1, 2 et 3. Cette clue violerait le _Good Touch Principle_, car les red 4 seraient dupliqués dans la main de Bob.
+  - Ainsi, la bonne clue à donner pour Alice est number 2.
+
+<GoodTouchPrinciple1Correct />
+
+<GoodTouchPrinciple1Illegal />
+
+- Dans l'exemple ci-dessous :
+  - Alice a une carte purple inconnue dans sa main.
+  - Alice peut voir que la pile purple est jouée jusqu'au purple 4. La seule autre carte purple utile restante est le purple 5.
+  - Alice sait aussi que selon le _Good Touch Principle_, chaque carte cluée finira par être jouée.
+  - Ainsi, par élimination, elle peut déduire que la carte purple inconnue dans sa main doit être le purple 5, et elle peut le jouer immédiatement.
+
+<GoodTouchPrinciple2 />
+
+- Dans l'exemple ci-dessous :
+  - Au milieu d'une partie, Alice clue yellow à Bob, touchant les slots 2 et 3.
+  - Le focus de la clue est sur le slot 2. Ce doit être une _Play Clue_, donc Bob marque sa carte du slot 2 comme un yellow 3.
+  - Le slot 3 a aussi été touché par la clue, mais ce n'était pas le focus. D'après le _Good Touch Principle_, Bob sait qu'elle doit être jouable dans le futur.
+  - Par conséquent, Bob marque sa carte du slot 3 comme étant soit un yellow 4, soit un yellow 5.
+
+<GoodTouchPrinciple3 />

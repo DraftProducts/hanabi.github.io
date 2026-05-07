@@ -1,0 +1,49 @@
+---
+title: L'ordre est important
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-4-order-is-important/question.yml";
+import AnswerPart1 from "../../docs/challenge-questions/level-4-order-is-important/answer-part-1.yml";
+import AnswerPart2 from "../../docs/challenge-questions/level-4-order-is-important/answer-part-2.yml";
+
+<ChallengeQuestionProgress level={4} id="level-4-order-is-important" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est l'_Early Game_.
+- Le red 1 et le blue 5 sont joués sur les stacks.
+- Précédemment, Bob a joué le blue 3 du slot 2 et le blue 4 du slot 4.
+- Cathy a deux 2 inconnus sauvés sur le chop.
+- Alice clue numéro 1 à Bob, ce qui touche les cartes en slot 2 et 3.
+- Bob joue sa carte du slot 3. C'est un green 1 qui se joue avec succès.
+- Quel slot Cathy défaussera-t-elle ensuite ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Puisque Bob a précédemment joué une carte du slot 2 et du slot 4, il a piocé deux cartes.
+- En conséquence, sa carte du slot 3 doit avoir été dans sa starting hand, tandis que sa carte du slot 2 doit avoir été piocée après avoir joué le blue 3.
+- Ainsi, sa carte du slot 2 est une carte "fraîche" et sa carte du slot 3 est une carte "normale" de la starting hand.
+
+<AnswerPart1 />
+
+- Comme établi au level 3, [les 1 inconnus sont censés être joués dans un ordre particulier](../level-3.mdx#playing-multiple-1s). Plus précisément, [les 1 fraîchement piocés sont censés avoir précédence](../level-3.mdx#part-2---the-fresh-1s-rule).
+- Cela signifie que Bob était censé jouer sa carte du slot 2 plutôt que sa carte du slot 3.
+- Ainsi, Cathy sait que Bob avait l'intention d'effectuer un _Order Chop Move_. Cathy _Chop Move_ sa carte du slot 3. Son nouveau chop est le slot 2, donc ce serait le slot que Cathy défausserait ensuite.
+
+<AnswerPart2 />
+
+</TabItem>
+</Tabs>

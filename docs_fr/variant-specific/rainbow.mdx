@@ -1,0 +1,51 @@
+---
+title: Rainbow
+---
+
+import FreeChoiceFinesse1 from "../../docs/variant-specific/rainbow/free-choice-finesse-1.yml";
+import FreeChoiceFinesse2 from "../../docs/variant-specific/rainbow/free-choice-finesse-2.yml";
+
+Ces conventions s'appliquent à toute variante avec une suite rainbow (touchée par toutes les couleurs) ou dual-color.
+
+### Saving Rainbow Cards
+
+- Si un rainbow 2 n'a pas encore été défaussé, alors il doit être _2 Saved_ de la même manière que les 2 normaux le sont.
+- Si un rainbow 2, un rainbow 3 ou un rainbow 4 sont critiques, alors ils peuvent être sauvés avec n'importe quelle couleur ou le rang correspondant.
+- Ainsi, dès qu'un rainbow 2, un rainbow 3 ou un rainbow 4 deviennent critiques, tout clue de couleur sur une carte chop ressemblera probablement simplement à un _Save Clue_ sur une carte critique.
+
+### Free Choice
+
+- _Free Choice_ est défini comme quand un joueur a deux options ou plus pour cluer une carte et que toutes les options ne toucheraient **que** la (les) même(s) carte(s).
+- Par exemple, dans une partie sans variante :
+  - La main de Bob est, du plus récent au plus ancien : `red 1, blue 4, blue 4, yellow 4, yellow 4`
+  - Si Alice veut donner un _Play Clue_ au red 1, on dit qu'Alice a un _Free Choice_ entre red et number 1, puisque ces deux types de clues ne toucheraient **que** le red 1.
+- Comme les cartes rainbow sont touchées par n'importe quelle couleur, les joueurs auront souvent un _Free Choice_ sur la façon de cluer une carte rainbow.
+- Par exemple, dans une partie rainbow avec 6 suites :
+  - La main de Bob est, du plus récent au plus ancien : `rainbow 1, blue 4, yellow 4, green 4, yellow 4`
+  - Si Alice veut donner un _Play Clue_ au rainbow 1, on dit qu'Alice a un _Free Choice_ entre red, purple et number 1, puisque tous ces types de clues ne toucheraient **que** le rainbow 1.
+
+### The Free Choice Finesse
+
+- Lorsqu'on effectue un _Prompt_ sur une carte rainbow, si le donneur de clue choisit une couleur qui ne touche que des cartes rainbow **et** qu'il a un _Free Choice_ pour choisir la couleur correspondant à la couleur sur la carte rainbow cluéée, alors **il doit toujours choisir la couleur correspondante**.
+- Par exemple, dans une partie rainbow :
+  - Le red 1 est joué sur la stack.
+  - Bob a une carte red cluéée dans sa main. Il ne connaît pas l'identité de la carte.
+  - Cathy n'a pas de cartes cluéées dans sa main, et sa main est, du plus récent au plus ancien : `yellow 2, green 3, rainbow 2, yellow 5, green 4`.
+  - Alice clue red à Cathy, touchant le rainbow 2.
+  - Bob voit qu'Alice avait un _Free Choice_ entre blue et red, qui ne toucheraient tous deux que le rainbow 2, et qu'elle a choisi la couleur qui _correspond_ à la carte cluéée de Bob.
+  - Bob sait donc que c'est un _Free Choice Prompt_ et joue sa carte en slot 2 comme le rainbow 1.
+
+<FreeChoiceFinesse1 />
+
+- Si un joueur dans cette situation choisit **de ne pas** correspondre à la couleur, alors il doit essayer de communiquer quelque chose de plus. Cela signifie que c'est en fait une _Finesse_ au lieu d'un _Prompt_.
+- Modifiant l'exemple ci-dessus :
+  - Alice clue **blue** à Cathy à la place, touchant le rainbow 2.
+  - Bob voit qu'Alice avait un _Free Choice_ entre blue et red, qui ne toucheraient tous deux que le rainbow 2, et qu'elle a choisi la couleur qui _ne correspond pas_ à la carte cluéée de Bob.
+  - Bob sait donc que c'est une _Free Choice Finesse_ et joue sa carte en slot 1 comme le rainbow 1.
+
+<FreeChoiceFinesse2 />
+
+### The Free Choice Bluff
+
+- Il est possible d'utiliser la convention _Free Choice_ pour communiquer à un coéquipier que vous voulez une _Finesse_ au lieu d'un _Prompt_ afin de le faire jouer une carte jouable non liée depuis sa _Finesse Position_.
+- Comme un _Bluff_ normal, après un _Free Choice Bluff_, le joueur qui a blind-play n'a pas nécessairement la carte "qui se connecte" dans sa main.

@@ -1,0 +1,459 @@
+---
+title: Pink
+---
+
+import Promise from "../../docs/variant-specific/pink/promise.yml";
+import PromisePrompt from "../../docs/variant-specific/pink/promise-prompt.yml";
+import PromptRankException from "../../docs/variant-specific/pink/prompt-rank-exception.yml";
+import PlayClueLie1s from "../../docs/variant-specific/pink/play-clue-lie-1s.yml";
+import PlayClueLieMismatch from "../../docs/variant-specific/pink/play-clue-lie-mismatch.yml";
+import FixClue1s from "../../docs/variant-specific/pink/fix-clue-1s.yml";
+import FixPromise from "../../docs/variant-specific/pink/fix-promise.yml";
+import FixClue from "../../docs/variant-specific/pink/fix-clue.yml";
+import ChoiceTempo from "../../docs/variant-specific/pink/choice-tempo.yml";
+import ChoiceFinesse from "../../docs/variant-specific/pink/choice-finesse.yml";
+import Positional from "../../docs/variant-specific/pink/positional.yml";
+import BubblegumFinesse from "../../docs/variant-specific/pink/bubblegum-finesse.yml";
+import BubblegumBluff from "../../docs/variant-specific/pink/bubblegum-bluff.yml";
+import BubblegumPrompt1 from "../../docs/variant-specific/pink/bubblegum-prompt-1.yml";
+import BubblegumPrompt2 from "../../docs/variant-specific/pink/bubblegum-prompt-2.yml";
+import BubblegumBluffTwoAway from "../../docs/variant-specific/pink/bubblegum-bluff-two-away.yml";
+import BubblegumDoubleBluff from "../../docs/variant-specific/pink/bubblegum-double-bluff.yml";
+import PinkPrecedence from "../../docs/variant-specific/pink/pink-precedence.yml";
+import TurnaboutEjection from "../../docs/variant-specific/pink/turnabout-ejection.yml";
+import FakeFinesse from "../../docs/variant-specific/pink/fake-finesse.yml";
+import Promise5Stall from "../../docs/variant-specific/pink/promise-5stall.yml";
+import Promise5ChopMove from "../../docs/variant-specific/pink/promise-5cm.yml";
+import Promise5Pull from "../../docs/variant-specific/pink/promise-5pull.yml";
+
+Ces conventions s'appliquent à toute variante avec une suite pink (touchée par tous les rangs).
+
+## Level 9 - Basic Pink Principles
+
+### Pink Promise
+
+- Quand une carte pink est ciblée par un clue de rang, le nombre doit correspondre à la véritable identité de la carte. En d'autres termes, la carte ciblée est _Promised_ comme correspondant au nombre du clue de rang.
+- Le _Pink Promise_ s'applique à tous les clues : _Play Clues_, _Save Clues_, _5 Stalls_, etc.
+- Par exemple, dans une partie à 3 joueurs :
+  - Cathy a un pink 2 sur le chop suivi par un blue 5.
+  - Alice et Bob doivent donner un _Save Clue_ à la fois au pink 2 et au blue 5.
+  - Si Alice donnait un clue number 5, cela sauverait les deux cartes d'un seul coup, car un clue number 5 toucherait le pink 2.
+  - Cependant, faire cela briserait le _Pink Promise_, puisqu'une fois que Cathy apprend que sa carte en slot 5 est une carte pink, elle supposera toujours que c'est un pink 5.
+  - Ainsi, Alice donne un clue number 2 comme _2 Save_ sur le pink 2, puis Bob donne un clue number 5 comme _5 Save_ sur le blue 5.
+
+<Promise />
+
+- Le _Pink Promise_ est la convention pink la **plus importante** ! Si vous devez gérer une situation délicate avec des cartes pink, alors assurez-vous d'abord de satisfaire le _Pink Promise_ pour que ce qui se passe soit clair pour l'équipe.
+
+### The 1's Assumption
+
+- Comme dans une partie normale, quand un joueur reçoit un clue sur deux 1 ou plus, alors il doit tous les jouer dans l'ordre normal.
+- En d'autres termes, même si les 1 non ciblés _pourraient_ être des cartes pink non-1, les joueurs sont censés _supposer_ que ce sont de vrais 1.
+- Cette supposition ne s'applique **pas** aux autres rangs. Par exemple, si tous les 1 sont joués sur les stacks, et qu'un joueur a une carte dans sa main avec un seul clue positif number 2 dessus, alors il ne peut pas jouer le 2, parce qu'il pourrait misplay un pink 5.
+
+### No Order Chop Moves
+
+- Même si nous avons la convention _1's Assumption_, il est toujours possible qu'un joueur donne un clue number 1 qui touche un tas de 1 et une carte pink injouable.
+- Dans cette situation, un _Fix Clue_ devra être donné dans le futur. (Les _Pink Fix Clues_ sont couverts plus loin.) Mais la première carte qui sera jouée à cause du clue sera toujours un vrai 1.
+- Ainsi, dans les variantes pink, les joueurs n'ont pas le droit d'effectuer un _Order Chop Move_, parce qu'ils pourraient misplay une carte pink.
+
+### Good Touch Principle
+
+- À cause de la nature des cartes pink touchées par beaucoup de différents types de clues, elles sont un peu plus faciles à dupliquer qu'une suite normale, ou même qu'une suite rainbow.
+- Cependant, comme pour toute autre suite, le _Good Touch Principle_ s'applique toujours aux cartes pink. Les joueurs doivent :
+  - faire de leur mieux pour ne pas dupliquer les cartes pink
+  - supposer par défaut que les cartes pink restantes dans leur main sont "bonnes"
+
+### Prompts with Pink Promise
+
+- La convention _Pink Promise_ ne change **pas** la façon dont fonctionnent les _Prompts_ - les joueurs sont toujours censés jouer la carte la plus à gauche dans un _Prompt_ (ou un _Priority Prompt_), comme ils le feraient dans n'importe quelle autre variante.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 1 est joué sur les stacks.
+  - Alice clue number 2 à Bob, touchant ses slot 2, slot 3 et slot 5. Ce doit être un _2 Save_.
+  - Bob marque sa carte en slot 5 comme un vrai 2, à cause du _Pink Promise_. Les cartes en slot 2 et slot 3 pourraient être des 2, mais ne sont pas nécessairement des 2.
+  - Plus tard, Alice clue red à Cathy, touchant un red 3 comme _Play Clue_.
+  - Bob sait qu'il est _Prompted_ pour le red 2. Bob a trois cartes dans sa main marquées avec un clue number 2. Même si Bob sait avec certitude que slot 5 est un 2, Bob sait que le _Prompt_ appelle simplement la carte la plus à gauche.
+  - Bob joue le red 2 depuis slot 2.
+
+<PromisePrompt />
+
+### The Pink Prompt Rank Exception
+
+- Normalement, les _Prompts_ ont la priorité sur les _Finesses_. Cela signifie que si une carte dans la main d'un joueur a un ou plusieurs clues positifs qui "correspondent", il ne doit jamais blind-play sa _Finesse Position_ et plutôt jouer sa carte cluéée la plus à gauche.
+- Cette règle ne s'applique **pas** aux cartes pink potentielles ayant uniquement un seul clue de rang dessus quand le rang dessus ne correspond pas au rang de la carte promise. Dans cette situation, les joueurs doivent préférer jouer leur _Finesse Position_ (si elle peut correspondre) au lieu de jouer la carte cluéée.
+- Pour résumer : quand on cherche une carte pink, on la cherche d'abord dans la pink connue cluéée la plus à gauche, puis dans le rang correspondant cluéé le plus à gauche, puis dans la non-cluéée possible la plus à gauche (_Finesse_), puis dans le rang non correspondant cluéé le plus à gauche, puis dans la non-cluéée la plus à gauche (_Known Bluff_).
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 2 sont joués sur les stacks.
+  - Alice clue pink à Cathy, touchant un pink 4 en slot 2 comme _Play Clue_.
+  - Bob sait que c'est soit un _Prompt_, soit une _Finesse_ sur le pink 3.
+  - La carte en slot 2 et la carte en slot 3 de Bob ont un seul clue number 4 dessus (et aucun autre clue). Ainsi, le pink 3 pourrait techniquement être la carte en slot 2 de Bob.
+  - Bob sait que les _Prompts_ ont normalement la priorité sur les _Finesses_. Cependant, Bob sait aussi que les _Prompts_ ne s'appliquent pas aux cartes pink avec un rang non correspondant. C'est actuellement son cas puisqu'on lui promet un 3 et que sa carte cluéée a un clue number 4 dessus.
+  - Ainsi, Bob joue sa carte en _Finesse Position_ comme pink 3.
+
+<PromptRankException />
+
+- Cette règle s'applique à la fois aux _Prompts_ amorcés par des clues et aux _Prompts_ amorcés en défaussant une carte (c'est-à-dire les _Sarcastic Discards_).
+- Cette règle ne s'applique pas quand une carte a une superposition qui inclut spécifiquement la carte qui prompt, et que cette superposition vient d'un coup spécial (comme un _4 Charm_ ou un _Bubblegum Bluff_).
+
+### Remaining 1's After All the 1's Have Been Played
+
+- Souvent, un joueur recevra un clue number 1 qui touche un tas de 1. Dans ces situations, il les jouera tous du plus ancien au plus récent (en utilisant le _1's Assumption_).
+- Si tous les 1 ont été joués avec succès sur les stacks et qu'un joueur a _toujours_ des 1 restants dans sa main, il doit les marquer comme des cartes pink utiles et les garder pour plus tard.
+  - En d'autres termes, ils ne doivent **pas** supposer qu'ils ont la prochaine carte pink jouable (par exemple pink 2).
+- Plus tard, si une carte pink est _Prompted_ depuis sa main, le joueur doit jouer le 1.
+  - En d'autres termes, la _Pink Prompt Rank Exception_ ne s'applique pas à ces cartes, parce qu'elles sont considérées comme "complétées" en tant que carte pink.
+- Le même concept s'applique aux 2 restants après que tous les 2 ont été joués, et ainsi de suite.
+
+## Level 10 - Violations of _Pink Promise_ That Don't Require a Fix
+
+### The Pink Play Clue Lie (PPCL) (With Multiple 1's)
+
+- Les joueurs peuvent violer le _Pink Promise_ avec un clue number 1 si toutes les cartes vont jouer avec succès.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue number 1 à Bob, touchant un red 1 en slot 1, un pink 3 en slot 2, un pink 2 en slot 3 et un pink 1 en slot 4.
+  - Bob sait d'après le _Good Touch Principle_ et le _1's Assumption_ que tous ses 1 sont bons, donc il peut tous les jouer du plus ancien au plus récent.
+  - Bob joue le pink 1 depuis slot 4.
+  - À son tour suivant, Bob joue le pink 2 depuis slot 3. Bob est immédiatement surpris que ce ne soit pas un vrai 1, mais il sait que ce genre de chose est autorisé et qu'il doit continuer à jouer ses 1 restants.
+  - À son tour suivant, Bob joue le pink 3 depuis slot 2. Bob est encore surpris que ce ne soit pas un vrai 1, mais il sait que ce genre de chose est autorisé et qu'il doit continuer à jouer son dernier 1.
+  - À son tour suivant, Bob joue le red 1 depuis slot 1.
+
+<PlayClueLie1s />
+
+### The Pink Play Clue Lie (PPCL) (With a Mismatched _Play Clue_ That Touches Other Cards)
+
+- Les joueurs peuvent aussi violer le _Pink Promise_ s'ils donnent un _Play Clue_ et que le mensonge sera résolu quand le joueur cluéé jouera sa carte ciblée.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le pink 3 et le red 2 sont joués sur les stacks.
+  - Alice clue number 3 à Cathy, touchant un pink 4 en slot 1 et un blue 3 en slot 2.
+  - Bob défausse.
+  - Cathy joue la carte en slot 1, pensant que c'est un red 3. C'est en fait le pink 4.
+  - Cathy sait qu'Alice a brisé le _Pink Promise_ et qu'elle a été trompée, mais que c'était un _Pink Play Clue Lie_. Cathy sait qu'Alice a probablement fait ainsi parce qu'elle voulait un 2-pour-1 (récupérer un 3 utile "gratuitement") au lieu d'un simple 1-pour-1 sur juste le pink 4.
+
+<PlayClueLieMismatch />
+
+## Level 11 - Pink Fix Clues
+
+### The Pink Fix Clue (on 1's)
+
+- Normalement, quand quelqu'un reçoit un clue number 1 qui touche un tas de 1, il jouera tous ces 1 du plus ancien au plus récent.
+- Si un clue ultérieur "complète" un des 1 comme étant une carte pink, alors le joueur ne **jouera plus** cette carte (parce qu'elle peut être n'importe quelle carte pink du jeu).
+- Par exemple, dans une partie à 3 joueurs :
+  - Alice clue number 1 à Bob, touchant trois 1 en slot 1, slot 2 et slot 3.
+  - Bob joue slot 3 et c'est un red 1.
+  - Cathy défausse.
+  - Alice défausse.
+  - Bob joue slot 3, et c'est un blue 1.
+  - Cathy défausse.
+  - Alice clue number 5 à Bob, touchant un 5 sur son chop comme _5 Save_. Cela "complète" aussi le 1 comme étant une carte pink.
+  - Bob sait que la carte pink dans sa main _pourrait_ être un pink 1. Cependant, elle pourrait aussi être n'importe quelle autre carte pink du jeu. Bob sait que quand des 1 sont complétés comme étant pink, ils ne doivent plus être joués.
+- Les _Pink Fix Clues_ ne doivent pas nécessairement être effectués "juste à temps". En d'autres termes, **tout** clue de rang qui "complète" une carte pink doit l'empêcher d'être jouée, même si le clue était précoce.
+
+<FixClue1s />
+
+### The Pink Fix Promise (PFP)
+
+- Voir d'abord la section sur le _[Pink Fix Clue (on 1's)](#the-pink-fix-clue-on-1s)_
+- Normalement, le _Pink Promise_ ne s'applique que quand une carte pink est la cible d'un clue. Cependant, comme exception, le _Pink Promise_ s'applique aussi à un _Pink Fix Clue_ qui empêche une carte marquée avec un clue number 1 de misplay.
+- Par exemple, dans une partie à 3 joueurs :
+  - Alice clue number 1 à Bob, touchant trois 1 en slot 1, slot 2 et slot 3.
+  - Bob joue slot 3 et c'est un red 1.
+  - Cathy défausse.
+  - Alice défausse.
+  - Bob joue slot 3, et c'est un blue 1.
+  - Cathy défausse.
+  - Alice clue number 3 à Bob, touchant un 3 sur son chop. Cela "complète" aussi le 1 comme étant une carte pink.
+  - Bob sait que la carte pink dans sa main pourrait techniquement être un pink 1. Cependant, Bob sait aussi que quand des 1 sont complétés comme étant pink, ils ne doivent plus être joués.
+  - Ainsi, Bob sait que le but du clue d'Alice était un _Fix Clue_ pour l'empêcher de jouer la carte pink. Le 3 sur son chop pourrait être n'importe quel 3 du jeu. De plus, Bob sait que le _Pink Promise_ s'applique à ce _Fix Clue_ et que sa carte pink doit être un pink 3.
+
+<FixPromise />
+
+- Comme exception, le _Pink Fix Promise_ ne s'applique **pas** quand le _Fix Clue_ est un clue number 2 ou un clue number 5 et que la nouvelle carte introduite était sur le chop. Un exemple peut être trouvé dans la [section précédente](#the-pink-fix-clue-on-1s). (Dans l'exemple de cette section, la carte pink de Bob n'est pas nécessairement un pink 5 ; elle peut être n'importe quelle carte pink du jeu.)
+
+### Pink Fix Clues (in general)
+
+- Normalement, si un clue retouche des cartes pink connues comme étant pink, il est traité comme un _Pink Choice Tempo Clue_ ou une _Pink Choice Finesse_.
+- Cependant, que se passe-t-il si le slot indiqué n'est pas une carte pink ? Cela n'a pas de sens, car le _Pink Choice_ n'est typiquement utilisé que pour communiquer un play sur une carte pink.
+- Dans cette situation, ce ne doit pas être un _Play Clue_ du tout. À la place, c'est un _Fix Clue_ - le rang de la carte pink la plus à gauche doit correspondre au clue.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 3 sont joués sur les stacks.
+  - Bob a une carte pink connue en slot 4 et une carte pink connue en slot 5.
+  - Alice clue number 3 à Bob, ce qui retouche les cartes pink en slot 4 et slot 5.
+  - Normalement, Bob interpréterait cela comme un _Pink Choice Tempo Clue_ et jouerait sa carte en slot 3. Cependant, sa carte en slot 3 est complètement non cluéée.
+  - Bob sait plutôt que ce doit être un _Pink Fix Clue_ et que sa carte pink la plus à gauche (en slot 4) doit être exactement le pink 3.
+  - Bob défausse sa carte en slot 4 comme pink 3.
+
+<FixClue />
+
+## Level 13 - Positional Moves
+
+### Pink Tempo Clues
+
+- Si un joueur donne un _Tempo Clue_ à une seule carte pink, ce n'est jamais un _Tempo Clue Chop Move_.
+- C'est parce qu'il est plutôt précieux de sortir les cartes pink de la main aussi tôt que possible au cas où des cartes bloquantes seraient piochées.
+
+### The Pink Choice Tempo Clue
+
+- Quand une ou plusieurs cartes pink sont retouchées avec un clue de couleur, l'interprétation doit être normale : jouer la carte la plus à gauche comme _Tempo Clue_.
+- Quand une ou plusieurs cartes pink sont retouchées avec un clue de rang, et qu'aucune "nouvelle" carte n'est introduite (ou si les seules "nouvelles" cartes introduites sont du trash), alors une information supplémentaire peut être véhiculée par le rang choisi.
+- Le rang choisi correspond au slot qu'ils doivent jouer.
+- Par exemple, dans une partie à 3 joueurs :
+  - Bob a deux cartes pink cluéées dans sa main en slot 3 et slot 4. Il ne connaît le rang d'aucune des deux.
+  - Alice clue number 4 à Bob, ce qui touche les deux cartes pink et rien d'autre.
+  - Bob sait qu'un clue de rang 4 signifie jouer slot 4, donc il joue sa carte pink en slot 4.
+  - Bob garde l'autre carte pink pour plus tard, sachant que le _Pink Choice Tempo Clue_ ne "récupère" qu'une seule carte.
+
+<ChoiceTempo />
+
+### The Pink Choice Finesse
+
+- Le concept de _Pink Choice_ peut aussi être utilisé pour amorcer une _Finesse_ sur une carte pink.
+- Par exemple, dans une partie à 3 joueurs :
+  - Aucune carte n'est jouée sur les stacks.
+  - Cathy a un pink 3 cluéé en slot 3 et un pink 2 cluéé en slot 4. Elle ne connaît le rang d'aucune des deux.
+  - Alice clue number 4 à Cathy, ce qui touche les deux cartes pink et rien d'autre.
+  - Bob sait qu'un clue number 4 signifie jouer slot 4, donc le pink 2 doit être jouable maintenant. Bob joue sa carte en _Finesse Position_ comme pink 1.
+  - Cathy joue le pink 2 depuis slot 4.
+
+<ChoiceFinesse />
+
+### Pink Positional Clues
+
+- Vers la fin de la partie, un joueur peut avoir plusieurs cartes pink dans sa main, dont une jouable. Si la carte pink jouable est entre d'autres cartes pink, il peut être difficile de "récupérer" la carte pour qu'elle joue.
+- Dans les cas où un clue de nombre n'aurait aucun sens, c'est une indication au joueur ayant deux cartes pink ou plus du slot à jouer.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le pink 4 est joué et tous les autres 3 sont joués.
+  - La main de Bob est entièrement non cluéée.
+  - Alice clue Bob number 2, touchant slot 1, slot 2 et slot 3.
+  - Bob sait que comme tous les 3 sont déjà joués, cela pourrait être un _Trash Chop Move_. Si c'est le cas, il doit marquer les cartes touchées comme trash et ensuite _Chop Move_ slot 4 et slot 5.
+  - Cependant, Bob sait aussi que c'est près de la fin de la partie et qu'il n'y a pas de cartes restantes à _Chop Move_, donc cette interprétation n'a pas beaucoup de sens.
+  - Ainsi, Bob sait que ce doit être un _Positional Clue_, et il joue sa carte en slot 2 comme le pink 5.
+- Les _Positional Clues_ sont différents des _Pink Choice Tempo Clues_ en ce sens qu'ils peuvent toucher de nouvelles cartes. (Les _Pink Choice Tempo Clues_ ne retouchent que des cartes pink connues.) Pour cette raison, les _Positional Clues_ ne peuvent typiquement être faits qu'à la fin de la partie quand le clue n'est pas susceptible d'être interprété comme autre chose.
+
+<Positional />
+
+## Level 21 - Bubblegum Moves
+
+- Normalement, quand les joueurs donnent un clue à une carte pink avec un nombre, ils correspondent exactement au nombre de la carte afin de satisfaire le _Pink Promise_.
+- Quelques situations courantes où les joueurs violent le _Pink Promise_ sont couvertes dans les deux sections différentes _Pink Play Clue Lie_ ci-dessus.
+- Il est aussi possible de violer le _Pink Promise_ d'une manière différente : en mentant sur le rang d'une carte pink qui n'est pas encore jouable. Faire cela communique le numéro du slot où se trouve la carte qui se connecte aux autres joueurs de l'équipe.
+- En jouant inopinément des cartes du slot correspondant, le joueur communique le vrai rang de la carte pink, ce qui répare le mensonge.
+- Tous les coups de cette nature sont appelés _Bubblegum_.
+
+### The Bubblegum Finesse
+
+- Par exemple, dans une partie à 4 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Donald a un pink 3 dans sa main cluéé avec pink. Il ne connaît pas le rang de la carte.
+  - Alice clue Donald number 4, ce qui ne touche que le pink 3.
+  - Bob sait que comme le pink 3 est la cible du clue, il doit être jouable maintenant. Cependant, si c'était une _Finesse_ normale (et que Bob avait un pink 2 sur sa _Finesse Position_), alors Alice aurait utilisé un clue pink ou un clue number 3 (pour correspondre au vrai rang de la carte, satisfaisant le _Pink Promise_).
+  - Bob sait que comme Alice n'a fait ni l'un ni l'autre, elle doit essayer de communiquer quelque chose de plus. Ce doit être une _Bubblegum Finesse_, indiquant dans quel slot se trouve le pink 2.
+  - Bob voit que Cathy a le pink 2 en slot 4. Ainsi, il sait que la _Bubblegum Finesse_ n'est pas pour lui. Bob défausse.
+  - Cathy passe par les mêmes étapes que Bob. Cathy ne voit le pink 2 nulle part ailleurs, donc elle sait que la _Bubblegum Finesse_ est pour elle. Cathy blind-play pink 2 depuis slot 4.
+  - Donald sait que comme Cathy a joué sa carte en slot 4, c'était une _Bubblegum Finesse_. La carte pink de Donald doit être la carte qui se connecte. Donald joue le pink 3.
+
+<BubblegumFinesse />
+
+### The Bubblegum Prompt
+
+- Normalement, vous ne pouvez _Prompt_ une carte que si c'est la carte cluéée la plus à gauche. Cependant, vous pouvez _Prompt_ une carte cluéée non la plus à gauche en violant le _Pink Promise_. Cela s'appelle un _Bubblegum Prompt_, qui est conceptuellement similaire à une _Bubblegum Finesse_.
+- Par exemple, dans une partie à 4 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - La carte en _Finesse Position_ de Bob a un pink négatif. Il a aussi trois cartes cluéées avec number 5 en slot 2, slot 3 et slot 4.
+  - Alice clue number 3 à Donald, ce qui cible un pink 4 en slot 2 et touche un pink 3 en slot 3.
+  - Bob voit que pour rendre le pink 3 et le pink 4 jouables, quelqu'un doit avoir le pink 2. Comme personne d'autre ne semble l'avoir, Bob doit l'avoir comme l'un de ses 5 cluéés.
+  - Étant donné qu'Alice a violé le _Pink Promise_, Bob peut déterminer que son pink 2 est sur son slot 3. Bob joue son slot 3, et c'est le pink 2.
+  - Cathy défausse.
+  - Donald sait que les clues ne _Prompt_ normalement pas une carte non la plus à gauche. Ainsi, Donald sait que la cible du _Play Clue_ d'Alice ne peut pas être un 3.
+  - La carte après un pink 3 est un pink 4, donc Donald sait que la carte ciblée par Alice est un pink 4. Par conséquent, comme le clue d'Alice était un _Play Clue_, le pink 4 doit être jouable. Pour qu'un pink 4 soit jouable, quelqu'un doit avoir un pink 3. Donald ne le voit nulle part ailleurs, donc il détermine qu'il doit avoir le pink 3 sur slot 3 (car c'est la seule autre carte cluéée qui pourrait possiblement être un pink 3).
+
+<BubblegumPrompt1 />
+
+- Il est possible qu'un clue soit à la fois une _Bubblegum Finesse_ et un _Bubblegum Prompt_ en même temps.
+  - Dans l'exemple précédent, on peut modifier la main de Donald pour qu'il ne tienne que le pink 4 (au lieu de tenir à la fois le pink 4 et le pink 3).
+  - Dans l'exemple précédent, Cathy défaussait, mais dans l'exemple modifié, Cathy saurait que le pink 4 était promis comme jouable. Et Cathy ne verrait personne d'autre tenir le pink 3, donc Cathy devrait répondre en jouant un pink 3 depuis sa _Finesse Position_.
+
+<BubblegumPrompt2 />
+
+### The Bubblegum Bluff (Standard Form)
+
+- Comme une _Bubblegum Finesse_, il est aussi possible d'effectuer un _Bubblegum Bluff_.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue number 3 à Cathy, touchant un pink 2 en slot 5.
+  - Bob sait qu'Alice viole le _Pink Promise_. Cela doit signifier qu'il est censé jouer sa carte en slot 3.
+  - Bob blind-play slot 3 et c'est un red 1.
+  - Cathy sait que si c'était un _3 Bluff_, alors Bob aurait joué sa _Finesse Position_. Donc ça ne peut pas être un _3 Bluff_.
+  - Ainsi, Cathy sait que ce doit être un clue _Bubblegum_. Comme le red 1 n'est pas une carte pink et qu'Alice était en _Bluff Seat_ pour Bob, ce doit être un _Bubblegum Bluff_.
+  - Cathy marque sa carte en slot 5 comme la carte pink one-away-from-playable, le pink 2.
+
+<BubblegumBluff />
+
+- Les _Bubblegum Bluffs_ ne peuvent être effectués que sur des cartes non pink ; sinon, cela ressemblera à une _Bubblegum Finesse_.
+- Notez qu'il est impossible de _3 Bluff_ et _Bubblegum Bluff_ en même temps.
+
+### The Bubblegum Bluff (Two-Away-From-Playable Form)
+
+- Normalement, le receveur du clue d'un _Bubblegum Bluff_ marque sa carte pink comme la valeur la plus basse possible et utile. (En d'autres termes, elle est marquée comme la carte pink _one-away-from-playable_.)
+- Cependant, il est parfois possible que la valeur la plus basse possible et utile de la carte pink ciblée soit en fait _two-away-from-playable_.
+- La forme _two-away-from-playable_ du _Bubblegum Bluff_ peut être hard de la même manière que le _Hard 3 Bluff_.
+  - À cause de cela, c'est toujours un _Known Bluff_ au lieu d'une _Bubblegum Finesse_.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue number 2 à Cathy, touchant un pink 3 en slot 3 comme _Play Clue_. (Le pink 3 est actuellement _two-away-from-playable_.)
+  - Bob sait qu'Alice viole le _Pink Promise_.
+  - Si Bob blind-play sa carte en _Finesse Position_ et qu'elle joue avec succès, il est garanti que ce soit l'un des 1. Si cela arrivait, alors Cathy marquerait sa carte cluéée comme le 2 correspondant et elle continuerait de la misplay.
+  - Ainsi, Bob conclut que c'est un _Bubblegum Bluff_, avec une carte jouable en slot 2.
+  - Bob blind-play son slot 2 et c'est un pink 1.
+  - Cathy sait que si sa carte cluéée était vraiment un 2, Bob aurait joué slot 1. Ainsi, ça ne peut pas être un 2. De plus, il n'y a pas de _Ejections_ qui correspondent à cette situation, donc un coup _Bubblegum_ a dû se produire. Normalement, un _Bubblegum Bluff_ serait sur une carte _one-away-from-playable_, mais ce serait le pink 2, et à cause des circonstances du clue, il est impossible que ce soit un 2. Ainsi, ce doit plutôt être la carte _two-away-from-playable_, qui est le pink 3.
+
+<BubblegumBluffTwoAway />
+
+### The Bubblegum Double Bluff
+
+- Normalement, après un _Bubblegum Bluff_, toute l'équipe est synchronisée sur l'identité de la cible du coup _Bubblegum_.
+- Mais que se passe-t-il si la note que le receveur du clue écrirait sur sa carte est toujours incorrecte ? Dans cette situation, le donneur du clue s'attend à des blind-plays supplémentaires pour resynchroniser l'information, de la même manière qu'un _Double Bluff_ normal fonctionne.
+- Par exemple, dans une partie à 4 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue number 3 à Donald, touchant un pink 4 en slot 2.
+  - Bob sait qu'Alice viole le _Pink Promise_. Cela doit signifier qu'il est censé jouer sa carte en slot 3 comme pink 1, avec pink 2 et 3 promis comme jouables via sa _Finesse Position_ actuelle et sa _Second Finesse Position_, respectivement.
+  - Bob blind-play slot 3. C'est un red 1 et il joue avec succès sur les stacks.
+  - Du point de vue de Donald, il sait qu'Alice a effectué un _Bubblegum Bluff_. Donald marque sa carte en slot 2 comme un pink 2 (c'est-à-dire la carte pink _one-away-from-playable_).
+  - Ensuite, c'est le tour de Cathy. Cathy voit que Donald marquera sa carte pink comme un pink 2. Cependant, la carte est en réalité un pink 4, donc la situation n'est pas encore résolue.
+  - Cathy blind-play sa carte en slot 1. C'est un red 2 et il joue avec succès sur les stacks.
+  - Donald se rend compte que si sa carte cluéée était un pink 2, alors Cathy n'aurait pas blind-play. Donald sait aussi que si la carte était un pink 3, Bob aurait joué slot 1 comme un _3 Bluff_. Ainsi, Donald met à jour la note sur sa carte pour qu'elle soit la carte pink suivante, qui est le pink 4.
+
+<BubblegumDoubleBluff />
+
+- Notez que, dans l'exemple précédent, le pink 4 se trouve être _three-away-from-playable_, mais ce n'est pas pertinent pour que le coup fonctionne correctement. Un _Bubblegum Double Bluff_ peut aussi être effectué avec une carte _two-away-from-playable_. Ce qui importe, c'est que l'équipe soit re-synchronisée sur l'identité de la cible du clue _Bubblegum_.
+- Le _Bubblegum Double Bluff_ peut être hard de la même manière que le _Hard Double Bluff_.
+  Par exemple, dans une partie à 4 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue number 3 à Donald, touchant un pink 4 en slot 1.
+  - Bob blind-play slot 3. C'est un pink 1 et il joue avec succès sur les stacks.
+  - Cathy détermine que c'est un _Bubblegum Double Bluff_ et joue son slot 1. C'est un pink 2 et il joue avec succès sur les stacks.
+  - Donald sait que sa carte cluéée est un pink 4. Bob et Cathy le savent aussi.
+  - L'équipe est re-synchronisée sur l'identité de la cible du clue _Bubblegum_ et aucun blind-play supplémentaire n'est nécessaire.
+
+### The Bubblegum Slide
+
+- Si un _Bubblegum Prompt_ ou une _Bubblegum Finesse_ dit à un joueur de jouer une carte dans un slot qui a un pink négatif, alors c'est absurde.
+- Dans cette situation, s'il n'y a pas d'autre interprétation possible du clue qu'un _Bubblegum Prompt_ ou une _Bubblegum Finesse_, et qu'il est peu probable que le donneur de clue fasse une erreur, alors le slot cible doit "glisser" vers la droite.
+- Si le slot immédiatement à droite est aussi impossible à être une carte pink, alors il doit continuer à glisser vers la droite jusqu'à trouver une carte pink, en faisant le tour vers l'autre côté de la main si nécessaire.
+
+## Level 21 - Other Special Moves
+
+### The Turnabout Ejection
+
+- Si un joueur viole le _Pink Promise_ en indiquant à tort un pink 5 comme un 1, **ou** une carte pink jouable comme un 5, c'est un mensonge dangereux qui doit être immédiatement résolu.
+- Dans cette situation, le joueur suivant doit immédiatement jouer sa _Second Finesse Position_ pour prouver ce qui s'est passé. Cela s'appelle un _Turnabout Ejection_.
+- Après l'_Ejection_, le joueur qui a reçu le clue saura que l'identité de la carte ciblée a été "inversée".
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue number 5 à Cathy, ce qui touche un pink 1 sur le chop de Cathy.
+  - Bob sait qu'Alice viole le _Pink Promise_. Ce doit être un _Turnabout Ejection_.
+  - Bob blind-play sa _Second Finesse Position_ (slot 2). C'est un blue 1 et il joue avec succès sur les stacks.
+  - Au début, Cathy pensait que le clue number 5 d'Alice était un _5 Save_.
+  - Après que Bob a blind-play, Cathy sait qu'Alice n'a pas effectué un _5 Save_ et a fait autre chose.
+  - Cathy sait qu'Alice n'a pas effectué un _Bubblegum Bluff_, parce que Bob aurait joué sa carte en slot 5 au lieu de sa carte en slot 2.
+  - Ainsi, Cathy sait que ce doit être un _Turnabout Ejection_. Elle marque sa carte en slot 5 comme un pink 1.
+
+<TurnaboutEjection />
+
+- Si un _Turnabout Ejection_ se produit à partir d'un clue number 1 qui touche aussi d'autres 1, les cartes non ciblées doivent toujours être supposées être des 1 (en utilisant la convention _1's Assumption_).
+- Pendant l'_Early Game_, les _Turnabout Ejections_ ont la priorité sur les _Bad Chop Move Ejections (with 5's)_. Ensuite, le _Bad Chop Move Ejection_ a la priorité.
+- Les _Turnabout Ejections (with 5's)_ ne peuvent être effectués qu'avec des cartes non trash.
+- Les _Turnabout Ejections (with 1's)_ ne peuvent pas être effectués une fois que tous les 1 sont joués.
+- Les _Turnabout Ejections_ ont explicitement la priorité sur toutes les autres conventions, y compris les _5 Number Ejections_. En d'autres termes, si un clue peut être un _Turnabout Ejection_, alors les joueurs sont censés supposer que c'en est un.
+
+### The Pink Fake Prompt & The Pink Fake Finesse
+
+- Voir d'abord la section sur le _[Pink Play Clue Lie](#the-pink-play-clue-lie-ppcl-with-a-mismatched-play-clue-that-touches-other-cards)_.
+- Dans le _Pink Play Clue Lie_, le _Pink Promise_ est violé en donnant un _Play Clue_ à une carte pink jouable. Cependant, aucune action spéciale n'est nécessaire de la part de quelqu'un d'autre dans l'équipe, parce que le mensonge se résoudra automatiquement quand la carte sera jouée.
+- Dans certaines situations spéciales, il est possible de donner un _Pink Play Clue Lie_ qui ne sera **pas** résolu automatiquement. Dans cette situation, le joueur suivant doit jouer une carte pour "réparer" le mensonge.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice donne un clue number 2 à Cathy, touchant un pink 1 en slot 2. (Cathy n'a pas de carte jouable en slot 1.)
+  - Bob sait que s'il ne fait rien, Cathy va l'interpréter comme une _Self-Finesse_, et jouer sa _Finesse Position_, ce qui sera un misplay.
+  - Ainsi, Bob joue sa _Finesse Position_ comme un _Pink Fake Finesse_. C'est un blue 1 et il joue avec succès.
+  - Du point de vue de Cathy, Alice a effectué une _Finesse_ sur le blue 1 puis le blue 2. Cathy joue le blue 2, mais c'est en fait le pink 1. Maintenant, Cathy sait qu'Alice a effectué un _Pink Fake Finesse_.
+- Rarement, les _Pink Fake Finesses_ peuvent être effectués _Out of Position_, mais seulement si la carte _Finessed_ joue dans une carte touchée par une carte annexe. (Cela transforme la "fausse" _Finesse_ en une "vraie" _Finesse_ sur la carte non ciblée.)
+
+<FakeFinesse />
+
+## Level 21 - Edge Cases
+
+### Trash Moves in Pink
+
+- Quand un _Trash Chop Move_, _Trash Bluff_, _Trash Finesse_ ou _Trash Push_ se produit avec un clue de rang dans une variante avec une suite pink, si plus d'une carte est touchée, alors toutes les cartes touchées sont connues comme étant du trash.
+- C'est exactement comme cela fonctionne dans toute autre variante, mais nous le répétons ici parce qu'il est théoriquement possible que le receveur du clue pense que les cartes non ciblées sont des cartes pink utiles. Cependant, par convention, nous traitons toutes les cartes comme du trash.
+
+### Pink Precedence
+
+- Les conventions _Bubblegum_ ont généralement la priorité sur les autres types de coups. Plus précisément :
+  - Les conventions _Bubblegum_ ont la priorité sur un _Rank Choice Ejection (with 2)_.
+  - Les conventions _Bubblegum_ ont la priorité sur un _Unknown Trash Discharge_ et un _Unknown Dupe Discharge_.
+  - Le _Bubblegum Bluff_ a la même priorité qu'un _4 Charm_. Ainsi, le joueur cluéé doit écrire des notes d'identité pour les deux options (y compris le pink 4).
+  - Une vraie _Bubblegum Finesse_ a la priorité sur _4 Charm_. (C'est parce que, contrairement aux scénarios de _Bluff_, le blind-play pink "se connecte" au clue de rang).
+- Notez que le _Trash Bluff_ a toujours la priorité sur une _Bubblegum Finesse_ et un _Bubblegum Bluff_. Par exemple, dans une partie à 3 joueurs :
+  - Le red 1 et le blue 1 sont joués sur les stacks.
+  - Alice clue number 1 à Cathy, touchant un red 1 comme _Trash Finesse_.
+  - Bob blind-play un pink 1.
+  - Cathy sait que c'est soit un _Trash Finesse_, soit une _Bubblegum Finesse_ :
+    - Si le clue d'Alice était un _Trash Finesse_, alors sa carte cluéée est soit un red 1, soit un blue 1.
+    - Si le clue d'Alice était une _Bubblegum Finesse_, alors sa carte cluéée est un pink 2.
+  - Cathy sait que les _Trash Finesses_ ont la priorité sur une _Bubblegum Finesse_, donc la carte doit être un red 1 ou un blue 1, et peut être défaussée en sécurité.
+
+<PinkPrecedence />
+
+### Pink Promise with a 5 Stall
+
+- Quand un joueur effectue un _5 Stall_ qui touche deux 5 ou plus, la cible du clue n'est pas évidente.
+- Nous définissons la cible d'un _5 Stall_ comme étant le 5 spécifique le plus proche du chop.
+- Ainsi, quand un joueur sait avec certitude qu'un clue number 5 indique un _5 Stall_, le _Pink Promise_ ne s'applique qu'au 5 le plus proche du chop.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est l'_Early Game_ et tous les _Play Clues_ et _Save Clues_ ont été épuisés.
+  - Bob a une main entièrement non cluéée.
+  - Alice clue number 5 à Bob, touchant deux 5 en slot 1 et slot 2.
+  - Bob sait que c'est un _5 Stall_. Bob sait que le clue est ciblé soit sur slot 1 soit sur slot 2.
+  - À cause de la convention _Pink Promise with a 5 Stall_, Bob sait que comme ce clue est ciblé sur slot 2.
+  - Ainsi, le _Pink Promise_ s'applique à cette carte, donc il marque slot 2 comme un 5.
+  - Plus tard dans la partie, un autre clue de rang "complète" la carte en slot 2 de Bob comme une carte pink. D'après le _Pink Promise_, Bob sait que ce doit être exactement le pink 5.
+
+<Promise5Stall />
+
+### Pink Promise with a 5's Chop Move
+
+- Voir d'abord la section sur _[Pink Promise with a 5 Stall](#pink-promise-with-a-5-stall)_.
+- Quand un joueur effectue un _5's Chop Move_ qui touche deux 5 ou plus, la cible du clue n'est pas évidente.
+- Nous définissons la cible d'un _5's Chop Move_ comme étant le 5 spécifique qui est à un de distance du chop. (C'est similaire à comment le _Pink Promise_ fonctionne avec un _5 Stall_.)
+- Ainsi, quand un joueur sait avec certitude qu'un clue number 5 indique un _5's Chop Move_, le _Pink Promise_ ne s'applique qu'au 5 qui est à un de distance du chop.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le milieu de la partie et aucun 5 n'est encore jouable.
+  - Bob a une main entièrement non cluéée.
+  - Alice clue number 5 à Bob, touchant deux 5 en slot 1 et slot 4.
+  - Bob sait que c'est un _5's Chop Move_, et marque sa carte en slot 5 comme étant _Chop Moved_.
+  - Bob sait que le clue est ciblé soit sur slot 1 soit sur slot 4.
+  - À cause de la convention _Pink Promise with a 5's Chop Move_, Bob sait que comme ce clue a fait _Chop Move_, il est ciblé sur slot 4.
+  - Ainsi, le _Pink Promise_ s'applique à cette carte, donc il marque slot 4 comme un 5.
+  - Plus tard dans la partie, un autre clue de rang "complète" la carte en slot 4 de Bob comme une carte pink. D'après le _Pink Promise_, Bob sait que ce doit être exactement le pink 5.
+
+<Promise5ChopMove />
+
+### Pink Promise with a 5 Pull
+
+- Voir d'abord la section sur _[Pink Promise with a 5's Chop Move](#pink-promise-with-a-5s-chop-move)_.
+- Quand un joueur effectue un _5 Pull_ qui touche deux 5 ou plus, la cible du clue n'est pas évidente.
+- Nous définissons la cible d'un _5 Pull_ comme étant le 5 directement à gauche de la carte "pulled".
+- Ainsi, quand un joueur sait avec certitude qu'un clue number 5 indique un _5 Pull_, le _Pink Promise_ ne s'applique qu'au 5 qui est à côté de la carte pulled.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue number 5 à Bob, touchant deux 5 en slot 1 et slot 2.
+  - Bob sait que c'est un _5 Pull_, parce qu'il voit que Cathy a un tas de cartes jouables dans sa main qu'Alice aurait pu cluer à la place.
+  - Bob blind-play son slot 3. C'est un red 1 et il joue avec succès.
+  - Ensuite, Bob considère rétroactivement les implications du _5 Pull_. Bob sait que le _5 Pull_ était ciblé soit sur slot 1 soit sur slot 2.
+  - À cause de la convention _Pink Promise with a 5 Pull_, Bob sait que comme ce clue était un _5 Pull_, il doit être ciblé sur slot 2 (la carte qui était à côté de la carte pulled).
+  - Ainsi, le _Pink Promise_ s'applique à cette carte, donc il marque slot 2 comme un 5.
+  - Plus tard dans la partie, un autre clue de rang "complète" la carte en slot 2 de Bob comme une carte pink. D'après le _Pink Promise_, Bob sait que ce doit être exactement le pink 5.
+
+<Promise5Pull />

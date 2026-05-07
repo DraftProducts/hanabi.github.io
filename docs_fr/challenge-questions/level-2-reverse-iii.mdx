@@ -1,0 +1,43 @@
+---
+title: Reverse, III ?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-2-reverse-iii/question.yml";
+import Answer from "../../docs/challenge-questions/level-2-reverse-iii/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-reverse-iii" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue numéro 3 à Bob, ce qui touche une carte en slot 2.
+- Bob écrit une note avec l'identité de la carte.
+
+1. Quelle _note_ Bob écrit-il ?
+1. Quelle action Bob doit-il effectuer ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Bob écrit "r3, b3, p3 if purple 2 f".
+   - Bob sait que ce doit être un _Play Clue_ sur son 3, puisqu'il n'est pas sur le chop. Cela pourrait être un red 3 ou blue 3 immédiatement jouable, mais cela pourrait aussi être une [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse) sur un purple 3.
+1. Bob doit envisager la possibilité d'une _Reverse Finesse_. Pour l'instant, Bob doit cluer green à Cathy, ce qui serait un [_Critical Save_](../beginner/critical-save.mdx) sur le green 3 critique.
+   - Si Cathy fait un blind-play du purple 2, Bob mettra à jour sa note en "r3, b3, p3 if purple 2 f | purple 3".
+   - Si Cathy ne fait pas de blind-play du purple 2, Bob mettra à jour sa note en "r3, b3, p3 if purple 2 f | red 3, blue 3".
+   - (Cela ne peut pas être une [_Self-Finesse_](../level-2.mdx#the-self-finesse) sur Bob, puisqu'il sait que les _Self-Finesses_ ne peuvent pas être données si une interprétation _Play Clue_ est possible. Dans ce cas, la carte cluée pourrait être un red 3 ou blue 3 immédiatement jouable.)
+
+<Answer />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,121 @@
+---
+title: Level 17 - Dupe Tech
+---
+
+import AssistedTrashChopMoveTrashFinesse from "../docs/level-17/assisted-trash-chop-move-trash-finesse.yml";
+import AssistedTrashChopMoveUTD from "../docs/level-17/assisted-trash-chop-move-utd.yml";
+import DuplicitousBlindPlay from "../docs/level-17/duplicitous-blind-play.yml";
+import DuplicitousTempoClue from "../docs/level-17/duplicitous-tempo-clue.yml";
+import DuplicitousValueClue from "../docs/level-17/duplicitous-value-clue.yml";
+import TimeTravelChopMoveBlind from "../docs/level-17/time-travel-chop-move-blind-play-form.yml";
+import TimeTravelChopMoveDirect from "../docs/level-17/time-travel-chop-move-direct-form.yml";
+
+## Mouvements Spéciaux
+
+### Le Duplicitous Value Clue
+
+- Normalement, nous ne donnons pas de _[Play Clues](beginner/play-clues.mdx)_ aux cartes dupliquées, car cela violerait le _[Good Touch Principle](beginner/good-touch-principle.mdx)_.
+- Cependant, dans certaines situations, il est possible de donner un _Play Clue_ à Bob et de le tromper en lui faisant jouer une carte dupliquée. Si en faisant cela, le clue a aussi récupéré une ou plusieurs autres cartes précieuses, alors ce serait un _Duplicitous Value Clue_.
+- Nous nous accordons à dire que tant que ce type de clue respecte le _Minimum Clue Value Principle_ (sans compter la carte dupliquée elle-même), aucun autre _[Prompt](beginner/prompt.mdx)_ ou blind-play n'est appelé – le but du clue était simplement de « verrouiller » une sauvegarde sur les cartes précieuses.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 2 et blue 2 sont joués sur les stacks.
+  - Alice tient un red 3 globalement connu.
+  - Alice clue nombre 3 à Bob comme _Play Clue_, touchant 2 cartes.
+  - Bob joue le 3 focalisé, supposant que c'est le blue 3. Cependant, c'est en réalité red 3, et il joue avec succès sur les stacks.
+  - Bien que ce soit inattendu, l'équipe voit que c'était un _Duplicitous Value Clue_, puisqu'il y a une valeur suffisante à « verrouiller » une sauvegarde sur l'autre 3 de Bob.
+  - Bob marque son autre 3 comme **n'importe quel** 3 utile. Il n'est pas promis playable. (Ainsi, personne ne pensera que c'est un _Prompt_ ou un _[Finesse](beginner/finesse.mdx)_.)
+
+<DuplicitousValueClue />
+
+- Pour les _Duplicitous Value Clues_ qui ne respectent **pas** le _Minimum Clue Value Principle_, voyez la section _[Duplicitous Tempo Clue](#le-duplicitous-tempo-clue)_ ci-dessous.
+
+### Le Duplicitous Blind-Play
+
+- D'abord, voyez la section sur le _[Duplicitous Value Clue](#le-duplicitous-value-clue)_.
+- Dans le _Duplicitous Value Clue_, une carte dupliquée est cluée directement (afin d'« obtenir » d'autres cartes). Similaire à cela, il est aussi possible d'obtenir qu'une carte dupliquée soit blind-played (afin d'« obtenir » d'autres cartes). C'est appelé un _Duplicitous Blind-Play_.
+- Les _Duplicitous Blind-Plays_ fonctionnent de la même manière que les _Duplicitous Value Clues_ en ce sens que tant que le clue respecte le _Minimum Clue Value Principle_, aucun autre _Prompt_ ou blind-play n'est appelé.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 2 et blue 2 sont joués sur les stacks.
+  - Alice tient un red 3 globalement connu.
+  - Alice clue blue à Cathy, touchant un blue 4 comme _Play Clue_.
+  - Bob blind-play sa _Finesse Position_, s'attendant à ce que ce soit un blue 3 comme _Finesse_. Au lieu de ça, c'est un red 3, et il joue avec succès sur les stacks.
+  - Bien que ce soit inattendu, l'équipe voit que c'était un _Duplicitous Blind-Play_, puisqu'il y a une valeur suffisante à « verrouiller » une sauvegarde sur le blue 4 de Cathy.
+  - L'équipe sait que blue 4 n'est pas promis playable. (Ainsi, personne ne pensera que c'est un _Prompt_ ou un _Finesse_.)
+
+<DuplicitousBlindPlay />
+
+- Notez que les _Duplicitous Blind-Plays_ peuvent aussi être effectués avec certains _[Ejections](level-16.mdx#ejections)_, _[Discharges](level-16.mdx#discharges)_, et ainsi de suite.
+
+### Le Duplicitous Tempo Clue
+
+- D'abord, voyez la section sur le _[Duplicitous Value Clue](#le-duplicitous-value-clue)_ et le _[Duplicitous Blind-Play](#le-duplicitous-blind-play)_.
+- Dans le _Duplicitous Value Clue_ et le _Duplicitous Blind-Play_, une ou plusieurs cartes précieuses « extra » sont touchées pour plus tard. Mais que se passe-t-il si ce type de mouvement est effectué, mais qu'aucune carte précieuse supplémentaire n'a été touchée ?
+- Si une carte remplie est révélée comme playable, le clue devrait rétroactivement être traité comme un _[Tempo Clue](level-6.mdx#le-tempo-clue)_. Ainsi, ce type de clue est appelé un _Duplicitous Tempo Clue_.
+- Les _Duplicitous Tempo Clues_ peuvent ou ne peuvent pas causer un _Tempo Clue Chop Move_. (Les conditions pour cela sont les mêmes qu'un _Tempo Clue_ « normal ».)
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1, green 1, et blue 1 sont joués sur les stacks.
+  - Cathy tient un red 2 globalement connu.
+  - Bob tient un green 2 précédemment touché, mais son rang n'est pas encore connu.
+  - Alice clue nombre 2 à Bob, touchant une nouvelle carte, et aussi « remplissant » le green 2.
+  - Bob sait que c'est un _Play Clue_ sur le blue 2. Il le joue, mais c'est en réalité un red 2, et il joue avec succès sur les stacks.
+  - La première pensée de Bob était que c'était un _Duplicitous Value Clue_, mais aucune autre nouvelle carte n'a été touchée dans le cadre du clue. Ainsi, Bob sait que c'est un _Duplicitous Tempo Clue_ à la place.
+  - Puisqu'Alice n'était pas dans une situation stalling valide et qu'obtenir du tempo sur le green 2 de Bob n'était pas _Valuable_, Bob traite cela comme un _Tempo Clue Chop Move_. (Le _Tempo Clue_ sur le green 2 n'est pas _Valuable_ parce que le green 2 était _Promptable_ et parce que le clue n'obtient qu'une unité de _Tempo_.)
+
+<DuplicitousTempoClue />
+
+### Le Assisted Trash Chop Move
+
+- D'abord, voyez la section sur le _[Trash Chop Move](level-4.mdx#le-trash-chop-move-tcm)_.
+- Les _Trash Chop Moves_ peuvent être très utiles, mais parfois ils peuvent être « bloqués » quand il n'y a pas de moyen de cluer proprement le trash connu.
+- Dans cette situation, le problème peut être résolu en utilisant un _[Trash Bluff](level-14.mdx#le-trash-bluff)_ ou un _[Unknown Trash Discharge](level-16.mdx#le-unknown-trash-discharge-1-for-1-form-utd)_ pour faire blind-play une carte dupliquée. C'est appelé un _Assisted Trash Chop Move_.
+- Puisqu'aucune carte « extra » n'est touchée dans le cadre du mouvement (comme dans un e.g. _Duplicitous Value Clue_), le but du clue devrait être clair pour l'équipe : un _Trash Chop Move_ sur toutes les cartes à droite de la/des carte(s) cluée(s).
+- Par exemple, c'est un _Assisted Chop Move_ d'un _[Trash Finesse](level-14.mdx#le-trash-finesse)_ dans une partie à 3 joueurs :
+  - Blue 1 est joué sur les stacks.
+  - Alice tient un yellow 1 globalement connu.
+  - Alice clue nombre 1 à Cathy, touchant un blue 1 au slot 3 comme _Play Clue_.
+  - Bob sait que puisque le blue 1 a été représenté comme un bon 1, ce doit être un _Trash Finesse_, et Bob doit avoir un red 1, un green 1, ou un purple 1 sur sa _Finesse Position_.
+  - Bob blind-play sa _Finesse Position_. À sa surprise, c'est un yellow 1 et il joue avec succès sur les stacks.
+  - Puisque yellow 1 a été dupliqué, le reste de l'équipe sait que quelque chose d'inhabituel s'est passé. Cependant, puisqu'aucune carte supplémentaire n'a été touchée dans le cadre du clue, tout le monde sait que c'était un _Assisted Chop Move_ sur Cathy. (Dans ce cas, Cathy devrait _Chop Move_ slot 4 et slot 5.)
+
+<AssistedTrashChopMoveTrashFinesse />
+
+- Par exemple, c'est un _Assisted Chop Move_ d'un _Unknown Trash Discharge_ dans une partie à 3 joueurs :
+  - Blue 1 est joué sur les stacks.
+  - Alice tient un yellow 1 globalement connu.
+  - Alice clue blue à Cathy, touchant un blue 1 au slot 2 comme _Play Clue_.
+  - Bob sait que puisque blue 1 a été représenté comme blue 2, ce doit être un _Unknown Trash Discharge_.
+  - Bob blind-play sa _Third Finesse Position_. À sa surprise, c'est un yellow 1 et il joue avec succès sur les stacks.
+  - Puisque yellow 1 a été dupliqué, le reste de l'équipe sait que quelque chose d'inhabituel s'est passé. Cependant, puisqu'aucune carte supplémentaire n'a été touchée dans le cadre du clue, tout le monde sait que c'était un _Assisted Chop Move_ sur Cathy. (Dans ce cas, Cathy devrait _Chop Move_ slot 3, slot 4 et slot 5.)
+
+<AssistedTrashChopMoveUTD />
+
+### Le Time Travel Chop Move (Direct Form)
+
+- D'abord, voyez la section sur le _[Duplicitous Value Clue](#le-duplicitous-value-clue)_ et le _[Duplicitous Blind-Play](#le-duplicitous-blind-play)_.
+- Normalement, un _Duplicitous Clue_ « obtient » une carte extra ou « remplit » une autre carte comme un _Tempo Clue_. Cependant, si un _Duplicitous Clue_ est effectué qui n'accomplit aucune de ces choses, il doit avoir été fait pour une autre raison.
+- Dans cette situation, après que la duplication se révèle, le joueur clué devrait interpréter le clue comme un _Trash Chop Move_ sur sa propre main. (En d'autres termes, il devrait faire comme si la carte dupliquée était cluée directement comme un _Trash Chop Move_.)
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 2 sont joués sur les stacks.
+  - Cathy tient un red 3 globalement connu.
+  - Alice clue nombre 3 à Bob, touchant un nouveau 3 comme _Play Clue_.
+  - Bob joue son 3, s'attendant à ce que ce soit n'importe quel 3 autre que rouge. Cependant, c'est en réalité red 3, et il joue avec succès sur les stacks.
+  - Puisque ce mouvement était un 0-for-1 et n'a pas fourni de tempo sur des cartes, tout le monde sait que c'était un _Time Travel Chop Move_. Bob _Chop Move_ toutes les cartes qui étaient derrière son red 3.
+
+<TimeTravelChopMoveDirect />
+
+### Le Time Travel Chop Move (Blind-Play Form)
+
+- D'abord, voyez la section sur le _[Time Travel Chop Move (Direct Form)](#le-time-travel-chop-move-direct-form)_.
+- Normalement, un _Time Travel Chop Move_ implique de cluer la carte dupliquée directement. Mais que se passe-t-il si la carte dupliquée est « bloquée » sans moyen de la cluer proprement ?
+- Dans cette situation, les joueurs peuvent faire que la carte dupliquée soit blind-played au lieu de la cluer directement, ce qui devrait accomplir la même chose (i.e. les cartes à droite de la carte dupliquée étant _Chop Moved_). Cependant, du soin doit être pris pour s'assurer que le résultat final est vraiment assez « mauvais » pour ne pas être mal interprété comme un autre type de clue.
+- Spécifiquement :
+  - Le clue ne doit pas satisfaire le _Minimum Clue Value Principle_ (similaire à un _Duplicitous Clue_).
+  - Le clue ne doit pas ressembler à un _[Assisted Trash Chop Move](#le-assisted-trash-chop-move)_ sur le destinataire du clue.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks. Cathy a un blue 2 connu.
+  - Bob a une carte rouge précédemment cluée dans sa main, mais ne connaît pas le rang de la carte.
+  - Alice clue nombre 3 à Bob, « remplissant » la carte rouge comme red 3. (Le clue ne touche aucune autre carte.)
+  - Bob sait que c'est un _Finesse_ sur le red 2 dans le red 3. Bob blind-play sa _Finesse Position_, mais c'est un blue 2 au lieu d'un red 2, qui joue avec succès sur les stacks.
+  - Puisque le mouvement était un 0-for-1, Bob comprend qu'il devrait _Chop Move_ tout ce qui était derrière le blue 2 comme _Time Travel Chop Move_.
+
+<TimeTravelChopMoveBlind />

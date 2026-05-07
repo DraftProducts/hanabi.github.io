@@ -1,0 +1,41 @@
+---
+title: 5's Chop Move
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-4-5's-chop-move/question.yml";
+import Answer from "../../docs/challenge-questions/level-4-5's-chop-move/answer.yml";
+
+<ChallengeQuestionProgress level={4} id="level-4-5's-chop-move" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est le premier tour et rien n'est joué sur les stacks.
+- Alice clue numéro 5 à Cathy, touchant un 5 en slot 4.
+- Quel type de clue est-ce ?
+- Quelles notes doivent être écrites ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Habituellement, toute clue qui n'est pas focused sur le chop est un _Play Clue_. Cependant, les clues 5 sont différentes.
+- Le level 4 introduit le [5's Chop Move](../level-4#the-5s-chop-move-5cm) qui dit qu'une clue 5 sur **un slot avant le chop** peut avoir une signification spéciale.
+- Cependant, les _5 Stalls_ ont précédence sur les _5 Chop Moves_, donc les joueurs doivent vérifier l'état de la partie.
+- Puisque c'est encore l'_Early Game_, les _5 Stalls_ sont autorisés, et ce n'est pas un _Chop Move_.
+- Aucune note ne doit être écrite. Alice n'a simplement rien vu d'autre à cluer.
+
+<Answer />
+
+</TabItem>
+</Tabs>

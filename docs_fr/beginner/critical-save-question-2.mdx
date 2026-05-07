@@ -1,0 +1,43 @@
+---
+title: Le Critical Save (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CriticalSaveQuestion2 from "../../docs/beginner/critical-save-question-2/critical-save-question-2.yml";
+import CriticalSaveAnswer2 from "../../docs/beginner/critical-save-question-2/critical-save-answer-2.yml";
+
+<BeginnersGuideProgress id="critical-save-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Il reste à l'équipe 2 jetons de clue.
+- Cathy a deux cartes critiques côte à côte.
+- Quelle action Alice doit-elle effectuer ?
+
+<CriticalSaveQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice pourrait être tentée de cluer purple à Cathy, ce qui « obtiendrait » les deux cartes purple d'un seul coup.
+- Cependant, il serait illégal pour Alice de faire cela car les 5 doivent être sauvegardés avec un _[5 Save](./5-save.mdx)_.
+- Ainsi, Alice doit cluer number 5 à Cathy en tant que _5 Save_.
+- Ensuite, Bob clue purple à Cathy en tant que _[Critical Save](./critical-save.mdx)_ sur le purple 3.
+- Cathy écrira une _[card note](./card-notes.mdx)_ sur sa carte du slot 4 qui contient les identités suivantes :
+  - purple 1 (en tant que _[Play Clue](./play-clues.mdx)_)
+  - purple 3 (en tant que _Critical Save_)
+  - purple 4 (en tant que _Critical Save_)
+
+<CriticalSaveAnswer2 />
+
+</TabItem>
+</Tabs>

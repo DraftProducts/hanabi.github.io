@@ -1,0 +1,204 @@
+---
+title: Level 20 - Mouvements Avancés
+---
+
+import OccupiedFinesse from "../docs/level-20/occupied-finesse.yml";
+import OccupiedSelfFinesse from "../docs/level-20/occupied-self-finesse.yml";
+import OutOfOrderPlayClue from "../docs/level-20/out-of-order-play-clue.yml";
+import OutOfOrderFinesse from "../docs/level-20/out-of-order-finesse.yml";
+import FiveColorEjectionInteraction from "../docs/level-20/five-color-ejection-interaction.yml";
+import OutOfOrderFinesse2 from "../docs/level-20/out-of-order-finesse-2.yml";
+import OutOfOrderCorollary from "../docs/level-20/out-of-order-corollary.yml";
+import SuboptimalFinesse from "../docs/level-20/suboptimal-finesse.yml";
+import SuboptimalBluff from "../docs/level-20/suboptimal-bluff.yml";
+import NoInformationDoubleFinesse from "../docs/level-20/no-information-double-finesse.yml";
+import InformationNoFinesse1 from "../docs/level-20/information-no-finesse-1.yml";
+import InformationNoFinesse2 from "../docs/level-20/information-no-finesse-2.yml";
+import NoInformationDoubleBluff from "../docs/level-20/no-information-double-bluff.yml";
+
+## Mouvements Spéciaux
+
+### Le Occupied Play Clue & Le Occupied Finesse (OPC)
+
+- Souvent, les joueurs auront un choix entre jouer une carte et donner un clue. Par défaut, c'est plus logique pour les joueurs de jouer la carte et de laisser un autre coéquipier donner le clue. C'est juste du bon travail d'équipe !
+- D'un autre côté, dans beaucoup de situations, les joueurs qui ont une carte playable devront _quand même_ donner un clue. Puisque Hanabi a de l'information asymétrique, c'est courant qu'un seul joueur ait la connaissance nécessaire pour effectuer un _[Finesse](beginner/finesse.mdx)_ ou _[Prompt](beginner/prompt.mdx)_ (ou un autre clue urgent). Ainsi, si un joueur avec une carte playable est le seul qui peut raisonnablement donner un certain type de clue, alors c'est logique pour lui d'effectuer le clue maintenant, et de jouer sa carte playable plus tard.
+- De même, s'il y a deux clues ou plus qui doivent être donnés, alors c'est logique pour Alice et Bob de faire équipe et d'effectuer les deux actions en séquence. (Si Alice a une carte playable, ce n'est pas vraiment pertinent ; les deux choses devraient être cluées peu importe si Alice avait une carte playable ou non.)
+- Cette section ne s'applique pas à ces situations. Plutôt, elle ne s'applique **que** quand un clue aurait vraiment pu être donné par deux joueurs ou plus, mais qu'un joueur avec une carte playable a « volé » le clue, laissant le joueur suivant avec rien d'autre à faire que défausser.
+- Si un joueur « vole » un clue de cette manière, nous dirions que le joueur était _Occupied_. Quand un joueur _Occupied_ donne un clue, il a une signification spéciale :
+  - Si le clue serait normalement interprété comme un _[Save Clue](beginner/save-clues.mdx)_, alors il se transforme en _Occupied Play Clue_.
+  - Si le clue serait normalement interprété comme un _[Play Clue](beginner/play-clues.mdx)_, alors il se transforme en _Occupied Finesse_.
+  - Et ainsi de suite. En général, un mouvement _Occupied_ fait une chose « extra » de plus que ce qu'il ferait normalement.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 2 et blue 1 sont joués sur les stacks.
+  - Alice a un red 3 playable globalement connu dans sa main et Bob n'a rien à faire.
+  - Alice clue nombre 2 à Cathy, ce qui touche un green 2 sur son chop. Ce serait normalement un _2-Save_.
+  - Cependant, puisqu'Alice est _Occupied_ et que Bob aurait pu donner exactement le même clue, et que Bob n'a rien à faire à son tour à part défausser, le _2 Save_ se transforme en _Occupied Play Clue_.
+  - Ensuite, Bob voit que le clue d'Alice était _Occupied_. Ainsi, Bob sait que Cathy continuera à jouer la carte.
+  - Si Bob ne fait rien, Cathy pensera que c'est un _Occupied Play Clue_ sur le blue 2. Puisqu'elle a en réalité un green 2, il misplayera.
+  - Ainsi, Alice doit avoir l'intention d'un _Occupied Finesse_. Bob joue sa _Finesse Position_. C'est un green 1 et il joue avec succès.
+
+<OccupiedFinesse />
+
+- Par exemple, dans une partie à 3 joueurs :
+  - Blue 1 est joué sur les stacks.
+  - Alice a un green 1 playable globalement connu dans sa main et Bob n'a rien à faire.
+  - Alice clue nombre 2 à Cathy, ce qui touche un 2 au slot 2.
+  - Bob défausse.
+  - Normalement, Cathy interpréterait le clue d'Alice comme un _Play Clue_ normal sur le blue 2.
+  - Cependant, puisqu'Alice est _Occupied_ et que Bob aurait pu donner le même clue, Cathy sait que ce doit être un _Occupied Self-Finesse_ à la place.
+  - Cathy blind-play sa _Finesse Position_. C'est un red 1 et il joue avec succès sur les stacks.
+  - Cathy sait maintenant que son 2 est le red 2 connectant.
+
+<OccupiedSelfFinesse />
+
+### Le Out-of-Order Play Clue (Triple O / OOO)
+
+- Parfois, un joueur aura deux cartes playable dans sa main de la même suite, mais elles seront « bloquées », signifiant qu'à la fois un clue de couleur et un clue de nombre ne pourront pas focaliser la première carte playable.
+- Une technique pour contourner cela est de donner un clue qui focalise la mauvaise carte, et puis avoir le joueur suivant donner un _Fix Clue_. C'est appelé un _Out-of-Order Play Clue_ parce que les cartes étaient originellement out-of-order, mais le focus original est toujours playable.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - La main de Cathy est, du plus récent au plus ancien : `red 4, red 1, red 2, red 3, blue 4`
+  - Alice clue rouge à Cathy, touchant slot 1, slot 2, slot 3, et slot 4.
+  - Bob voit qu'Alice a indiqué à Cathy qu'elle a le red 1 au slot 1. Cathy continuera à misplay le red 4 comme red 1.
+  - Normalement, Bob penserait que c'est un _Finesse_ et essaierait de jouer le red 1 dans le red 4. Cependant, cela n'a aucun sens, parce que Cathy a le red 1, et qu'alors Alice violerait le _[Good Touch Principle](beginner/good-touch-principle.mdx)_.
+  - Au lieu de ça, Bob sait que l'équipe devrait utiliser le red 1 de Cathy. Ainsi, Bob sait qu'il doit donner un _Fix Clue_ à Cathy, parce qu'Alice a l'intention pour elle et Bob de travailler ensemble.
+  - Bob clue nombre 4 à Cathy, touchant le blue 4 et « remplissant » le red 4.
+  - Cathy est surprise parce que la carte qu'elle pensait être red 1 est en réalité un red 4. Cathy sait que puisque le red 4 était le focus original du clue d'Alice, alors il doit en réalité être playable maintenant. Ainsi, Cathy doit avoir le red 1, le red 2, et le red 3.
+  - Cathy joue le red 1 du slot 2 (la carte rouge la plus à gauche qui pourrait être le red 1). Elle continuera à jouer le red 2, le red 3, et le red 4.
+  - Cathy (et tout le monde dans l'équipe) sait que même si le blue 4 était le focus du clue de Bob, il n'est en réalité pas playable maintenant, et était juste des « dommages collatéraux » du _Fix Clue_ requis de Bob.
+
+<OutOfOrderPlayClue />
+
+### Le Out-of-Order Finesse
+
+- Parfois, un _Finesse_ est initié en donnant un clue de couleur qui focalise la mauvaise carte.
+- Quand cela se produit, le _Finesse_ fonctionnera toujours : un joueur blind-playera une carte connectante. Cependant, un _Fix Clue_ doit alors être donné au joueur qui a reçu le clue, ou il continuera à misplay.
+- Normalement, après avoir reçu un _Fix Clue_, un joueur « s'arrêterait » et ne supposerait rien d'autre sur sa main. Cependant, quand un clue _Out-of-Order_ est donné, le joueur devrait toujours continuer à jouer le focus original du clue.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Bob a un red 3 et un red 2 (sur les slots 1 et 2 respectivement).
+  - Cathy a un red 1 au slot 1 (sur _Finesse Position_).
+  - Alice clue à Bob rouge (comme _Out-of-Order Reverse Finesse_). Le focus du clue est le red 3 au slot 1.
+  - Bob voit le red 1 sur la _Finesse Position_ de Cathy, donc il doit respecter que cela pourrait être un _Reverse Finesse_. Bob défausse.
+  - Cathy blind-play red 1.
+  - Alice doit maintenant donner un _Fix Clue_ à Bob, ou sinon red 3 sera misplay comme red 2.
+  - Alice clue nombre 2 à Bob.
+  - Bob joue red 2.
+  - Bob sait que son autre carte rouge **doit** être red 3, puisqu'elle était originellement cluée comme playable et qu'elle a causé un _Reverse Finesse_.
+
+<OutOfOrderFinesse />
+
+#### Interaction Entre le Out-of-Order Finesse et le 5 Color Ejection
+
+- Le _[5 Color Ejection](level-16.mdx#le-5-color-ejection-5ce)_ a la précédence sur le _Out-of-Order Finesse_ tant que la règle des deux-ou-plus-blind-plays est satisfaite.
+- Par exemple, dans une partie à 3 joueurs, ce serait un _5 Color Ejection_ :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 5 au slot 1, un red 1 au slot 2, et un red 2 au slot 3.
+  - Bob sait que cela pourrait être un _Out-of-Order Finesse_. Spécifiquement, si Bob donne un _Fix Clue_ de suivi nombre 5 à Cathy, alors Cathy jouerait le red 1 et red 2, Bob blind-playerait le red 3 et le red 4, et finalement Cathy jouerait le red 5.
+  - Cependant, cette line nécessiterait que Bob blind-play 2 cartes, donc Bob sait qu'il devrait préférer un _5 Color Ejection_ à la place.
+
+<FiveColorEjectionInteraction />
+
+- Par exemple, dans une partie à 3 joueurs, ce serait un _Out-of-Order Finesse_ :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 5 au slot 1, un red 1 au slot 2, un red 2 au slot 3, et un red 4 au slot 4.
+  - Bob sait que cela pourrait être un _Out-of-Order Finesse_. Spécifiquement, si Bob donne un _Fix Clue_ de suivi nombre 5 à Cathy, alors Cathy jouerait le red 1 et le red 2, Bob blind-playerait le red 3, et finalement Cathy jouerait le red 4 et le red 5.
+  - Puisque cette line ne nécessite que Bob blind-play 1 carte, il sait que cela ne peut pas être un _5 Color Ejection_, donc Bob effectue le _Fix Clue_ pour permettre le _Out-of-Order Finesse_.
+
+<OutOfOrderFinesse2 />
+
+### Le Out-of-Order Corollary
+
+- D'abord, voyez la section sur le _[Out-of-Order Play Clue](#le-out-of-order-play-clue-triple-o--ooo)_.
+- Normalement, si Alice donne un clue à Cathy touchant la prochaine carte playable, mais que le focus est mauvais, Bob le traiterait comme un _Out-of-Order Play Clue_. Il donnerait alors un _Out-of-Order Fix Clue_ (au lieu de blind-play une carte).
+- Ainsi, si Alice donne un clue à Cathy, et que Bob blind-play une carte, alors par défaut, Cathy peut marquer toutes les cartes qui ont été touchées avec une note de ne pas être la prochaine carte playable.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 2 est joué sur les stacks.
+  - Alice clue rouge à Cathy, touchant deux cartes au slot 2 et slot 3.
+  - Bob blind-play une carte sans rapport.
+  - Cathy marque sa carte du slot 2 comme red 4. (Cathy sait qu'Alice a effectué un _[Bluff](level-11.mdx#le-bluff)_ et que le slot 2 était le focus du clue.)
+  - Cathy marque aussi sa carte du slot 3 comme red 5. (Cathy sait que si c'était un red 3, alors Bob serait forcé de donner un _Fix Clue_.)
+
+<OutOfOrderCorollary />
+
+### Le Suboptimal Prompt & Le Suboptimal Finesse & Le Suboptimal Bluff
+
+- Si l'autre copie d'une carte est dans le trash, alors la copie restante est critique et doit être sauvegardée. Les cartes critiques de cette nature peuvent être sauvegardées avec soit un clue de couleur soit un clue de nombre.
+- Si les deux types de clues n'introduiront **qu'**une nouvelle carte, alors on dit qu'il y a un _Free Choice_ entre les deux types de clues.
+- Dans cette situation, le type de clue sera choisi qui « remplit » d'autres cartes auxiliaires dans la main ou donne une importante information négative.
+- Si un type de clue est choisi qui est **clairement pire** que l'autre, alors le donneur de clue doit essayer de communiquer quelque chose en plus.
+- Cela signifie que ce _Save Clue_ d'apparence innocente est en réalité un _Play Clue_, et toutes les cartes intermédiaires sont appelées.
+- Par exemple, dans une partie à 3 joueurs :
+  - Yellow 1 et blue 1 sont joués sur les stacks.
+  - Blue 3 et blue 4 ont été défaussés, rendant le blue 3 et 4 restants critiques.
+  - Cathy a un red 3 au slot 1, un yellow 3 au slot 3 et le blue 3 critique sur son chop.
+  - Alice doit sauvegarder le blue 3.
+  - Alice pourrait cluer nombre 3 à Cathy, ce qui toucherait 3 cartes utiles.
+  - Alice choisit à la place de cluer blue à Cathy, ce qui ne touche que le blue 3. C'est clairement pire.
+  - Bob réalise que c'est suboptimal. Puisque ce n'est pas juste un _Save Clue_, ce doit être un _Play Clue_ sur le blue 3.
+  - Bob blind-play sa _Finesse Position_ comme un _Suboptimal Finesse_ et c'est blue 2.
+  - Cathy réalise que Bob n'a joué que parce que c'était un _Play Clue_, donc elle joue blue 3.
+
+<SuboptimalFinesse />
+
+- Un _Suboptimal Bluff_ fonctionne de manière similaire, mais Bob blind-play une carte sans rapport au lieu de la carte connectante. Par exemple, dans la même partie à 3 joueurs :
+  - Alice clue blue à Cathy (le clue suboptimal).
+  - Bob réalise que c'est suboptimal et que ce devrait être un _Play Clue_ sur blue 3, qui nécessiterait blue 2.
+  - Bob blind-play sa _Finesse Position_, et c'est green 1 (sans rapport).
+  - Cathy voit que Bob a joué une carte sans rapport, donc c'était un _Suboptimal Bluff_.
+  - Cathy sait que son blue 3 est one-away-from-playable, et non le blue 4.
+
+<SuboptimalBluff />
+
+- Notez que pour qu'un _Suboptimal Prompt, Finesse ou Bluff_ fonctionne, le clue doit être **vraiment mauvais**, pas juste techniquement suboptimal d'une certaine façon légère.
+- Par exemple, si Bob avait n'importe quel 3 clué dans ses mains, Alice pourrait vouloir éviter de toucher un 3 dupliqué par le _Good Touch Principle_, et Bob ne devrait pas le prendre comme un mouvement suboptimal.
+
+### Le No-Information Finesse
+
+- Parfois, des cartes sont re-cluées pour causer un _Finesse_ ou _Bluff_. Mais la plupart du temps, le re-clue « remplira » ou donnera une information supplémentaire à la carte existante.
+- Formellement, un clue _No-Information_ est défini par les critères suivants :
+  - Le re-clue n'a donné aucune information positive supplémentaire à la carte.
+  - Les éléments dans la superposition de la carte re-cluée étaient les mêmes avant et après la séquence de clue.
+- Utiliser un clue _No-Information_ pour causer un _Finesse_ qui obtient une seule carte est ok. Mais puisque les clues _No-Information_ ne sont pas très précieux, nous nous accordons à dire qu'un clue _No-Information_ ne peut jamais être un _Bluff_ qui obtient une seule carte. Au lieu de ça, il doit obtenir deux cartes.
+- Par exemple, dans une partie à 3 joueurs :
+  - Rien n'est joué sur les stacks.
+  - Alice clue 3 à Cathy, ce qui touche un 3, le red 3.
+  - Bob blind-play blue 1. À ce stade, tout le monde sait qu'Alice a effectué un _[3 Bluff](level-13.mdx#le-3-bluff)_, et de la perspective de Cathy, son 3 peut être n'importe quel 3 du tout.
+  - Cathy défausse.
+  - Alice clue 3 à Cathy, ce qui re-touche le red 3 (et ne donne aucune information supplémentaire dessus).
+  - Bob blind-play red 1. Si c'était un _3 Bluff_, alors personne ne serait promis le red 2. Cependant, puisqu'aucune nouvelle information n'a été donnée, ce doit être un _No-Information Finesse_. Bob voit que Cathy n'a pas le red 2, donc il doit avoir le red 2, et peut le blind-play à son tour suivant.
+
+<NoInformationDoubleFinesse />
+
+- Même si un clue ne « remplit » pas une carte, ce n'est pas nécessairement un clue _No-Information_, à cause du second critère.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie.
+  - Alice clue rouge à Cathy, touchant une carte au slot 3 comme _Play Clue_.
+  - Bob blind-play un blue 1.
+  - Cathy marque sa carte rouge comme soit un red 2 soit un red 3.
+  - Plus tard dans la partie, red 1 est maintenant joué.
+  - Alice clue rouge à Cathy, re-touchant la carte qui est dans une superposition de red 2 et red 3.
+  - Bob blind-play un blue 2.
+  - Cathy met à jour la note sur sa carte rouge pour être exactement red 3.
+  - Tout le monde à la table comprend que ce clue a donné une information précieuse à la carte rouge de Cathy et ne serait pas considéré comme un clue « no-information ».
+
+<InformationNoFinesse1 />
+
+<InformationNoFinesse2 />
+
+- Le principe _No-Information_ peut aussi être utilisé pour effectuer un _No-Information Layered Finesse_ sur le joueur suivant. (Le joueur suivant saura que c'est un _Layered Finesse_ au lieu d'un _Bluff_ parce qu'un autre clue plus utile aurait pu être donné pour initier le _Bluff_.)
+- Un clue _No-Information_ ne peut causer un _No-Information Finesse_ (ou un _No-Information Bluff_) que si la carte touchée est _one-or-more-away-from-playable_.
+
+### Le No-Information Double Bluff (NIDB)
+
+- Habituellement, un clue _No-Information_ transmet un _Finesse_. Mais vous pouvez aussi l'utiliser pour effectuer un _[Double Bluff](level-15.mdx#le-double-bluff)_. Par exemple, dans une partie à 3 joueurs :
+  - Rien n'est joué sur les stacks.
+  - Alice clue 3 à Cathy, ce qui touche un 3, le red 3.
+  - Bob blind-play blue 1. À ce stade, tout le monde sait qu'Alice a effectué un _3 Bluff_, et de la perspective de Cathy, son 3 peut être n'importe quel 3 du tout.
+  - Cathy défausse.
+  - Alice clue 3 à Cathy, ce qui re-touche le red 3 (et ne donne aucune information supplémentaire dessus).
+  - Bob blind-play green 1. Si c'était un _3 Bluff_, alors personne ne serait promis le green 2. Cependant, puisqu'aucune nouvelle information n'a été donnée, ce doit être un _No-Information Finesse_.
+  - Cathy voit que Bob n'a pas le green 2, donc elle doit avoir le green 2, donc elle blind-play sa carte de _Finesse Position_, et c'est yellow 1 au lieu de green 2.
+  - Puisque deux cartes ont été blind-played (qui ne se connectaient à rien), tout le monde sait maintenant que le clue _No-Information_ était un _Double Bluff_ au lieu d'un _Finesse_. De la perspective de Cathy, son 3 peut (toujours) être n'importe quel 3 du tout.
+
+<NoInformationDoubleBluff />

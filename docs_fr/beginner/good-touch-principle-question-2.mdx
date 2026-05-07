@@ -1,0 +1,42 @@
+---
+title: Good Touch Principle (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import GoodTouchPrincipleQuestion2 from "../../docs/beginner/good-touch-principle-question-2/good-touch-principle-question-2.yml";
+import GoodTouchPrincipleAnswer2 from "../../docs/beginner/good-touch-principle-question-2/good-touch-principle-answer-2.yml";
+
+<BeginnersGuideProgress id="good-touch-principle-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Quelle action Alice doit-elle effectuer ?
+- Si Alice doit donner une clue, quelle _[card note](./card-notes.mdx)_ sera écrite sur la carte focalisée ? (Soyez précis.)
+
+<GoodTouchPrincipleQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice doit donner une _[Play Clue](./play-clues.mdx)_ au red 2 de Bob avant qu'il ne soit défaussé.
+- Si Alice clue red, cela focaliserait le red 2, mais le red 4 serait dupliqué (parce qu'il est déjà clué dans la main de Cathy).
+- Si Alice clue number 2, cela ne toucherait que le red 2.
+- Ainsi, Alice doit cluer number 2 à Bob.
+- Bob écrira une _card note_ avec les identités suivantes :
+  - red 2 (en tant que _Play Clue_)
+  - yellow 2 (en tant que _[2 Save](./2-save.mdx)_)
+- (Bob sait que cela ne peut pas être un _2 Save_ sur un green 2 car cette carte est présente dans la main de Cathy et n'est pas encore en [chop](./chop.mdx).)
+
+<GoodTouchPrincipleAnswer2 />
+
+</TabItem>
+</Tabs>

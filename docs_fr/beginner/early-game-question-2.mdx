@@ -1,0 +1,38 @@
+---
+title: L'Early Game (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import EarlyGameQuestion2 from "../../docs/beginner/early-game-question-2/early-game-question-2.yml";
+import EarlyGameAnswer2 from "../../docs/beginner/early-game-question-2/early-game-answer-2.yml";
+
+<BeginnersGuideProgress id="early-game-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est actuellement l'_[Early Game](./early-game.mdx)_. Il reste 1 jeton de clue.
+- Précédemment, Bob a été clué sur des 1. Il jouera le purple 1 et le green 1 dans le futur.
+- Quelle action Alice doit-elle effectuer ?
+
+<EarlyGameQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- La **seule** action légale qu'Alice peut effectuer est de cluer green à Bob en tant que _[Delayed Play Clue](./delayed-play-clues.mdx)_ sur le green 2.
+  - À part cette clue green, il n'y a pas d'autres clues légales possibles à donner.
+  - Alice n'a pas le droit de défausser car c'est l'_Early Game_ et toutes les _[Play Clues](./play-clues.mdx)_ n'ont pas encore été épuisées.
+
+<EarlyGameAnswer2 />
+
+</TabItem>
+</Tabs>

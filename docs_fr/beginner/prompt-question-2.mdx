@@ -1,0 +1,43 @@
+---
+title: Le Prompt (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import PromptQuestion2 from "../../docs/beginner/prompt-question-2/prompt-question-2.yml";
+import PromptAnswer2 from "../../docs/beginner/prompt-question-2/prompt-answer-2.yml";
+
+<BeginnersGuideProgress id="prompt-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Cathy a deux 3 inconnus dans sa main.
+- Quelles sont les deux clues possibles qu'Alice peut donner ?
+- Laquelle est meilleure et pourquoi ?
+
+<PromptQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- D'abord, Alice peut cluer yellow à Bob :
+  - Ce serait une _[Play Clue](./play-clues.mdx)_ sur le yellow 4, qui _[Prompt](./prompt.mdx)_-erait Cathy.
+  - Cathy jouerait son 3 le plus à gauche puis s'arrêterait.
+- Ensuite, Alice peut aussi cluer blue à Bob :
+  - Ce serait une _Play Clue_ sur le blue 4, qui _Prompt_-erait Cathy.
+  - Cathy essaierait de jouer le blue 3 depuis le slot 3. Cependant, ce serait le yellow 3, qui se jouerait avec succès.
+  - Cathy saurait qu'on lui promet le blue 3, donc elle jouerait son autre 3 comme étant le blue 3.
+- La seconde clue est meilleure que la première parce qu'elle fait jouer deux cartes à Cathy au lieu d'une.
+
+<PromptAnswer2 />
+
+</TabItem>
+</Tabs>

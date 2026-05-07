@@ -1,0 +1,42 @@
+---
+title: Le Critical Save (Question 4)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CriticalSaveQuestion4 from "../../docs/beginner/critical-save-question-4/critical-save-question-4.yml";
+import CriticalSaveAnswer4 from "../../docs/beginner/critical-save-question-4/critical-save-answer-4.yml";
+
+<BeginnersGuideProgress id="critical-save-question-4" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue red à Bob, touchant une carte sur le slot 5.
+- Est-ce une _[Play Clue](./play-clues.mdx)_ ou une _[Save Clue](./save-clues.mdx)_ ?
+- Quelle _[card note](./card-notes.mdx)_ Bob écrit-il ? (Soyez précis.)
+
+<CriticalSaveQuestion4 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob sait que ce pourrait être une _Play Clue_ sur le red 1.
+- Cependant, puisqu'elle a touché sa [chop](./chop.mdx), ce pourrait aussi être une _Save Clue_. Puisque le red 2 est dans la trash et qu'une clue rouge correspond à cette carte, ce pourrait être un red 2.
+- Bob ne sait pas si c'est une _Play Clue_ ou une _Save Clue_, mais il doit la traiter comme une _Save Clue_ pour le moment, jusqu'à obtenir plus d'informations.
+- Bob écrit une _card note_ qui inclut les identités suivantes :
+  - red 1 (en tant que _Play Clue_)
+  - red 2 (en tant que _[Critical Save](./critical-save.mdx)_)
+- Notez que la plupart du temps, les joueurs sauvegardent les 2 avec un _[2 Save](./2-save.mdx)_. Cependant, si la première copie d'un 2 est défaussée, la seconde copie de ce 2 peut être _Critical Saved_ exactement de la même manière qu'un 3 ou un 4 le serait.
+
+<CriticalSaveAnswer4 />
+
+</TabItem>
+</Tabs>

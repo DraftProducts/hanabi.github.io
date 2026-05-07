@@ -1,0 +1,37 @@
+---
+title: Single Card Focus (Question 3)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SingleCardFocusQuestion3 from "../../docs/beginner/single-card-focus-question-3/single-card-focus-question-3.yml";
+import SingleCardFocusAnswer3 from "../../docs/beginner/single-card-focus-question-3/single-card-focus-answer-3.yml";
+
+<BeginnersGuideProgress id="single-card-focus-question-3" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Bob a deux 2 clués dans sa main.
+- Alice clue blue à Bob, touchant deux cartes.
+- Quel slot est focalisé ?
+
+<SingleCardFocusQuestion3 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Slot 3, parce que c'est la seule nouvelle carte.
+  - (Le slot 2 était déjà touché, donc la clue bleue le « complète ».)
+
+<SingleCardFocusAnswer3 />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,40 @@
+---
+title: Crier dans le vide
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-7-screaming-into-the-void/question.yml";
+import Answer from "../../docs/challenge-questions/level-7-screaming-into-the-void/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-screaming-into-the-void" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Tous les 2 sont joués sur les stacks.
+- Il n'y a 0 clue disponible.
+- Alice a un green 3 connu jouable.
+- La main de Bob est, de la plus récente à la plus ancienne : `yellow 3 (globally known), red 2, blue 4, purple 5`.
+- Que doit faire Alice à ce tour ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice doit jouer son green 3.
+- Puisque Bob peut jouer son yellow 3, le purple 5 n'est pas en danger immédiat d'être défaussé.
+- Il serait illégal pour Alice d'effectuer un [_Scream Discard_](../level-7.mdx#the-scream-discard-chop-move-sdcm), car cela n'est censé être utilisé qu'en dernier recours, et puisque Bob est censé jouer le yellow 3 à ce tour, ce ne serait pas un dernier recours.
+
+<Answer />
+
+</TabItem>
+</Tabs>

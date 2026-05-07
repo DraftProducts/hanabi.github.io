@@ -1,0 +1,37 @@
+---
+title: Single Card Focus (Question 4)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SingleCardFocusQuestion4 from "../../docs/beginner/single-card-focus-question-4/single-card-focus-question-4.yml";
+import SingleCardFocusAnswer4 from "../../docs/beginner/single-card-focus-question-4/single-card-focus-answer-4.yml";
+
+<BeginnersGuideProgress id="single-card-focus-question-4" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Bob a un 5 et un 2 clués dans sa main.
+- Alice clue red à Bob, touchant trois cartes.
+- Quel slot est focalisé ?
+
+<SingleCardFocusQuestion4 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Slot 3, parce qu'il y a deux nouvelles cartes et que le slot 3 est la [chop](./chop.mdx).
+  - (Le slot 5 était déjà touché, donc la clue rouge le « complète ».)
+
+<SingleCardFocusAnswer4 />
+
+</TabItem>
+</Tabs>

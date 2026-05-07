@@ -1,0 +1,259 @@
+---
+title: Documentation Technique des Images d'Exemple
+---
+
+import { Highlight } from "prism-react-renderer";
+
+import SimpleSource from "!raw-loader!../docs/example-images/simple.yml";
+import SimpleResult from "../docs/example-images/simple.yml";
+
+import TextNameSource from "!raw-loader!../docs/example-images/text-name.yml";
+import TextNameResult from "../docs/example-images/text-name.yml";
+import OffsetNameSource from "!raw-loader!../docs/example-images/offset-name.yml";
+import OffsetNameResult from "../docs/example-images/offset-name.yml";
+
+import TypesSource from "!raw-loader!../docs/example-images/types.yml";
+import TypesResult from "../docs/example-images/types.yml";
+
+import ClueSource from "!raw-loader!../docs/example-images/clue.yml";
+import ClueResult from "../docs/example-images/clue.yml";
+
+import CardTextSource from "!raw-loader!../docs/example-images/card-text.yml";
+import CardTextResult from "../docs/example-images/card-text.yml";
+
+import CardTextExpandSource from "!raw-loader!../docs/example-images/card-text-expand.yml";
+import CardTextExpandResult from "../docs/example-images/card-text-expand.yml";
+
+import TrashSource from "!raw-loader!../docs/example-images/trash.yml";
+import TrashResult from "../docs/example-images/trash.yml";
+
+import BigTextSource from "!raw-loader!../docs/example-images/big-text.yml";
+import BigTextResult from "../docs/example-images/big-text.yml";
+
+import Suits1Source from "!raw-loader!../docs/example-images/suits-1.yml";
+import Suits1Result from "../docs/example-images/suits-1.yml";
+
+import Suits2Source from "!raw-loader!../docs/example-images/suits-2.yml";
+import Suits2Result from "../docs/example-images/suits-2.yml";
+
+export const Code = ({ code }) => (
+  <Highlight code={code} language="yaml">
+    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+      <pre>
+        <code>
+          {tokens.map((line, i) => (
+            <div {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </code>
+      </pre>
+    )}
+  </Highlight>
+);
+
+export const Example = ({ code, Image }) => (
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <Code code={code} />
+      </div>
+      <div class="col">
+        <Image />
+      </div>
+    </div>
+  </div>
+);
+
+## Intro
+
+Tout au long de ce site, des images d'exemple montrent des états de partie. Cette page décrit comment les éditer ou comment en créer de nouvelles.
+
+Chaque image d'exemple est créée à partir d'un fichier [YAML](https://yaml.org/), une description textuelle simple que vous pouvez facilement éditer.
+
+## Ajouter une Nouvelle Image
+
+1. Créez un nouveau fichier YAML dans un sous-répertoire ayant le même nom que la page Markdown sur laquelle vous le placez. (Vous pouvez vous baser sur un fichier YAML existant si vous le souhaitez.)
+
+2. Sur la page Markdown, importez-le comme un composant React en haut du fichier, comme ceci :
+
+```jsx
+import NewChopMove from "./page-name/new-chop-move.yml";
+```
+
+3. Insérez le composant React à l'endroit approprié dans le fichier Markdown :
+
+```jsx
+<NewChopMove />
+```
+
+Voir [le fichier Markdown du level 2](https://raw.githubusercontent.com/hanabi/hanabi.github.io/refs/heads/main/docs/level-2.mdx) comme exemple basique de l'apparence d'un document avec à la fois du texte et des images.
+
+## Développement
+
+Lors de l'utilisation de `npm run start` pour visualiser la page localement, tous les changements que vous faites sur le site seront automatiquement mis à jour sans avoir à rafraîchir la page. Cela inclut tous les changements dans les fichiers YAML – ils seront automatiquement re-convertis en fichiers SVG à la volée et mis à jour dans le navigateur.
+
+## Directives
+
+Voici les directives générales à suivre lors de la création ou modification d'images. La meilleure façon de commencer est de copier et modifier une image existante.
+
+- Les exemples doivent normalement utiliser 5 stacks et 3 joueurs. N'en incluez plus que si nécessaire.
+- Les stacks peuvent être omis s'ils ne sont pas du tout importants au scénario.
+- N'incluez que les identités de cartes pertinentes au scénario. Moins de détails, plus c'est clair et général.
+  - Identifiez les cartes avec l'attribut `type:`.
+    - Pensez à utiliser `border: false` si elles n'ont pas été touchées par une clue.
+    - Les cartes qui _ont_ été touchées par une clue sont partiellement identifiées. (Par exemple `type: 2`.)
+    - De plus, si une note a été écrite, mettez-la dans l'attribut `middleNote`.
+    - Utilisez plusieurs `type` avec parcimonie, et seulement quand pertinent à la variante (i.e. rainbow/pink).
+  - Habituellement, n'identifiez pas les cartes dans la main du donneur de clue ou du joueur réagissant.
+    - Les cartes vues seulement par _certains_ joueurs doivent avoir leurs identités _au-dessus_ de la carte. (Par exemple : `above: Red 2`.)
+- Si une clue est donnée, indiquez toujours qui la donne en utilisant l'attribut `clueGiver: true`.
+  - Le donneur de clue est généralement Alice.
+  - Pensez à inclure toutes les cartes touchées avec l'attribut `clue: X`.
+  - Morphez les cartes touchées comme l'UI du jeu le ferait, en utilisant l'attribut `type: X`.
+  - Indiquez le focus de la clue avec un message doré _en dessous_ de la carte. (Par exemple `below: Play` ou `below: Stall`.)
+  - Les cartes re-touchées doivent avoir `retouched: true` pour rendre la flèche grise.
+  - Indiquez presque toujours ce que le joueur recevant écrirait sur la carte en utilisant l'attribut `middleNote`.
+    - Utilisez la notation abrégée, et incluez toutes les possibilités :
+      - Entièrement identifiée : `b2`
+      - Partiellement identifiée : `b23`, `ryg2`
+      - _Chop Moved_ : `cm`. De plus, les cartes _Chop Moved_ doivent avoir `cm: true` pour dessiner un contour blanc.
+      - Trash connue : `kt`. De plus, la trash connue doit avoir `trash: true` pour dessiner une poubelle.
+  - Les autres cartes dont les identités sont déduites de la clue donnée doivent avoir un message noir _en dessous_ de la carte. (Par exemple `below: Finesse`.)
+    - Il n'est pas nécessaire d'écrire des notes sur ces cartes, car elles vont généralement blind-play immédiatement.
+    - Mais _écrivez_ leurs identités réelles avec `above:`, car celles-ci sont connues du donneur de clue.
+- Les clues illégales et/ou misplays doivent être clairement marqués en couleur `red`.
+- Les erreurs ou clues sous-optimales doivent être marquées en couleur `orange`.
+- Les actions alternatives (défausses, jeux) doivent être marquées `below:` en couleur cyan.
+  - Le joueur dont c'est l'action doit être marqué avec `clueGiver: true` ou `zeroClues: true`.
+- Les autres informations sur les cartes doivent être marquées `below:`.
+
+Chaque exemple est différent, ce sont des directives, utilisez le bon sens.
+
+## Format Détaillé du Fichier YML
+
+Il y a 2 sections principales : `stacks` et `players`.
+
+- `stacks` est un tableau de cartes qui ont déjà été jouées sur les stacks. Les couleurs suivantes sont supportées par défaut :
+  - `r` : red,
+  - `g` : green,
+  - `b` : blue,
+  - `y` : yellow,
+  - `p` : purple,
+  - `m` : rainbow (multicolor).
+- `players` contient une entrée pour chaque joueur. Chaque entrée contient les `cards` qu'il a en main.
+
+<Example code={SimpleSource} Image={SimpleResult} />
+
+Les joueurs reçoivent automatiquement les noms suivants : Alice, Bob, Cathy, Donald et Emily. Il est possible d'écraser cela avec l'attribut `name`. Par exemple, cela pourrait être utile si la main de Bob est montrée deux fois, avant et après que quelque chose se produise.
+
+`players` peut aussi contenir un `text` ou `space` au lieu de `cards`. Le premier sert à décrire quelque chose qui se passe dans une partie. Le second à ajouter de l'espace vertical.
+
+<Example code={TextNameSource} Image={TextNameResult} />
+
+De plus, `players` peut aussi contenir un `offset` pour changer les noms des joueurs.
+
+<Example code={OffsetNameSource} Image={OffsetNameResult} />
+
+### Cartes
+
+Les cartes en main peuvent être de divers types :
+
+- cluée avec identité exacte connue, ex: `g2`
+- cluée avec couleur connue, ex: `b`
+- cluée avec rang connu, ex: `4`
+- cluée avec plusieurs possibilités, ex: `b234`, `rm4`, `ym45`
+- carte non-cluée sans pips affichés, ex: `x`
+- carte non-cluée avec pips affichés, ex: `xrg23`
+
+L'attribut `crossedOut` peut être utilisé pour marquer certains pips avec X (quand toutes les autres copies de cette carte sont vues ailleurs).
+
+L'attribut `orange` peut être utilisé pour dessiner certains pips de rang en orange. C'est utile pour les cartes pink.
+
+Par défaut, les cartes cluées ont un contour orange, mais cela peut être écrasé avec l'attribut `border`.
+
+L'attribut `cm` peut être utilisé pour dessiner un contour blanc autour de la carte.
+
+L'attribut `trash` peut être utilisé pour dessiner une icône poubelle sur la carte.
+
+L'attribut `fix` peut être utilisé pour dessiner une icône clé à molette sur la carte.
+
+<Example code={TypesSource} Image={TypesResult} />
+
+### Clues
+
+Vous pouvez utiliser l'attribut `clue` pour montrer qu'une carte est en train d'être cluée.
+
+Par défaut, il n'y a pas de donneur de clue, mais cela peut être spécifié avec l'attribut `clueGiver`.
+
+Vous pouvez aussi utiliser l'attribut `retouched` pour signifier que la clue re-touche une carte, ce qui produira une flèche plus sombre que la normale. (Cela correspond au comportement de Hanab Live.)
+
+<Example code={ClueSource} Image={ClueResult} />
+
+### Texte sur les Cartes
+
+Du texte peut être placé sur une carte :
+
+- `middleNote` pour mettre une étiquette texte au milieu de la carte
+  - la chaîne est automatiquement colorée s'il s'agit d'une lettre d'une des 5 couleurs
+- `above` pour mettre une note au-dessus de la carte
+- `below` pour mettre une note en dessous de la carte
+
+`above` et `below` ont la même syntaxe :
+
+- `above: Green 3` ou `above: Rainbow 5` dessinera la boîte avec la couleur et le texte spécifiés.
+- Plusieurs autres mots-clés ont une couleur spécifique assignée : `Focus`, `Chop`, `Bad`, `Play`.
+- Vous pouvez écraser la couleur en utilisant l'attribut `color`. Les couleurs CSS sont acceptées, ainsi que `rainbow`.
+
+<Example code={CardTextSource} Image={CardTextResult} />
+
+Certains raccourcis se développent en texte plus grand :
+
+<Example code={CardTextExpandSource} Image={CardTextExpandResult} />
+
+### Pile de Défausse
+
+Pour certains exemples, certaines cartes dans la pile de défausse doivent être montrées. Cela se fait avec le tableau `discarded` au niveau supérieur.
+
+<Example code={TrashSource} Image={TrashResult} />
+
+### Texte en Grand
+
+Pour les mots-clés « Bluff », « Finesse » et « Illegal! », la couleur est ignorée.
+
+<Example code={BigTextSource} Image={BigTextResult} />
+
+### Variantes
+
+Certaines couleurs spécifiques aux variantes peuvent être ajoutées via `suits`, qui contient le mapping de la lettre indiquant la couleur vers la partie des noms de fichiers des images de cartes et pips.
+Actuellement ces variantes de couleurs sont supportées :
+
+Couleurs alternatives :
+
+- black
+- brown
+- gray
+- muddy
+- null (doit être entre guillemets car normalement `null` est un mot-clé YAML)
+- omni
+- orange
+- pink
+- prism-rygbp
+- teal
+- white
+
+Cela est fait pour pouvoir différencier des couleurs qui utilisent communément la même lettre, ex: « i » pour à la fois prism et pink.
+
+Couleurs standard qui n'ont pas besoin d'être répétées dans `suits` :
+
+- red
+- yellow
+- green
+- blue
+- purple
+- multi
+
+<Example code={Suits1Source} Image={Suits1Result} />
+<Example code={Suits2Source} Image={Suits2Result} />

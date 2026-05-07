@@ -1,0 +1,45 @@
+---
+title: Jouer ou sauver ?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-2-play-or-save/question.yml";
+import Answer from "../../docs/challenge-questions/level-2-play-or-save/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-play-or-save" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue numéro 3 à Bob, ce qui touche deux cartes en slot 3 et slot 5.
+- Il s'agit d'une clue _Chop Focus_, ce qui signifie que le slot 5 est focused.
+- Bob écrit une note sur les deux cartes.
+
+1. Quelle _note_ Bob écrit-il sur chaque carte ?
+1. Quelle action Bob doit-il effectuer ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Bob écrit "r3" sur la carte du slot 5, et "y3, g3, b3, p3" sur la carte du slot 3.
+   - Puisque Bob a reçu une clue _Chop Focus_, il doit la traiter comme un _Play Clue_ ou un _Save Clue_.
+   - Cependant, il n'y a pas de 3 directement jouables, donc cela ne peut pas être un _Play Clue_ direct.
+   - Le seul 3 dans le trash est le red 3, donc cela doit être un _Save Clue_ sur un red 3.
+   - Cela ne peut pas être une [_Self-Finesse_](../level-2.mdx#the-self-finesse), car Alice s'attendrait à ce que Bob traite la clue comme un _Save Clue_ sur le red 3.
+   - Cela ne peut pas être une [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse). Même si Cathy a un red 2 sur sa _Finesse Position_, Cathy interpréterait une clue touchant un red 3 critique sur le chop comme un _Save Clue_. Ainsi, elle ne ferait jamais de blind-play à partir de la clue d'Alice.
+1. En supposant qu'Alice n'ait pas de cartes intéressantes, Bob devrait cluer numéro 2 à Cathy comme un _Play Clue_ sur le red 2. (Une clue numéro 2 est meilleure qu'une clue red car elle récupère le purple 2 "gratuitement".)
+
+<Answer />
+
+</TabItem>
+</Tabs>

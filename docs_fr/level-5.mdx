@@ -1,0 +1,158 @@
+---
+title: Level 5 - Finesses Intermédiaires
+---
+
+import PromptMultiColor from "../docs/level-5/prompt-multicolor.yml";
+import PromptMultiColorNoNegative from "../docs/level-5/prompt-multicolor-no-negative.yml";
+import HiddenFinesse from "../docs/level-5/hidden-finesse.yml";
+import LayeredFinesse from "../docs/level-5/layered-finesse.yml";
+import LayeredFinesse2 from "../docs/level-5/layered-finesse-2.yml";
+import ClandestineFinesse from "../docs/level-5/clandestine-finesse.yml";
+import AmbiguousFinesse from "../docs/level-5/ambiguous-finesse.yml";
+import UrgencyPrinciple from "../docs/level-5/urgency-principle.yml";
+
+## Mouvements Spéciaux
+
+### Prompts dans les Variantes Multi-Couleurs
+
+- Dans les variantes multi-couleurs, les _[Prompts](beginner/prompt.mdx)_ s'appliquent à la carte avec le plus d'information positive.
+- Par exemple, dans une partie rainbow à 3 joueurs :
+  - Red 2 est joué sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 4 comme _[Play Clue](beginner/play-clues.mdx)_. C'est un _Prompt_ sur Bob pour un red 3.
+  - Au slot 1, Bob a une carte avec seulement un clue rouge dessus. (Donc, ça peut être n'importe quelle carte rouge ou n'importe quelle carte rainbow.)
+  - Au slot 2, Bob a une carte avec un clue rouge et un clue 3 dessus. (Donc, ça peut être red 3 ou rainbow 3.)
+  - Puisque le slot 2 a plus d'information positive, Bob devrait choisir de jouer le slot 2 comme red 3 (au lieu du slot 1, la carte la plus à gauche).
+
+<PromptMultiColor />
+
+- Les joueurs **ne sont pas** censés utiliser les informations des clues négatifs.
+- Par exemple, dans une partie rainbow à 3 joueurs :
+  - Red 2 est joué sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 4 comme _Play Clue_. C'est un _Prompt_ sur Bob pour un red 3.
+  - Au slot 1, Bob a une carte avec un clue rouge positif dessus. (Donc, ça peut être n'importe quelle carte rouge ou n'importe quelle carte rainbow.)
+  - Au slot 2, Bob a une carte avec un clue rouge positif dessus et un clue green négatif dessus. (Donc, ça peut être n'importe quelle carte rouge.)
+  - Même si le slot 2 est techniquement plus susceptible d'être le red 3, Bob sait que les joueurs ne sont pas censés utiliser l'information négative pour déterminer quelle carte jouer dans un _Prompt_. Ainsi, Bob joue le red 3 depuis le slot 1.
+
+<PromptMultiColorNoNegative />
+
+- Pour les joueurs avancés, voyez aussi la section sur _[Double Prompts dans les Variantes Multi-Couleurs](extras/miscellaneous.mdx#double-prompts-in-multi-color-variants)_.
+
+### Le Hidden Finesse
+
+- Parfois, vous voulez _[Finesse](beginner/finesse.mdx)_ quelqu'un avec une carte cluée déjà dans sa main. Cependant, si vous essayez de le _Finesse_, il supposera que c'est un _Prompt_ et jouera sa carte cluée. Ce qui signifie qu'une grande partie du temps, vous ne pouvez pas donner un _Finesse_, et devez plutôt cluer la carte directement.
+- Cependant, que se passe-t-il si la carte cluée est en réalité playable ? Dans ce cas, vous pouvez toujours faire le _Finesse_ – il jouera la carte _Prompted_, verra que ce n'était pas la carte que vous aviez prévue, puis blind-playera sa 2ème carte la plus récente au tour suivant. C'est appelé un _Hidden Finesse_ parce que le _Finesse_ a été temporairement caché par la présence de la carte cluée.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 et rainbow 2 sont joués sur les stacks.
+  - Alice clue rouge à Cathy, ce qui touche son red 3.
+  - Bob a un rainbow 3 clué comme rouge dans sa main et il n'a aucune idée de ce que c'est.
+  - Bob voit que le clue d'Alice doit être un _Prompt_, donc il joue sa carte rouge comme red 2. Il est surpris de voir que c'est en réalité rainbow 3.
+  - Bob sait qu'il doit vraiment avoir le red 2, et il doit avoir été sur _Finesse Position_ quand Alice a originellement donné le clue. Puisqu'il vient de tirer une carte après avoir joué le rainbow 3, il sait maintenant que le red 2 est sur son slot 2 (la deuxième carte la plus récente).
+  - Au tour suivant de Bob, il blind-play son red 2 depuis le slot 2.
+  - Dans cet exemple, le red 2 a été « caché » par le rainbow 3.
+
+<HiddenFinesse />
+
+### Le Layered Finesse
+
+- Normalement, un _Finesse_ promet la copie exacte de la carte sur _Finesse Position_. Cependant, tant que toutes les cartes menant à la carte sont playable, vous pouvez toujours promettre la copie exacte de la carte. Nous ne considérons **pas** cela comme un _Lie_, puisque le joueur qui blind-play a effectivement la véritable copie de la carte.
+- Nous appelons cela un _Layered Finesse_ parce que la cible du blind-play _Finesse_ prévue est « stratifiée » derrière d'autres cartes playable.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue rouge à Bob, touchant un red 2 comme _Play Clue_.
+  - Normalement, Bob penserait qu'il a le red 1. Cependant, il voit aussi que cela pourrait être un _Reverse Layered Finesse_ sur Cathy. Ainsi, Bob ne peut rien jouer maintenant – il doit attendre et voir ce que Cathy fait.
+  - Bob fait quelque chose sans rapport.
+  - Cathy sait que c'est un _Reverse Finesse_ et qu'elle a le red 1. Cathy blind-play sa carte de _Finesse Position_. Cependant, c'est en réalité un blue 1, et il joue avec succès. Cathy soupire de surprise.
+  - Alice fait quelque chose sans rapport.
+  - Bob sait que Cathy a dû essayer de blind-play un red 1. Ainsi, il doit avoir le red 2, et Alice a effectivement effectué un _Layered Finesse_.
+  - Bob fait quelque chose sans rapport.
+  - Cathy a été surprise d'avoir blind-play le blue 1 au lieu du red 1. Ce doit être un _Layered Finesse_ et Cathy doit vraiment avoir le red 1. Cathy joue sa _Second Finesse Position_ et c'est le red 1.
+
+<LayeredFinesse />
+
+### Le Clandestine Finesse
+
+- Pour le joueur qui reçoit un clue qui initie un _Layered Finesse_, c'est habituellement évident ce qui se passe. Par exemple, dans une partie à 4 joueurs :
+  - Alice clue à Donald blue, touchant une carte blue.
+  - Bob défausse.
+  - Cathy blind-play un green 1.
+  - Donald sait clairement que c'est un _Layered Finesse_ sur Cathy – Cathy continuera de jouer des cartes jusqu'à ce qu'elle trouve la carte blue qui se connecte à celle dans sa main.
+
+<LayeredFinesse2 />
+
+- En d'autres termes, la plupart des _Layered Finesses_ font blind-play des cartes sans rapport qui ne se connectent pas au type de clue donné.
+- Cela dit, il est aussi possible d'effectuer un _Layered Finesse_ pour des cartes sans rapport qui **se** connectent au type du clue donné. Quand cela se produit, c'est caché du receveur du clue, donc nous l'appelons un _Clandestine Finesse_ pour le distinguer d'un _Layered Finesse_ (plus évident).
+- Par exemple, dans une partie à 3 joueurs :
+  - Alice clue nombre 3 à Cathy, ce qui touche le red 3 au slot 2. Ainsi, le red 3 est le focus du clue. Ce doit être un _Play Clue_ sur le red 3.
+  - Bob sait que le red 3 est actuellement unplayable, donc ce doit être un _Finesse_. Il blind-play sa _Finesse Position_ comme red 2. Au lieu de ça, c'est un blue 2, et il joue avec succès. Bob soupire de surprise.
+  - Normalement, Cathy penserait qu'elle a le blue 3, parce que cela se connecterait au blue 2 qui a été blind-played. (Le nombre 2 se connecte au nombre 3.)
+  - Cependant, Cathy voit aussi que Bob avait un red 2 sur sa _Second Finesse Position_ au moment du clue. Donc il y a une possibilité que c'était un _Clandestine Finesse_ au lieu d'un _Finesse_ normal. Ainsi, Cathy doit donner à Bob une chance de blind-play le red 2. S'il ne le fait pas, alors Cathy a effectivement le blue 3.
+  - Cathy fait quelque chose sans rapport.
+  - Alice fait quelque chose sans rapport.
+  - Bob a été surpris d'avoir blind-play le blue 2 au lieu du red 2. Ce doit être un _Clandestine Finesse_ et Bob doit vraiment avoir le red 2.
+  - Bob blind-play sa carte du slot 2. C'est le red 2 et il joue avec succès. (Bob sait que s'il ne le faisait pas, alors Cathy continuerait à misplay le red 3 comme un blue 3.)
+  - Cathy joue le red 3.
+
+<ClandestineFinesse />
+
+### Le Queued Finesse
+
+- Si un joueur a été _Finessed_, alors sa _Finesse Position_ se déplace d'un slot vers la droite, exactement comme si la carte blind était cluée. (C'est un concept similaire à comment, si un joueur a été _Chop Moved_, alors son chop se déplace d'un slot vers la gauche.)
+- Par la suite, il est possible d'effectuer **un autre** _Finesse_ sur un joueur qui a déjà été _Finessed_. Dans ce cas, alors le second _Finesse_ est mis en file d'attente après le premier. Le joueur est censé blind-play dans les _Finesses_ dans l'ordre, du plus ancien au plus récent.
+  - La raison de cette convention est que cela permet aux _Layered Finesses_ de fonctionner correctement. En d'autres termes, si Bob pense qu'il est _Finessed_ deux fois, il doit aussi entretenir la possibilité qu'il soit _Layered Finessed_ une fois.
+
+### Le Ambiguous Finesse
+
+- Parfois, le joueur qui est censé blind-play une carte dans un _Finesse_ est ambigu. Par exemple, dans une partie à 4 joueurs :
+  - Rien n'est joué sur les stacks.
+  - Alice clue à Donald à propos d'un red 2 comme _Play Clue_.
+  - Bob **et** Cathy ont tous deux red 1 sur leur _Finesse Position_.
+  - Bob pensera que c'est un _Finesse_ dirigé vers Cathy, et il défaussera.
+  - Ensuite, Cathy pense que Bob a fait une erreur et a « manqué » le _Finesse_. Cathy défausse.
+
+<AmbiguousFinesse />
+
+- Ici, Cathy est en réalité celle qui fait l'erreur. Les _Finesses_ sont considérés comme des mouvements de base, donc l'idée est que vous devriez faire confiance à vos coéquipiers pour ne pas faire d'erreur. Si Bob défausse, alors cela signifie que Cathy a aussi exactement la même copie de la carte, et Cathy devrait blind-play immédiatement.
+
+### Le Layered Finesse Dupe Clue
+
+- Parfois, les joueurs qui ont été _Layered Finessed_ ne peuvent pas blind-play leurs cartes immédiatement. Quand cela se produit, ils donneront des clues ou défausseront.
+- Ainsi, il est possible qu'une personne qui a été _Layered Finessed_ donne accidentellement un _Play Clue_ à une carte dans la main de quelqu'un d'autre qui était déjà « obtenue » à l'intérieur du _Layered Finesse_ de sa propre main.
+- Quand cela se produit, l'une des deux choses se passe habituellement :
+  - Si Bob (la personne qui a été cluée) connaît l'identité exacte de la carte, alors c'est évident qu'Alice l'a accidentellement dupliquée. Dans ce cas, Bob peut défausser la carte en toute sécurité pour la repasser à Alice. (C'est important pour empêcher un bomb plus tard quand Alice « déroule » le _Layered Finesse_.)
+  - Si Bob (la personne qui a été cluée) ne connaît pas l'identité exacte de la carte, alors il est forcé de simplement jouer la carte. Bob n'est pas autorisé à « faire le con » dans cette situation, car cela pourrait causer encore plus de confusion pour l'équipe. Après que Bob joue la carte, si elle était effectivement dupliquée, alors l'équipe doit maintenant donner un _Fix Clue_ à Alice. D'abord, Alice sera surprise qu'un clue soit ciblé sur une carte « à l'intérieur de son layer ». Mais combiné avec le contexte d'Alice donnant un clue à une carte similaire, ce qui se passe devrait être évident.
+
+## Principes Généraux
+
+### Urgency Principle (Jouer dans les Finesses Aussi Vite que Possible)
+
+- Normalement, quand un _Finesse_ se produit, quelqu'un blind-play immédiatement. C'est extrêmement important, car cela resynchronise l'information entre l'équipe. Donc, en groupe, nous nous accordons à **blind-play nos cartes aussi vite que raisonnablement possible**. C'est appelé le _Urgency Principle_.
+- Ainsi, si vous voyez qu'un joueur **ne** blind-play **pas** dans le _Finesse_, alors vous savez que le _Finesse_ doit être **sur vous**.
+- Cependant, il y a deux exceptions importantes :
+  1. Les joueurs sont autorisés à **différer** le jeu dans un _Finesse_ s'ils donnent un clue qui cause un _Finesse_ (et personne d'autre dans l'équipe n'aurait pu le faire).
+  1. Les joueurs sont autorisés à **différer** le jeu dans un _Finesse_ s'ils font quelque chose de vraiment important, comme sauvegarder un 5 sur le chop ou donner un _Play Clue_ à une carte qui est sur le point d'être défaussée.
+- Donc, si l'une des deux conditions ci-dessus s'applique, alors vous devez **attendre** et donner au joueur encore un autre tour pour démontrer s'il blind-playera ou non.
+- Par exemple, dans une partie à 5 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Il y a 1 clue dans la banque.
+  - Alice clue rouge à Emily, touchant un red 3 comme _Play Clue_. C'est un _Finesse_ sur le red 2.
+  - Bob voit que le _Finesse_ est sur Cathy. (Cathy a le red 2 dans sa _Finesse Position_.) Puisque l'équipe est à 0 clue, Bob défausse.
+  - Cathy sait qu'Alice effectue un _Finesse_ et qu'elle doit avoir le red 2. Le premier instinct de Cathy est de blind-play le red 2. C'est urgent parce que sinon, Emily pensera que sa carte rouge pourrait être le red 2, et elle misplayerait.
+  - Cependant, Cathy voit aussi que Donald a un blue 5 sur le chop qui doit être sauvegardé. De plus, du point de vue de Cathy, Donald pourrait défausser à son tour, donc le blue 5 est en danger imminent. Si Cathy blind-play dans le _Finesse_, alors le blue 5 pourrait être défaussé.
+  - Au lieu de blind-play dans le _Finesse_, Cathy clue nombre 5 à Donald comme un _5 Save_.
+  - Puisque l'équipe est à 0 clue, Donald défausse.
+  - Après le clue d'Alice, Emily a marqué sa carte rouge comme « r2 ou r3 si Cathy blind-play red 2 ». Cependant, même si Cathy n'a pas blind-play le red 2, Emily a pu voir que Cathy faisait une action importante et urgente pour empêcher l'équipe de perdre la partie. Ainsi, Emily sait qu'elle doit donner à Cathy une autre chance de blind-play le red 2. Si Cathy ne blind-play pas le red 2 à son tour suivant (et que rien d'autre de spécial ne se passe), alors Emily peut jouer sa propre carte rouge comme red 2.
+
+<UrgencyPrinciple />
+
+### Schrödinger's Cat Principle
+
+- Souvent, quand vous recevez un clue, la carte peut être deux ou plusieurs choses. Par exemple :
+  - Dans une partie sans variante, un _Play Clue_ rouge pourrait indiquer un red 2 ou un red 3 selon que red 2 va blind-play depuis la main de quelqu'un d'autre ou non.
+  - Dans une partie rainbow, un clue rouge pourrait indiquer soit un _Play Clue_ sur un red 1 soit un _Delayed Play Clue_ sur un rainbow 2 à travers le rainbow 1 pas encore joué d'un autre joueur.
+- Après avoir reçu un clue, vous devriez immédiatement marquer toutes les possibilités sur la carte comme une note.
+- Pour tous vos tours suivants, vous devez traiter cette carte comme si elle était **toutes les possibilités** en même temps. C'est beaucoup comme l'analogie quantique du _Chat de Schrödinger_, qui dit qu'un chat est à la fois vivant et mort en même temps, et vous ne saurez pas avant d'ouvrir la boîte et de regarder. De même, traitez la carte inconnue comme toutes les possibilités en même temps, et vous ne saurez vraiment qu'une fois la carte jouée.
+- Les implications du _Schrödinger's Cat Principle_ sont que les joueurs doivent être très prudents. Avant de jouer une carte, ils devront souvent attendre que tout le monde ait un tour pour permettre la possibilité d'un _Prompt_, _Reverse Finesse_, et ainsi de suite.
+
+## Questions de Défi
+
+Si vous êtes nouveau au level 5, voyez si vous pouvez compléter [ces questions de défi](challenge-questions/level-5.mdx).

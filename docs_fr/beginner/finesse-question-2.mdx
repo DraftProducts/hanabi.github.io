@@ -1,0 +1,37 @@
+---
+title: La Finesse (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import FinesseQuestion2 from "../../docs/beginner/finesse-question-2/finesse-question-2.yml";
+import FinesseAnswer2 from "../../docs/beginner/finesse-question-2/finesse-answer-2.yml";
+
+<BeginnersGuideProgress id="finesse-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue yellow à Cathy, touchant un yellow 4 en tant que _[Play Clue](./play-clues.mdx)_.
+- Du point de vue de Bob, est-ce une _[Finesse](./finesse.mdx)_ ? Pourquoi ou pourquoi pas ?
+
+<FinesseQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Non, ce n'est pas une _Finesse_.
+- Bob a un 3 clué dans sa main, qui pourrait être le yellow 3. Par conséquent, ce pourrait être un _[Prompt](./prompt.mdx)_ sur Bob.
+- Bob sait que les _Prompts_ ont la priorité sur les _Finesses_. Puisqu'un _Prompt_ est possible, ce ne peut pas être une _Finesse_.
+
+<FinesseAnswer2 />
+
+</TabItem>
+</Tabs>

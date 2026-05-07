@@ -1,0 +1,155 @@
+---
+title: Level 14 - Trash Moves
+---
+
+import TrashBluff from "../docs/level-14/trash-bluff.yml";
+import TrashFinesse from "../docs/level-14/trash-finesse.yml";
+import TrashFinesseTwoCards from "../docs/level-14/trash-finesse-two-cards.yml";
+import ReverseTrashFinesse from "../docs/level-14/reverse-trash-finesse.yml";
+import ReverseTrashFinesse2 from "../docs/level-14/reverse-trash-finesse-2.yml";
+import TrashPush from "../docs/level-14/trash-push.yml";
+import ShoutDiscardOrderChopMove from "../docs/level-14/shout-discard-order-chop-move.yml";
+
+## Conventions
+
+### Known-Trash Discard Order
+
+- Parfois, les joueurs auront deux cartes trash cluées connues ou plus dans leur main. (Et tout le monde dans l'équipe peut également voir qu'elles sont trash connues.)
+- Dans cette situation, les joueurs sont censés défausser la carte trash la plus à gauche.
+  - Pour les joueurs de level 16, sachez que l'exception à cela est si le trash venait d'un _[Unknown Trash Discharge](level-16.mdx#le-unknown-trash-discharge-1-for-1-form-utd)_ ou d'un _[Unknown Dupe Discharge](level-16.mdx#le-unknown-dupe-discharge-udd)_. Dans ce cas, ces cartes doivent être défaussées en premier.
+
+## Mouvements Spéciaux
+
+### Le Trash Order Chop Move (TOCM)
+
+- D'abord, voyez la section sur le _[Known-Trash Discard Order](#known-trash-discard-order)_ et le _[Order Chop Move](level-4.mdx#le-order-chop-move-ocm)_.
+- Si un joueur saute par-dessus sa carte trash la plus à gauche et défausse à la place la deuxième carte trash la plus à gauche, il doit essayer de communiquer quelque chose en plus.
+- Cela signifie que le joueur suivant devrait _[Chop Move](level-4.mdx#chop-moves)_ (d'une manière similaire à un _Order Chop Move_).
+- Notez qu'un joueur n'essaie pas nécessairement d'effectuer un _Trash Order Chop Move_ si les deux cartes trash ont des types différents de clues dessus. Par exemple, en défaussant des cartes trash spécifiques, cela peut communiquer que le joueur « voit » toutes les possibilités non-trash de cette carte.
+
+### Le Shout Discard Order Chop Move
+
+- D'abord, voyez les sections sur le _[Shout Discard Chop Move](level-7.mdx#le-shout-discard-chop-move)_ et le _[Trash Order Chop Move](level-14.mdx#le-trash-order-chop-move-tocm)_.
+- Si un joueur a une carte playable connue et plusieurs cartes trash connues, alors défausser une carte trash autre que la carte trash attendue cause un saut exactement de la même manière qu'un _Trash Order Chop Move_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Alice a une carte playable connue au slot 1, une carte trash connue au slot 2, et une carte trash connue au slot 3.
+  - Si Alice joue sa carte playable connue depuis le slot 1, rien de spécial ne se passe.
+  - Si Alice défausse sa carte trash connue depuis le slot 2, cela déclencherait un _Shout Discard Chop Move_ sur Bob.
+  - Si Alice défausse sa carte trash connue depuis le slot 3, cela déclencherait un _Shout Discard Order Chop Move_ sur Cathy.
+
+<ShoutDiscardOrderChopMove />
+
+### Le Trash Push
+
+- Normalement, quand une carte inutile est cluée, cela signifie un _[Trash Chop Move](level-4.mdx#le-trash-chop-move-tcm)_. Cependant, que se passe-t-il si la carte inutile est en réalité la carte sur le chop ? Alors cela ne _Chop Move_ rien.
+- Du _[Good Touch Principle](beginner/good-touch-principle.mdx)_, nous savons qu'il est inutile de dépenser un clue pour toucher une carte inutile sur le chop de quelqu'un, parce que si nous ne faisons rien, la carte inutile serait automatiquement défaussée.
+- Par la suite, si cela est fait délibérément, ça doit avoir une signification. Nous nous accordons à dire que ce type de clue « pousse » la nouvelle carte chop sur la table.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Bob n'a pas de cartes cluées dans sa main. Son chop est son slot 5.
+  - Alice clue à Bob nombre 1, ce qui ne touche que sa carte du slot 5.
+  - Bob blind-play sa carte du slot 4, et c'est un red 2 playable.
+
+<TrashPush />
+
+- Parfois, un _Trash Push_ est la seule façon de faire jouer une carte qui est assise entre deux autres cartes ennuyeuses.
+- Similaire à un _[Bluff](level-11.mdx#le-bluff)_, les _Trash Pushes_ doivent être immédiatement playable et devraient généralement être démontrés immédiatement. (C'est différent d'autres mouvements similaires comme le _5 Pull_, qui peut devoir attendre un certain temps.)
+
+### Le Trash Push Prompt & Le Trash Push Finesse
+
+- Si un joueur effectue un _Trash Push_ sur une carte _one-away-from-playable_, c'est un signal que quelqu'un d'autre a la carte connectante comme _[Prompt](beginner/prompt.mdx)_ ou _[Finesse](beginner/finesse.mdx)_.
+- Les _Trash Push Prompts_ et _Trash Push Finesses_ ne peuvent pas être en reverse. En d'autres termes, ils doivent se résoudre complètement quand le joueur clué obtient un tour.
+
+### Le Trash Finesse
+
+- Normalement, quand une carte trash est cluée, cela signifie un _Trash Chop Move_ ou un _Trash Push_. Cependant, pour que ces deux stratégies fonctionnent, on suppose que le destinataire du clue saura que la carte qui a été touchée est trash.
+- Que se passe-t-il si le destinataire du clue **ne sait pas** que la carte cluée est trash ? Alors, il continuerait à misplay cette carte, la prenant pour un _[Play Clue](beginner/play-clues.mdx)_ « normal ».
+- Si les joueurs représentent mal l'identité d'une carte trash de cette manière, c'est un signal qu'un joueur a la carte originellement promise sur sa _Finesse Position_.
+- Après un _Trash Finesse_, le joueur qui a été clué devrait _Chop Move_ toutes les cartes à droite de la carte trash. (En d'autres termes, vous pouvez penser à un _Trash Finesse_ comme à la fois un _Finesse_ et un _Trash Chop Move_ en même temps.)
+  - Au level 23 et en dessous, si la carte cluée dans un _Trash Finesse_ était déjà sur le chop, rien d'extra ne se passe.
+  - Au level 24 et au-dessus, si la carte cluée dans un _Trash Finesse_ était déjà sur le chop, [une chose extra se passe](level-24.mdx#unnecessary-moves-with-unknown-trash-on-chop----trash-push).
+- Par exemple, dans une partie à 4 joueurs :
+  - Tous les 1 sont joués sur les stacks sauf red 1 et yellow 1.
+  - Alice clue à Donald nombre 1, ce qui touche un blue 1. Pour Donald, cela ressemblera à un _Play Clue_ sur un red 1 ou un yellow 1.
+  - Bob voit que Cathy a un red 1 sur sa _Finesse Position_. Ainsi, Bob sait que le clue d'Alice est un _Trash Finesse_ appelant le red 1 de Cathy. Bob défausse.
+  - Cathy sait qu'elle est promise un red 1 ou yellow 1 pour correspondre au clue 1 d'Alice. Cathy blind-play sa carte de _Finesse Position_ et c'est un red 1.
+  - Donald avait originellement une note de « r1, y1 » sur son 1. Cependant, après le blind-play de Cathy, il met à jour sa note en « trash ». De plus, Donald marque aussi ses cartes du slot 3 et slot 4 comme étant _Chop Moved_.
+
+<TrashFinesse />
+
+- Dans le cas où plusieurs cartes sont cluées dans le cadre d'un _Trash Finesse_, **toutes** les cartes nouvellement touchées sont considérées comme trash.
+- Les _Double Trash Finesses_ sont explicitement interdits. Ainsi, il est possible d'effectuer un _Trash Finesse_ dans une situation comme celle-ci :
+  - Tous les 1 sont joués sur les stacks sauf red 1 et blue 1.
+  - Alice clue à Donald nombre 1, ce qui touche deux green 1 au slot 1 et 2. Pour Donald, cela ressemblera à la fois au red 1 et au blue 1 (dans un ordre ou l'autre).
+  - Similaire à l'exemple précédent, Bob voit que Cathy a un red 1 sur sa _Finesse Position_.
+  - À première vue, Bob pourrait penser qu'Alice promet à la fois red 1 et blue 1, ce qui signifierait qu'il devrait blind-play le blue 1.
+  - Cependant, un _Trash Finesse_ ne promet qu'une carte correspondante, et puisqu'il voit que Cathy a une carte correspondante, alors c'est suffisant. Ainsi, Bob défausse.
+  - Cathy sait qu'elle est promise un red 1 ou blue 1 pour correspondre au clue 1 d'Alice. Cathy blind-play sa carte de _Finesse Position_ et c'est un red 1.
+  - Donald sait que le focus du clue (slot 1) est trash, puisqu'il a fait blind-play Cathy. De plus, Donald sait que sa carte du slot 2 est aussi trash, parce que toutes les cartes nouvellement touchées dans un _Trash Finesse_ sont garanties d'être trash.
+
+<TrashFinesseTwoCards />
+
+### Le Reverse Trash Finesse
+
+- D'abord, voyez la section sur le _[Trash Finesse](#le-trash-finesse)_.
+- Il est aussi possible d'effectuer un _Trash Finesse_ en reverse. C'est beaucoup plus difficile à voir qu'un _Trash Finesse_ vers l'avant. Même ainsi, les joueurs devraient généralement entretenir la possibilité que cela se produise.
+- Quand un clue ressemble à ce qu'il pourrait être un _Reverse Trash Finesse_, le joueur qui reçoit le clue est forcé à immédiatement défausser la carte. Si c'était effectivement un _Reverse Trash Finesse_, ce sera une carte trash et cela démontrera immédiatement ce qui se passe. Alternativement, si le clue était un _Play Clue_ normal sur une carte playable, alors la défausse sera un _[Gentleman's Discard](level-10.mdx#le-gentlemans-discard-gd)_. En défaussant, cela couvre les deux cas.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 1 est joué sur les stacks. Tous les 2 sont joués sur les autres stacks.
+  - Alice clue à Bob nombre 2, touchant sa carte du slot 1 comme _Play Clue_.
+  - De la perspective de Bob, c'est probablement juste un _Play Clue_ sur le red 2 (qui se trouve être le 2 final qui doit être joué).
+  - Cependant, Bob voit que Cathy a aussi un red 2 sur sa _Finesse Position_. Cela signifie que cela pourrait être un _Reverse Trash Finesse_.
+  - Si c'est un _Reverse Trash Finesse_, alors son 2 est un 2 trash (e.g. green 2). En le défaussant immédiatement, cela prouvera à Cathy qu'_elle_ a un red 2.
+  - Alternativement, si Bob a un red 2, alors il peut le défausser pour effectuer un _Gentleman's Discard_ sur Cathy.
+  - Dans tous les cas, défausser couvrira les deux cas. Bob défausse le 2 et il est révélé comme étant un green 2.
+  - Cathy vient ensuite. Elle a été surprise quand Alice a donné à Bob un clue de nombre 2 sur le green 2. De la perspective de Cathy de la perspective de Bob, le green 2 misplayerait immédiatement comme red 2. Cependant, quand Bob défausse le green 2 au lieu de le jouer, le plan d'Alice devient clair. Cathy avait un red 2 depuis le début. Cathy blind-play sa carte de _Finesse Position_ comme red 2.
+  - Parce que c'était un _Trash Finesse_, Bob _Chop Moves_ slot 2, slot 3, slot 4, et slot 5.
+
+<ReverseTrashFinesse />
+
+- Les _Reverse Trash Finesses_ **doivent** contenir un « _Gentleman's Discard_ potentiel ». En d'autres termes, il n'est pas possible d'effectuer un _Reverse Trash Finesse_ qui fait blind-play une carte critique correspondante.
+  - Pour les joueurs de level 18, ce concept est étoffé dans la section _[Trash Touch Elimination](level-18.mdx#trash-touch-elimination-tte)_, mais ce n'est pas nécessaire de comprendre la règle.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 1 est joué sur les stacks. Tous les 2 sont joués sur les autres stacks. Une copie du red 2 est dans la pile de défausse.
+  - Alice clue à Bob nombre 2, touchant sa carte du slot 1 comme _Play Clue_.
+  - La première pensée de Bob est que c'est un _Play Clue_ sur le red 2 (qui est le 2 final qui doit être joué).
+  - Cependant, Bob voit les deux copies du red 2. L'une est dans la pile de défausse et l'autre est dans la main de Cathy. Cela signifie que le 2 de Bob ne peut possiblement pas être le red 2. Ainsi, Bob sait que ce 2 est trash.
+  - Bob défausse son 2, comprenant qu'Alice a effectué un _[Trash Chop Move](level-4.mdx#le-trash-chop-move-tcm)_.
+  - Cathy a été surprise quand Alice a donné à Bob un clue de nombre 2 sur le green 2. De la perspective de Cathy de la perspective de Bob, le green 2 misplayerait immédiatement comme red 2. Cependant, quand Bob défausse le green 2 au lieu de le jouer, Cathy sait que quelque chose d'autre se passe.
+  - La première pensée de Cathy est que c'est un _Reverse Trash Finesse_ (et qu'elle devrait jouer le red 2 depuis sa _Finesse Position_).
+  - Cependant, Cathy sait que les _Reverse Trash Finesses_ doivent avoir une composante _Gentleman's Discard_, et qu'il n'est pas possible de _Gentleman's Discard_ un red 2 critique. Ainsi, Cathy suppose juste qu'elle a un red 2 quelque part dans sa main, et défausse.
+
+<ReverseTrashFinesse2 />
+
+- Notez que les _Reverse Trash Finesses_ ne devraient pas toujours être entretenus et **dépendent du contexte**. Spécifiquement, vers la fin de la partie, les _Reverse Trash Finesses_ sont « désactivés ». C'est parce que vers la fin de la partie, l'équipe a besoin de _Tempo_, et les _Reverse Trash Finesses_ sont lents et nécessitent encore plus de défausses.
+
+### Le Forced Gentleman's Discard Chop Move
+
+- D'abord, voyez la section sur le _[Reverse Trash Finesse](#le-reverse-trash-finesse)_.
+- Quand un joueur est forcé d'effectuer un _Gentleman's Discard_ qui ressemble à un _Reverse Trash Finesse_, il _Chop Move_ de la même manière qu'un _Reverse Trash Finesse_.
+- Par exemple, dans la section pour le _Reverse Trash Finesse_, Bob est forcé de défausser son 2. Il s'est avéré être un green 2, ce qui signifie que le clue d'Alice était un _Trash Finesse_, ce qui signifie qu'un _Chop Move_ se produit.
+- Cependant, dans une hypothèse où le 2 de Bob s'avérait être un red 2, le mouvement de Bob serait un _Gentleman's Discard_. Mais slot 2, slot 3, slot 4, et slot 5 seraient toujours _Chop Moved_ de la même manière (même si les cartes ne sont normalement pas _Chop Moved_ par un _Gentleman's Discard_).
+
+### Le Trash Bluff
+
+- D'abord, voyez les sections sur _[Cathy's Connecting Principle](level-11.mdx#cathys-connecting-principle-partie-2)_ et le _[Trash Finesse](#le-trash-finesse)_.
+- Dans le cas d'un _Finesse_ normal, un red 1 playable se « connecterait » à un red 2 _one-away-from-playable_.
+- Dans le cas d'un _Trash Finesse_, un red 1 playable se « connecterait » à un blue 1 trash.
+- Tout comme il est possible d'obtenir des cartes non-connectantes avec un _Bluff_ normal, il est aussi possible d'obtenir des cartes non-connectantes avec un _Trash Bluff_.
+- Les _Trash Finesses_ et les _Trash Bluffs_ _Chop Move_ tous deux toutes les cartes à droite de la carte trash.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 2 sont joués sur les stacks sauf le red 2.
+  - Cathy n'a pas de cartes cluées dans sa main.
+  - Alice clue à Cathy nombre 2, ce qui touche ses cartes du slot 2 et slot 4. Cela focalise le slot 2 et ressemble à un _Play Clue_. Ainsi, Cathy supposera que sa carte du slot 2 est un red 2. Cependant, la carte est en réalité un blue 2.
+  - Bob voit que Cathy continuera à misplay le blue 2 comme un red 2. Ainsi, Bob sait qu'il est promis d'avoir le red 2. Bob blind-play sa carte de _Finesse Position_, s'attendant à jouer un red 2. Cependant, c'est à la place un blue 3, et il joue avec succès sur les stacks.
+  - Cathy sait maintenant que son 2 sur le slot 2 ne doit pas être un red 2, ou alors Bob n'aurait rien blind-played. Ainsi, ce doit être une autre carte trash.
+  - De plus, Cathy marque sa carte du slot 5 comme étant _Chop Moved_.
+
+<TrashBluff />
+
+- Tout comme les _Bluffs_ normaux, les _Trash Bluffs_ ne peuvent être faits qu'en _Bluff Seat_.
+- Les _Bluffs_ normaux ont la précédence sur les _Trash Bluffs_. Cela signifie que les joueurs peuvent **uniquement** effectuer un _Trash Bluff_ avec des cartes qui seront prouvées comme trash par un blind-play.
+  - Par exemple, si certains des 1 ont été joués sur les stacks (mais pas tous les 1), alors vous pouvez utiliser un clue de nombre 1 pour initier un _Trash Bluff_, parce qu'un blind-play prouvera que le 1 clué n'est pas un bon 1.
+  - Par exemple, si le stack rouge est joué jusqu'au red 3, alors vous **ne pouvez pas** utiliser un clue rouge pour initier un _Trash Bluff_, parce qu'un blind-play fera ressembler la carte cluée au red 5.
+  - Par exemple, si le stack rouge est joué jusqu'au red 4, alors vous pouvez utiliser un clue rouge pour initier un _Trash Bluff_, parce qu'un blind-play prouvera que la carte cluée n'est pas un red 5.
+- Pour les joueurs de level 24, il y a [des règles supplémentaires](level-24.mdx#trash-finesses-and-trash-bluffs-are-always-unnecessary) concernant les _Trash Bluffs_.

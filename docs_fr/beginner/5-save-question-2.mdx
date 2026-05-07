@@ -1,0 +1,46 @@
+---
+id: 5-save-question-2
+title: Le 5 Save (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import FiveSaveQuestion2 from "../../docs/beginner/5-save-question-2/5-save-question-2.yml";
+import FiveSaveAnswer2 from "../../docs/beginner/5-save-question-2/5-save-answer-2.yml";
+
+<BeginnersGuideProgress id="5-save-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Listez toutes les actions légales qu'Alice peut effectuer.
+- Quelle action Alice doit-elle effectuer ?
+
+<FiveSaveQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob a un yellow 2 en [chop](./chop.mdx), qui devrait normalement être sauvegardé. Cependant, Cathy a déjà l'autre copie cluée dans sa main, donc le yellow 2 de Bob est de la trash et doit être ignoré.
+- Bob a aussi deux 5, mais aucun n'est en chop, donc ils ne peuvent pas encore être sauvegardés.
+- Cathy a deux 5. L'un est déjà sauvegardé (i.e. a une clue dessus), mais l'autre n'est pas encore sauvegardé et est en chop.
+  - (La chop de Cathy est le slot 2 parce que les cartes des slots 3 et 4 ont une clue dessus.)
+- Ainsi, les actions qu'Alice peut effectuer sont :
+  - sauvegarder le 5 de Cathy
+  - défausser
+- Mais laquelle est meilleure ? Dans cette situation, Alice ou Bob peuvent sauvegarder le 5 :
+  - Si Alice sauvegarde le 5 de Cathy, alors Bob défausserait un yellow 2 (qui est de la trash).
+  - Si Alice défausse, elle défausserait une carte inconnue, et Bob sauvegarderait le 5 de Cathy.
+- Puisque défausser de la trash est mieux que défausser une carte inconnue, Alice doit donner la clue pour laisser Bob défausser.
+
+<FiveSaveAnswer2 />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,41 @@
+---
+title: La Finesse (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import FinesseQuestion1 from "../../docs/beginner/finesse-question-1/finesse-question-1.yml";
+import FinesseAnswer1 from "../../docs/beginner/finesse-question-1/finesse-answer-1.yml";
+
+<BeginnersGuideProgress id="finesse-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Énumérez les 5 clues légales qu'Alice peut donner maintenant, ainsi que leurs noms de clue.
+- Quelle est la meilleure clue ?
+
+<FinesseQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Alice peut cluer blue à Bob, touchant le blue 1 en tant que _[Play Clue](./play-clues.mdx)_.
+1. Alice peut cluer number 1 à Bob, touchant le blue 1 en tant que _Play Clue_.
+1. Alice peut cluer yellow à Cathy, touchant le yellow 2 en tant que _Play Clue_.
+1. Alice peut cluer blue à Cathy, touchant le blue 2 en tant que _[Finesse](./finesse.mdx)_ sur le blue 1.
+1. Alice peut cluer number 2 à Cathy, touchant le yellow 2 et le blue 2 en tant que _[2 Save](./2-save.mdx)_.
+
+La meilleure clue est la _Finesse_ car elle fait jouer deux cartes immédiatement. (L'équipe peut donner une _Play Clue_ au yellow 2 plus tard.)
+
+<FinesseAnswer1 />
+
+</TabItem>
+</Tabs>

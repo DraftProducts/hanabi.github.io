@@ -1,0 +1,36 @@
+---
+title: L'Early Game (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import EarlyGameQuestion1 from "../../docs/beginner/early-game-question-1/early-game-question-1.yml";
+import EarlyGameAnswer1 from "../../docs/beginner/early-game-question-1/early-game-answer-1.yml";
+
+<BeginnersGuideProgress id="early-game-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Au premier tour de la partie, Alice clue number 1 à Cathy, touchant trois cartes.
+- Bob défausse un red 1.
+- Est-on maintenant dans l'_[Early Game](./early-game.mdx)_ ou dans le _Mid-Game_ ?
+
+<EarlyGameQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- C'est le _Mid-Game_ parce que Bob a défaussé.
+
+<EarlyGameAnswer1 />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,40 @@
+---
+id: 2-save-question-1
+title: Le 2 Save (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import TwoSaveQuestion1 from "../../docs/beginner/2-save-question-1/2-save-question-1.yml";
+import TwoSaveAnswer1 from "../../docs/beginner/2-save-question-1/2-save-answer-1.yml";
+
+<BeginnersGuideProgress id="2-save-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue number 2 à Bob, touchant son slot 4.
+- Du point de vue de Bob, est-ce une _[Play Clue](./play-clues.mdx)_ ou une _[Save Clue](./save-clues.mdx)_ ?
+- Quelle _[card note](./card-notes.mdx)_ Bob écrit-il ?
+
+<TwoSaveQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Cela ne peut pas être une _Save Clue_ car la clue n'a pas touché la carte sur la [chop](./chop.mdx) de Bob. Donc, ce doit être une _Play Clue_.
+- Bob écrit une _card note_ qui inclut les identités suivantes :
+  - yellow 2 (en tant que _[Delayed Play Clue](./delayed-play-clues.mdx)_ via le yellow 1 de Cathy)
+  - blue 2 (directement jouable)
+
+<TwoSaveAnswer1 />
+
+</TabItem>
+</Tabs>

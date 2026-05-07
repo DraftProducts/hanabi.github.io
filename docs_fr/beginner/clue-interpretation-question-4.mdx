@@ -1,0 +1,49 @@
+---
+title: Interprétation des Clues (Question 4)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ClueInterpretationQuestion4 from "../../docs/beginner/clue-interpretation-question-4/clue-interpretation-question-4.yml";
+import ClueInterpretationAnswer4 from "../../docs/beginner/clue-interpretation-question-4/clue-interpretation-answer-4.yml";
+
+<BeginnersGuideProgress id="clue-interpretation-question-4" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Bob a un 2 clué dans sa main.
+- Alice clue blue à Bob, touchant les slots 3, 4 et 5.
+
+1. Quel slot est focalisé ?
+1. Est-ce une _[Play Clue](./play-clues.mdx)_ ou une _[Save Clue](./save-clues.mdx)_ ?
+1. Quelle _[card note](./card-notes.mdx)_ Bob écrit-il sur la carte focalisée ?
+
+<ClueInterpretationQuestion4 />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Le slot 4 est focalisé (i.e. la « nouvelle » carte qui était sur la [chop](./chop.mdx)).
+1. Le blue 1 est joué sur les stacks et Bob a déjà un blue 2. Ainsi, la carte bleue focalisée peut être soit un blue 3, soit un blue 4, soit un blue 5.
+   - Si c'est un blue 3, alors ce serait une _Chop-Focus [Delayed Play Clue](./delayed-play-clues.mdx)_ via son propre blue 2. C'est légal.
+   - Si c'est un blue 4, alors ce serait un _[Critical Save](./critical-save.mdx)_ sur le blue 4.
+   - Si c'est un blue 5, alors cela n'aurait aucun sens, car le blue 5 n'est pas jouable. Le blue 5 est critique, mais il doit être sauvegardé avec une clue de chiffre 5 en tant que _[5 Save](./5-save.mdx)_.
+   - Ainsi, ce peut être soit une _Chop-Focus Delayed Play Clue_ sur le blue 3, soit un _Critical Save_ sur le blue 4.
+1. Bob écrit une _card note_ « b3, b4 » sur sa carte du slot 4.
+
+- Notez qu'avant cette clue, Bob ne pouvait pas jouer le 2 dans sa main, car il aurait pu être le yellow 2 (qui n'est pas jouable).
+- Cette clue bleue a « complété » son 2 pour qu'il soit le blue 2, donc maintenant Bob peut aller de l'avant et le jouer.
+- Cependant, cela ne fait **pas** de la clue une _Play Clue_. Puisqu'elle était focalisée sur le slot 4, c'est avant tout une potentielle _Save Clue_. La clue a aussi rendu le blue 2 jouable comme effet secondaire. (Le blue 2 n'était pas le focus de la clue.)
+
+<ClueInterpretationAnswer4 />
+
+</TabItem>
+</Tabs>

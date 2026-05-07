@@ -1,0 +1,50 @@
+---
+title: Faut-il faire un Blind-Play ?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-7-should-this-blind-play/question.yml";
+import Answer from "../../docs/challenge-questions/level-7-should-this-blind-play/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-should-this-blind-play" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Le red 3, le yellow 5, le green 3, le blue 3 et le purple 5 sont joués sur les stacks.
+- Alice a une carte [_Chop Moved_](../level-4.mdx#the-5s-chop-move-5cm) datant de plusieurs tours, avec un négatif 5.
+- Alice doit-elle faire un blind-play de cette carte ? Quelles sont les considérations ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- La réponse à la question de savoir si Alice doit faire un blind-play est que **cela dépend** de plusieurs facteurs.
+- Alice doit d'abord déterminer si cette carte est sûre à jouer :
+  - Cela ne peut pas être un 5 (à cause du négatif), donc elle n'est pas _Critical_.
+  - Cela _peut_ être un red 4, green 4 ou blue 4, qui se joueraient avec succès.
+  - Cela peut aussi être n'importe quelle autre carte du jeu, ce qui causerait un strike.
+  - Puisque la carte a été _Chop Moved_, elle a plus de chances d'être une carte utile que non.
+- Ainsi, puisque les résultats du blind-play sont soit un jeu réussi soit un strike, Alice peut procéder à des considérations supplémentaires. (Si la carte était _Critical_, alors elle ne devrait absolument pas risquer de la jouer.)
+- Selon la section [_Blind-Playing Chop Moved Cards_](../level-7.mdx#blind-playing-chop-moved-cards), les joueurs peuvent faire un blind-play de leurs cartes _Chop Moved_ si l'équipe a un strike ou plus à perdre.
+- Ainsi :
+  - Si l'équipe a 0 strike, Alice voudra probablement essayer le blind-play de la carte.
+  - Si l'équipe a 1 strike, Alice pourrait vouloir essayer le blind-play de la carte.
+  - Si l'équipe a 2 strikes, Alice ne devrait absolument pas essayer le blind-play de la carte.
+- Si l'équipe a 0 ou 1 strike, la dernière considération est de savoir comment se passe la partie actuelle. Quel est le _Tempo_ et l'_Efficiency_ actuels ? En d'autres termes, combien de temps reste-t-il et combien de futures clues restent-elles ?
+  - Si la partie se passe déjà bien, alors il n'est pas nécessaire de risquer un blind-play. Alice peut simplement défausser normalement et attendre qu'un de ses coéquipiers clue la carte directement.
+  - Si l'_End-Game_ est arrivé et qu'il n'y a pas beaucoup de clues à perdre, alors Alice peut essayer le blind-play de la carte pour économiser une clue à l'équipe.
+
+<Answer />
+
+</TabItem>
+</Tabs>

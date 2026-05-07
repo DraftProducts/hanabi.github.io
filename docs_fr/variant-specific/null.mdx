@@ -1,0 +1,129 @@
+---
+title: "Null"
+---
+
+import Null5CM from "../../docs/variant-specific/null/null-5-cm.yml";
+import Null5Play from "../../docs/variant-specific/null/null-5-play.yml";
+import GoodDoubleSave from "../../docs/variant-specific/null/good-double-save.yml";
+import BadDoubleSave1 from "../../docs/variant-specific/null/bad-double-save-1.yml";
+import BadDoubleSave2 from "../../docs/variant-specific/null/bad-double-save-2.yml";
+
+Ces conventions s'appliquent à toute variante avec une suite null (non touchée par les clues). Elles sont désactivées une fois que toutes les cartes null sont jouées ou globalement connues.
+
+### The Null Kick
+
+- Quand des cartes null sont fraîchement piochées, elles peuvent généralement être récupérées par des _Bluffs_, des _Ejections_ et des _Discharges_. Cependant, il peut parfois être difficile de récupérer des cartes situées vers le fond de la main du joueur.
+- Par conséquent, dans les variantes avec une suite null, nous remplaçons les _Ejections_ moins fréquemment utilisés par un coup appelé _Kick_. Un _Kick_ signale que le joueur suivant doit blind-play son chop. (Les cartes _Chop Moved_ ne doivent jamais être blind-play à partir d'un _Kick_.)
+- Plus précisément, _Replay Ejections_, _Poke Ejections_, _Trash Ejections_ et _Double Ejections_ sont désactivés et signalent à la place un _Null Kick_.
+- Comme les _Bluffs_, _Ejections_ et _Discharges_, les _Kicks_ doivent être effectués sur le joueur immédiatement suivant.
+- Notez qu'un _Double Ignition_ a la priorité sur un _Null Kick_ ; si Bob voit que quelqu'un d'autre a une carte jouable en _Finesse Position_, cette interprétation doit être préférée.
+
+#### The Null Kick Finesse
+
+- Comme il est généralement très facile de récupérer des cartes non-null sur le chop d'un joueur, nous nous accordons pour que les _Null Kicks_ ne soient utilisés que pour récupérer des cartes null.
+- Ainsi, si Bob blind-play une carte non-null à cause d'un _Null Kick_, il doit continuer à blind-play des cartes jusqu'à trouver une carte null.
+- Dans cette situation, Bob doit blind-play son _Second Chop_, _Third Chop_, et ainsi de suite, jusqu'à atteindre sa _First Finesse Position_. S'il n'a toujours pas blind-play de carte null, il doit alors jouer ses cartes _Chop Moved_ de gauche à droite.
+
+### Null 5 Tech
+
+- Les _Bluffs_, _Ejections_, _Discharges_ et _Kicks_ sont utiles pour faire jouer les cartes null. Cependant, nous avons besoin d'un moyen distinct et plus fiable pour gérer les sauvegardes null.
+- L'outil principal pour cela est l'utilisation des clues number 5.
+- Le _5 Save_ et le _5's Chop Move_ fonctionnent toujours comme dans une partie sans variante. Cependant, les conventions suivantes sont désactivées :
+  - _Play Clues_ avec un number 5 (y compris sur un 5 préalablement cluéé)
+  - Le _5 Stall_
+  - Le _5 Pull_
+  - Le _5 Number Ejection_
+  - Le _5 Number Discharge_
+- Ces coups sont remplacés par d'autres choses ; voir ci-dessous.
+  - Même dans les situations de stall (par exemple avec 8 clues disponibles), les _5 Stalls_ sont toujours désactivés.
+
+#### The Null 5's Chop Move
+
+- Quand Alice donne un clue number 5 qui n'est pas un _5 Save_ ou un _5's Chop Move_, **tant que Bob n'est pas loaded**, il signale un _Null 5's Chop Move_ sur Bob.
+  - Notez que le clue number 5 peut être donné à n'importe quel joueur ; il ne doit pas nécessairement être sur Bob.
+- Le _Null 5's Chop Move_ n'est **autorisé** que pour sauver des cartes null jouables / phantom playable ou critiques (ou un null 2 qui n'est pas visible ailleurs, comme pour un _2 Save_ ordinaire).
+- Cette convention ne s'applique qu'à Bob ; voir _The Double Save_ pour sauver d'autres joueurs.
+- Par exemple, dans une partie à 4 joueurs de la variante "Null (5 Suits)" :
+  - C'est le premier tour de la partie.
+  - Bob a un null 2 sur le chop, et il n'y a pas d'autres null 2 visibles.
+  - Alice ne peut pas sauver le null 2 avec un clue, mais heureusement, Cathy a un red 5 en slot 2.
+  - Alice clue number 5 à Cathy comme _Null 5's Chop Move_ pour _Chop Move_ le null 2.
+  - Cathy sait que c'était un _Null 5's Chop Move_ et garde son 5 pour plus tard.
+
+<Null5CM />
+
+#### The Loaded 5 Null Play Clue
+
+- Quand Alice donne un clue number 5 qui n'est pas un _5 Save_ ou un _5's Chop Move_, **si Bob est loaded**, il signale un _Loaded 5 Null Play Clue_ à Bob.
+  - Notez que le clue number 5 peut être donné à n'importe quel joueur ; il ne doit pas nécessairement être sur Bob.
+- Bob doit immédiatement jouer sa carte la plus à droite sans clues positifs. Notamment, si Bob est _Chop Moved_, il doit jouer sa carte _Chop Moved_ la plus à droite.
+- Cette convention ne s'applique qu'à Bob.
+- Par exemple, dans une partie à 4 joueurs de la variante "Null (5 Suits)" :
+  - Bob a un green 1 globalement connu et jouable en slot 1, donc il est **loaded**.
+  - Bob a un null 1 sur le chop, et Alice a un red 5 non cluéé en slot 2.
+  - Alice clue number 5 à Cathy comme _Loaded 5 Null Play Clue_.
+  - Bob blind-play sa carte la plus à droite non cluéée. C'est un null 1.
+  - Cathy sait que c'était un _Loaded 5 Null Play Clue_ et garde son 5 pour plus tard.
+
+<Null5Play />
+
+#### Interaction Between the Null Kick and Pink Cards
+
+- Le _Pink Promise_ ne s'applique pas aux clues number 5, sauf pour les _5 Saves_, _5's Chop Moves_ et _Turnabout Ejections_.
+- En particulier, il n'est pas possible d'effectuer une _Bubblegum Finesse_ ou un _Bubblegum Bluff_ avec un clue number 5.
+
+### Saving Multiple Cards
+
+#### Double Save Situations
+
+- Étant donné que le _Null 5's Chop Move_ ne s'applique qu'à Bob et ne _Chop Move_ qu'une seule carte, il peut être difficile de sauver deux cartes critiques d'affilée chez Bob.
+- Une _Double Save Situation_ se produit quand :
+  1. Cathy n'est pas loaded.
+  2. Cathy a une carte null critique sur son chop.
+  3. Cathy a une carte critique quelconque sur son second chop (la carte non cluéée suivante après le chop).
+  4. Les deux cartes critiques de Cathy ne peuvent pas être sauvées avec un seul clue (par exemple un _5's Chop Move_, un _Trash Chop Move_, ou une _Unnecessary Reverse Trash Finesse_).
+
+#### The Double Save
+
+- Dans le _Double Save_, Alice donne un clue number 5, similaire à un _Null 5's Chop Move_. Mais Bob ne _Chop Move_ pas, et effectue immédiatement à la place un second _Save Clue_ ou _Chop Move_ sur Cathy.
+- Les _Double Saves_ ne peuvent être effectués qu'en _Double Save Situation_.
+- Quand une interprétation _Double Save_ est possible, Cathy doit toujours supposer qu'un _Double Save_ s'est produit. En d'autres termes, Cathy ne doit pas supposer qu'Alice a effectué un _Null 5's Chop Move_ sur Bob et que Bob lui a donné un _Play Clue_.
+- Comme la nécessité de sauver les 2 n'est pas symétrique, les _Double Saves_ ne peuvent pas être amorcés pour sauver des 2 non critiques.
+- Notez que les _Double Saves_ peuvent être effectués que Bob soit loaded ou non.
+- Par exemple, dans une partie à 3 joueurs de la variante "Null (5 Suits)" :
+  - Le red 3 est joué sur les stacks. Le green 4 est défaussé.
+  - Bob a déjà reçu un _Play Clue_ sur un yellow 1, mais ne l'a pas encore joué. Il a aussi un null 1 jouable en carte la plus à droite.
+  - Cathy a deux cartes critiques sur le chop : le null 5 et le green 4.
+  - Pour sauver ces cartes, Alice amorce un _Double Save_ en cluéant number 5 à Cathy, ce qui force Bob à cluer number 4 à Cathy.
+  - Normalement, comme Bob est loaded, il considérerait cela comme un _Loaded 5 Null Play Clue_ et jouerait son chop. Cependant, Bob sait que les situations de _Double Save_ ont la priorité sur les _Loaded 5 Null Play Clues_.
+  - Normalement, comme Cathy voit que Bob a un null 1 jouable sur le chop, elle considérerait cela comme un _Loaded 5 Null Play Clue_. Cependant, Cathy sait que les situations de _Double Save_ ont la priorité sur les _Loaded 5 Null Play Clues_. Elle _Chop Move_ donc sa carte en slot 5.
+
+<GoodDoubleSave />
+
+#### The Double Save Corollary
+
+- Comme Cathy doit toujours supposer qu'un _Double Save_ s'est produit dès que c'est possible, Alice doit veiller à ne pas créer de situations ambiguës en effectuant un _Null 5's Chop Move_ au mauvais moment.
+- Par exemple, dans une partie à 3 joueurs de la variante "Null (5 Suits)" :
+  - Le red 2, le yellow 2, le green 2 et le blue 2 sont tous joués sur les stacks.
+  - Bob et Cathy ont tous deux des cartes null critiques sur le chop.
+  - Alice doit s'abstenir de tenter de sauver la carte critique de Bob maintenant.
+  - C'est parce qu'utiliser un _Null 5's Chop Move_ sur Bob empêcherait Bob d'effectuer un _Null 5's Chop Move_ sur Cathy, puisque cela ressemblerait à un _Double Save_.
+  - Ainsi, Alice peut clue number 1 à Bob comme _Trash Chop Move_. Alternativement, Alice peut défausser et compter sur Bob pour sauver la carte null critique de Cathy.
+
+<BadDoubleSave1 />
+
+- Par exemple, dans une partie à 3 joueurs de la variante "Null (5 Suits)" :
+  - Le red 1, le yellow 1 et le blue 1 sont joués sur les stacks. Le yellow 4 est défaussé.
+  - Bob a une carte null critique sur le chop, et Cathy a un yellow 2 jouable.
+  - Si Alice clue number 5 à Bob comme _Null 5's Chop Move_, Bob ne pourra pas faire jouer le yellow 2.
+  - C'est parce que si Bob cluéait yellow à Cathy, cela ressemblerait à un _Double Save_ sur le null 3 et le yellow 4.
+  - Ainsi, Alice devrait probablement clue le green 1 ou défausser.
+
+<BadDoubleSave2 />
+
+### Relaxed 1 and 2 Saves
+
+- Il est optionnel pour les joueurs de donner des _Save Clues_ aux null 2.
+- Ainsi, si un null 2 est défaussé, les joueurs ne doivent pas faire d'_Elimination Notes_ pour lui.
+- De même, il est optionnel de "récupérer" la première copie du null 1.
+- Si la première copie du null 1 a été difficile à faire jouer et est défaussée, les joueurs ne doivent pas faire d'_Elimination Notes_ pour elle.

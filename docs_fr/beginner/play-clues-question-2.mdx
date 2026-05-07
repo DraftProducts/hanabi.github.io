@@ -1,0 +1,37 @@
+---
+title: Play Clues (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import PlayCluesQuestion2 from "../../docs/beginner/play-clues-question-2/play-clues-question-2.yml";
+import PlayCluesAnswer2 from "../../docs/beginner/play-clues-question-2/play-clues-answer-2.yml";
+
+<BeginnersGuideProgress id="play-clues-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue number 4 à Bob, touchant une carte sur le slot 4.
+- Du point de vue de Bob, ce doit être une _[Play Clue](./play-clues.mdx)_. Bob note l'identité de la carte.
+- Quelle _[card note](./card-notes.mdx)_ Bob écrit-il ? (Soyez précis.)
+
+<PlayCluesQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob écrit « r4, g4, b4 ».
+  - (Ce sont les couleurs qui ont des 4 jouables, donc la carte peut être l'une de ces possibilités.)
+
+<PlayCluesAnswer2 />
+
+</TabItem>
+</Tabs>

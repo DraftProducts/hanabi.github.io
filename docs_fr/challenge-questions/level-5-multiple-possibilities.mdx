@@ -1,0 +1,43 @@
+---
+title: Possibilités multiples
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-5-multiple-possibilities/question.yml";
+import Answer from "../../docs/challenge-questions/level-5-multiple-possibilities/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-multiple-possibilities" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Le red 2, le yellow 1 et le green 1 sont joués sur les stacks.
+- La main de Bob est, de la plus récente à la plus ancienne : `blue 1, blue 2, green 1, yellow 4`
+- La main de Cathy est, de la plus récente à la plus ancienne : `green 2, purple 1, purple 2, yellow 2 (clued with 2)`
+- Alice clue 3 à Donald, touchant un 3 en slot 2.
+- Quelles notes Donald doit-il écrire sur sa carte ? Sois précis.
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Cela peut être un red 3 comme _Play Clue_ "normal".
+- Cela peut être un yellow 3, comme [_Prompt_](../level-1.mdx#the-prompt) sur le yellow 2 de Cathy.
+- Cela peut être un green 3, comme [_Hidden Finesse_](../level-5.mdx#the-hidden-finesse) sur le green 2 de Cathy. (Le yellow 2 se jouera en premier comme green 2.)
+- Cela peut être un blue 3, comme [_Double Finesse_](../level-2.mdx#the-double-finesse--triple-finesse--quadruple-finesse) sur le blue 1 et blue 2 de Bob.
+- Cela peut être un purple 3, comme [_Clandestine Finesse_](../level-5.mdx#the-clandestine-finesse) sur toutes les cartes de Cathy. (C'est techniquement appelé une [Surreptitious Finesse](../extras/special-finesses.mdx#the-surreptitious-finesse), mais tu n'as pas à te soucier de la distinction au level 5.)
+- Donald doit écrire une note qui inclut toutes ces possibilités : `r3, y3 if y2 p, g3 if g2 f, b3 if b1 f, p3 if p1 f`
+
+<Answer />
+
+</TabItem>
+</Tabs>

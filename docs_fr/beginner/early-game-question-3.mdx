@@ -1,0 +1,36 @@
+---
+title: L'Early Game (Question 3)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import EarlyGameQuestion3 from "../../docs/beginner/early-game-question-3/early-game-question-3.yml";
+import EarlyGameAnswer3 from "../../docs/beginner/early-game-question-3/early-game-answer-3.yml";
+
+<BeginnersGuideProgress id="early-game-question-3" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est actuellement l'_[Early Game](./early-game.mdx)_. Il reste 1 jeton de clue.
+- Quelle action Alice doit-elle effectuer ?
+
+<EarlyGameQuestion3 />
+
+</TabItem>
+<TabItem value="solution">
+
+- La **seule** action légale qu'Alice peut effectuer est de cluer purple à Cathy en tant que _[Play Clue](./play-clues.mdx)_ sur le purple 2.
+  - Alice ne peut pas cluer number 2 à Cathy, car cela toucherait le red 2 et violerait le _[Good Touch Principle](./good-touch-principle.mdx)_.
+
+<EarlyGameAnswer3 />
+
+</TabItem>
+</Tabs>

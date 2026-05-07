@@ -1,0 +1,193 @@
+---
+title: Level 4 - Chop Moves
+---
+
+import TrashChopMove1 from "../docs/level-4/trash-chop-move-1.yml";
+import TrashChopMove2 from "../docs/level-4/trash-chop-move-2.yml";
+import TrashChopMove3 from "../docs/level-4/trash-chop-move-3.yml";
+import FivesChopMove1 from "../docs/level-4/5s-chop-move-1.yml";
+import FivesChopMove2 from "../docs/level-4/5s-chop-move-2.yml";
+import OrderChopMove from "../docs/level-4/order-chop-move.yml";
+import ChopMoveNew from "../docs/level-4/chop-move-new.yml";
+import ChopMoveNewException from "../docs/level-4/chop-move-new-exception.yml";
+import ChopMovePrompt from "../docs/level-4/chop-move-prompt.yml";
+
+## Conventions
+
+### Chop Moves
+
+- Normalement, les joueurs défaussent leur carte non-cluée la plus ancienne (la plus à droite). Cependant, parfois un joueur peut savoir qu'une carte non-cluée est très importante.
+- Un _Chop Move_ est un type spécial de mouvement qui indique à un joueur que la carte non-cluée qui est actuellement sur son [chop](beginner/chop.mdx) est très importante.
+- Après le _Chop Move_, le joueur considère la carte sur son chop comme touchée par un clue « invisible ». Ainsi, son chop « se déplacera » vers la prochaine carte non-cluée la plus à droite.
+- Tous les joueurs devraient marquer les cartes _Chop Moved_ avec une note « cm ». Hanab Live affichera alors une bordure blanche autour de ces cartes.
+- Un _Chop Move_ est permanent, signifiant qu'une carte _Chop Moved_ ne devrait pas être défaussée pour le reste de la partie.
+- Les trois types les plus simples de _Chop Moves_ sont listés ci-dessous. (Aux levels 6 et 7, deux types courants supplémentaires de _Chop Moves_ seront introduits.)
+
+## Mouvements Spéciaux
+
+### Le Trash Chop Move (TCM)
+
+- Au milieu d'une partie, si tous les 1 ont déjà été joués, et que quelqu'un clue un 1, c'est assez étrange. (Du _[Good Touch Principle](beginner/good-touch-principle.mdx)_, les joueurs ne sont pas censés toucher les cartes qui ont déjà été jouées.) Dans cette situation, le 1 est considéré comme _Trash_.
+- Le clue doit avoir une signification plus profonde. Nous nous accordons à dire que cela signifie que les cartes à droite du trash sont importantes. Le but du clue était de donner au joueur une défausse sûre.
+- Cependant, en plus de donner une défausse sûre, cela devrait aussi _Chop Move_ **toutes** les cartes à droite du trash.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués.
+  - Bob a une main complètement non-cluée.
+  - Alice clue nombre 1 à Bob, ce qui touche un 1 dans son slot 4.
+  - Bob _Chop Move_ son slot 5.
+  - Bob défausse le 1.
+  - Le chop de Bob est maintenant son slot 4.
+
+<TrashChopMove1 />
+
+- La plupart du temps, le _Trash Chop Move_ est fait pour une seule carte (signifiant que la carte trash qui a été cluée était à un slot du chop). Cependant, vous pouvez aussi utiliser le _Trash Chop Move_ pour _Chop Move_ plusieurs cartes.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Bob a une main complètement non-cluée.
+  - Alice clue 1 à Bob, ce qui touche un 1 dans son slot 1.
+  - Bob _Chop Move_ son slot 2, son slot 3, son slot 4, et son slot 5 (un quadruple _Chop Move_).
+  - Bob défausse le 1.
+  - Le chop de Bob est maintenant son slot 1.
+
+<TrashChopMove2 />
+
+- Les _Trash Chop Moves_ sont le plus communément effectués avec un clue de nombre 1 parce qu'il est probable qu'au milieu d'une partie, tous les 1 soient déjà joués. Mais cela peut aussi être effectué avec un clue de nombre 2 si tous les 2 sont déjà joués ou comptabilisés. Ou, cela peut être effectué avec un clue rouge si toutes les cartes rouges sont déjà jouées ou comptabilisées. Et ainsi de suite.
+- Stratégiquement, le _Trash Chop Move_ est utilisé pour deux raisons principales :
+  1. Parfois il y a plusieurs cartes critiques d'affilée sur le chop et il revient à un joueur de toutes les sauvegarder. Dans cette situation, un _Chop Move_ multi-cartes peut être le seul moyen de toutes les sauvegarder.
+  1. Certaines cartes unplayable (e.g. un 3 _one-away-from-playable_) sont assez utiles à l'équipe, mais sont illégales à toucher directement (car les toucher directement serait un _[Play Clue](beginner/play-clues.mdx)_ sur la carte unplayable). Si la partie va bien, alors il peut être utile de « gaspiller » un clue pour sauvegarder la carte de façon permanente.
+- Notez que vous **n'êtes pas** autorisé à _Trash Chop Move_ une carte que vous pouvez juste cluer directement avec un _[Save Clue](beginner/save-clues.mdx)_ (à moins qu'il y ait plusieurs cartes critiques d'affilée sur le chop et que vous n'ayez pas d'autre choix). C'est parce qu'avoir une certaine information positive est toujours mieux que d'avoir la carte être un mystère.
+- Si un _Trash Chop Move_ touche **plusieurs** cartes trash, alors il _Chop Move_ uniquement les cartes à droite de la carte trash la plus à droite. (La carte trash la plus à droite est considérée comme focalisée.)
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Bob a une main complètement non-cluée.
+  - Alice clue nombre 1 à Bob, ce qui touche un 1 au slot 2 et un 1 au slot 4.
+  - Bob _Chop Move_ **uniquement** sa carte du slot 5.
+
+<TrashChopMove3 />
+
+### Le 5's Chop Move (5CM)
+
+- Normalement, nous ne sommes autorisés à sauvegarder que les 5 qui sont sur le chop, avec le mouvement spécial appelé le _[5 Save](beginner/5-save.mdx)_.
+- De plus, les 5 peuvent aussi être sauvegardés indirectement avec le mouvement spécial appelé le _5 Stall_, qui peut se produire dans l'_Early Game_ et dans d'autres situations « stalling ».
+- Donc, si un clue de nombre 5 est effectué sur un 5 qui n'est pas sur le chop, et que ce **n'est pas** une situation stalling, alors cela ressemblera normalement à un _Play Clue_ sur ce 5.
+- Cependant, si un 5 est **à un slot** du chop, alors nous nous accordons à dire qu'il a une signification spéciale, et que le clue n'est **pas** un _Play Clue_ du tout.
+  - Spécifiquement, « à un slot du chop » signifie que si le joueur défaussait son chop deux fois, alors il défausserait le 5.
+- Nous nous accordons à dire que la signification spéciale est un _5's Chop Move_ : le joueur devrait _Chop Move_ la carte à droite du 5 (similaire au _Trash Chop Move_).
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Bob a une main complètement non-cluée.
+  - Alice clue 5 à Bob, ce qui touche un 5 au slot 4.
+  - Bob _Chop Move_ sa carte du slot 5. Le nouveau chop de Bob est son slot 3.
+
+<FivesChopMove1 />
+
+- Similaire au _Trash Chop Move_, si un _5's Chop Move_ touche **plusieurs** 5, alors il _Chop Move_ uniquement la carte à droite du 5 le plus à droite. (Le 5 le plus à droite est considéré comme focalisé.)
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Bob a une main complètement non-cluée.
+  - Alice clue 5 à Bob, ce qui touche un 5 au slot 2 et un 5 au slot 4.
+  - Bob _Chop Move_ **uniquement** sa carte du slot 5. Le nouveau chop de Bob est son slot 3.
+
+<FivesChopMove2 />
+
+- Notez que le _5's Chop Move_ est différent du _Trash Chop Move_ en ce que vous ne pouvez _Chop Move_ qu'**une** carte avec lui. Ainsi, si vous cluez un 5 et qu'il est à **deux** (ou plus) slots du chop, alors c'est un _Play Clue_ sur le 5.
+  - Quand vous comptez à quelle distance du chop est une carte, vous ne devriez regarder que les cartes **non-cluées**.
+- Rappelez-vous que les _5 Stalls_ ont la précédence sur les _5's Chop Moves_. Ainsi, si un clue de nombre 5 **pourrait** juste être un _5 Stall_ (e.g. c'est l'_Early Game_), alors il ne _Chop Move_ rien.
+- Pour les joueurs de level 19, voyez le _[Early 5's Chop Move](level-19.mdx#the-early-5s-chop-move)_.
+- Pour les joueurs de level 21, il y a [des règles supplémentaires](level-21.mdx#interaction-between-the-chop-move-ignition-and-5-rank-clues) concernant le _5's Chop Move_.
+
+### Le Order Chop Move (OCM)
+
+- D'abord, voyez la section sur [Jouer Plusieurs 1](level-3.mdx#jouer-plusieurs-1).
+- Nous nous accordons à dire que les 1 inconnus sont censés être joués dans un ordre particulier. Si un joueur a des 1 inconnus et **ne les joue pas** dans le bon ordre, cela signifie qu'il essaie d'envoyer un message supplémentaire.
+- Si un joueur saute par-dessus **un** des 1, et qu'il n'y a rien d'autre de spécial qui se passe, cela signifie que le joueur suivant devrait _Chop Move_ une carte.
+- Si un joueur saute par-dessus **deux** des 1, le message saute par-dessus le joueur suivant, et le joueur après cela devrait _Chop Move_ une carte.
+- Un saut de **trois** 1 signifie que le joueur trois sièges plus loin devrait _Chop Move_, et ainsi de suite.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue à Bob nombre 1, ce qui touche trois 1. Ils sont au slot 1, slot 2, et slot 3.
+  - Bob est censé jouer le slot 3 (qui est le 1 le plus ancien). S'il joue le slot 3, rien de spécial ne se passe.
+  - Si Bob joue le slot 2, alors il saute par-dessus une carte. Cathy devrait _Chop Move_ une carte (son slot 5).
+  - Si Bob joue le slot 1, il saute par-dessus deux cartes. Alice devrait _Chop Move_ une carte (son slot 5).
+
+<OrderChopMove />
+
+- Si un joueur décide de faire un _Order Chop Move_, à son tour suivant, il devrait revenir à l'ordre original.
+- Par exemple, en continuant l'exemple précédent :
+  - Bob décide de jouer le slot 2, effectuant un _Order Chop Move_ sur Cathy.
+  - Cathy marque sa carte du slot 5 comme étant _Chop Moved_. Puis, Cathy donne un clue sans rapport.
+  - Alice donne un clue sans rapport.
+  - Maintenant, Bob a deux 1 restants au slot 2 et slot 3.
+  - Bob est censé jouer le slot 3 (qui est le 1 le plus ancien). S'il joue le slot 3, rien de spécial ne se passe.
+  - Si Bob joue le slot 2, il effectue un autre _Order Chop Move_, et Cathy devrait _Chop Move_ une carte. (Ce serait son slot 4, puisque son slot 5 est déjà _Chop Moved_.)
+- Il y a d'autres situations courantes qui n'impliquent **pas** un _Order Chop Move_. Utilisez votre bon sens ! Voici une courte liste :
+  - Le 1 qui a été joué avait une identité connue.
+  - Le 1 qui a été joué avait une **quantité différente de clues positifs** que les autres 1. (Les clues négatifs différents sont ignorés.)
+  - Le 1 qui a été joué a été originalement _Finessed_ depuis un clue qui s'est produit **avant** le clue de nombre 1.
+  - Le 1 qui a été sauté est connu comme étant mauvais d'après l'information contextuelle.
+- Le _Order Chop Move_ ne s'applique qu'aux 1. S'il se produit avec n'importe quelle carte qui n'est pas un 1, alors ce n'est jamais un _Order Chop Move_ et cela ne signifie simplement rien.
+- Pour les joueurs de niveau max, il y a une situation rare où un [_Double Order Chop Move_](extras/chop-moves.mdx#double-order-chop-move-for-3-player-games) peut se produire.
+
+## Principes Généraux
+
+### Chop Moves comme Catégorie
+
+- En matière de terminologie, les _Chop Moves_ ne sont pas classifiés comme des _Save Clues_ – ils sont une catégorie séparée.
+- C'est parce que le _Chop Move_ n'est pas un message sur la carte touchée – c'est un clue référentiel qui parle d'une carte différente.
+
+### Chop Moves & Nouveaux Clues
+
+- Une fois qu'une carte a été _Chop Moved_ et n'est plus en danger d'être défaussée, elle est traitée comme une carte déjà cluée concernant les nouveaux clues donnés à cette main.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Bob a une main complètement non-cluée.
+  - Alice clue nombre 1 à Bob, ce qui touche un 1 sur le slot 4 de Bob comme _Trash Chop Move_.
+  - Bob défausse le 1.
+  - Le chop de Bob est maintenant son slot 4.
+  - Cathy clue blue à Bob, ce qui touche son slot 1 (la carte qu'il vient de tirer) et son slot 5 (la carte qui vient d'être _Chop Moved_).
+  - Bob sait que le focus du clue est toujours sur la nouvelle carte introduite. Donc, le focus du clue est sur le slot 1.
+  - Ainsi, Bob jouera blue 2 depuis le slot 1 à son tour suivant.
+
+<ChopMoveNew />
+
+- L'exception à la règle ci-dessus est si un clue est donné qui touche une carte _Chop Moved_ pour la première fois et que seules des « anciennes » cartes sont touchées. Dans ce cas, le focus est sur la carte _Chop Moved_ la plus à gauche qui a été touchée par le clue.
+- Par exemple, dans une partie rainbow à 3 joueurs :
+  - Tous les 2 sont joués sur les stacks.
+  - Bob a une carte rouge inconnue au slot 3, une carte rouge inconnue au slot 4, et une carte _Chop Moved_ au slot 5 (qui est complètement non-cluée).
+  - Alice clue blue à Bob, ce qui touche le slot 3, slot 4, et slot 5. (Le slot 3 et slot 4 sont « remplis » comme des cartes rainbow et le slot 5 est maintenant une vraie carte blue.)
+  - Bob sait que le focus du clue est normalement sur la nouvelle carte introduite, mais les trois cartes touchées étaient « anciennes ».
+  - Bob sait que quand des anciennes cartes sont re-touchées, le focus du clue est la plus à gauche de ces cartes.
+  - Cependant, Bob sait aussi que c'est l'exception à la règle. Dans ce cas spécifique, mettre un clue positif sur la carte _Chop Moved_ était plus important que de remplir les cartes rainbow, donc par convention le focus du clue est son slot 5.
+
+<ChopMoveNewException />
+
+### Chop Moves & Prompts
+
+- Les _Chop Moves_ interagissent avec les _[Prompts](beginner/prompt.mdx)_ & _[Finesses](beginner/finesse.mdx)_ d'une manière potentiellement déroutante. Les cartes _Chop Moved_ ne devraient **pas** être jouées dans des _Prompts_, même si les cartes _Chop Moved_ sont imaginées avoir un clue « invisible » dessus.
+- Par exemple :
+  - Tous les 1 sont joués sur les stacks.
+  - Bob n'a pas de cartes cluées dans sa main, mais il est _Chop Moved_ pour une carte mystère sur son slot 5.
+  - Alice clue rouge à Cathy, ce qui touche un red 3.
+  - Bob sait qu'il est promis le red 2. Si c'est un _Finesse_, alors il a le red 2 sur sa _Finesse Position_ (slot 1).
+  - Cependant, Bob est aussi _Chop Moved_ pour une carte. Bob sait que les cartes _Chop Moved_ ont un clue « invisible » autour d'elles, et Bob sait aussi que les _Prompts_ sont dits avoir la précédence sur les _Finesses_.
+  - Donc devrait-il jouer son slot 1 comme _Finesse_ ou son slot 5 comme _Prompt_ ? Bob sait que les _Prompts_ ne s'appliquent pas aux cartes _Chop Moved_, donc Bob devrait jouer son slot 1.
+
+<ChopMovePrompt />
+
+## Erreurs Communes
+
+### Défausses Critiques après un Chop Move (Erreur)
+
+- Si un joueur _Chop Move_ une carte, et que la prochaine fois qu'il défausse, il défausse une carte critique, alors évidemment une sorte d'erreur s'est produite.
+- La meilleure explication est que le _Chop Move_ n'a jamais été intentionnel en premier lieu.
+- Ainsi, quand cela se produit, le joueur devrait « annuler » le _Chop Move_.
+
+### Chop Moves Accidentels (Erreur)
+
+- Souvent un joueur peut mal interpréter un clue comme un _Chop Move_ alors qu'il avait une autre signification. Si cela se produit, après qu'il défausse son nouveau _Chop_, tout le monde dans l'équipe saura qu'un _Chop Move_ accidentel a eu lieu.
+- Plus tard dans la partie, parfois un joueur dans cette situation réalisera qu'il a fait une erreur en _Chop Moving_ plus tôt. Il pourrait être tenté de déplacer son chop là où il est censé être.
+- Cependant, à moins qu'il ne défausse une carte critique (voyez la section ci-dessus), les joueurs ne devraient **jamais annuler un _Chop Move_**, parce qu'ils pourraient défausser une carte maintenant critique qui n'était pas critique au moment de l'erreur originale. Tout le monde dans l'équipe ne s'est pas embêté à cluer la carte maintenant critique, parce qu'ils pensaient qu'elle était _Chop Moved_ en sécurité.
+
+## Questions de Défi
+
+Si vous êtes nouveau au level 4, voyez si vous pouvez compléter [ces questions de défi](challenge-questions/level-4.mdx).

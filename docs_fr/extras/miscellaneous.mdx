@@ -1,0 +1,65 @@
+---
+title: Divers
+---
+
+import DoublePrompts from "../../docs/extras/miscellaneous/double-prompts.yml";
+import EliminationRewrite1 from "../../docs/extras/miscellaneous/elimination-rewrite-1.yml";
+import EliminationRewrite2 from "../../docs/extras/miscellaneous/elimination-rewrite-2.yml";
+import NoValidClues1 from "../../docs/extras/miscellaneous/no-valid-clues-1.yml";
+import NoValidClues2 from "../../docs/extras/miscellaneous/no-valid-clues-2.yml";
+
+### Pas de clues valides au premier tour
+
+- Bien que rare, il est possible de n'avoir aucun clue valide à donner au premier tour. (Spécifiquement, pas de cartes jouables, pas de 2 sur chop, et de 5 pour _5 Save_ ou _5 Stall_.) Ainsi, puisque n'importe quel clue causera un misplay, nous convenons de donner le clue qui cause le moins de dommages (ou le plus grand bénéfice).
+- Le meilleur clue dépendra de la partie particulière.
+- Par exemple, vous pourriez vouloir causer un misplay d'une carte qui ne sera pas un risque bottom-deck :
+  - Alice ne voit pas de clues valides à donner au premier tour.
+  - Bob a un yellow 4 sur chop et Cathy a un yellow 4 en slot 2.
+  - Alice clue Bob jaune, touchant le yellow 4 et représentant un _Play Clue_ sur un yellow 1.
+  - Bob misplay le yellow 4.
+  - Cathy suppose qu'Alice n'avait pas de clues légaux à donner au premier tour.
+
+<NoValidClues1 />
+
+- Par exemple, vous pourriez vouloir verrouiller la sauvegarde d'une ou plusieurs cartes :
+  - Alice ne voit pas de clues valides à donner au premier tour.
+  - Bob a un purple 4 sur sa _Finesse Position_.
+  - La main de Cathy est, du plus récent au plus ancien : `x, x, red 3, blue 3, yellow 3`
+  - Alice clue numéro 3 à Cathy, touchant trois 3 et représentant un _3 Bluff_ pour Bob.
+  - Bob misplay le purple 4.
+  - Cathy suppose qu'Alice n'avait pas de clues légaux à donner au premier tour.
+
+<NoValidClues2 />
+
+### Double Prompts dans les variantes Multi-Color
+
+- Normalement, lorsqu'une carte multi-color est _Prompted_ depuis la main de quelqu'un, il devrait jouer la carte qui a le plus d'informations positives.
+- Cependant, que se passe-t-il s'ils sont _Prompted_ pour deux cartes de la même suite multi-color ? Ils devraient jouer la carte avec le plus d'informations positives en premier, même si ce n'est pas la carte la plus à gauche.
+- Par exemple, dans une partie rainbow à 3 joueurs :
+  - Le rainbow 1 est joué sur les stacks.
+  - Bob a une carte slot 1 qui a un clue bleu dessus. (Ainsi, c'est soit une carte bleue, soit une carte rainbow.)
+  - Bob a aussi une carte slot 3 qui a un clue bleu et un clue rouge dessus. (Ainsi, c'est une carte rainbow connue.)
+  - Alice clue Cathy à propos d'un rainbow 4.
+  - Bob est promis le rainbow 2 et le rainbow 3, donc il sait que ces cartes doivent être en slot 1 et slot 3.
+  - Cependant, Bob sait aussi que vous devriez toujours jouer la carte avec le plus d'informations dessus en premier, donc il joue sa carte slot 3 comme rainbow 2 (au lieu de slot 1, la carte la plus à gauche).
+
+<DoublePrompts />
+
+### Le Elimination Rewrite (pour les 1)
+
+- Normalement, lorsqu'une carte jouable est défaussée, un joueur écrit des _Elimination Notes_ sur sa main pour l'autre copie de la carte.
+- Cependant, il y a un cas spécial lorsque **deux** copies du même 1 sont défaussées. Les _Elimination Notes_ originales du défaussage du premier 1 ne s'appliquent plus parce qu'il est possible que le joueur ait pioché la troisième copie du 1 avant que la deuxième copie ne puisse être cluée.
+- Ainsi, lorsqu'un joueur défausse la deuxième copie d'un 1 jouable, il devrait supprimer toutes ses _Elimination Notes_ du premier défaussage et réécrire toutes les _Elimination Notes_ sur le reste de sa main à nouveau (agissant essentiellement comme si le deuxième défaussage était le premier défaussage).
+- Par exemple, dans une partie à 3 joueurs :
+  - Rien n'est joué sur les stacks.
+  - Alice défausse un red 1. Alice écrit des _Elimination Notes_ sur ses slot 2, slot 3, slot 4, et slot 5.
+  - À son prochain tour, Alice défausse une carte non liée. Elle a maintenant des _Elimination Notes_ sur slot 3, slot 4, et slot 5.
+  - À son prochain tour, Alice défausse un autre red 1. Normalement, elle aurait maintenant des _Elimination Notes_ sur slot 4 et slot 5. Cependant, à cause du _Elimination Rewrite_, elle écrit plutôt des _Elimination Notes_ sur slot 2, slot 3, slot 4, et slot 5.
+
+<EliminationRewrite1 />
+<EliminationRewrite2 />
+
+### Le Negative Blind-Play
+
+- Étant donné suffisamment de clues négatifs sur une carte (et potentiellement quelques informations annexes basées sur l'historique de la partie), il est possible de réduire l'identité d'une carte non cluée dans votre main à des possibilités qui n'incluent que des cartes jouables qui ne sont pas déjà touchées dans la main de quelqu'un d'autre.
+- Dans cette situation, vous êtes censé blind-play la carte.

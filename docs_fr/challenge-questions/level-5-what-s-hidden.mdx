@@ -1,0 +1,44 @@
+---
+title: Qu'est-ce qui est caché ?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-5-what-s-hidden/question.yml";
+import Answer from "../../docs/challenge-questions/level-5-what-s-hidden/answer.yml";
+
+<ChallengeQuestionProgress level={5} id="level-5-what-s-hidden" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Le red 1 et le blue 1 sont joués sur les stacks.
+- Bob a :
+  - Un blue 2 non clued en slot 1.
+  - Un red 2 en slot 4 clued avec une clue numéro 2. (Bob ne connaît pas l'identité.)
+- Alice clue numéro 3 à Cathy, touchant un 3 en slot 3 comme _Play Clue_.
+- Bob joue le red 2.
+- Quelles notes Cathy doit-elle écrire sur son 3 ?
+- Que doit faire Cathy ensuite ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Le 3 de Cathy pourrait être un red 3, ce qui ferait de la clue d'Alice un [_Prompt_](../level-1.mdx#the-prompt) sur le red 2.
+- Le 3 de Cathy pourrait aussi être un blue 3, ce qui ferait de la clue d'Alice une [_Hidden Finesse_](../level-5.mdx#the-hidden-finesse) sur le blue 2.
+- Puisque les deux interprétations sont légales, Cathy écrit `r3, b3 if b2 f` sur sa carte.
+- Ainsi, Cathy ne peut pas jouer son 3 maintenant, donc elle doit défausser ou effectuer une clue sans rapport. Notamment, Cathy ne devrait pas cluer le blue 2, car cela pourrait _Stomp_ sur la _Hidden Finesse_.
+
+<Answer />
+
+</TabItem>
+</Tabs>

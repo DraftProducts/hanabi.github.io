@@ -1,0 +1,37 @@
+---
+title: 5 cartes restantes
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-8-5-cards-left/question.yml";
+import Answer from "../../docs/challenge-questions/level-8-5-cards-left/answer.yml";
+
+<ChallengeQuestionProgress level={8} id="level-8-5-cards-left" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Il reste 5 cartes dans le deck, et 1 clue disponible. Les seules cartes clued sont les 5 d'Alice.
+- Quelle action Alice doit-elle effectuer ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Il pourrait être tentant pour Alice de cluer red à Cathy, ce qui serait une _Finesse_ sur le red 4. Cependant, faire cela risquerait de perdre la partie.
+- C'est parce qu'il est possible qu'Alice pioche le blue 5 et le purple 5. Si elle le faisait, elle devrait jouer 4 cartes au total. Si Alice clue à ce tour, alors il serait impossible de jouer les 4 cartes (car la partie se terminera).
+- À la place, il est correct pour Alice de jouer le yellow 5 ou le green 5, laissant Bob sauver le red 5, et Cathy récupérer le red 4.
+
+<Answer />
+
+</TabItem>
+</Tabs>

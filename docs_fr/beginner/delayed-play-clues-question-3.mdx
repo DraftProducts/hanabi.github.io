@@ -1,0 +1,44 @@
+---
+title: Delayed Play Clues (Question 3)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import DelayedPlayCluesQuestion3 from "../../docs/beginner/delayed-play-clues-question-3/delayed-play-clues-question-3.yml";
+import DelayedPlayCluesAnswer3 from "../../docs/beginner/delayed-play-clues-question-3/delayed-play-clues-answer-3.yml";
+
+<BeginnersGuideProgress id="delayed-play-clues-question-3" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue number 4 à Bob, touchant une carte sur le slot 1. (C'est une _[Play Clue](./play-clues.mdx)_.)
+- Bob écrit une _[card note](./card-notes.mdx)_ avec l'identité de la carte.
+
+1. Quelle _card note_ Bob écrit-il ? (Soyez précis.)
+1. Est-ce une _[Delayed Play Clue](./delayed-play-clues.mdx)_ ?
+1. Quelle action Bob doit-il effectuer ?
+
+<DelayedPlayCluesQuestion3 />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Bob écrit une _card note_ « r4, y4, b4, p4 ».
+   - Premièrement, ce pourrait être une _Play Clue_ directe sur un red 4 ou un purple 4.
+   - Deuxièmement, ce pourrait être une _Delayed Play Clue_ sur un yellow 4 via le yellow 2 et le yellow 3 de Cathy.
+   - Troisièmement, ce pourrait être une _Delayed Play Clue_ sur un blue 4 via le blue 3 de Donald.
+1. Bob ne sait pas si c'est une _Play Clue_ ou une _Delayed Play Clue_. Cependant, puisque Bob doit traiter toutes les _Play Clues_ comme de potentielles _Delayed Play Clues_, Bob ne peut pas jouer le 4 ce tour-ci.
+1. Puisque Bob ne peut pas encore jouer le 4, il doit donner une clue non liée ou défausser.
+
+<DelayedPlayCluesAnswer3 />
+
+</TabItem>
+</Tabs>

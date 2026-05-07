@@ -1,0 +1,42 @@
+---
+title: Save Principle (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SavePrincipleQuestion2 from "../../docs/beginner/save-principle-question-2/save-principle-question-2.yml";
+import SavePrincipleAnswer2 from "../../docs/beginner/save-principle-question-2/save-principle-answer-2.yml";
+
+<BeginnersGuideProgress id="save-principle-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Quelle action Alice doit-elle effectuer ?
+- Si Alice doit donner une clue, quelle _[card note](./card-notes.mdx)_ sera écrite sur la carte focalisée ? (Soyez précis.)
+
+<SavePrincipleQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice doit donner une _[Save Clue](./save-clues.mdx)_ au yellow 2 de Bob avant qu'il ne soit défaussé (parce que tout le monde s'accorde sur le fait que tous les 2 uniques **doivent** être sauvegardés).
+- Alice n'a pas le droit de cluer yellow, parce que les 2 doivent être sauvegardés avec un _[2 Save](./2-save.mdx)_.
+  - Si Alice cluait yellow, alors cela ressemblerait à une _[Play Clue](./play-clues.mdx)_ sur une carte yellow et Bob essaierait de la jouer comme le yellow 1.
+- Si Alice clue number 2, alors ce serait un _2 Save_ sur le yellow 2, mais cela dupliquerait aussi le red 2 (qui est déjà joué sur les stacks).
+- Ainsi, Alice doit cluer number 2 à Bob en tant que _2 Save_ (parce qu'il est plus important de sauvegarder des cartes que de satisfaire le _[Good Touch Principle](./good-touch-principle.mdx)_).
+- Cette clue serait focalisée sur le slot 5. Bob écrira une _card note_ avec les identités suivantes :
+  - green 2, blue 2 (en tant que _Play Clue_)
+  - yellow 2, purple 2 (en tant que _2 Save_)
+
+<SavePrincipleAnswer2 />
+
+</TabItem>
+</Tabs>

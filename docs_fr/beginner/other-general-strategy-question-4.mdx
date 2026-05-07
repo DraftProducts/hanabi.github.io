@@ -1,0 +1,40 @@
+---
+title: Autre Stratégie Générale (Question 4)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import OtherGeneralStrategyQuestion4 from "../../docs/beginner/other-general-strategy-question-4/other-general-strategy-question-4.yml";
+import OtherGeneralStrategyAnswer4 from "../../docs/beginner/other-general-strategy-question-4/other-general-strategy-answer-4.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-4" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Énumérez toutes les clues légales qu'Alice peut donner.
+- Parmi ces possibilités, quelle clue Alice doit-elle donner ?
+
+<OtherGeneralStrategyQuestion4 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice peut cluer blue à Bob en tant que _[Play Clue](./play-clues.mdx)_ sur le blue 2.
+  - Si elle faisait cela, Bob écrirait une _[card note](./card-notes.mdx)_ « b2 ».
+- Alice peut cluer number 2 à Bob en tant que _Play Clue_ sur le blue 2.
+  - Si elle faisait cela, Bob écrirait une _card note_ « y2, b2, p2 ».
+- Par défaut, Alice sait que les clues de couleur doivent être préférées aux clues de chiffre. Plus précisément, dans cette situation, Alice sait qu'une clue blue communiquera l'identité exacte de la carte, tandis qu'une clue de chiffre communiquerait trois possibilités différentes.
+- Ainsi, Alice doit donner une clue blue à Bob.
+
+<OtherGeneralStrategyAnswer4 />
+
+</TabItem>
+</Tabs>

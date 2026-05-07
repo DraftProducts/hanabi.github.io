@@ -1,0 +1,36 @@
+---
+title: Save Principle (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SavePrincipleQuestion1 from "../../docs/beginner/save-principle-question-1/save-principle-question-1.yml";
+import SavePrincipleAnswer1 from "../../docs/beginner/save-principle-question-1/save-principle-answer-1.yml";
+
+<BeginnersGuideProgress id="save-principle-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue blue à Bob, touchant une carte sur le slot 1. Ce doit être une _[Play Clue](./play-clues.mdx)_ sur le blue 1.
+- Bob doit-il jouer le blue 1 ?
+
+<SavePrincipleQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Non. Si Bob joue le blue 1 et que Cathy défausse le green 4, alors le score maximum serait diminué.
+- Tant qu'il y a une chance que Cathy défausse, Bob **doit** sauvegarder le green 4 immédiatement avant de jouer une carte jouable.
+
+<SavePrincipleAnswer1 />
+
+</TabItem>
+</Tabs>

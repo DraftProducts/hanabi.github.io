@@ -1,0 +1,179 @@
+---
+title: Special Bluffs
+---
+
+import SelfColorBluff from "../../docs/extras/special-bluffs/self-color-bluff.yml";
+import SelfColorBluff2 from "../../docs/extras/special-bluffs/self-color-bluff-2.yml";
+import SelfColorBluff3 from "../../docs/extras/special-bluffs/self-color-bluff-3.yml";
+import SelfColorDoubleBluff from "../../docs/extras/special-bluffs/self-color-double-bluff.yml";
+import KnownPriorityBluff from "../../docs/extras/special-bluffs/known-priority-bluff.yml";
+import PestilentTripleBluff from "../../docs/extras/special-bluffs/pestilent-triple-bluff.yml";
+
+### Le 3 Bluff
+
+- Le _3 Bluff_ est traité au [niveau 13](../level-13.mdx#the-3-bluff).
+
+### Le Critical Color Bluff (CCB)
+
+- Le _Critical Color Bluff_ est traité au [niveau 13](../level-13.mdx#the-critical-color-bluff-ccb).
+
+### Le Good Touch Bluff
+
+- Le _Good Touch Bluff_ est traité au [niveau 13](../level-13.mdx#the-good-touch-bluff).
+
+### Le Trash Bluff
+
+- Le _Trash Bluff_ est traité au [niveau 14](../level-14.mdx#the-trash-bluff).
+
+### Le Pestilent Double Bluff (PDB)
+
+- Le _Pestilent Double Bluff_ est traité au [niveau 15](../level-15.mdx#the-pestilent-double-bluff-pdb).
+
+### Le No-Information Double Bluff (NIDB)
+
+- Le _No-Information Double Bluff_ est traité au [niveau 20](../level-20.mdx#the-no-information-double-bluff-nidb).
+
+### Le Priority Bluff
+
+- Le _Priority Bluff_ est traité au [niveau 25](../level-25.mdx#the-priority-bluff).
+
+### Self Color Bluffs (forme 1-pour-1) (SCB)
+
+- Il est possible (et assez commun) d'effectuer un _Self-Bluff_ sur un joueur avec un clue de rang.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 2 est joué sur les stacks.
+  - Alice clue numéro 4 à Bob, ce qui touche un nouveau 4 comme _Play Clue_.
+  - Bob ne voit pas de cartes jouables dans la main de quelqu'un d'autre.
+  - Le 4 le plus proche d'être jouable est le red 4, donc Bob sait que le 4 dans sa main est probablement un red 4.
+  - Puisque Bob ne voit pas de red 3, Bob sait qu'il doit avoir le red 3, et il blind-play sa carte _Finesse Position_. C'est un blue 1 et il joue avec succès.
+  - Bob sait maintenant qu'il a été _Bluffé_ par Alice et que le 4 dans sa main est exactement le red 4.
+
+<SelfColorBluff />
+
+- Faire un _Self-Bluff_ sur un joueur avec un clue de couleur est un peu plus bizarre. À première vue, un _Self Color Bluff_ serait absurde, puisque le joueur recevant aurait du négatif couleur sur la carte qu'il blind-play - il saurait explicitement que la carte blind ne peut pas "se connecter".
+- Néanmoins, nous convenons que dans cette situation, les joueurs devraient blind-play une carte quand même comme un _Known Bluff_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 2 est joué sur les stacks.
+  - Alice clue rouge à Bob, ce qui "remplit" une carte avec un clue numéro 4 dessus. C'est maintenant un red 4 globalement connu.
+  - Cela doit être un _Play Clue_ sur le red 4, puisqu'Alice n'est pas dans une situation de stalling. (Si Alice était dans une situation de stalling, alors elle serait autorisée à donner un clue de "fill-in" sans rien de spécial qui se passe.)
+  - Bob ne voit pas de cartes rouges dans les mains des autres joueurs, donc cela ne peut pas être un _Prompt_ ou une _Reverse Finesse_.
+  - Bob ne peut pas avoir le red 3 dans sa _Finesse Position_, parce que cette carte a du négatif rouge.
+  - Ainsi, Bob sait que cela doit être un _Self Color Bluff_, donc il blind-play sa carte _Finesse Position_ comme un _Known Bluff_ sur n'importe quelle carte non-rouge jouable. C'est un blue 1 et il joue avec succès sur les stacks.
+
+<SelfColorBluff2 />
+
+- Notez que les _Self Color Bluffs_ ne devraient pas être confondus avec les clues "fill-in" plus ordinaires qui sont utilisés dans les situations de stalling. (Voir la section [Allowable Stall Clues](../level-9.mdx#allowable-stall-clues-stall-table).) En d'autres termes, **si quelqu'un pourrait être dans une situation de stalling, vous ne devriez jamais blind-play une carte d'un clue de fill-in**.
+- Les _Self Color Bluffs_ ne sont pas très bons et ne devraient être utilisés qu'avec parcimonie, parce que :
+  - ils peuvent être confus
+  - ils ont presque toujours une efficacité de 1-pour-1
+- Les joueurs experts peuvent utiliser les _Self Color Bluffs_ comme une belle alternative à donner un 1-pour-1 directement à la carte sur _Finesse Position_. Faire ainsi a l'avantage de "remplir" une carte annexe dans la main.
+- Plus d'exemples de _Self Color Bluff_ peuvent être trouvés [ici](../examples/self-color-bluffs.mdx).
+
+### Self Color Bluff (forme 2-pour-1) (SCB)
+
+- Rarement, il est aussi possible d'effectuer un _Self Color Bluff_ comme un 2-pour-1.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 2 est joué sur les stacks.
+  - Alice clue rouge à Bob, ce qui touche une nouvelle carte rouge sur son slot 2.
+  - Cela doit être un _Play Clue_ sur la carte rouge.
+  - Bob a un négatif 3 clue sur sa carte rouge, donc il sait que cela ne peut pas être un red 3 (la prochaine carte rouge jouable).
+  - Bob ne voit pas de cartes rouges dans les mains des autres joueurs, donc cela ne peut pas être un _Prompt_ ou une _Reverse Finesse_.
+  - Bob ne peut pas avoir le red 3 dans sa _Finesse Position_, parce que cette carte a maintenant du négatif rouge.
+  - Ainsi, Bob sait que cela doit être un _Self Color Bluff_, donc il blind-play sa carte _Finesse Position_ comme un _Known Bluff_ sur n'importe quelle carte non-rouge jouable. C'est un blue 1 et il joue avec succès sur les stacks.
+  - Bob marque sa carte rouge comme un red 4 (puisque c'est la carte rouge qui est _one-away-from-playable_).
+
+<SelfColorBluff3 />
+
+### Self Color Double Bluff (SCDB)
+
+- Tout comme les bluffs normaux, les _Self Color Bluffs_ sont faits en "remplissant" une carte qui est _one-away-from-playable_ ou une cible légale de _Bluff_.
+- Cependant, les joueurs peuvent aussi effectuer un _Self Color Double Bluff_ en "remplissant" une carte qui est _two-or-more-away-from-playable_ et n'est pas une cible légale de _Bluff_.
+- Par exemple, dans une partie à 3 joueurs (similaire à l'exemple précédent) :
+  - Le red 2 est joué sur les stacks.
+  - Alice clue rouge à Bob, ce qui touche une nouvelle carte rouge sur son slot 2.
+  - Cela doit être un _Play Clue_ sur la carte rouge, puisqu'Alice n'est pas dans une situation de stalling. (Si Alice était dans une situation de stalling, alors elle serait autorisée à donner un clue de "fill-in" sans rien de spécial qui se passe.)
+  - Bob a un négatif 3 clue sur sa carte rouge, donc il sait que cela ne peut pas être un red 3 (la prochaine carte rouge jouable).
+  - Bob ne voit pas de cartes rouges dans les mains des autres joueurs, donc cela ne peut pas être un _Prompt_ ou une _Reverse Finesse_.
+  - Bob ne peut pas avoir le red 3 dans sa _Finesse Position_, parce que cette carte a maintenant du négatif rouge.
+  - Ainsi, Bob sait que cela doit être un _Self Color Bluff_, donc il blind-play sa carte _Finesse Position_ comme un _Known Bluff_ sur n'importe quelle carte non-rouge jouable. C'est un blue 1 et il joue avec succès sur les stacks.
+  - Bob marque sa carte rouge comme un red 4 (puisque c'est la carte rouge qui est _one-away-from-playable_).
+  - Cathy voit qu'Alice a fait un _Self Color Bluff_ sur Bob. Cependant, Cathy voit que la carte rouge dans la main de Bob est le red 5, qui est _two-away-from-playable_. Cela signifie qu'Alice veut effectuer un _Self Color Double Bluff_ (au lieu d'un seul _Bluff_).
+  - Cathy blind-play sa carte _Finesse Position_ comme un _Known Bluff_. C'est un blue 2 et il joue avec succès sur les stacks.
+  - Bob est surpris par le blind-play de Cathy et réalise que cela doit être lié au clue qu'Alice a donné. Si Bob avait un red 4 dans sa main, alors Cathy n'aurait pas continué à blind-play quoi que ce soit. Donc, Bob efface sa note de "r4" et écrit plutôt "r5", parce que c'est la seule carte rouge qui est _two-away-from-playable_, et c'est la seule carte qui ferait blind-play Cathy.
+
+<SelfColorDoubleBluff />
+
+- Plus d'exemples de _Self Color Double Bluff_ peuvent être trouvés [ici](../examples/self-color-bluffs.mdx).
+
+### Queued Bluffs (Exception)
+
+- Tout d'abord, voir la section expliquant que les [_Queued Bluffs_ sont illégaux](../level-11.mdx#queued-bluffs-illegal).
+- Rarement, un joueur peut savoir qu'une _Layered Finesse_ est impossible. Cela pourrait être parce qu'il connaît l'identité de chaque carte dans sa main (moins sa carte _Finesse Position_). Ou, alternativement, ils pourraient avoir des informations négatives pertinentes sur toute leur main.
+- Si le joueur peut écarter une _Layered Finesse_, alors il est possible d'effectuer un _Queued Bluff_ sur lui. Il est important de noter qu'un tel joueur est "verrouillé" dans le _Bluff_ et devrait presque toujours immédiatement jouer sa carte _Finesse Position_.
+
+### Le Elimination Bluff & La Elimination Layered Finesse
+
+- Normalement, si un joueur a des _Elimination Notes_ sur sa main, vous pouvez cluer la carte suivante dans la suite pour effectuer une _Elimination Finesse_.
+- Il est aussi possible de prétendre effectuer une _Elimination Finesse_ sur quelqu'un afin d'obtenir une carte non liée pour blind-play depuis son slot le plus ancien.
+- Si le joueur qui a effectué le clue était dans le _Bluff Seat_, alors cela doit être traité comme un _Bluff_, et donc il ne saura pas où se trouve la véritable _Elimination Card_. (Cependant, dans la plupart des cas, à ce stade, il n'y aura qu'une seule carte restante avec une _Elimination Note_ dessus, donc cela n'aura pas d'importance.)
+- Si le joueur qui a effectué le clue n'était pas dans le _Bluff Seat_, alors le joueur blind-playing est censé continuer à jouer jusqu'à ce qu'il trouve la carte voulue. C'est similaire au fonctionnement d'une _Layered Finesse_, mais c'est inversé de sorte qu'ils jouent les cartes du plus ancien au plus récent.
+
+### Le Known Priority Bluff
+
+- Les joueurs effectuent généralement les _Priority Bluffs_ en trompant les joueurs en pensant qu'ils ont une carte spécifique. Cependant, il est aussi possible d'effectuer un _Known Priority Bluff_.
+- Par exemple :
+  - Alice a trois cartes jouables connues : red 1, blue 4, et blue 5.
+  - Bob a un red 2 connu.
+  - Alice est censée jouer le red 1 dans le red 2, donc le red 1 a la _Priority_.
+  - À la place, Alice joue le blue 4.
+  - Normalement, Bob penserait que c'est une _Priority Finesse_ sur le blue 5. Cependant, lui et Alice savent qu'Alice a le blue 5.
+  - Cela doit être un _Known Priority Bluff_, donc Bob joue sa carte _Finesse Position_ comme n'importe quelle carte jouable.
+
+<KnownPriorityBluff />
+
+- Tout comme les _Bluffs_ normaux, les joueurs ne sont autorisés à effectuer un _Known Priority Bluff_ que sur le tout prochain joueur.
+
+### Le Pestilent Triple Bluff
+
+- Tout d'abord, voir la section sur le _[Pestilent Double Bluff](../level-15.mdx#the-pestilent-double-bluff-pdb)_.
+- Normalement, lors du cluage d'une carte non-trash, deux blind-plays suffisent pour que le joueur clué écrive la note correcte sur la carte.
+- Rarement, dans une partie à 5 joueurs, deux blind-plays ne suffisent pas, et la note est encore mauvaise. Dans ces cas, Alice voudrait que Donald joue comme un _Pestilent Triple Bluff_.
+- Notez que normalement, les _Triple Bluffs_ sont explicitement illégaux. Mais les _Pestilent Triple Bluffs_ sont une exception à cette règle.
+- Par exemple, dans une partie à 5 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice clue numéro 4 à Emily, touchant un red 4 comme _Play Clue_.
+  - Bob tente de blind-play un red 2 depuis sa _Finesse Position_. À la place, c'est un blue 2, et il joue avec succès.
+  - Cathy sait que c'est probablement un _4's Double Bluff_. Cathy blind-play sa _Finesse Position_ comme n'importe quelle carte jouable. C'est un blue 3 et il joue avec succès.
+  - Donald sait qu'Emily va incorrectement penser que son red 4 est un blue 4 (parce que le clue d'Alice ressemble à une _Double Finesse_). Ainsi, le clue d'Alice est assez étrange.
+  - Alice doit avoir l'intention que Donald blind-play aussi sa _Finesse Position_ afin de "guérir" le problème. Donald blind-play sa _Finesse Position_. C'est un green 2 et il joue avec succès.
+  - Au début, Emily pensait que son 4 était le blue 4 (se connectant au blue 2 et au blue 3). Cependant, si c'était le cas, alors Donald n'aurait pas blind-play quoi que ce soit. Emily sait que cela doit être un _Pestilent Triple Bluff_, et son 4 est n'importe quel autre 4 que le blue 4 (parce que Donald a blind-play) et le green 4 (parce que Bob aurait attendu Donald).
+
+<PestilentTripleBluff />
+
+### Le Pass Bluff
+
+- Tout d'abord, voir la section sur le [_Hesitation Blind-Play_](../level-23.mdx#the-hesitation-blind-play).
+- Il est possible qu'un _Hesitation Blind-Play_ se produise sans que personne ne le veuille. Cependant, si un joueur essaie intentionnellement de faire qu'un _Hesitation Blind-Play_ se produise, cela s'appelle un _Pass Bluff_.
+- En d'autres termes, après qu'une _Finesse_ qui vous est destinée se produit, vous saurez que votre carte _Finesse Position_ est jouable. Si le prochain joueur immédiat a aussi une carte jouable non liée sur sa _Finesse Position_, vous pouvez faire semblant que la _Finesse_ ne vous était pas destinée. Cela les fera penser que la _Finesse_ leur était destinée, et vous obtiendrez la carte non liée jouée gratuitement.
+- Après que la carte non liée est jouée, le prochain joueur ne devrait **pas** continuer à blind-play des cartes (comme une _Layered Finesse_) parce que :
+  - Le joueur "passing" accomplit la vraie _Finesse_ à son prochain tour.
+  - Le joueur "passing" était dans le _Bluff Seat_.
+- Les _Pass Bluffs_ s'appuient sur des informations contextuelles pour fonctionner, donc les circonstances dans lesquelles vous pouvez les faire sont étroites.
+- Il est extrêmement dangereux pour le joueur effectuant le _Pass Bluff_ de défausser sa chop, parce que tout le monde dans l'équipe s'attend à ce qu'il blind-play. Pour cette raison, les _Pass Bluffs_ devraient être effectués en donnant un clue non lié ou en défaussant du trash connu.
+- Important, il est illégal pour un joueur d'effectuer un _Pass Bluff_ s'il pourrait être _Bluffé_. (C'est parce que le premier _Bluff_ ne se résoudrait pas immédiatement et violerait le [_Lie Principle_](../level-11.mdx#lie-principle).)
+  - Par la suite, il est aussi illégal pour un joueur de passer une _Ejection_, un _Discharge_, etc. au prochain joueur.
+
+### Le Double/Triple Pass Bluff
+
+- Après qu'un joueur effectue un _Pass Bluff_, quand c'est à nouveau son tour, s'il voit une carte jouable non liée sur la _Second Finesse Position_ du prochain joueur, il peut effectuer un autre _Pass Bluff_, impliquant que le premier _Pass Bluff_ n'était pas du tout un _Pass Bluff_ et était simplement une _Layered Finesse_ ou une _Clandestine Finesse_.
+- Ensuite, après que la carte non liée est jouée, le joueur qui a initié le _Double Pass Bluff_ peut aller jouer dans la véritable _Finesse_.
+- Alternativement, s'il continue à y avoir des cartes jouables, ils peuvent continuer à _Pass Bluffing_.
+
+### Le Purge Bluff (Layered Bluff)
+
+- Cette convention ne s'applique qu'aux parties à 3 joueurs.
+- Parfois, un joueur aura une main entièrement jouable de gauche à droite. Dans cette situation, les joueurs essaieront normalement d'effectuer une _Layered Finesse_ afin d'obtenir toutes les cartes de la manière la plus efficace. Cependant, une _Layered Finesse_ peut ne pas toujours être disponible.
+- Dans des situations extrêmement rares, il est possible d'orchestrer un _Lie_ dans lequel le joueur avec la main entièrement jouable pense qu'il est _Layered Finessé_ alors qu'il n'a vraiment pas la carte de connexion. Après avoir joué sa carte finale et qu'elle n'est pas la carte de connexion, il saura qu'il a été _Purge Bluffé_ et que personne n'a la carte manquante.
+- Il faut faire attention que l'autre joueur (par exemple, le joueur qui n'est pas _Purge Bluffé_) comprenne ce qui se passe. Par exemple, ils pourraient penser qu'une _Patch Finesse_ se produit. Ainsi, les _Purge Bluffs_ ne peuvent être faits que dans des parties d'experts où il n'y a **pas d'autre interprétation possible de ce qui se passe**.
+- Si le joueur blind-playing des cartes dans un _Purge Bluff_ réalise qu'un _Lie_ s'est produit avant de finir de blind-play toute sa main, il est censé s'arrêter. En d'autres termes, il n'est **pas** censé continuer à blind-play des cartes comme un _Known Purge Bluff_.
+- Des exemples de _Purge Bluff_ peuvent être trouvés [ici](../examples/purge-bluff.mdx).

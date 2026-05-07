@@ -1,0 +1,52 @@
+---
+title: La Finesse
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Finesse1 from "../../docs/beginner/finesse/finesse-1.yml";
+import Finesse2 from "../../docs/beginner/finesse/finesse-2.yml";
+
+<BeginnersGuideProgress id="finesse" />
+
+- Normalement, les joueurs jouent des cartes qui ont été cluées par quelqu'un d'autre dans l'équipe.
+- Cependant, il est aussi possible de dire à un joueur de jouer à l'aveugle (blind-play) une carte sans aucune clue dessus.
+- Dans l'exemple ci-dessous :
+  - Bob n'a aucune carte cluée dans sa main.
+  - Alice clue red à Cathy, touchant un red 4. Ce doit être une _[Play Clue](./play-clues.mdx)_ sur le red 4.
+  - Bob voit que le red 4 est actuellement non-jouable. En supposant qu'Alice ne fait pas une erreur, cette clue implique que quelqu'un a le red 3.
+  - Bob ne voit pas de red 3 clué dans la main de quelqu'un d'autre. Donc, Alice doit lui promettre qu'il a un red 3.
+  - Normalement, cela indiquerait un _[Prompt](./prompt.mdx)_. Mais Bob n'a aucune carte rouge et Bob n'a aucun 3. Alors où est le red 3 ?
+  - Bob sait que ce doit être une _Finesse_ – on lui promet que sa carte non-cluée la plus à gauche est le red 3.
+  - Bob blind-play sa carte du slot 1, et c'est le red 3.
+  - Cathy voit le blind-play se produire immédiatement après cette clue rouge, donc elle sait qu'elle doit avoir la carte rouge connectante, le red 4.
+  - Cathy joue le red 4.
+
+<Finesse1 />
+
+### Prompts > Finesses
+
+- **Les _[Prompts](./prompt.mdx)_ ont toujours la priorité sur les _Finesses_**.
+- Cela signifie que si Alice doit décider entre :
+  1. jouer une carte dans sa main avec une clue rouge dessus, et
+  1. blind-play une carte rouge potentielle depuis sa _Finesse Position_
+- Alors Alice doit toujours faire #1.
+
+### Urgence de la Finesse
+
+- Quand une _Finesse_ se produit, elle cause une désynchronisation temporaire de l'information.
+- Par exemple, dans le scénario précédent, si Bob avait défaussé au lieu de blind-play, Cathy continuerait à penser qu'elle a le red 3. Mais elle n'a vraiment pas le red 3, ce qui signifie que l'information n'est pas synchronisée dans toute l'équipe.
+- Pour cette raison, blind-play une carte dans une _Finesse_ est très important – en faisant cela, on resynchronise toute l'information. Donc, **si un joueur est _Finessed_, il doit généralement blind-play la carte immédiatement**, même s'il a d'autres cartes importantes à jouer ou une bonne clue à donner.
+
+### Finesse Position
+
+- Nous définissons la _Finesse Position_ comme le slot où se trouve la carte non-cluée la plus à gauche d'un joueur.
+- La _Finesse Position_ d'un joueur peut bouger, et si c'est le cas, il est toujours possible de le _Finesse_.
+- Dans l'exemple ci-dessous :
+  - Alice clue red à Cathy, ce qui touche deux cartes rouges sur les slots 1 et 2.
+  - Cathy suppose que la carte du slot 1 est un red 1.
+  - Ensuite, Bob clue blue à Donald, ce qui touche un blue 2.
+  - Maintenant, c'est le tour de Cathy. Cathy sait qu'elle doit avoir le blue 1 et que Bob essaie d'effectuer une _Finesse_.
+  - Blind-play le blue 1 est plus important que jouer le red 1.
+  - Normalement, la _Finesse Position_ de Cathy serait sa carte la plus à gauche. Cependant, puisque les slots 1 et 2 de Cathy sont déjà clués, sa carte de _Finesse Position_ s'est déplacée vers son slot 3. Ainsi, Cathy doit blind-play le blue 1 depuis le slot 3.
+
+<Finesse2 />

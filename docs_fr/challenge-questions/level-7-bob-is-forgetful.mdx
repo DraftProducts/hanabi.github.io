@@ -1,0 +1,40 @@
+---
+title: Bob est distrait
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-7-bob-is-forgetful/question.yml";
+import Answer from "../../docs/challenge-questions/level-7-bob-is-forgetful/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-bob-is-forgetful" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Tous les 2 sont joués sur les stacks.
+- Alice utilise la dernière clue pour cluer numéro 4 à Cathy. Cela semble être une _Finesse_ sur le red 3 de Bob.
+- Bob est maintenant à 0 clue, mais oublie de jouer son red 3 et défausse plutôt son chop.
+- Quelles notes Cathy doit-elle écrire ? Que doit faire Cathy à son tour ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob n'est pas distrait, il a délibérément défaussé au lieu de blind-play sa carte _Finessed_.
+- D'après l'[_Urgency Principle_](../level-5.mdx#urgency-principle-playing-into-finesses-as-soon-as-possible), les blind-plays doivent arriver dès que possible, et si Bob avait simplement fait un blind-play de son red 3, Cathy aurait facilement pu jouer son red 4.
+- Donc ce n'est en fait **pas** un [_Scream Discard_](../level-7.mdx#the-scream-discard-chop-move-sdcm), car le jeu connu de Bob venait d'une _Finesse_, et Cathy peut aussi avoir un red 3 sur sa _Finesse Position_ (comme une _Ambiguous Finesse_).
+- Par conséquent, Cathy ne devrait pas _Chop Move_ quoi que ce soit. Elle devrait blind-play sa _Finesse Position_ comme l'autre red 3.
+
+<Answer />
+
+</TabItem>
+</Tabs>

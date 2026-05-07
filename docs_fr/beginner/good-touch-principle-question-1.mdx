@@ -1,0 +1,37 @@
+---
+title: Good Touch Principle (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import GoodTouchPrincipleQuestion1 from "../../docs/beginner/good-touch-principle-question-1/good-touch-principle-question-1.yml";
+import GoodTouchPrincipleAnswer1 from "../../docs/beginner/good-touch-principle-question-1/good-touch-principle-answer-1.yml";
+
+<BeginnersGuideProgress id="good-touch-principle-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Quelle action Alice doit-elle effectuer ?
+
+<GoodTouchPrincipleQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice doit donner une _[Play Clue](./play-clues.mdx)_ au blue 3 de Bob avant qu'il ne soit défaussé.
+- Si Alice clue blue, cela focaliserait le blue 3, mais le blue 2 serait dupliqué (parce qu'il est déjà joué sur les stacks).
+- Si Alice clue number 3, cela focaliserait le blue 3, mais cela toucherait aussi le red 3. Le red 3 sera utile à l'équipe dans le futur, donc c'est une bonne chose.
+- Ainsi, Alice doit cluer number 3 à Bob.
+
+<GoodTouchPrincipleAnswer1 />
+
+</TabItem>
+</Tabs>

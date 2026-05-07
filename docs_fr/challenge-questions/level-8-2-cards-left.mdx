@@ -1,0 +1,40 @@
+---
+title: 2 cartes restantes
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-8-2-cards-left/question.yml";
+import Answer from "../../docs/challenge-questions/level-8-2-cards-left/answer.yml";
+
+<ChallengeQuestionProgress level={8} id="level-8-2-cards-left" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Il reste 2 cartes dans le deck, et 2 clues disponibles. Personne n'a de cartes clued.
+- Quelle action Alice doit-elle effectuer ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice voit le red 3 dans la main de Cathy et le red 5 dans la main de Bob.
+- Si Alice a le red 4 dans sa main, alors la situation est simple : l'équipe va cluer les cartes red puis les jouer.
+- D'un autre côté, il est possible que les deux red 4 soient encore dans le deck. Dans ce cas, il n'y aurait pas le temps de jouer le 5 après avoir joué le 4.
+- Ainsi, Alice doit défausser. Elle est garantie soit d'avoir eu un red 4 dans sa main, soit de piocher l'une des copies.
+  - (Pour les besoins de cet exemple, nous supposons qu'il est extrêmement improbable qu'Alice défausse le red 4, puisque l'équipe l'aurait probablement _Chop Moved_ plus tôt.)
+- Après qu'Alice a défaussé, Bob peut _Finesse_ le red 3 en cluant le red 4 d'Alice, et ensuite le red 5 peut être joué dans la manche suivante.
+
+<Answer />
+
+</TabItem>
+</Tabs>

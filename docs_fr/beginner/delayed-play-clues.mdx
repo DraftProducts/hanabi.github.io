@@ -1,0 +1,18 @@
+---
+title: Delayed Play Clues
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import DelayedPlayClues from "../../docs/beginner/delayed-play-clues/delayed-play-clues.yml";
+
+<BeginnersGuideProgress id="delayed-play-clues" />
+
+- Il est permis de donner une _[Play Clue](./play-clues.mdx)_ sur une carte qui ne pourra être jouée sur les stacks _qu'après_ que d'autres joueurs aient joué des cartes de la même couleur. C'est ce qu'on appelle une _Delayed Play Clue_.
+- Nous nous accordons à traiter **toutes les _Play Clues_** comme des **_Delayed Play Clues_ potentielles**.
+- Par exemple, dans une partie à 3 joueurs :
+  - Alice clue number 2 à Bob, ce qui est une _Play Clue_ sur un 2.
+  - C'est maintenant le tour de Bob. Si son 2 est le red 2, il peut le jouer immédiatement.
+  - Cependant, Bob sait aussi que cela pourrait être une _Delayed Play Clue_ via le yellow 1, le green 1 ou le blue 1. Donc, Bob doit attendre que Cathy joue tous ses 1 d'abord avant de pouvoir tenter de jouer le 2.
+  - Bob enregistre cette information en tant que [card note](./card-notes.mdx) sur la carte, puis défausse.
+
+<DelayedPlayClues />

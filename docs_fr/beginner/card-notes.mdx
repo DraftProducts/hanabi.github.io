@@ -1,0 +1,44 @@
+---
+title: Card Notes
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import CardNotes1 from "../../docs/beginner/card-notes/card-notes-1.yml";
+
+<BeginnersGuideProgress id="card-notes" />
+
+Quand vous jouez à Hanabi, vous devez écrire des _card notes_. Cette page explique pourquoi.
+
+## Information Explicite et Implicite
+
+- À Hanabi, les joueurs connaissent des informations _explicites_ et _implicites_ sur les cartes de leur main :
+  - L'information _explicite_ provient des [clues](./two-types-of-clues.mdx) « sur » la carte.
+  - L'information _implicite_ provient du contexte de la partie au _moment_ où la carte a été cluée.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie.
+  - Alice clue red à Bob, touchant une carte sur son slot 1. Alice a l'intention que ce soit une _[Play Clue](./play-clues.mdx)_, signalant à Bob qu'il a un red 1 et qu'il doit le jouer sur les stacks tout de suite.
+  - Du point de vue de Bob, il sait que _explicitement_, sa carte rouge peut être red 1, red 2, red 3, red 4 ou red 5.
+  - Mais Bob sait aussi que _implicitement_, Alice veut qu'il joue cette carte rouge, donc cela doit être exactement le red 1.
+  - Les couleurs dans les card notes sont par convention abrégées par leur première lettre.
+
+<CardNotes1 />
+
+## Les Joueurs Doivent Tracer l'Information Implicite
+
+- Sur [Hanab Live](https://hanab.live/), l'interface garde automatiquement une trace des clues qui touchent les cartes. Et l'interface réduit automatiquement les identités possibles des cartes au fur et à mesure qu'elles « obtiennent » plus de clues.
+- Cependant, ce suivi automatique de l'information _explicite_ n'est pas suffisant – il y a beaucoup plus d'information _implicite_ que d'information _explicite_.
+- Dans les parties d'Hanabi où les joueurs ne donnent que des _Play Clues_ basiques entre eux (comme dans l'exemple précédent), se rappeler de toute l'information _implicite_ sur les cartes est facile. Mais à mesure que les parties deviennent plus complexes, se rappeler de l'information _implicite_ sur chaque carte de la partie devient impossible.
+- Ainsi, pour bien jouer à Hanabi, les joueurs **doivent** aller au-delà du suivi automatique _explicite_ et enregistrer eux-mêmes toute l'information implicite.
+
+## Écrire des Notes
+
+- Heureusement, Hanab Live permet aux joueurs de tracer l'information _implicite_ sur une carte en cliquant droit dessus. Cela ouvre une boîte de texte, permettant aux joueurs d'enregistrer toute information souhaitée. Cela s'appelle une _card note_.
+- **Après chaque clue, les joueurs doivent enregistrer une note sur la carte concernée.**
+- Dans l'exemple précédent, Bob doit cliquer droit sur sa carte rouge et écrire « r1 », pour ne pas l'oublier plus tard.
+- De plus, Alice et Cathy doivent **aussi** cliquer droit sur la carte rouge de Bob et écrire « r1 », pour suivre ce que Bob pense de la carte. Ainsi, **tout le monde écrit des notes sur les cartes de tout le monde.**
+
+## Éviter les Erreurs
+
+- Puisque la clue rouge ci-dessus était si simple, vous pourriez penser qu'écrire une note « r1 » est inutile et une perte de temps. Mais réalisez que Bob **pourrait ne pas jouer le red 1 avant plusieurs tours**, à un moment où la situation de la partie aura pu changer dramatiquement.
+- L'erreur de débutant la plus commune que nous voyons est l'oubli d'écrire une note sur une carte, et ensuite oublier cette information plus tard dans la partie.
+- N'oubliez pas de le faire ! Écrivez des _card notes_ après **chaque clue**, peu importe la simplicité ou la complexité !

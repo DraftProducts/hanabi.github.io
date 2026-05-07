@@ -1,0 +1,63 @@
+---
+title: No Positive Clues
+---
+
+Ces conventions s'appliquent aux variantes suivantes :
+
+- Extremely Ambiguous (avec uniquement des clues de couleur)
+- Color Blind (avec uniquement des clues de couleur)
+- Number Blind (avec uniquement des clues de nombre)
+- Totally Blind
+- Cow & Pig
+- Duck
+
+### Special Move Summary
+
+- Si un clue cible une carte critique sur le chop, alors c'est probablement un _Save Clue_, comme mentionné dans la section "Basic Conventions" ci-dessus.
+- Si un clue cible une carte qui n'est pas sur le chop, alors c'est un _Play Clue_, et la table suivante s'applique :
+
+| Type de clue                                                         | Interprétation                                                      |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Tout clue ciblant une carte one-away                                 | Une _Finesse_, un _Transparent Bluff_, ou un _Transparent Double Bluff_ |
+| Tout clue ciblant un 5 deux ou plus away                             | Une _Ejection_                                                      |
+| Tout clue ciblant un 3 deux ou plus away                             | Une _Discharge_                                                     |
+| Tout clue ciblant un 4 deux ou plus away                             | Un _Charm_                                                          |
+
+- Pour des informations plus précises, voir chaque section ci-dessous.
+
+### The Transparent Bluff
+
+- Normalement, vous ne pouvez pas effectuer un _Bluff_ dans des variantes sans information positive. C'est parce que le blind-play va toujours sembler "se connecter" à la cible du clue.
+- Cependant, la seule exception à cela est si un 5 blind-play. Alors, le receveur du clue peut savoir que c'est un _Bluff_ (parce qu'il n'y a aucune carte qui se connecte à un 5).
+- Dans cette situation, le receveur du clue marquerait sa carte touchée comme une carte one-away-from-playable.
+
+### The Transparent Double Bluff
+
+- Normalement, vous ne pouvez pas effectuer un _Bluff_ dans des variantes sans information positive. C'est parce que le blind-play va toujours sembler "se connecter" à la cible du clue.
+- Cependant, il est possible d'effectuer un _Double Bluff_ en cluéant n'importe quelle carte one-away-from-playable et en faisant jouer deux cartes non connectées.
+- Par exemple, dans une partie à 4 joueurs de la variante Duck :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue red à Donald, touchant un red 2 comme _Play Clue_.
+  - Bob essaie de blind-play red 1 depuis sa _Finesse Position_, mais il blind-play à la place le blue 1.
+  - Cathy voit que Donald va misplay le red 2 comme blue 2. Ainsi, ce doit être un _Double Bluff_, donc Cathy blind-play sa carte en _Finesse Position_. C'est un green 1 et il joue avec succès.
+  - Donald sait qu'il ne peut pas avoir le blue 2, sinon Cathy n'aurait rien fait de spécial. La carte de Donald peut être n'importe quelle carte one-away-from-playable du jeu.
+- Les _Double Half-Bluffs_ sont explicitement interdits. En d'autres termes, le premier blind-play d'un _Double Bluff_ doit être complètement non lié à la carte qui a été cluéée. (C'est pour que le receveur du clue ait des informations plus précises.)
+
+### 5 Ejection
+
+- Le _5 Color Ejection_ est activé dans les variantes sans information positive, comme dans toute autre variante.
+- De plus, les joueurs peuvent aussi effectuer un _5 Number Ejection_ et cela fonctionnera généralement exactement de la même manière.
+- Ainsi, les joueurs doivent garder en tête que les clues qui causent un _Ejection_ peuvent avoir été soit un clue de couleur, soit un clue de nombre.
+
+### 3 Discharge
+
+- _Unknown Trash Discharge_ est désactivé dans les variantes sans information positive.
+- À la place, _3 Discharge_ est activé. En d'autres termes, un _Play Clue_ ciblant un 3 deux ou plus away-from-playable est un signal pour que le joueur suivant joue sa _Third Finesse Position_.
+- Comme le _5 Ejection_, le _3 Discharge_ peut être amorcé soit avec un clue de couleur, soit avec un clue de nombre.
+- Quand tous les 3 ont été joués ou comptabilisés, _Unknown Trash Discharge_ est réactivé.
+
+### 4 Charm
+
+- _Charm_ est défini comme un coup qui fait jouer à un joueur sa _Fourth Finesse Position_.
+- Un _Play Clue_ ciblant un 4 deux ou plus away-from-playable est un signal pour que le joueur suivant joue sa _Fourth Finesse Position_.
+- Comme le _5 Ejection_, le _4 Charm_ peut être amorcé soit avec un clue de couleur, soit avec un clue de nombre.

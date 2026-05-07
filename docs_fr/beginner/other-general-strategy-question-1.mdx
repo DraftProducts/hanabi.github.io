@@ -1,0 +1,38 @@
+---
+title: Autre Stratégie Générale (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import OtherGeneralStrategyQuestion1 from "../../docs/beginner/other-general-strategy-question-1/other-general-strategy-question-1.yml";
+import OtherGeneralStrategyAnswer1 from "../../docs/beginner/other-general-strategy-question-1/other-general-strategy-answer-1.yml";
+
+<BeginnersGuideProgress id="other-general-strategy-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- C'est le tour d'Alice et elle a un yellow 2 à jouer.
+- Cathy a un blue 5 critique en [chop](./chop.mdx).
+- Alice doit-elle jouer le yellow 2 ou sauvegarder le blue 5 de Cathy ?
+
+<OtherGeneralStrategyQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice a une carte jouable et Bob n'a rien à faire.
+- Ainsi, ce serait un mauvais travail d'équipe pour Alice de sauvegarder le blue 5 de Cathy.
+- Alice doit jouer le yellow 2 et laisser Bob s'occuper de sauvegarder le blue 5 de Cathy.
+
+<OtherGeneralStrategyAnswer1 />
+
+</TabItem>
+</Tabs>

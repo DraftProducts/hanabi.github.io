@@ -1,0 +1,39 @@
+---
+title: Une clue gaspillée ?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-4-a-wasted-clue/question.yml";
+import Answer from "../../docs/challenge-questions/level-4-a-wasted-clue/answer.yml";
+
+<ChallengeQuestionProgress level={4} id="level-4-a-wasted-clue" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Tous les 3 sont joués sur les stacks.
+- Alice clue numéro 3 à Cathy, touchant une carte en slot 3.
+- Quel type de clue est-ce ?
+- Quelles notes doivent être écrites ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Aucun 3 supplémentaire ne devrait être joué sur les stacks, donc la carte touchée est du trash connu.
+- C'est un _Trash Chop Move_, qui _Chop Move_ toutes les cartes à droite du trash.
+- Tous les joueurs devraient écrire `kt` sur le slot 3 de Bob et `cm` sur les slots 4 et 5 de Bob.
+
+<Answer />
+
+</TabItem>
+</Tabs>

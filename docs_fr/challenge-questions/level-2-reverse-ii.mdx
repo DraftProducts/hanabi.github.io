@@ -1,0 +1,37 @@
+---
+title: Reverse, II ?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-2-reverse-ii/question.yml";
+import Answer from "../../docs/challenge-questions/level-2-reverse-ii/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-reverse-ii" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue numéro 4 à Bob, ce qui touche un green 4 en slot 5.
+- Bob défausse du trash du slot 4.
+- Du point de vue de Cathy, la clue d'Alice était-elle une [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse) ? Pourquoi ou pourquoi pas ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Oui, c'est une _Reverse Finesse_.
+- Le green 4 n'est pas critique, donc la clue 4 ne peut pas être un _Save Clue_. Ce doit donc être un _Play Clue_. Cathy se voit promettre un green 3 pour rendre le green 4 jouable.
+
+<Answer />
+
+</TabItem>
+</Tabs>

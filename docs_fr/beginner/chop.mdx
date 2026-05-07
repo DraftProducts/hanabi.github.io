@@ -1,0 +1,30 @@
+---
+title: Le Chop
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Chop1 from "../../docs/beginner/chop/chop-1.yml";
+import Chop2 from "../../docs/beginner/chop/chop-2.yml";
+
+<BeginnersGuideProgress id="chop" />
+
+- À Hanabi, les joueurs défaussent des cartes de leur main pour générer des [clues](./two-types-of-clues.mdx) pour l'équipe. Mais quelle carte faut-il défausser ?
+- La carte **non-cluée** la plus à droite dans la main d'un joueur s'appelle sa carte « chop ».
+  - C'est une métaphore d'une carte « sur le billot ».
+- Quand un joueur doit défausser, il doit défausser sa carte chop. Ainsi, **tout le monde défausse de manière prévisible**.
+
+## Sans Clues
+
+- Dans l'exemple ci-dessous :
+  - La carte chop d'Alice est le red 5 (en slot 5).
+  - La carte chop de Bob est le red 3 (en slot 5).
+
+<Chop1 />
+
+## Avec Clues
+
+- Dans l'exemple ci-dessous :
+  - La carte chop d'Alice est le blue 4 (en slot 4), parce que le slot 5 est déjà clué.
+  - La carte chop de Bob est le blue 3 (en slot 2), parce que les slots 3, 4 et 5 sont déjà cluées.
+
+<Chop2 />

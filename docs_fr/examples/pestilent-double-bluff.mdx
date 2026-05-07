@@ -1,0 +1,51 @@
+---
+title: Exemples du Pestilent Double Bluff
+---
+
+import Example1 from "../../docs/examples/pestilent-double-bluff/example-1.yml";
+import Example2 from "../../docs/examples/pestilent-double-bluff/example-2.yml";
+import Example3 from "../../docs/examples/pestilent-double-bluff/example-3.yml";
+
+Le [_Pestilent Double Bluff_](../level-15.mdx#the-pestilent-double-bluff-pdb) est une convention de niveau 15.
+
+### Exemple 1
+
+- C'est le premier tour de la partie.
+- Alice clue le 2 à Donald, touchant un red 2 comme un _Play Clue_.
+- Du point de vue de Bob, cela ressemble à un _Finesse_. Bob sait qu'il a probablement le red 1 sur sa _Finesse Position_. Bob blind-play sa _Finesse Position_, c'est un yellow 1 et il se joue avec succès. Bob sait maintenant qu'il s'est fait _Bluffer_.
+- Cathy voit que du point de vue de Donald, un _Finesse_ vient de se produire et que le 2 dans la main de Donald est le yellow 2 (pour se connecter au yellow 1 qui a été blind-play). C'est un problème (parce que la carte est en réalité un red 2 et Donald va finir par la misplay).
+- Cathy sait qu'Alice doit essayer de communiquer quelque chose en plus. Quand ce genre de chose arrive, c'est généralement un _Good Touch Bluff_, ce qui signifie que quelqu'un d'autre a déjà le yellow 2 clué dans sa main. Cependant, ce n'est pas le cas ici, car Alice a donné le clue au premier tour de la partie et évidemment personne n'a encore de carte cluée dans sa main.
+- Cela doit donc être un _Pestilent Double Bluff_. Cathy peut "soigner" la situation en blind-playant sa _Finesse Position_, et c'était l'intention d'Alice depuis le début. Cathy blind-play sa _Finesse Position_, c'est un blue 1 et il se joue avec succès.
+- Du point de vue de Donald, le coup d'Alice ressemblait à un _Finesse_ après que Bob ait blind-play le yellow 1. Cependant, après que Cathy ait également blind-play une carte, Donald est resté bouche bée. Quelque chose de spécial doit se passer, car un _Finesse_ sur le yellow 1 menant au yellow 2 ne pourrait jamais amener Cathy à blind-play.
+- Par conséquent, Donald sait que son 2 ne peut pas être le yellow 2.
+- De plus, Donald sait également que son 2 ne peut pas être le blue 2, car alors Bob n'aurait rien blind-play, mais aurait laissé Cathy compléter le _Finesse_.
+- Ainsi, Donald sait que cela doit être un _Pestilent Double Bluff_ et marque son 2 comme étant soit un red 2, soit un green 2, soit un purple 2.
+
+<Example1 />
+
+### Exemple 2
+
+- Le red 1 et le blue 1 sont joués sur les piles.
+- Alice clue le 3 à Donald, touchant un blue 3 comme un _Play Clue_.
+- Bob sait qu'il s'agit d'un _Finesse_, donc il blind-play sa _Finesse Position_ (slot 1) comme un blue 2. À la place, c'est un red 2 et il se joue avec succès. Bob sait maintenant qu'il s'est fait _Bluffer_.
+- Cathy sait que quelque chose de bizarre vient de se produire. Comme le red 2 se connecte à un clue de 3, Donald va penser qu'il a le red 3 (et il va finir par le misplay).
+- Cathy sait que cela doit être un _Pestilent Double Bluff_. Elle blind-play sa _Finesse Position_ (slot 1). C'est un purple 1 et il se joue avec succès.
+- Après que le clue du 3 ait été donné et que le red 2 ait été blind-play, Donald a pensé que son 3 était le red 3 (puisque 2 se connecte à 3). Cependant, si c'était le red 3, alors Cathy n'aurait jamais blind-play. Ainsi, Donald sait que son 3 ne peut pas être le red 3.
+- De plus, comme Bob n'a pas attendu que Cathy joue son purple 1, ce n'est pas non plus le purple 3.
+
+<Example2 />
+
+### Exemple 3
+
+- Le red 1, le yellow 1 et le purple 1 sont joués sur les piles.
+- Alice clue le 3 à Donald, touchant un green 3 comme un _Play Clue_.
+- Bob sait qu'il s'agit d'un _3 Bluff_ ou d'un _Finesse_, donc il blind-play sa _Finesse Position_ (slot 3). C'est un red 2 et il se joue avec succès. Bob sait maintenant qu'il s'est fait _Bluffer_.
+- Cathy sait que quelque chose de bizarre vient de se produire. Comme le red 2 se connecte à un clue de 3, Donald va penser qu'il a le red 3 (et il va finir par le misplay).
+- Cependant, dans ce cas, Cathy sait que Donald ne pensera **pas** qu'il a le red 3, parce qu'Alice les a en réalité tous les deux dans sa propre main.
+- Mais Alice ne sait pas qu'elle a les deux red 3 dans sa main — du point de vue d'Alice, Donald **va** penser qu'il a le red 3.
+- Cathy sait qu'Alice ne donnerait jamais intentionnellement un aussi mauvais clue — elle doit essayer de communiquer quelque chose en plus.
+- Cathy sait que cela doit être un _Pestilent Double Bluff_. Elle blind-play sa _Finesse Position_ (slot 1). C'est un purple 2 et il se joue avec succès.
+- Après que le clue du 3 ait été donné et que le red 2 ait été blind-play, Donald a pensé que son 3 était le red 3 (puisque 2 se connecte à 3). Cependant, si c'était le red 3, alors Cathy n'aurait jamais blind-play. Ainsi, Donald sait que son 3 ne peut pas être le red 3.
+- De plus, comme Bob n'a pas attendu que Cathy joue son purple 2, ce n'est pas non plus le purple 3.
+
+<Example3 />

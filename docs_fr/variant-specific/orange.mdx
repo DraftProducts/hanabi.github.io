@@ -1,0 +1,243 @@
+---
+title: Orange
+---
+
+import OrangeFinesse from "../../docs/variant-specific/orange/orange-finesse.yml";
+import OrangeDoubleFinesse from "../../docs/variant-specific/orange/orange-double-finesse.yml";
+import OrangeLayeredFinesse from "../../docs/variant-specific/orange/orange-layered-finesse.yml";
+import NonOrangeRank1 from "../../docs/variant-specific/orange/non-orange-rank-1.yml";
+import NonOrangeRank2 from "../../docs/variant-specific/orange/non-orange-rank-2.yml";
+import NonOrangeRank3 from "../../docs/variant-specific/orange/non-orange-rank-3.yml";
+import OrangeColorAssumption from "../../docs/variant-specific/orange/orange-color-assumption.yml";
+import HollowBluff1 from "../../docs/variant-specific/orange/hollow-bluff-1.yml";
+import HollowBluff2 from "../../docs/variant-specific/orange/hollow-bluff-2.yml";
+import CitrusBluff1 from "../../docs/variant-specific/orange/citrus-bluff-1.yml";
+import CitrusBluff2 from "../../docs/variant-specific/orange/citrus-bluff-2.yml";
+import InsolentBluff from "../../docs/variant-specific/orange/insolent-bluff.yml";
+import EjectionOrange from "../../docs/variant-specific/orange/ejection-orange.yml";
+import OrangeTrashDischarge from "../../docs/variant-specific/orange/orange-trash-discharge.yml";
+import OrangeFixClueBluff from "../../docs/variant-specific/orange/orange-fix-clue-bluff.yml";
+
+Ces conventions s'appliquent à toute variante avec une suite orange (inversée).
+
+### The Orange Finesse / The Orange Double Finesse
+
+- Une _Finesse_ sur des cartes orange cause des blind-discards au lieu de blind-plays, exactement comme on s'y attendrait.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue orange à Cathy, touchant un orange 2 en slot 2 comme _Play Clue_.
+  - Bob voit qu'on lui a promis un orange 1 sur sa _Finesse Position_. Normalement, dans une _Finesse_, il jouerait sa _Finesse Position_ sans regarder, mais comme on lui promet une carte orange, il glisse à la place sa _Finesse Position_ vers la pile de défausse. C'est l'orange 1 et il joue avec succès sur les stacks.
+  - Cathy sait qu'elle a l'orange 2 qui correspond.
+
+<OrangeFinesse />
+
+- Ce concept fonctionne de manière identique pour une _Double Finesse_.
+- Par exemple, dans une partie à 4 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue orange à Donald, touchant un orange 3 en slot 2 comme _Play Clue_.
+  - Bob glisse sa _Finesse Position_ vers la pile de défausse. C'est l'orange 1 et il joue avec succès sur les stacks.
+  - Cathy glisse sa _Finesse Position_ vers la pile de défausse. C'est l'orange 2 et il joue avec succès sur les stacks.
+  - Donald sait qu'il a l'orange 3 qui correspond.
+
+<OrangeDoubleFinesse />
+
+### The Orange Layered Finesse
+
+- Une _Orange Finesse_ peut aussi être _Layered_, à condition qu'il y ait des cartes _Trash_ non orange qui mènent à la carte promise.
+- Par exemple, dans une partie à 4 joueurs :
+  - Tous les 2 sont joués sur les stacks.
+  - Cathy a un red 1 en slot 1 et un orange 3 en slot 2.
+  - Alice clue orange à Donald, touchant un orange 4 en slot 3 comme _Play Clue_.
+  - Bob voit que Cathy peut réaliser la _Finesse_ et fait quelque chose qui n'est pas lié.
+  - Cathy glisse son slot 1 vers la pile de défausse, pensant que c'est l'orange 3. C'est en fait le red 1, et il défausse avec succès.
+  - Cathy sait maintenant que l'orange 3 est dans une _Orange Layered Finesse_. Elle marque son slot 2 comme l'orange 3.
+  - À son prochain tour, elle glisse son slot 2 vers la pile de défausse. C'est un orange 3 et il joue avec succès sur les stacks.
+
+<OrangeLayeredFinesse />
+
+### The Non-Orange Rank Play Clue Assumption
+
+- Par défaut, les _Play Clues_ avec un rang sont supposés concerner des cartes non orange.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue number 1 à Bob, touchant trois 1 comme _Play Clue_.
+  - Bob sait que s'il joue simplement tous les 1, il a une chance de défausser un orange 1, ce qui pourrait être mauvais parce que l'équipe perdrait alors leur seule copie visible. Cependant, Bob sait aussi que les play clues de rang sont supposés concerner des cartes non orange, donc il n'a pas à s'en soucier.
+  - Bob glisse tous ses 1 vers les stacks dans l'ordre normal.
+
+<NonOrangeRank1 />
+
+- Cette convention est désactivée quand le seul 1 jouable restant est l'orange 1.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks sauf l'orange 1.
+  - Alice clue number 1 à Bob, touchant un 1 en slot 1 comme _Play Clue_.
+  - Bob suppose que c'est l'orange 1 et le glisse vers la pile de défausse. C'est un orange 1 et il joue avec succès sur les stacks.
+
+<NonOrangeRank2 />
+
+- De plus, les _Play Clues_ de rang sur des cartes orange sont supposés au lieu des _Self-Finesses_, ce qui découle du _Rasoir d'Occam_.
+- Par exemple, dans une partie à 3 joueurs :
+  - L'orange 1 est joué sur les stacks.
+  - Alice clue number 2 à Bob, touchant un 2 en slot 1 comme _Play Clue_.
+  - Bob sait que c'est soit un _Play Clue_ direct sur un orange 2, soit une _Self-Finesse_ sur par exemple red 1 puis red 2. Cependant, Bob sait que la _Non-Orange Rank Play Clue Assumption_ est désactivée quand orange est la seule possibilité.
+  - Bob glisse son 2 vers la pile de défausse. C'est un orange 2 et il joue avec succès sur les stacks.
+
+<NonOrangeRank3 />
+
+### The Orange Color Play Clue Assumption
+
+- Par défaut, les _Play Clues_ avec la couleur orange sont supposés concerner des cartes orange.
+- Par exemple, dans une partie à 3 joueurs de "Rainbow & Orange (5 Suits)" :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue orange à Bob, touchant une carte en slot 1 comme _Play Clue_.
+  - Bob sait que les deux cartes orange jouables sont rainbow 1 et orange 1. Cela le met dans un dilemme potentiel, parce que mal deviner le fera défausser une carte qu'il avait l'intention de jouer.
+  - Cependant, Bob sait aussi que les play clues de couleur orange sont supposés concerner des cartes orange, ce qui signifie qu'il peut être confiant qu'il a exactement l'orange 1.
+  - Bob glisse sa carte orange vers la pile de défausse. C'est l'orange 1 et il joue avec succès sur les stacks.
+
+<OrangeColorAssumption />
+
+### The Orange Fix Clue
+
+- Quand une carte orange est sur le chop, elle doit être indiquée par un clue afin d'éviter un strike.
+  - L'exception est quand la carte jouerait "accidentellement" via la défausse, ce qui est couvert dans la section suivante. Mais ce sera rarement le cas.
+- Un orange 2 sur le chop doit être fixé/sauvé avec un _2 Save_, comme à la normale.
+- Un orange 5 doit être fixé/sauvé avec un _5 Save_, comme à la normale.
+- Un orange 3 et un orange 4 doivent être fixés/sauvés avec un clue de couleur orange.
+- Les cartes orange trash doivent aussi être fixées avec un clue de couleur orange.
+- Ainsi, la note sur une carte chop après un _Orange Fix Clue_ serait :
+  - `o3, o4` s'il n'y a pas de cartes orange jouées.
+  - `o3, o4, trash` s'il y a une ou plusieurs cartes orange jouées.
+
+### Orange Fix Clues in The Early Game
+
+- Pour ce qui est de l'_Early Game_, les _Orange Fix Clues_ sont considérés comme "obligatoires" de la même manière que sauver un 5 sur le chop le serait.
+
+### The Orange Accidental Blind-Play
+
+- Quand une carte orange jouable est sur le chop, vous ne devez pas l'indiquer avec un clue. C'est parce que le joueur va naturellement la défausser, ce qui la fera "accidentellement" jouer.
+
+### The Orange Gentleman's Discard
+
+- Quand une carte orange est _Gentleman's Discarded_, au lieu de promettre que la carte correspondante est en _Finesse Position_, elle est plutôt promise comme étant sur le chop.
+- Comme la _Orange Layered Finesse_, le _Orange Gentleman's Discard_ peut aussi être _Layered_ si la carte promise est derrière des cartes trash non orange. (Contrairement à une _Layered Finesse_ normale, le layering se ferait dans l'ordre opposé, similaire à une _Layered Elimination Finesse_.)
+
+### The Orange Baton Discard
+
+- Quand une carte orange est _Baton Discarded_, au lieu de promettre que la carte correspondante est en _Finesse Position_, elle est plutôt promise comme étant sur le chop.
+- Cette carte promise doit alors être _Chop Moved_.
+
+### The Orange Blaze Discard (Unchanged)
+
+- Quand une carte orange est _Blaze Discarded_, il n'y a pas de règles spéciales comme avec _Gentleman's Discard_ et _Baton Discard_. En d'autres termes, si Bob voit la carte orange correspondante en _Second Finesse Position_, il doit blind-play sa _Second Finesse Position_.
+
+### The Hollow Bluff
+
+- Comme toutes les cartes orange doivent être cluéées quand elles arrivent sur le chop, vous pouvez les considérer comme des "mines". Ainsi, si vous pouvez retirer la mine tôt, c'est généralement une bonne chose à faire.
+- Une façon de faire est de les faire blind-play en utilisant un _Bluff_ (ce qui les fera défausser). Cependant, comme aucune carte n'est réellement blind-play, le _Bluff_ est "creux".
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice clue red à Cathy, touchant un red 3 comme _Play Clue_.
+  - Bob sait que ce doit être une _Finesse_, donc il glisse sa _Finesse Position_ vers les stacks, essayant de jouer un red 2. À la place, il défausse un orange 1.
+  - Cathy sait que comme Bob a essayé de jouer sa _Finesse Position_, elle doit avoir la carte red _one-away-from-playable_, le red 3.
+
+<HollowBluff1 />
+
+- Si la carte défaussée d'un _Hollow Bluff_ n'est pas du trash, alors tous les joueurs doivent écrire des _Elimination Notes_ pour l'autre copie.
+- Par exemple, dans une partie à 3 joueurs :
+  - La configuration est identique à l'exemple précédent, mais au lieu que Bob glisse un orange 1 vers les stacks, c'est un orange 3.
+  - Comme dans l'exemple précédent, Cathy sait que sa carte red est red 3. De plus, Cathy sait que quelqu'un doit avoir l'autre copie de l'orange 3. Cathy ne voit pas l'orange 3 dans la main de quelqu'un d'autre, donc elle marque ses cartes non red comme de possibles orange 3.
+
+<HollowBluff2 />
+
+- Comme les _Hollow Bluffs_ sont utiles pour se débarrasser des "mines", ils ne devraient jamais provoquer un _Chop Move_.
+
+### The Hollow [Whatever]
+
+- De la même manière qu'il est possible de faire blind-discard une carte orange via un _Hollow Bluff_, vous pouvez aussi faire blind-discard une carte orange via un _Hollow Unknown Trash Discharge_, un _Hollow Chop Move Ignition_, etc.
+
+### The Citrus Bluff
+
+- Voir d'abord la section sur le [_Hollow Bluff_](#the-hollow-bluff).
+- À cause du _Bob's Truth Principle_, vous ne pouvez normalement pas utiliser une carte orange comme cible de _Bluff_, puisque le joueur réagissant ferait un blind-discard au lieu d'un blind-play.
+- Cependant, vous pouvez utiliser une carte orange comme cible de _Bluff_ si la carte en _Finesse Position_ est du trash. C'est similaire à un _Hollow Bluff_, mais inversé.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice clue orange à Cathy, touchant un orange 3 comme _Play Clue_.
+  - Bob sait que ce doit être une _Finesse_, donc il glisse sa _Finesse Position_ vers la pile de défausse, essayant de jouer un orange 2. À la place, il défausse un red 1.
+  - Cathy sait que comme Bob a essayé de défausser sa _Finesse Position_, elle doit avoir la carte orange one-away-from-playable, l'orange 3.
+
+<CitrusBluff1 />
+
+- Vous pouvez aussi effectuer un _Citrus Bluff_ sur une carte non trash. Comme un _Hollow Bluff_, cela doit conduire tous les joueurs à écrire des _Elimination Notes_ pour l'autre copie.
+- Par exemple, dans une partie à 3 joueurs :
+  - La configuration est identique à l'exemple précédent, mais au lieu que Bob glisse un red 1 vers la pile de défausse, c'est un red 3.
+  - Comme dans l'exemple précédent, Cathy sait que sa carte orange est orange 3. De plus, Cathy sait que quelqu'un doit avoir l'autre copie du red 3. Cathy ne voit pas le red 3 dans la main de quelqu'un d'autre, donc elle marque ses cartes non orange comme de possibles red 3.
+
+<CitrusBluff2 />
+
+### The Insolent Bluff
+
+- Normalement, si Alice clue un orange 3 avec un _Play Clue_ number 3, alors Bob penserait avoir l'orange 1 et l'orange 2 comme une _Double Finesse_ (à cause du _Bob's Truth Principle_).
+- Cependant, nous nous accordons pour que les clues number 3 sur un orange 3 _two-away-from-playable_ appellent un _Known Bluff_ sur une carte non orange. (En d'autres termes, nous nous accordons pour désactiver le _Bob's Truth Principle_ pour ce type spécifique de clue.)
+- Par exemple, dans une partie à 3 joueurs de "Orange (5 Suits)" :
+  - Seul le red 1 est joué sur les stacks.
+  - Alice clue number 3 à Cathy, touchant un orange 3 en slot 2 comme _Play Clue_.
+  - Normalement, Bob penserait que c'est une _Double Finesse_ orange. Cependant, il sait aussi que comme la convention _Insolent Bluff_ existe, il doit la traiter comme un _Known Bluff_ à la place.
+  - Bob glisse sa _Finesse Position_ vers les stacks. C'est un yellow 1 et il joue avec succès.
+  - Cathy sait que :
+    - Si le clue d'Alice était un _Bluff_ normal, elle aurait un red 3.
+    - Si le clue d'Alice était un _Insolent Bluff_, elle aurait l'orange 3.
+    - Si le clue d'Alice était un _3 Bluff_, elle aurait n'importe quel autre 3.
+  - Ainsi, Cathy sait que son 3 peut être de n'importe quelle suite.
+
+<InsolentBluff />
+
+### Ejections & Discharges & Charms on Orange Cards
+
+- Les cartes orange peuvent être utilisées comme cibles d'_Ejections_, _Discharges_ et _Charms_. Cependant, le joueur qui blind-play doit toujours supposer que sa carte est non orange.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue orange à Cathy, touchant un orange 5 comme _Play Clue_.
+  - Bob sait que c'est un _5 Color Ejection_. Mais doit-il glisser sa _Second Finesse Position_ vers les stacks ou la pile de défausse ?
+  - Bob sait que les _Ejections_ & _Discharges_ & _Charms_ sur des cartes orange appellent des blind-plays, donc Bob glisse sa _Second Finesse Position_ vers les stacks. C'est un red 1 et il joue avec succès.
+  - Cathy marque sa carte orange comme étant exactement orange 5.
+
+<EjectionOrange />
+
+### Complicated Moves on Orange Cards are Necessary
+
+- Si un coup compliqué fait blind-discard / blind-play / toucher une carte orange, alors il est considéré comme nécessaire.
+  - C'est parce que si la carte orange arrivait sur le chop, un clue devrait être "gaspillé" pour l'empêcher d'exploser.
+
+### Elimination with Orange Cards
+
+- L'_Elimination Blind Play Riding Deduction_ ne s'applique pas quand les _Elimination Notes_ sont sur une carte orange immédiatement jouable. C'est parce que le plan de l'équipe pourrait être de causer un _Orange Accidental Blind-Play_.
+
+### The Orange Trash Discharge
+
+- Dans de rares cas, il est possible de représenter à tort une carte orange trash comme une carte non orange trash. Comme jouer la _Finesse Position_ et la _Second Finesse Position_ ne résoudrait pas la mauvaise représentation, nous nous accordons pour jouer la _Third Finesse Position_ à la place.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice clue number 1 à Cathy, touchant un orange 1 en slot 4.
+  - Bob voit que du point de vue de Cathy, cela ressemblera à un _Trash Chop Move_ :
+    - Si Bob ne fait rien, Cathy va défausser l'orange 1, causant un misplay.
+    - Si Bob blind-play sa _Finesse Position_, Cathy pensera qu'un _Chop Move Ignition_ se produit et misplay sa carte en slot 5.
+    - Si Bob blind-play sa _Second Finesse Position_, Cathy pensera qu'un _Bad Chop Move Ejection_ se produit, et elle continuera de défausser l'orange 1, causant un misplay.
+    - Ainsi, Bob blind-play sa _Third Finesse Position_. C'est un red 2 et il joue avec succès.
+    - Cathy marque sa carte comme orange 1, car c'est la seule façon que ce type de clue cause un _Discharge_.
+
+<OrangeTrashDischarge />
+
+- Si un _Orange Trash Discharge_ touche deux cartes trash ou plus, alors seule la cible est promise comme une carte orange. La carte trash la plus à gauche est considérée comme la cible, puisque c'est la carte qui serait défaussée en premier.
+
+### The Orange Fix Clue Bluff
+
+- Normalement, l'_Orange Accidental Blind-Play_ se produit quand une carte orange jouable est sur le chop de quelqu'un. En d'autres termes, il serait inutile d'indiquer une carte orange jouable sur le chop avec un clue.
+- Cependant, que se passe-t-il si un joueur effectue intentionnellement un _Orange Fix Clue_ sur une carte orange jouable sur le chop ? Cela ferait une fausse représentation de l'identité de la carte, exigeant que le joueur suivant réagisse d'une certaine manière pour prouver ce qui se passe vraiment. Nous nous accordons pour que les joueurs traitent cela comme un _Known Bluff_.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour de la partie et rien n'est joué sur les stacks.
+  - Alice clue orange à Cathy, touchant un orange 1 en slot 5 (chop).
+  - Bob voit que du point de vue de Cathy, cela ressemblera à un _Orange Fix Clue_, et Cathy marquera la carte comme `o3, o4`. Ainsi, cela exige que Bob réagisse d'une certaine manière pour prouver que c'est vraiment un orange 1.
+  - Bob glisse sa _Finesse Position_ vers les stacks comme un _Known Bluff_. C'est un red 1 et il joue avec succès.
+  - Cathy met à jour sa note de `o3, o4` à `o1`, puisque c'est la seule raison pour laquelle Bob aurait blind-play sa _Finesse Position_ dans cette situation.
+
+<OrangeFixClueBluff />

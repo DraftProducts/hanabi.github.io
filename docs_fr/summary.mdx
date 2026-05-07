@@ -1,0 +1,179 @@
+---
+title: Résumé / Antisèche
+---
+
+Cette page est un résumé des conventions les plus couramment utilisées dans la section « Basic Strategies ». Elle est conçue comme une référence rapide et un aperçu, et ne couvre pas les détails de chaque convention, les cas particuliers, les conventions rarement utilisées, etc.
+
+## Jouer et Sauvegarder des Cartes
+
+### Focus et Interprétation des Clues
+
+- Normalement, chaque clue est focalisée sur une carte spécifique.
+- Si la _Chop_ (carte non-cluée la plus ancienne) est touchée, alors la clue est focalisée sur la chop. Sinon, la clue est focalisée sur la carte nouvellement touchée la plus à gauche. Si seules des cartes cluées sont touchées, la carte touchée la plus à gauche est focalisée.
+- Le _Good Touch Principle_ énonce que les autres cartes touchées (en plus du focus) seront utiles à terme.
+- Normalement, chaque clue est soit une _Play Clue_, soit une _Save Clue_.
+- On ne peut donner une _Save Clue_ qu'à une carte qui est en chop, et seulement si c'est un 5 (par chiffre), un 2 unique (par chiffre), ou une carte critique (par chiffre ou par couleur).
+
+### Prompts et Finesses
+
+- Une _Play Clue_ est une promesse qu'une carte est jouable maintenant. S'il y a des cartes « connectantes », il est promis à l'équipe que les cartes connectantes sont présentes et identifiables.
+  - Par exemple, si un red 3 reçoit une _Play Clue_, et que le red 1 et le red 2 n'ont pas encore été joués, alors le joueur qui donne la clue promet _aussi_ que l'équipe possède collectivement le red 1 et le red 2.
+- Dans une telle situation, ces coéquipiers doivent réaliser la promesse du donneur de clue en jouant les cartes connectantes.
+- Ils doivent d'abord chercher parmi leurs cartes cluées les cartes qui correspondent, et les jouer de gauche à droite (cela s'appelle un [_Prompt_](level-1.mdx#the-prompt)). S'il n'y a pas de cartes cluées qui correspondent (ou si toutes les cartes correspondantes ont été jouées et que la promesse n'est toujours pas réalisée), ils doivent blind-play leurs cartes _non-cluées_ de gauche à droite jusqu'à ce que la promesse soit réalisée (cela s'appelle une [_Finesse_](level-1.mdx#the-finesse)).
+  - S'il y a des _Prompts_ ou _Finesses_ potentiels, alors d'autres joueurs peuvent avoir besoin d'attendre avant de jouer leurs cartes.
+  - Le _Double Prompt_, _Double Finesse_, _Reverse Finesse_, _Hidden Finesse_, _Layered Finesse_ et _Clandestine Finesse_ sont tous des cas particuliers de ce principe général.
+
+## Chop Moves
+
+- Le H-Group a plusieurs conventions qui peuvent dire à un joueur que sa carte _Chop_ est importante et ne doit pas être défaussée, même sans toucher la carte avec une clue. Cela s'appelle un _[Chop Move](level-4.mdx#chop-moves)_.
+- Quand un _Chop Move_ se produit, le joueur considère la carte sur sa chop comme touchée par une clue « invisible ». Ainsi, sa chop « bouge » vers la prochaine carte non-cluée la plus à droite.
+- Les cartes _Chop Moved_ ne comptent pas comme « correspondantes » pour les _Prompts_.
+
+### Types de Chop Moves
+
+- **Order Chop Move**. Quand un joueur reçoit une clue number 1 touchant plusieurs 1, **ils doivent normalement être joués dans un [ordre spécial](level-3.mdx#playing-multiple-1s)** :
+  - Si la clue a focalisé un 1 sur la _Chop_, ce 1 doit être joué en premier.
+  - Tous les 1 piochés après le début de la partie doivent être joués du plus récent au plus ancien.
+  - Tous les 1 restants doivent être joués de droite à gauche.
+
+  Si les 1 sont joués dans un **ordre différent**, cela déclenche un [_Order Chop Move_](level-4.mdx#the-order-chop-move-ocm) basé sur le nombre de 1 « sautés » : sauter un seul 1 _Chop Move_ le joueur suivant, sauter deux 1 _Chop Move_ le joueur d'après, etc.
+
+- **5's Chop Move**. Le [_5's Chop Move_](level-4.mdx#the-5s-chop-move-5cm) est une clue number 5 qui touche un 5 qui est **one-away** de la chop. Dans ce cas, on s'accorde aussi à _Chop Move_ la carte _Chop_.
+
+- **Trash Chop Move**. Le [_Trash Chop Move_](level-4.mdx#the-trash-chop-move-tcm) est un coup où une clue est donnée qui ne touche que des cartes connues comme étant trash. Dans ce cas, on s'accorde à _Chop Move_ chaque carte à droite de la carte trash la plus à droite.
+  - En jeu expert, il y a un coup similaire où une carte se joue et est révélée comme étant un duplicate d'une carte cluée globalement connue dans la main de quelqu'un d'autre. Cela est couvert dans le chapitre [_Dupe Tech_](level-17.mdx) ; ces clues peuvent ou non causer un _Chop Move_ selon que le coup a aussi récupéré des cartes supplémentaires.
+
+- **Tempo Clue Chop Move**. Une clue qui ne fait jouer qu'une **seule** carte qui **avait déjà une clue dessus** est appelée une [_Tempo Clue_](level-6.mdx#the-tempo-clue), et ne vaudrait normalement pas la peine d'être donnée. Donc, si le donneur de clue n'est pas en train de stall, on s'accorde à ce que cette clue de faible valeur _Chop Move_ aussi le joueur qui reçoit la clue. Cela s'appelle un [_Tempo Clue Chop Move_](level-6.mdx#the-tempo-clue-chop-move-tccm).
+
+- **Scream Discard Chop Move et Generation Discard**. Si Alice a une carte connue jouable dans sa main, et qu'elle choisit de défausser sa chop quand même au lieu de jouer sa carte, alors cela signale à l'équipe une certaine **situation d'urgence**. Il y a deux coups courants auxquels cela correspond.
+  - Si l'équipe a 0 clues et que Bob a une carte jouable ou critique sur sa chop, cela déclenche un [_Scream Discard Chop Move_](level-7.mdx#the-scream-discard-chop-move-sdcm) sur Bob. Le but de la défausse d'Alice est d'empêcher Bob de défausser. Donc, Bob doit _Chop Move_ une fois.
+  - Bob est aussi tenu de **ne pas** défausser au tour où il est screamed at (parce qu'il pourrait avoir plusieurs cartes critiques), et peut staller si nécessaire.
+  - Si l'équipe a 0 clues et que Cathy a une carte jouable ou critique sur sa chop, et n'a rien à faire, on considère plutôt cela comme un [_Generation Discard_](level-7.mdx#the-generation-discard) ; le but de la défausse d'Alice est de générer une clue pour que Bob puisse sauvegarder la carte de Cathy.
+
+- **Trash Order Chop Move**. Quand un joueur a plusieurs cartes connues comme trash, on attend normalement qu'il les défausse **de gauche à droite**. Sauter des cartes trash déclenche un [_Trash Order Chop Move_](level-14.mdx#the-trash-order-chop-move-tocm) similaire à un _Order Chop Move_.
+
+## Défausser
+
+### Défausser des Cartes Cluées Non-Trash
+
+- Si un joueur défausse une carte connue non-trash, cela promet que **quelqu'un d'autre a l'autre copie**.
+- Comme avec les _Prompts_ vs _Finesses_, les cartes cluées qui correspondent doivent être considérées en premier. (C'est rare car le _Good Touch_ interdit de cluer les deux copies de la même carte, mais ça arrive parfois à cause d'une erreur ou d'une situation gênante.) Dans ce cas, on appelle ce coup un [_Sarcastic Discard_](level-3.mdx#the-sarcastic-discard-sd). Une telle défausse est utile car elle resynchronise l'équipe, communiquant la duplication aux autres joueurs et empêchant la confusion potentielle.
+- Sinon, cela promet l'autre copie en _Finesse Position_ de quelqu'un. Cela s'appelle soit un [_Gentleman's Discard_](level-10.mdx#the-gentlemans-discard-gd) soit un [_Baton Discard_](level-10.mdx#the-baton-discard-bd), selon que la carte est déjà jouable ou non.
+
+### Double Discard Avoidance
+
+- Une _Double Discard situation_ est une situation où le joueur précédent défausse (ou misplay) une carte ; **et** où le joueur courant pourrait défausser l'autre copie de cette carte.
+- Si l'équipe est malchanceuse, cela pourrait faire perdre la partie. Donc, on s'accorde à traiter cela comme une situation de « stalling » aussi.
+- Si les fonctionnalités H-group avancées sont activées sur hanab.live, les situations de _Double Discard_ seront indiquées par un effet sonore de défausse différent, un contour jaune autour de la pile de défausse, et de petits points d'interrogation bleus sur les cartes qui pourraient correspondre à la carte juste défaussée ou misplay.
+- Dans les [variantes hard](variant-specific.mdx#hard-variants--easy-variants), la _Double Discard Avoidance_ est désactivée.
+
+### Elimination Notes
+
+- Parfois, un joueur peut réaliser qu'il doit avoir une carte spécifique quelque part dans sa main.
+  - Si rien de spécial ne se passe, et qu'un joueur voit une carte jouable ou un 2 être défaussé inopinément, il s'ensuit que quelqu'un a l'autre copie.
+  - Si quelqu'un défausse alors qu'il devrait être en _Double Discard Avoidance_, il s'ensuit que quelqu'un d'autre a l'autre copie de la carte qui a initié la situation de _Double Discard_.
+- Dans ce cas, ce joueur doit faire des notes sur toutes les cartes de sa main pour la carte « manquante ».
+- Ces card notes peuvent être utilisées pour faire des déductions, parfois même en laissant la carte blind-play « gratuitement ». Cela est couvert dans le chapitre sur l'[Elimination](level-18.mdx).
+
+## Stalling
+
+- Il y a des situations où l'équipe peut avoir besoin de « staller » en donnant une clue de faible valeur. Par ordre de gravité, ces situations incluent :
+  - Severity 1 : L'_Early Game_ est la période avant la **première défausse inconnue**. On s'accorde à autoriser les _5 Stalls_ (définis ci-dessous) pour étendre l'_Early Game_ un peu plus longtemps que ce qui se produirait normalement si seules les _Play Clues_ et _Save Clues_ normales étaient autorisées.
+  - Severity 2 : Les _Double Discard situations_ et les _Scream Discards_, qui ont été définis ci-dessus.
+  - Severity 3 : Une _Locked Hand_ est une main où chaque carte est cluée ou _Chop Moved_. Dans ce cas, un joueur ne peut pas défausser en sécurité, donc il a le droit de staller à la place.
+  - Severity 4 : Les règles du jeu interdisent de défausser si l'équipe a déjà 8 clues.
+- Il y a une [stall table](level-9.mdx#allowable-stall-clues-stall-table) qui indique quels types de stalls sont permis à quelles severities, et leur précédence. Cette table assez stricte facilite la distinction entre les stall clues et des choses comme les _Finesses_.
+- Les types de stalls couverts dans la table sont résumés ci-dessous :
+  - Un [_5 Stall_](level-2.mdx#the-5-stall-cluing-off-chop-5s) est le type de stall préféré, et est disponible dans toute situation où aucune _Play_ ou _Save Clue_ normale n'est autorisée. Il consiste simplement à donner une clue number 5 à un 5 off-chop. Cela ne déclenche pas un _5's Chop Move_.
+  - À Severity 2 et plus, on peut donner un _Tempo Clue Stall_ en re-cluant une carte pour qu'elle joue ; cela ne déclenche pas un _Tempo Clue Chop Move_.
+  - S'il n'y a pas de _5 Stalls_ ou _Tempo Clue Stalls_ valides, alors :
+    - À Severity 2 et plus, on peut aussi simplement _fill-in_ une carte (donner des informations supplémentaires à des cartes déjà cluées ou _Chop Moved_).
+    - À Severity 3 ou plus, un joueur peut sauvegarder n'importe quelle carte sur la chop, même si elle n'est pas critique ou jouable. Cela s'appelle un [_Locked Hand Save_](level-9.mdx#locked-hands-severity-3-stalling).
+    - À Severity 4 ou plus, un joueur peut sauvegarder n'importe quelle carte qui n'est pas en slot 1, même si elle n'est pas critique ou jouable. Cela s'appelle un [_8 Clue Save_](level-9.mdx#clues-given-while-at-8-clues-severity-4-stalling).
+  - À Severity 2 ou plus, si aucun autre type de stall n'est disponible, un joueur peut faire un _Hard Burn_ en dépensant une clue pour ne fournir aucune nouvelle information (ex: re-cluer un 5 connu non-jouable).
+
+### End-Game
+
+- Dans l'_End-Game_, staller est souvent nécessaire pour gagner la partie avant que le temps ne s'écoule. Comme la stratégie d'_End-Game_ est si complexe, la stalling table ne prescrit pas de conventions sur ce qui est légal ou non, et les joueurs doivent plutôt utiliser le contexte et le bon sens.
+- Dans l'_End-Game_, quand presque toutes les cartes sont trash, un joueur peut aussi choisir de défausser une carte non-cluée hors de sa chop pour communiquer la position d'une carte à son coéquipier : par exemple, défausser le slot 2 sans raison apparente dit à l'équipe qu'un joueur a une carte jouable sur le slot 2. Cela s'appelle un [_Positional Discard_](level-8.mdx#the-positional-discard-indicating-a-play-with-a-discard).
+  - Si un _Positional Discard_ ne fonctionnait pas, par exemple parce qu'il y a plusieurs joueurs avec une carte sur un slot donné ou si le slot désiré est la chop habituelle, on peut dépenser un strike pour utiliser un [_Positional Misplay_](level-8.mdx#the-positional-misplay-indicating-a-play-with-a-misplay) à la place.
+
+## Bluffs
+
+- Un [_Bluff_](level-11.mdx) est un coup spécial où l'on raconte un [_Fib_](level-11.mdx#lie-principle) au joueur suivant, le faisant blind-play une carte comme s'il était _Finessed_. Le _Fib_ est révélé dès qu'il blind-play.
+- Comme les _Bluffs_ impliquent de ne pas dire la vérité, on impose plusieurs restrictions. Disons qu'Alice donne la clue.
+  - Un _Bluff_ ne peut **être fait que** sur Bob.
+  - Bob supposera toujours une _Finesse_ plutôt qu'un _Bluff_. Cela s'appelle [_Bob's Truth Principle_](level-11.mdx#bobs-truth-principle-part-1).
+  - Un _Bluff_ n'est légal que si **Bob blind-play au tour suivant immédiat**.
+  - Les seules cartes qui peuvent être utilisées comme cible de _Bluff_ sont :
+    - une carte one-away-from-playable (_Bluff_ normal)
+    - un 3 two-away-from-playable ([_3 Bluff_](level-13.mdx#the-3-bluff))
+    - un 4 critique, mais seulement si une clue de couleur est utilisée ([_Critical Color Bluff_](level-13.mdx#the-critical-color-bluff-ccb))
+  - La cible du _Bluff_ ne doit **pas « connecter » à la carte blind-play** par Bob, pour que la clue ne soit pas confondue avec une _Finesse_ après le blind-play. Cela s'appelle [_Cathy's Connecting Principle_](level-11.mdx#cathys-connecting-principle-part-2) et les cas où « connecter » signifie quelque chose précisément y sont écrits en détail.
+
+### Double Bluffs
+
+- Un [_Double Bluff_](level-15.mdx) est similaire à un _Bluff_, mais il fait blind-play **à la fois Bob et Cathy** leur _Finesse Position_.
+- La carte focalisée ne doit **pas** être une cible valide de _Bluff_, et elle doit être au moins two-away-from-playable.
+  (Il y a une exception appelée le [_Pestilent Double Bluff_](level-15.mdx#the-pestilent-double-bluff-pdb).)
+- En pratique, les _Double Bluffs_ sont presque toujours donnés à un 4 dont le 2 correspondant n'a pas encore été joué.
+  (C'est parce que le cas du 5 est écrasé par la _5 Color Ejection_ définie plus tard.)
+- Un _Double Bluff_ doit être démontré immédiatement pour être légal : les deux joueurs doivent blind-play immédiatement.
+
+## Blind-Plays Spéciaux
+
+### Trash Pushes
+
+- Normalement, une clue qui focalise une trash connue cause un _Trash Chop Move_ sur les cartes à droite de la trash. Cependant, si la trash est déjà sur la chop, cette interprétation n'a pas de sens car aucune carte ne serait _Chop Moved_.
+- À la place, cela cause le blind-play immédiat de la carte à gauche de la trash cluée. Cela s'appelle un [_Trash Push_](level-14.mdx#the-trash-push).
+
+### Ejections, Discharges et Charms
+
+- Une _Ejection_, _Discharge_ ou _Charm_ se réfère à un coup spécial par Alice qui fait blind-play immédiatement à Bob sa _Second Finesse Position_, _Third Finesse Position_ ou _Fourth Finesse Position_, respectivement. Comme les _Bluffs_, elles ne peuvent pas être différées. Les types les plus courants de ces coups sont donnés ci-dessous.
+- **5CE**. Si Alice donne une _Play Clue_ par couleur à un 5 frais, et que Bob voit qu'il devrait blind-play **deux cartes ou plus** pour réaliser cette promesse, on s'accorde à ce que ce ne soit pas du tout une _Play Clue_, mais une [_5 Color Ejection (5CE)_](level-16.mdx#the-5-color-ejection-5ce). Bob doit immédiatement blind-play sa _Second Finesse Position_.
+- **UTD**. Parfois, Alice peut donner une _Play Clue_ à une carte qui est trash, mais le receveur de la clue ne peut pas le savoir. Dans ce cas, le reste de l'équipe doit blind-play quelque chose pour signaler au receveur de la clue d'éviter que la carte ne bombe.
+  - Dans certains cas, blind-play une seule carte suffit à prouver que la carte est trash. Par exemple, si Cathy reçoit une clue de 1, et que Bob blind-play en réponse à la clue, alors Cathy sait que le 1 focalisé est trash.
+  - Cela s'appelle un [_Trash Bluff_](level-14.mdx#the-trash-bluff) ou [_Trash Finesse_](level-14.mdx#the-trash-finesse), et promet que toutes les cartes touchées sont trash.
+  - Si un seul blind-play **ne** resynchroniserait **pas** l'équipe, alors un coup différent est requis : un [_Unknown Trash Discharge (UTD)_](level-16.mdx#the-unknown-trash-discharge-1-for-1-form-utd). Bob doit immédiatement blind-play sa _Third Finesse Position_.
+  - Une fois que cela arrive, le receveur de la clue marque la carte focalisée comme trash. Cependant, le _Good Touch_ s'applique encore à toute autre carte touchée (contrairement au _Trash Bluff_ ou _Trash Finesse_).
+- **4 Charm**. Si Alice donne une _Play Clue_ à un 4 frais, et que Bob voit qu'il devrait blind-play **trois cartes ou plus** pour réaliser cette promesse, on s'accorde à ce que ce ne soit pas du tout une _Play Clue_. Bob s'attendrait normalement à un _Double Bluff_, mais parfois Bob peut aussi exclure cette interprétation parce que la _Finesse Position_ de Cathy n'est pas jouable. Dans ce cas, la clue d'Alice déclenche plutôt un [_4 Charm_](level-23.mdx#the-4-charm). Bob doit immédiatement blind-play sa _Fourth Finesse Position_.
+
+### Ignition
+
+- Un [_Double Ignition_](level-21.mdx#double-ignition-di) est un coup qui fait
+  blind-play à deux joueurs leur _Finesse Position_.
+  - Si Alice donne la clue, alors Bob, et le dernier joueur avec une carte jouable,
+    doivent blind-play.
+- Quand on n'est pas dans une situation de stalling, plusieurs coups « inutiles » déclenchent un _Double Ignition_ :
+  - **Replay Double Ignition**. Un [_Replay Double Ignition_](level-21.mdx#the-replay-double-ignition-rdi) est déclenché en re-cluant une carte jouable globalement connue.
+  - **Poke Double Ignition**. Un [_Poke Double Ignition_](level-21.mdx#the-poke-double-ignition-pdi) est déclenché en re-cluant une carte trash globalement connue.
+  - **Trash Double Ignition**. Vers la fin de la partie, le [_Trash Double Ignition_](level-21.mdx#the-trash-double-ignition-tdi) est déclenché en cluant de nouvelles cartes trash, quand le coup ne peut pas être confondu avec un _Trash Chop Move_ (off-chop) ou un _Trash Push_ (on chop).
+- **Chop Move Ignition**. Un [_Chop Move Ignition_](level-21.mdx#the-chop-move-ignition-cmi-with-1-card-chop-moved) est déclenché en _Chop Moving_ une carte qui aurait pu simplement recevoir une _Play Clue_ directe. (Il n'appelle qu'un seul blind-play, contrairement aux précédents _Double Ignitions_.)
+
+## 5 Tech
+
+- Jusqu'ici, la précédence pour les coups « spéciaux » de 5 est _5 Save_ > _5 Stall_ > _5's Chop Move_ > _Play Clue_.
+- On définit la [_Low Score Phase_](level-19.mdx#the-low-score-phase-and-the-normal-score-phase) comme la période où le score est au plus deux fois le nombre de couleurs.
+- Dans la _Low Score Phase_, **les clues number 5 ne sont pas des _Play Clues_**. Donc, si Alice donne une clue number 5 à un 5 qui est two-or-more-away-from-chop, et qu'un _5 Stall_ peut être exclu, alors une interprétation différente est nécessaire. L'équipe doit réagir en fonction de la carte qui est à droite du 5 touché :
+  - **5 Pull**. L'interprétation habituelle est un [_5 Pull_](level-19.mdx#the-5-pull), qui appelle au blind-play de la carte à droite du 5. On dit que la carte est _Pulled_.
+  - Les _5 Pulls_ peuvent aussi déclencher des _Prompts_ et _Finesses_ comme une _Play Clue_ normale.
+  - Cependant, si un blind-play est nécessaire, on exige que la première carte blind-play soit détenue par quelqu'un entre Alice et le joueur _Pulled_. (Cela limite le nombre de possibilités que le joueur _Pulled_ doit considérer.)
+  - **5NE**. Cependant, si Bob aurait besoin de deux blind-plays ou plus pour réaliser une promesse sur la carte _Pulled_, on s'accorde à utiliser plutôt une interprétation différente : Bob doit réagir avec une _Ejection_ (en blind-play immédiatement le slot 2). Cela s'appelle une [_5 Number Ejection_](level-19.mdx#the-5-number-ejection-5ne), comme une _5CE_.
+  - **5ND**. Enfin, si la carte _Pulled_ est en fait trash, alors Bob doit réagir avec une _Discharge_ (en blind-play immédiatement le slot 3). Cela s'appelle une [_5 Number Discharge_](level-19.mdx#the-5-number-discharge-5nd), comme une _UTD_.
+
+## Coups Inutiles
+
+- Un [_Unnecessary Move_](level-24.mdx#unnecessary-moves) est un coup « compliqué » qui aurait pu être une simple _Play Clue_ normale, sans autres avantages (comme récupérer des cartes supplémentaires ou compléter de l'information).
+- Si Alice effectue un _Unnecessary Move_, une chose « supplémentaire » est requise :
+  - Si le coup utilisait de la trash connue, la chose « supplémentaire » est une _Ignition_ sur Bob.
+  - Si le coup utilisait de la trash inconnue off-chop, la chose « supplémentaire » est un _Chop Move_ sur le receveur de la clue.
+  - Si le coup utilisait de la trash inconnue on-chop, la chose « supplémentaire » est un _Trash Push_ sur le receveur de la clue.
+
+## Priority
+
+- Quand un joueur a deux cartes connues, on s'accorde sur un ordre dans lequel les cartes doivent être jouées. L'ordre de précédence est [donné dans une table de _Priority_](level-25.mdx#the-priority-prompt--the-priority-finesse), mais il est assez intuitif et correspond généralement à ce qu'on attend.
+  - En bref : jouez les cartes qui mènent dans les mains des autres si possible. Sinon, jouez les 5 pour récupérer une clue ; puis jouez les cartes de plus bas rang de gauche à droite.
+- Si un joueur choisit de jouer une carte entièrement connue qui n'a **pas** de Priority, et que rien de spécial ne se passe, alors cela promet que la carte « suivante » est dans la main de quelqu'un d'autre.
+  - Comme avec les autres promesses, cela déclenche soit un [_Priority Prompt ou Priority Finesse_](level-25.mdx#the-priority-prompt--the-priority-finesse). Cela peut aussi être layered. Il est aussi possible d'effectuer un [_Priority Bluff_](level-25.mdx#the-priority-bluff).
+  - Il est aussi permis d'utiliser la _Priority_ pour obtenir la prochaine carte même si elle n'est pas en _Finesse Position_ ; cependant, cela force quelqu'un à donner une _Play Clue_ au joueur avec la carte pour empêcher un misplay imminent (puisqu'il pensera que c'est une _Priority Finesse_ sinon). Ce type de _Play Clue_ s'appelle une [_Load Clue_](level-25.mdx#the-load-clue).
+- Normalement, la _Priority_ n'est déclenchée qu'en jouant des cartes connues, pas par des cartes inconnues. Cependant, si jouer une carte inconnue est manifestement très idiot, la _Priority_ est quand même déclenchée.

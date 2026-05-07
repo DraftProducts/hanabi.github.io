@@ -1,0 +1,37 @@
+---
+id: 2-save-question-3
+title: Le 2 Save (Question 3)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import TwoSaveQuestion3 from "../../docs/beginner/2-save-question-3/2-save-question-3.yml";
+import TwoSaveAnswer3 from "../../docs/beginner/2-save-question-3/2-save-answer-3.yml";
+
+<BeginnersGuideProgress id="2-save-question-3" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Quelle action Alice doit-elle effectuer ?
+
+<TwoSaveQuestion3 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Alice n'a pas le droit d'effectuer un _[2 Save](./2-save.mdx)_ sur le green 2 de Bob car l'autre copie du green 2 est présente dans la main de Cathy et n'est pas en [chop](./chop.mdx).
+- Alice n'a pas le droit d'effectuer un _2 Save_ sur le yellow 2 de Cathy car l'autre copie du yellow 2 est présente dans la main de Bob et n'est pas en chop.
+- Ainsi, Alice doit défausser.
+
+<TwoSaveAnswer3 />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,181 @@
+---
+title: Level 2 - Mouvements de Base
+---
+
+import DoublePrompt from "../docs/level-2/double-prompt.yml";
+import DoubleFinesse1 from "../docs/level-2/double-finesse-1.yml";
+import DoubleFinesse2 from "../docs/level-2/double-finesse-2.yml";
+import PromptFinesse from "../docs/level-2/prompt-finesse.yml";
+import ReverseFinesse from "../docs/level-2/reverse-finesse.yml";
+import SelfFinesse from "../docs/level-2/self-finesse.yml";
+import WrongPrompt from "../docs/level-2/wrong-prompt.yml";
+
+- Les stratégies du Level 2 peuvent être apprises après quelques parties d'expérience.
+- Avez-vous joué un bon nombre de parties au level 1 ? Si non, alors **arrêtez de lire immédiatement**, car continuer à lire vous rendrait en réalité un moins bon joueur. Pratiquez beaucoup les fondamentaux d'abord (10+ parties au strict minimum), puis revenez. (Connaître des « mouvements supplémentaires » fait souvent que les nouveaux joueurs font des choses compliquées sans raison, ce qui les rend pénibles à jouer avec.)
+
+## Mouvements Spéciaux
+
+### Le 5 Stall (Cluer des 5 Off Chop)
+
+- Normalement, vous n'êtes autorisé à donner un _[Save Clue](beginner/save-clues.mdx)_ à un 5 que s'il est sur le chop. Donc, si vous utilisez le nombre 5 pour cluer un 5 qui n'est **pas** sur le chop, alors cela ressemblera typiquement à un _[Play Clue](beginner/play-clues.mdx)_ sur ce 5 (ou à une autre stratégie avancée).
+- En tant qu'exception spéciale, dans l'_Early Game_, vous **êtes** autorisé à cluer le nombre 5 comme un _Save Clue_ sur des 5 off chop. Faire cela est juste interprété comme un clue « stall » et indique que vous essayez d'étendre l'_Early Game_ un peu plus longtemps.
+- Normalement, les _5 Stalls_ ne sont effectués que dans l'_Early Game_. Cependant, vous pourriez voir quelqu'un faire un _5 Stall_ dans le _Mid-Game_ s'il est dans une situation spéciale où il n'est pas autorisé à défausser.
+- Pour les joueurs de level 9, il y a [des règles supplémentaires](level-9.mdx#the-5-stall-intermediate-section) concernant le _5 Stall_.
+- Pour les joueurs de level 19, il y a une [interaction spéciale entre les _2 Saves_ et les _5 Stalls_](level-19.mdx#interaction-between-2-saves--5-stalls).
+
+### Le Double Prompt / Triple Prompt / Quadruple Prompt
+
+- Parfois, quelqu'un peut donner un _[Prompt](beginner/prompt.mdx)_ qui prompte **deux** (ou plus) cartes avec un seul clue, ce qui est plutôt bien.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 est joué sur les stacks.
+  - Alice clue rouge à Cathy, ce qui touche un red 4. Ce doit être un _Play Clue_, parce que le red 4 n'est pas sur le chop.
+  - Bob a deux cartes rouges cluées dans sa main. Puisque Alice a indiqué que le red 4 doit être playable maintenant, il sait que ses deux cartes rouges doivent être un red 2 et un red 3 (dans l'ordre de gauche à droite).
+  - Bob joue la carte la plus à gauche comme red 2. À son tour suivant, il joue l'autre carte rouge comme red 3.
+
+<DoublePrompt />
+
+### Le Double Finesse / Triple Finesse / Quadruple Finesse
+
+- Typiquement, les _[Finesses](beginner/finesse.mdx)_ sont effectués en cluant une carte _one-away-from-playable_. Cependant, il est possible de faire blind-play à deux personnes différentes leurs cartes consécutivement si vous donnez un clue à une carte _two-away-from-playable_. C'est très efficace, car c'est un clue 3-for-1.
+- Par exemple, dans une partie à 4 joueurs :
+  - Red 1 est joué sur les stacks.
+  - Alice clue rouge à Donald, ce qui touche un red 4.
+  - Bob joue red 2 depuis sa _Finesse Position_.
+  - Cathy joue red 3 depuis sa _Finesse Position_.
+  - Donald joue red 4.
+
+<DoubleFinesse1 />
+
+- De même, il est possible de faire blind-play 2 cartes consécutives à un seul joueur. Dans cette situation, puisqu'il voit que les cartes promises ne sont pas dans les mains des autres, il blind-playera deux tours d'affilée, jouant de gauche à droite.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue rouge à Cathy, touchant un red 3.
+  - Bob blind-play red 1 depuis le slot 1.
+  - Cathy penserait normalement qu'elle a red 2, qui se connecterait au red 1 qui vient d'être joué. Cependant, elle voit que quand le clue a eu lieu, il y avait un red 2 à côté du red 1.
+  - Ainsi, Cathy défausse, donnant à Bob une chance de blind-play le red 2. S'il ne le blind-play pas, alors c'était un _Finesse_ normal et elle a red 2. S'il le blind-play, alors c'était un _Double Finesse_ et elle a red 3.
+  - À son tour suivant, Bob blind-play red 2 depuis le slot 2. Cathy sait maintenant qu'elle a le red 3.
+
+<DoubleFinesse2 />
+
+### Le Prompt + Finesse
+
+- En général, rappelez-vous que les joueurs supposent toujours les _Prompts_ avant les _Finesses_. Ainsi, il est possible de donner un clue qui _Prompte_ une carte de la main d'un joueur **puis** lui fait blind-play sa carte de _Finesse Position_ au tour suivant.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 est joué sur les stacks.
+  - Bob a une carte rouge cluée dans sa main au slot 4.
+  - Alice clue rouge à Cathy, ce qui touche un red 4 comme _Play Clue_.
+  - Bob sait qu'il doit avoir à la fois red 2 et red 3 (afin de rendre le red 4 playable), mais il n'a qu'une seule carte rouge cluée dans sa main. Donc ce doit être à la fois un _Prompt_ sur lui et un _Finesse_ sur lui en même temps.
+  - Puisque les _Prompts_ ont la précédence sur les _Finesses_, il joue d'abord la carte rouge cluée depuis le slot 4. C'est red 2 et il joue avec succès.
+  - Normalement, Cathy penserait qu'elle a un red 3. Cependant, comme elle a vu un red 3 sur la _Finesse Position_ de Bob au moment du clue, elle attend un tour pour lui donner une chance de le jouer. Si Bob ne blind-play rien, alors Cathy devrait avoir le red 3, et elle peut le jouer à son tour suivant.
+  - À son tour suivant, Bob blind-play le slot 2 comme red 3. (Sa _Finesse Position_ au moment du clue était le slot 1, mais il a tiré une carte, et maintenant elle a glissé au slot 2.)
+  - Cathy sait maintenant qu'elle a le red 4 connectant.
+
+<PromptFinesse />
+
+### Le Reverse Finesse
+
+- Dans un _Finesse_ normal, vous donnez un clue à un joueur qui vient après le joueur qui blind-play une carte.
+  - i.e. clue --> blind-play --> la carte cluée joue
+- Si vous donnez un clue de _Finesse_ à quelqu'un qui a un tour **avant** que le blind-play se produise, c'est appelé un _Reverse Finesse_. C'est plus compliqué qu'un _Finesse_ normal et plus difficile à voir.
+  - i.e. clue --> le joueur clué fait une action sans rapport --> blind-play --> la carte cluée joue
+- À cause des _Reverse Finesses_, les joueurs doivent être prudents avant de jouer toute carte. Les joueurs dans cette situation doivent vérifier la _Finesse Position_ de tout le monde. Si une carte sur la _Finesse Position_ de quelqu'un est playable et « connecte » au clue, alors **ils devraient différer le jeu de la carte cluée** pendant au moins un tour de table et attendre de voir ce qui se passe.
+- Si un blind-play se produit, alors cela signifie que la carte cluée est la prochaine carte de la chaîne.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue rouge à Bob, touchant son red 2.
+  - Ensuite, c'est le tour de Bob. Normalement, Bob penserait qu'il a le red 1, et le jouerait immédiatement.
+  - Cependant, Bob remarque aussi que Cathy a un red 1 sur sa position slot 1. Ainsi, il doit donner une chance à Cathy de prouver si oui ou non un _Reverse Finesse_ est en train de se produire. Si Cathy ne blind-play rien, alors Bob devrait avoir le red 1, et il peut le jouer à son tour suivant.
+  - Bob défausse.
+  - Cathy blind-play le red 1. Bob sait maintenant qu'il a le red 2 connectant.
+
+<ReverseFinesse />
+
+- Si le joueur avec la carte « connectante » **ne blind-play pas**, alors la carte cluée est probablement l'autre copie, et peut être jouée au tour suivant.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le contexte est le même que dans l'exemple précédent. Bob est clué rouge, donc il suspecte qu'un _Reverse Finesse_ est en cours et défausse.
+  - Cathy fait une action sans rapport.
+  - Maintenant Bob sait que la carte rouge dans sa main est en réalité le red 1.
+
+### Le Self-Finesse
+
+- Il est aussi possible d'effectuer un _Finesse_ sur un joueur en lui donnant **à lui** un clue.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice clue nombre 3 à Cathy, touchant un 3 au slot 2.
+  - Bob défausse.
+  - Cathy sait que c'était un _Play Clue_ sur le 3, mais il n'y a pas de 3 directement playables. Ainsi, quelqu'un doit avoir le 2 connectant. Puisque Bob a défaussé, Cathy doit être celle qui a le 2 connectant.
+  - Ainsi, Cathy joue sa carte de _Finesse Position_ comme **n'importe quel** 2. C'est un red 2 et il joue avec succès.
+  - Cathy sait maintenant que son 3 doit se connecter au 2, donc elle marque son 3 comme red 3.
+
+<SelfFinesse />
+
+- Notez que les _Self-Finesses_ peuvent être difficiles à effectuer parce que le joueur recevant le clue ne considérera **uniquement** la possibilité d'un _Self-Finesse_ **que s'il n'y a aucune autre possibilité** pour le clue. Par exemple :
+  - Si le clue ressemble à ce qu'il _pourrait_ être juste un _Play Clue_ direct, alors le receveur du clue ne blind-playera rien – il jouera simplement la carte qui a été cluée.
+  - Si le clue ressemble à ce qu'il _pourrait_ être un _Prompt_, alors le receveur du clue ne jouera rien et supposera que c'est un _Prompt_. (Au moins, jusqu'à ce que l'autre joueur ait eu une chance de jouer la carte _Prompted_.)
+  - Si le clue ressemble à ce qu'il _pourrait_ être un _Reverse Finesse_, alors le receveur du clue ne jouera rien et supposera que c'est un _Reverse Finesse_. (Au moins, jusqu'à ce que l'autre joueur ait eu une chance de blind-play la carte.)
+
+## Principes Généraux
+
+### Trash
+
+- Les cartes _Trash_ sont définies comme des cartes qui ne peuvent jamais jouer sur les stacks ou des cartes qui ont une autre copie qui est cluée dans la main de quelqu'un. Ainsi, les cartes _Trash_ sont inutiles à l'équipe.
+- Les joueurs devraient généralement éviter de « toucher » les cartes trash avec un clue, car le faire violerait le _Good Touch Principle_.
+  - Rarement, il peut être utile de cluer délibérément une carte trash et de violer le _Good Touch Principle_ afin d'effectuer un mouvement spécial. Plusieurs de ces mouvements seront couverts plus tard.
+- Dans le cas où une couleur est partiellement « morte », les cartes inutiles sont également considérées comme trash. Par exemple, si les deux copies du red 3 ont été défaussées, alors le red 4 et le red 5 sont tous deux considérés comme trash.
+
+### Cartes One-Away-From-Playable
+
+- Comme noté dans la section précédente, parfois des cartes non-cluées se trouvent être _playable_.
+- De plus, parfois des cartes non-cluées se trouvent être _one-away-from-playable_.
+- Une carte est _one-away-from-playable_ si une seule autre carte aurait besoin de recevoir un _Play Clue_ ou un _Delayed Play Clue_ afin de rendre la carte _playable_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Aucune carte rouge n'est jouée sur les stacks.
+  - Aucun joueur n'a de red 1 dans sa main.
+  - Bob a un red 2 avec un clue de nombre 2 dessus. (Il a été sauvegardé avec un clue _2 Save_ plus tôt.)
+  - Cathy a un red 3 non-clué dans sa main.
+  - Alice sait que le red 3 non-clué est actuellement _one-away-from-playable_, parce qu'il n'y a qu'une seule carte nécessaire pour rendre la carte _playable_ – le red 1.
+- En tant que catégorie, les cartes _one-away-from-playable_ sont intéressantes :
+  - Elles ne sont pas assez précieuses pour justifier de les cluer directement. (En d'autres termes, ce ne sont pas des cibles légales pour les _Play Clues_ ou les _Save Clues_, donc nous devons les laisser être défaussées.)
+  - Elles sont plus précieuses que les cartes _two-away-from-playable_, parce qu'elles pourraient devenir _playable_ à tout moment.
+- Pour cette raison, même si les cartes _one-away-from-playable_ ne peuvent pas recevoir de clues, les joueurs essaient de les garder le plus longtemps possible.
+
+## Erreurs Communes
+
+### Stomping on a Finesse
+
+- C'est le terme utilisé pour quand un joueur clue directement une carte qui allait être blind-play depuis un _Finesse_. Typiquement, cela signifie que le joueur qui a donné le clue n'était pas attentif et n'a pas vu qu'un _Finesse_ avait eu lieu du tout.
+- _Stomping_ sur un _Finesse_ gaspille un clue pour l'équipe.
+
+### Que Faire Après un Strike
+
+- Quand une carte est mal jouée et va dans la pile de défausse, l'équipe accumule un _strike_ (qui est aussi appelé un _bomb_).
+- Si trois strikes sont accumulés, l'équipe obtiendra un score de 0. Cela doit être **évité à tout prix**.
+  - Une exception est lorsque les joueurs visent explicitement un score parfait dans une variante vraiment difficile, mais c'est moins courant.
+- En s'appuyant sur ce concept, il peut aussi être **très mauvais** d'obtenir **deux strikes d'affilée**. Par exemple, disons qu'Alice effectue un mauvais clue et que Bob misplay, causant un strike. Et puis Cathy « croit toujours » au clue original (pensant que Bob était celui qui a fait l'erreur au lieu d'Alice), et Cathy continue à misplay, causant encore un autre strike.
+- Donc, en général, nous voulons **limiter les erreurs à un seul strike**. Pourquoi ? Puisque Hanabi est si difficile, les erreurs sont communes, et nous ne voulons pas pousser l'équipe au précipice de l'échec après une seule erreur.
+- Cela signifie que quand un strike se produit, **l'état de l'information devrait être « réinitialisé »** à ce qu'il était avant que l'erreur ne se produise.
+  - Spécifiquement, les card notes qui ont été faites depuis l'erreur doivent être supprimées. L'information explicite des clues n'est pas réinitialisée.
+- Par exemple, si Alice clue rouge à Cathy, et Bob misplay une carte, alors Cathy ne devrait **pas** continuer à jouer aucune de ses cartes rouges, et Cathy ne devrait **pas** faire de suppositions sur ce que ses cartes rouges pourraient être. Évidemment, une sorte d'erreur s'est produite, et Cathy devrait s'asseoir et attendre patiemment d'autres instructions.
+- Cette convention sur ce qu'il faut faire après un strike s'applique à tous les niveaux.
+
+### Le Wrong Prompt
+
+- D'abord, voyez la section sur [que faire après un strike](#que-faire-après-un-strike).
+- Normalement, après qu'un strike se produit, vous êtes censé vous détendre et ne pas faire de suppositions supplémentaires.
+- Cependant, il y a une exception majeure. Une erreur courante à Hanabi est de tenter d'effectuer un _Finesse_ quand il y a une carte cluée correspondante dans la main de ce joueur. Puisque les _Prompts_ ont la précédence sur les _Finesses_, le joueur jouera toujours sa carte cluée correspondante en premier.
+- Quand une carte est _Prompted_ et qu'elle misplay, tout le monde peut interpréter cette erreur – c'était presque certainement un _Wrong Prompt_, signifiant que le joueur qui a donné le clue avait probablement l'intention que la carte de _Finesse Position_ joue à la place.
+- Ainsi, s'il n'y a rien d'autre de spécial dans la situation, le joueur qui a misplay devrait continuer à jouer sa carte de _Finesse Position_ au tour suivant.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 1 sont joués sur les stacks.
+  - Alice voit que Bob a un red 2 sur sa _Finesse Position_.
+  - Alice clue rouge à Cathy, touchant un red 3 comme _Play Clue_. Elle essaie d'effectuer un _Finesse_.
+  - Bob voit qu'Alice signale qu'il a le red 2. Ce doit être un _Prompt_, donc Bob joue sa carte rouge cluée comme red 2.
+  - Cependant, c'est en réalité un red 4 et il misplay. Oups ! Alice a oublié que Bob avait une carte rouge cluée dans sa main.
+  - Bob sait que c'était un _Wrong Prompt_. Il a vraiment le red 2 et il était sur sa _Finesse Position_ au moment du clue.
+  - À son tour suivant, Bob blind-play son slot 2. (C'est sur le slot 2 maintenant parce qu'il a tiré une carte quand il a misplay le red 4.)
+
+<WrongPrompt />
+
+## Questions de Défi
+
+Si vous êtes nouveau au level 2, voyez si vous pouvez compléter [ces questions de défi](challenge-questions/level-2.mdx).

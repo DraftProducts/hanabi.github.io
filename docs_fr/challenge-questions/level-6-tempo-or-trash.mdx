@@ -1,0 +1,44 @@
+---
+title: Tempo ou Trash ?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-6-tempo-or-trash/question.yml";
+import Answer from "../../docs/challenge-questions/level-6-tempo-or-trash/answer.yml";
+
+<ChallengeQuestionProgress level={6} id="level-6-tempo-or-trash" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- La carte red 2 est jouée sur les stacks.
+- Alice a une carte red en slot 3, promise comme étant un red 4 jouable.
+- Bob a un 5 inconnu, sauvé sur le chop.
+- Cathy a une carte red en slot 2, promise comme étant un red 3 jouable.
+- Alice donne ensuite une clue red à Bob, qui touche une carte red en slot 1 et remplit le red 5 précédemment inconnu en slot 5.
+- Quelles actions Bob effectuera-t-il à son tour ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Dans cette situation, le focus de la clue red est ambigu :
+  - Si la clue red était focused sur la "nouvelle" carte du slot 1, alors le focus serait du _Trash_, donc le coup résultant serait un [_Trash Chop Move_](../level-4.mdx#the-trash-chop-move-tcm) sur les slots 2, 3 et 4.
+  - Si la clue red était focused sur le slot 5 déjà clued, alors le focus serait le red 5 précédemment inconnu pour être jouable, donc le coup résultant serait un [_Tempo Clue Chop Move_](../level-6.mdx#the-tempo-clue-chop-move-tccm) sur le slot 4.
+  - Bob sait aussi que les _Tempo Clue Chop Moves_ ont précédence sur les _Trash Chop Moves_.
+  - Ainsi, dans cette situation, Bob ne devrait _Chop Move_ que la carte du slot 4.
+  - Bob écrit "cm" sur sa carte du slot 4 et procède à donner une clue sans rapport ou défausse sa carte du slot 1.
+
+<Answer />
+
+</TabItem>
+</Tabs>

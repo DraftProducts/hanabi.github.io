@@ -1,0 +1,37 @@
+---
+title: Reverse, I ?
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-2-reverse-i/question.yml";
+import Answer from "../../docs/challenge-questions/level-2-reverse-i/answer.yml";
+
+<ChallengeQuestionProgress level={2} id="level-2-reverse-i" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Alice clue numéro 2 à Bob, ce qui touche un yellow 2 en slot 5.
+- Bob défausse du trash du slot 4.
+- Du point de vue de Cathy, la clue d'Alice était-elle une [_Reverse Finesse_](../level-2.mdx#the-reverse-finesse) ? Pourquoi ou pourquoi pas ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Non, ce n'est pas une _Reverse Finesse_.
+- Puisque le yellow 2 était sur le chop, Alice a effectué un [_2 Save_](../level-1.mdx#the-2-save) normal.
+
+<Answer />
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,42 @@
+---
+title: Interprétation des Clues (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ClueInterpretationQuestion2 from "../../docs/beginner/clue-interpretation-question-2/clue-interpretation-question-2.yml";
+import ClueInterpretationAnswer2 from "../../docs/beginner/clue-interpretation-question-2/clue-interpretation-answer-2.yml";
+
+<BeginnersGuideProgress id="clue-interpretation-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Bob a une main complètement non-cluée.
+- Alice clue number 2 à Bob, touchant le slot 5.
+
+1. Quel slot est focalisé ?
+1. Est-ce une _[Play Clue](./play-clues.mdx)_ ou une _[Save Clue](./save-clues.mdx)_ ?
+1. Quelle _[card note](./card-notes.mdx)_ Bob écrit-il sur sa carte du slot 5 ?
+
+<ClueInterpretationQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+1. Le slot 5 est focalisé.
+1. C'est une _Play Clue_.
+   - (Normalement, cela ressemblerait à une clue _[2 Save](./2-save.mdx)_, mais tous les 2 sont actuellement jouables. Donc ce ne peut pas être un _2 Save_ et c'est juste une simple _Play Clue_.)
+1. Bob écrit une _card note_ « y2, g2 ».
+
+<ClueInterpretationAnswer2 />
+
+</TabItem>
+</Tabs>

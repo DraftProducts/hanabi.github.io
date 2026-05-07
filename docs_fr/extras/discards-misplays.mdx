@@ -1,0 +1,114 @@
+---
+title: Discards & Misplays
+---
+
+import CautiousGenerationDiscard from "../../docs/extras/discards-misplays/cautious-generation-discard.yml";
+import PromiseClue from "../../docs/extras/discards-misplays/promise-clue.yml";
+
+### Le Sarcastic Discard (SD)
+
+- Le _Sarcastic Discard_ est traité au [niveau 3](../level-3.mdx#the-sarcastic-discard-sd).
+
+### Le Scream Discard
+
+- Le _Scream Discard_ est traité au [niveau 7](../level-7.mdx#the-scream-discard-chop-move-sdcm). (Un _Scream Discard_ provoque toujours un _Scream Discard Chop Move_, donc ce coup est aussi listé sur [la page _Chop Moves_](chop-moves.mdx#the-scream-discard-chop-move-sdcm).)
+
+### Le Shout Discard
+
+- Le _Shout Discard_ est traité au [niveau 7](../level-7.mdx#the-shout-discard-chop-move). (Un _Shout Discard_ provoque toujours un _Shout Discard Chop Move_, donc ce coup est aussi listé sur [la page _Chop Moves_](chop-moves.mdx#the-shout-discard-chop-move).)
+
+### Le Generation Discard
+
+- Le _Generation Discard_ est traité au [niveau 7](../level-7.mdx#the-generation-discard).
+
+### Le Positional Discard
+
+- Le _Positional Discard_ est traité au [niveau 8](../level-8.mdx#the-positional-discard-indicating-a-play-with-a-discard).
+
+### Le Positional Misplay
+
+- Le _Positional Misplay_ est traité au [niveau 8](../level-8.mdx#the-positional-misplay-indicating-a-play-with-a-misplay).
+
+### Le Double Positional Misplay
+
+- Le _Double Positional Misplay_ est traité au [niveau 8](../level-8.mdx#the-double-positional-misplay-indicating-two-plays-with-a-misplay).
+
+### Le Gentleman's Discard (GD)
+
+- Le _Gentleman's Discard_ est traité au [niveau 10](../level-10.mdx#the-gentlemans-discard-gd).
+
+### Le Layered Gentleman's Discard (GD)
+
+- Le _Layered Gentleman's Discard_ est traité au [niveau 10](../level-10.mdx#the-layered-gentlemans-discard).
+
+### Le Baton Discard (BD)
+
+- Le _Baton Discard_ est traité au [niveau 10](../level-10.mdx#the-baton-discard-bd).
+
+### Le Certain Discard
+
+- Le _Certain Discard_ est traité au [niveau 10](../level-10.mdx#the-certain-finesse--the-certain-discard).
+
+### Le Sacrifice Discard
+
+- Le _Sacrifice Discard_ est traité au [niveau 22](../level-22.mdx#the-sacrifice-discard).
+
+### Le Echo Scream Discard
+
+- Le _Echo Scream Discard_ est traité au [niveau 22](../level-22.mdx#the-echo-scream-discard-chop-move-esdcm). (Un _Echo Scream Discard_ provoque toujours un _Echo Scream Discard Chop Move_, donc ce coup est aussi listé sur [la page _Chop Moves_](chop-moves.mdx#the-echo-scream-discard-chop-move-esdcm).)
+
+### Le Composition Discard
+
+- Le _Composition Discard_ est traité au [niveau 22](../level-22.mdx#the-composition-discard).
+
+### Le Rebellious Discard
+
+- Le _Rebellious Discard_ est traité au [niveau 22](../level-22.mdx#the-rebellious-discard).
+
+### Le Blaze Discard
+
+- Le _Blaze Discard_ est traité au [niveau 23](../level-23.mdx#the-blaze-discard).
+
+### Le Cautious Generation Discard
+
+- Tout d'abord, voir la section sur le _[Generation Discard](../level-7.mdx#the-generation-discard)_.
+- Souvent, un joueur aura une carte cluée dans sa main, mais ne connaîtra pas encore son identité exacte. Dans ces situations, le joueur peut penser que l'équipe a besoin d'une carte jouable dans la main de quelqu'un d'autre, alors que l'équipe l'a déjà.
+- Par exemple, dans une partie à 3 joueurs :
+  - Le red 3 est joué sur les stacks. Aucune carte bleue n'est jouée sur les stacks.
+  - Alice a un blue 1 dans sa main. Elle connaît son identité exacte, donc il est connu comme jouable.
+  - Alice a aussi un 4 clué dans sa main. Elle ne sait pas de quelle couleur il est.
+  - Il y a 0 clue, donc si Alice joue le blue 1, Bob sera forcé de défausser.
+  - Alice voit que Cathy a un red 4 sur chop, qui est jouable. Si Alice n'a pas le red 4 dans sa main, alors Cathy pourrait potentiellement défausser le red 4 (après que Bob soit forcé de défausser).
+- Ici, si Alice n'a pas de red 4, alors faire un _Generation Discard_ pour le red 4 de Cathy serait nécessaire. D'autre part, si Alice a un red 4, alors faire un _Generation Discard_ pour le red 4 de Cathy serait redondant.
+- Pour couvrir les deux cas, Alice _doit_ adopter l'approche la plus conservatrice et toujours effectuer un _Generation Discard_. Ces types de _Generation Discards_ sont appelés _Cautious Generation Discards_ pour les différencier du type plus ordinaire.
+- Après qu'un _Cautious Generation Discard_ se produit, le prochain joueur est mis dans une situation délicate : était-ce vraiment un _Generation Discard_ (pour Cathy) ? Ou est-ce que cela pourrait être un _Scream Discard_ (pour Bob) ? Pour couvrir les deux cas, le prochain joueur ne devrait pas _Chop Move_, mais il ne devrait pas non plus défausser à son tour.
+- Par exemple, en continuant le scénario d'avant :
+  - Alice ne sait pas si l'équipe a besoin du red 4 de Cathy ou non, donc Alice est forcée d'effectuer un _Cautious Generation Discard_.
+  - Bob voit qu'Alice a en effet déjà le red 4 clué dans sa main. Donc, de son point de vue, si Alice effectuait un _Generation Discard_, ce serait un _Cautious Generation Discard_.
+  - Cependant, il est aussi possible que le coup d'Alice puisse être un _Scream Discard_ pour Bob.
+  - Bob sait que dans cette situation, il doit couvrir les deux cas.
+  - Ainsi, Bob n'effectue pas de _Chop Move_. De plus, il n'a pas besoin de cluer le red 4 sur la chop de Cathy (parce qu'Alice l'a déjà), mais il **va** dépenser un clue d'une autre manière productive. Si Bob n'a rien de productif à faire, il doit _Burn_ un clue, similaire à ce qui se passe quand un _Scream Discard_ se produit.
+
+<CautiousGenerationDiscard />
+
+### Le Promise Clue & le Promise Discard
+
+- Tout d'abord, voir la section sur la _[Certain Finesse](../level-10.mdx#the-certain-finesse--the-certain-discard)_.
+- Quand une _Certain Finesse_ se produit, les joueurs peuvent blind-discard leur carte _Finesse Position_, parce qu'une _Layered Finesse_ est impossible. Cependant, quand une _Finesse_ normale se produit, les joueurs ne peuvent rien blind-discard, juste au cas où une _Layered Finesse_ se produirait.
+- Parfois, après qu'une _Finesse_ a eu lieu, mais avant que la carte promise ait été blind-played, un coéquipier peut trouver une valeur stratégique à dupliquer la carte promise.
+- Si un coéquipier duplique la carte promise en la cluant directement, et que la duplication n'était pas un dernier recours, alors cela **promet** que la carte dupliquée est exactement en _Finesse Position_. Cela s'appelle un _Promise Clue_.
+- Le _Promise Clue_ permet au destinataire de la _Finesse_ de blind-discard la carte comme un _Promise Discard_. (Un _Promise Discard_ est presque exactement comme un _Certain Discard_.)
+- Enfin, du point de vue du joueur recevant le clue, s'il joue la carte dupliquée en premier, alors il devrait savoir que le focus du clue original était sur l'autre carte non dupliquée, et il peut continuer à la jouer ensuite. (Sinon, le clue original serait de valeur assez faible.)
+- Par exemple, dans une partie à 5 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue rouge à Donald, touchant un red 2 comme _Play Clue_. C'est une _Finesse_ sur le red 1 de Cathy.
+  - Bob voit qu'Alice a quatre 1 dans sa main. Ce serait un succulent clue 4-pour-1.
+  - Bob clue le numéro 1 à Alice, touchant quatre 1 : red 1, yellow 1, green 1, et blue 1.
+  - Cathy sait qu'Alice a effectué une _Finesse_ sur elle pour le red 1. Si elle joue le red 1, alors Alice va misplay le red 1 comme un purple 1.
+  - Cathy sait aussi qu'il est possible qu'Alice ait effectué une _Layered Finesse_ sur elle. Par exemple, Cathy pourrait avoir le purple 1 en _Finesse Position_ et le red 1 en _Second Finesse Position_. Si c'était le cas, et que Cathy blind-discardait le purple 1, alors l'équipe pourrait perdre la seule copie visible du purple 1, ce qui serait vraiment mauvais.
+  - Cependant, en raison de la convention _Promise Clue_, Cathy sait que Bob a promis que le red 1 est exactement en _Finesse Position_ et qu'aucune _Layered Finesse_ n'est en cours.
+  - Cathy blind-discard sa carte _Finesse Position_ comme un _Promise Discard_.
+
+<PromiseClue />
+
+- Notez que tant que le clue de duplication touche deux cartes ou plus (par exemple, avec une efficacité de 1-pour-1), l'interprétation _Promise Discard_ a la priorité sur l'interprétation _Unknown Trash Discharge_.

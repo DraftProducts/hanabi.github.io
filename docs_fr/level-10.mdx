@@ -1,0 +1,147 @@
+---
+title: Level 10 - Défausses Spéciales
+---
+
+import GentlemanDiscard from "../docs/level-10/gentleman-discard.yml";
+import LayeredGentlemanDiscard from "../docs/level-10/layered-gentleman-discard.yml";
+import BatonDiscard from "../docs/level-10/baton-discard.yml";
+import SarcasticFinesse from "../docs/level-10/sarcastic-finesse.yml";
+import CertainFinesseDiscard from "../docs/level-10/certain-finesse-discard.yml";
+import CompositionFinesse from "../docs/level-10/composition-finesse.yml";
+import DoubleGentlemanDiscard from "../docs/level-10/double-gentleman-discard.yml";
+
+## Mouvements Spéciaux
+
+### Le Gentleman's Discard (GD)
+
+- D'abord, voyez la section sur le _[Sarcastic Discard](level-3.mdx#le-sarcastic-discard-sd)_.
+- Pour rappel, le _Sarcastic Discard_ est :
+  1. un mouvement qui transfère une **carte cluée** dans la main d'une personne à une **carte cluée** dans la main d'une autre personne
+  1. **nécessaire** pour éliminer la confusion dans l'équipe (parce que du _[Good Touch Principle](beginner/good-touch-principle.mdx)_, nous ne sommes normalement pas censés avoir deux copies de la même carte « touchées » avec un clue)
+  1. fait avec à la fois des cartes playable et des cartes non-playable
+- Il est aussi possible de « transférer » des cartes vers la _Finesse Position_ d'autres joueurs. C'est appelé un _Gentleman's Discard_ pour signifier que l'autre carte était complètement blind plutôt que d'avoir un clue dessus déjà.
+- Le _Gentleman's Discard_ est :
+  1. un mouvement qui transfère une **carte cluée** dans la main d'une personne à la **_Finesse Position_** de la main d'une autre personne
+  1. **non nécessaire** et n'aide pas directement l'équipe, mais peut avoir des effets secondaires utiles
+  1. fait **uniquement avec des cartes playable**
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue nombre 1 à Cathy, touchant un 1.
+  - Bob clue rouge à Cathy, remplissant le 1 déjà touché comme red 1, ainsi que touchant une nouvelle carte, qui doit être un red 2.
+  - Cathy défausse le red 1 connu comme _Gentleman's Discard_.
+  - Alice blind-play sa carte de _Finesse Position_ comme red 1.
+
+<GentlemanDiscard />
+
+- Souvent, faire un _Gentleman's Discard_ retardera les choses et coûtera du _Tempo_ à l'équipe. Ainsi, un _Gentleman's Discard_ qui ralentit les choses n'est bon que s'il y a un autre bénéfice secondaire pour compenser le _Tempo_ perdu (comme retarder la défausse d'une carte précieuse, par exemple).
+- Tout comme les _[Prompts](beginner/prompt.mdx)_ ont la précédence sur les _[Finesses](beginner/finesse.mdx)_, les _Sarcastic Discards_ ont la précédence sur les _Gentleman's Discards_.
+- Il est explicitement illégal d'effectuer un _Gentleman's Discard_ avec un 1 quand les deux autres copies de ce 1 sont sur deux _Finesse Positions_ différentes en même temps.
+- Dans de rares cas, les joueurs peuvent effectuer un _Gentleman's Discard_ sur une carte qui semble avoir plusieurs identités possibles. Cependant, quand cela se produit, **seule** la carte avec la véritable identité est transférée.
+
+### Le Layered Gentleman's Discard
+
+- D'abord, voyez la section sur le _[Gentleman's Discard](#le-gentlemans-discard-gd)_.
+- Une excellente raison de vouloir faire un _Gentleman's Discard_ est si la carte que vous défaussez est aussi derrière des cartes playable. C'est similaire à un _[Layered Finesse](level-5.mdx#le-layered-finesse)_, sauf qu'il a été initié par une défausse au lieu d'un clue.
+- Par exemple, dans une partie à 3 joueurs :
+  - C'est le premier tour et rien n'est joué sur les stacks.
+  - Alice clue nombre 1 à Cathy, touchant un 1.
+  - Bob clue rouge à Cathy, remplissant le 1 déjà touché comme red 1, ainsi que touchant une nouvelle carte, qui doit être red 2.
+  - Cathy défausse le red 1 connu comme _Gentleman's Discard_.
+  - Alice blind-play sa carte de _Finesse Position_ comme red 1, mais c'est green 1.
+  - Alice sait qu'elle est promise le red 1, donc elle blind-playera son slot 2 à son tour suivant.
+
+<LayeredGentlemanDiscard />
+
+### Le Baton Discard (BD)
+
+- D'abord, voyez la section sur le _[Gentleman's Discard](#le-gentlemans-discard-gd)_.
+- Quand un _Gentleman's Discard_ se produit, il transfère une carte playable à la main de quelqu'un d'autre. Mais les joueurs sont aussi autorisés à transférer des cartes unplayable dont ils connaissent l'identité complète. Nous appelons cela un _Baton Discard_ pour le distinguer du plus ordinaire _Gentleman's Discard_.
+- Tout comme un _Gentleman's Discard_, un _Baton Discard_ promet que la carte est exactement sur la _Finesse Position_ de quelqu'un d'autre.
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 est joué sur les stacks.
+  - Alice défausse un red 3 connu.
+  - Bob n'a pas de cartes cluées dans sa main.
+  - Bob regarde la main de Cathy et ne voit pas le red 3. Ainsi, il sait qu'il l'a.
+  - Bob marque sa carte de _Finesse Position_ comme red 3. Pour l'instant, Bob n'a rien d'autre à faire, donc il défausse sa carte chop.
+
+<BatonDiscard />
+
+- Similaire au _Gentleman's Discard_, la carte transférée compte comme étant cluée. (Tous les joueurs devraient écrire une note de exactement la carte transférée. Par exemple, une note de « r3 » serait écrite dans la situation ci-dessus.)
+  - Par la suite, cela signifie que la _Finesse Position_ du joueur se déplacera vers la droite d'un slot.
+- Notez qu'il est **illégal** d'effectuer un _Layered Baton Discard_ ; la carte **doit** être exactement sur _Finesse Position_.
+  - C'est parce qu'un _Layered Baton Discard_ serait asymétrique en information. Puisque la carte n'est pas encore playable, le layer ne se déroulerait pas dans un cadre temporel défini. En d'autres termes, si la carte ne devient pas playable pendant longtemps, le joueur pourrait techniquement défausser la carte sans savoir qu'elle était à l'intérieur d'un layer.
+  - Pour les joueurs de level 23, un _Layered Baton Discard_ serait à la place interprété comme un _[Blaze Discard](level-23.mdx#le-blaze-discard)_.
+- Les _Baton Discards_ sont principalement utiles pour deux raisons principales :
+  1. Pour mieux satisfaire le _Team Distribution Principle_. C'est logique de transférer une carte hors d'une main locked / presque locked à un joueur avec une main « vide » ou une main qui n'a qu'une carte cluée dedans.
+  1. Vous voulez protéger votre propre chop. Si vous défaussez votre chop, l'équipe pourrait perdre une carte _one-away-from-playable_ de haute valeur. Mais si vous transférez une carte à quelqu'un d'autre, cela vous donne quelque chose de « sûr » à faire.
+
+### Le Sarcastic Finesse
+
+- D'abord, voyez la section sur le _[Sarcastic Discard](level-3.mdx#le-sarcastic-discard-sd)_.
+- Imaginez que dans une partie à 3 joueurs :
+  - Rien n'est joué sur les stacks.
+  - Alice a un 2 déjà clué dans sa main. Elle n'a aucune idée de quelle couleur 2 c'est.
+  - Alice initie un _Finesse_ en donnant un _[Play Clue](beginner/play-clues.mdx)_ de couleur rouge à un red 2 dans la main de Cathy.
+  - Bob blind-play le red 1 depuis sa _Finesse Position_.
+  - Dans la plupart des cas, Cathy jouerait maintenant le red 2.
+  - Cependant, dans ce cas, le 2 inconnu d'Alice se trouve être un red 2. Dans cette situation, Cathy est censée effectuer un _Sarcastic Discard_.
+
+<SarcasticFinesse />
+
+- Faire un _Finesse_ qui dupliquerait potentiellement une carte de cette manière est appelé un _Sarcastic Finesse_. Normalement, dupliquer potentiellement une carte est mauvais – cela viole le _Good Touch Principle_ et pourrait mener à un clue gaspillé. Cependant, dupliquer potentiellement une carte avec le _Sarcastic Finesse_ n'est pas mauvais parce que :
+  - Dans le meilleur cas, vous obtenez un « vrai » _Finesse_ (un 2-for-1 ou meilleur).
+  - Dans le pire cas, vous obtenez un 1-for-1 et la connaissance complète d'une carte cluée dans votre propre main qui était précédemment un mystère.
+  - En moyenne, c'est un 1.5-for-1, qui satisfait le _Minimum Clue Value Principle_.
+- Notez que quand vous donnez un _Sarcastic Finesse_, la carte dupliquée dans votre propre main doit être inconnue. Sinon, le receveur du clue pensera simplement que la carte cluée est la prochaine carte de la suite.
+
+### Le Certain Finesse & Le Certain Discard
+
+- D'abord, voyez la section sur le _[Sarcastic Finesse](#le-sarcastic-finesse)_.
+- Imaginez que dans une partie à 3 joueurs :
+  - Red 2 est joué sur les stacks.
+  - Alice a une carte rouge déjà cluée dans sa main. Elle a un clue 4 négatif dessus, donc du _Good Touch Principle_ Alice sait que c'est soit red 3 soit red 5.
+  - Alice effectue un _Reverse Finesse_ en donnant un _Play Clue_ de couleur rouge à un red 4 dans la main de Bob.
+  - Bob défausse.
+  - Cathy sait qu'elle est promise le red 3 dans sa _Finesse Position_.
+
+<CertainFinesseDiscard />
+
+- C'est un exemple de _Certain Finesse_ – c'est similaire au _Sarcastic Finesse_, mais la carte « blind » a été potentiellement dupliquée au lieu de la carte cluée.
+- Dans cette situation, si Alice a vraiment le red 3, Cathy est autorisée à blind-discard sa carte de _Finesse Position_. C'est appelé un _Certain Discard_, parce que Cathy peut être certaine que c'est exactement red 3.
+- En d'autres termes, tout le monde s'accorde à dire qu'effectuer un _Layered Finesse_ sur une carte qui pourrait potentiellement être cluée dans votre propre main est illégal. Ainsi, tout le monde peut être certain qu'il peut blind-discard en toute sécurité une carte pour la repasser à quelqu'un qui a potentiellement dupliqué.
+- Notez que les joueurs sont **uniquement autorisés** à faire un _Certain Discard_ s'ils savent qu'ils n'ont pas été _[Bluffed](level-11.mdx#le-bluff)_. Cela signifie que les _Certain Finesses_ **ne peuvent pas être effectués** depuis _Bluff Seat_. (Les _Bluffs_ sont un type de mouvement avancé qui est couvert plus tard.)
+
+### Le Composition Finesse
+
+- D'abord, voyez la section sur le _[Sarcastic Finesse](#le-sarcastic-finesse)_ et le _[Certain Finesse](#le-certain-finesse--le-certain-discard)_.
+- Parfois, un mouvement peut être à la fois un _Sarcastic Finesse_ et un _Certain Finesse_ en même temps. Quand cela se produit, c'est appelé un _Composition Finesse_.
+- Par exemple, dans une partie à 3 joueurs :
+  - Tous les 2 sont joués sur les stacks.
+  - Alice a une carte dans sa main avec un clue rouge dessus. Du _Good Touch Principle_, ça pourrait être soit red 3, red 4, ou red 5.
+  - Alice clue rouge à Bob, touchant un red 4 comme _Play Clue_.
+  - Bob défausse.
+  - Cathy sait qu'elle a le red 3 sur sa _Finesse Position_ (comme _Certain Finesse_). Elle peut le _Certain Discard_ si Alice a le red 3. Mais Alice n'a pas le red 3, donc Cathy blind-play le red 3.
+  - Alice défausse.
+  - Bob sait que sa carte rouge est un red 4 (comme _Sarcastic Finesse_). Il peut la _Sarcastic Discard_ si Alice a le red 4. Mais Alice n'a pas le red 4, donc Bob joue le red 4.
+
+<CompositionFinesse />
+
+## Erreurs Communes
+
+### Le Double Gentleman's Discard (Illégal)
+
+- Normalement, quand un joueur effectue un _Gentleman's Discard_, il connaît l'identité **exacte** de la carte qu'il défausse.
+- Cependant, parfois un _Gentleman's Discard_ peut se produire où, de votre perspective, la carte aurait pu être deux choses différentes. Cela signifie-t-il que le _Gentleman's Discard_ « obtient » **les deux** cartes ?
+- Non, ce n'est pas le cas. Même s'il semble que le joueur n'aurait pas pu connaître la véritable identité de la carte, le _Gentleman's Discard_ n'obtient que la carte spécifique correspondante. (La raison est que cela permet aux joueurs d'agir sur l'information asymétrique.)
+- Par exemple, dans une partie à 3 joueurs :
+  - Red 1 et blue 1 sont joués sur les stacks.
+  - Alice clue à Bob nombre 2, ce qui touche un red 2 au slot 1. C'est un _Play Clue_ sur le 2. Donc, c'est un red 2 ou blue 2 globalement connu. Alice clique-droit sur la carte et écrit une note de « r2, b2 ».
+  - Bob écrit aussi une note de « r2, b2 », mais s'arrête ensuite pour réfléchir un peu plus. Il remarque qu'Alice a un blue 3 dans sa main, donc il aurait pu être possible pour Cathy d'effectuer un _Finesse_ sur un hypothétique blue 2 dans sa main.
+  - Bob rembobine au début de la partie et regarde tous les tours, observant attentivement pour voir si Cathy avait une ample opportunité d'effectuer un _Finesse_ sur un blue 2. En effet, il trouve que Cathy a eu un ou deux tours où elle aurait pu facilement effectuer un _Reverse Finesse_, mais a défaussé à la place.
+  - Ainsi, Bob sait que sa carte doit être un red 2, donc il met à jour sa note « r2, b2 » en « r2 ».
+  - Bob voit que Cathy a un red 2 sur sa _Finesse Position_, donc il effectue un _Gentleman's Discard_ en défaussant le red 2.
+  - Cathy blind-play le red 2 depuis sa _Finesse Position_.
+  - Alice soupire de surprise, parce que Bob n'aurait pas pu savoir que c'était exactement un red 2. Ce doit être un _Double Gentleman's Discard_, appelant à la fois red 2 et blue 2. Alice blind-play sa carte de _Finesse Position_, espérant jouer un blue 2, mais joue à la place un red 5, perdant la partie.
+  - Alice a oublié que les _Double Gentleman's Discards_ étaient expressément illégaux parce qu'il est possible pour les joueurs d'avoir de l'information asymétrique sur l'état actuel de la partie.
+
+<DoubleGentlemanDiscard />

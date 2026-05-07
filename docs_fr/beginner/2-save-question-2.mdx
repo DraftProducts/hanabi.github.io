@@ -1,0 +1,45 @@
+---
+id: 2-save-question-2
+title: Le 2 Save (Question 2)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import TwoSaveQuestion2 from "../../docs/beginner/2-save-question-2/2-save-question-2.yml";
+import TwoSaveAnswer2 from "../../docs/beginner/2-save-question-2/2-save-answer-2.yml";
+
+<BeginnersGuideProgress id="2-save-question-2" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Précédemment dans la partie, Bob a reçu une _[Play Clue](./play-clues.mdx)_ sur un 1. Il prévoyait de le jouer à son prochain tour.
+- Maintenant, Alice clue number 2 à Bob, touchant son slot 5.
+- Du point de vue de Bob, est-ce une _Play Clue_ ou une _[Save Clue](./save-clues.mdx)_ ?
+- Quelle _[card note](./card-notes.mdx)_ Bob écrit-il ? (Soyez précis.)
+
+<TwoSaveQuestion2 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Bob a déjà une _card note_ « r1, b1, p1 » sur son 1 (parce que ce sont les 1 restant à jouer sur les stacks).
+- Si c'est une _Play Clue_, alors l'identité de son 2 serait :
+  - un yellow 2 (directement jouable)
+  - ou une _[Delayed Play Clue](./delayed-play-clues.mdx)_ sur le 2 qui correspond à son 1 inconnu (e.g. red 2, blue 2, ou purple 2)
+- Cependant, puisque la clue d'Alice a touché la [chop](./chop.mdx) de Bob, ce pourrait aussi être une _Save Clue_. Si c'est une _Save Clue_, alors ce pourrait être un _[2 Save](./2-save.mdx)_ sur un 2 non jouable.
+- Bob ne sait pas si c'est une _Play Clue_ ou une _Save Clue_, mais il doit la traiter comme une _Save Clue_ pour le moment, jusqu'à obtenir plus d'informations.
+- Ainsi, Bob écrit une _card note_ « r2, y2, b2, p2 ».
+  - (Cela ne peut pas être un green 2 car cette carte est déjà jouée et est inutile à l'équipe ; Alice ne gaspillerait pas une clue sur une carte inutile comme ça.)
+
+<TwoSaveAnswer2 />
+
+</TabItem>
+</Tabs>

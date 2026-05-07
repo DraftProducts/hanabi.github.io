@@ -1,0 +1,41 @@
+---
+title: Le Prompt (Question 3)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import PromptQuestion3 from "../../docs/beginner/prompt-question-3/prompt-question-3.yml";
+import PromptAnswer3 from "../../docs/beginner/prompt-question-3/prompt-answer-3.yml";
+
+<BeginnersGuideProgress id="prompt-question-3" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Cathy a deux cartes purple inconnues dans sa main.
+- Alice veut donner une _[Play Clue](./play-clues.mdx)_ au purple 4.
+- Quelle clue Alice doit-elle donner ?
+
+<PromptQuestion3 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Il est possible pour Alice de donner une _Play Clue_ au purple 4 soit en cluant purple, soit en cluant number 4. Les deux clues focaliseraient le purple 4.
+- Cependant, cela signalerait un _[Prompt](./prompt.mdx)_ à Cathy, et elle jouerait ses cartes purple de gauche à droite. Cela signifie que le purple 3 serait mal joué depuis le slot 4.
+- Ainsi, Alice n'a pas le droit de donner une _Play Clue_ au purple 4.
+- À la place, Alice peut cluer number 3 à Cathy. Cela focaliserait le purple 3 en tant que _Self-Prompt_.
+- Après cela, Alice peut donner une _Play Clue_ au purple 4 sans problème.
+- Notez que normalement, les joueurs ne sont pas censés donner des _[Tempo Clues](./minimum-clue-value-principle.mdx)_, car elles ne respectent pas le _[Minimum Clue Value Principle](./minimum-clue-value-principle.mdx)_. Mais ici, Alice a une très bonne raison de donner une _Tempo Clue_ – les cartes de Cathy sont « dans le désordre ». Donc, c'est OK de briser la règle.
+
+<PromptAnswer3 />
+
+</TabItem>
+</Tabs>

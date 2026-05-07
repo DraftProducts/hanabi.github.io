@@ -1,0 +1,37 @@
+---
+title: Single Card Focus (Question 1)
+---
+
+import BeginnersGuideProgress from "@site/src/beginnersGuide.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import SingleCardFocusQuestion1 from "../../docs/beginner/single-card-focus-question-1/single-card-focus-question-1.yml";
+import SingleCardFocusAnswer1 from "../../docs/beginner/single-card-focus-question-1/single-card-focus-answer-1.yml";
+
+<BeginnersGuideProgress id="single-card-focus-question-1" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Bob a une main complètement non-cluée.
+- Alice clue purple à Bob, touchant quatre cartes.
+- Quel slot est focalisé ?
+
+<SingleCardFocusQuestion1 />
+
+</TabItem>
+<TabItem value="solution">
+
+- Slot 1, parce que c'est la carte la plus à gauche.
+  - (Toutes les cartes sont « nouvelles » et aucune n'est en [chop](./chop.mdx).)
+
+<SingleCardFocusAnswer1 />
+
+</TabItem>
+</Tabs>

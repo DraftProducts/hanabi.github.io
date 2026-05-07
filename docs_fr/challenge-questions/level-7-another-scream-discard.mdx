@@ -1,0 +1,40 @@
+---
+title: Un autre Scream Discard
+---
+
+import ChallengeQuestionProgress from "@site/src/challengeQuestions.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Question from "../../docs/challenge-questions/level-7-another-scream-discard/question.yml";
+import Answer from "../../docs/challenge-questions/level-7-another-scream-discard/answer.yml";
+
+<ChallengeQuestionProgress level={7} id="level-7-another-scream-discard" />
+
+<Tabs
+  queryString="tab"
+  defaultValue="question"
+  values={[
+    {label: 'Question', value: 'question'},
+    {label: 'Solution', value: 'solution'},
+  ]}>
+<TabItem value="question">
+
+- Tous les 2 sont joués sur les stacks.
+- Il n'y a 0 clue disponible.
+- Alice a un red 3 connu jouable.
+- Bob a un green 4 sur le chop (le green 3 n'a pas encore été joué).
+- Alice veut sauver le green 4 utile et défausse au lieu de jouer le red 3.
+- Est-ce un [_Scream Discard_](../level-7.mdx#the-scream-discard-chop-move-sdcm) légal ? Pourquoi ou pourquoi pas ?
+
+<Question />
+
+</TabItem>
+<TabItem value="solution">
+
+- Ce n'est **pas** un [_Scream Discard_](../level-7.mdx#the-scream-discard-chop-move-sdcm) légal car le green 4 est _one-away-from-playable_.
+- Les joueurs ne sont **autorisés** à _Scream Discard_ que pour des cartes qui sont **jouables** ou **critiques**, pas pour des cartes _one-away-from-playable_.
+
+<Answer />
+
+</TabItem>
+</Tabs>
