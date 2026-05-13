@@ -10,14 +10,10 @@ jobs:
       - uses: ./.github/workflows/setup
       - run: npm run build
 
-      # @template-customization-start
-
       - uses: actions/upload-artifact@v4
         with:
           name: build
           path: ./build
-
-      # @template-customization-end
 
   lint:
     runs-on: ubuntu-latest
@@ -25,8 +21,6 @@ jobs:
       - uses: actions/checkout@v6
       - uses: ./.github/workflows/setup
       - run: npm run lint
-
-  # @template-customization-start
 
   deploy_website:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
@@ -46,61 +40,3 @@ jobs:
         with:
           path: ./build
       - uses: actions/deploy-pages@v4
-
-      - name: Check if the "ALGOLIA_CRAWLER_USER_ID" GitHub secret is set
-        env:
-          SECRET_CHECK: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
-        if: ${{ env.SECRET_CHECK == '' }}
-        run: |
-          echo "Error: The GitHub secret of \"ALGOLIA_CRAWLER_USER_ID\" is not set."
-          exit 1
-
-      - name: Check if the "ALGOLIA_CRAWLER_API_KEY" GitHub secret is set
-        env:
-          SECRET_CHECK: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
-        if: ${{ env.SECRET_CHECK == '' }}
-        run: |
-          echo "Error: The GitHub secret of \"ALGOLIA_CRAWLER_API_KEY\" is not set."
-          exit 1
-
-      - name: Check if the "ALGOLIA_CRAWLER_ID" GitHub secret is set
-        env:
-          SECRET_CHECK: ${{ secrets.ALGOLIA_CRAWLER_ID }}
-        if: ${{ env.SECRET_CHECK == '' }}
-        run: |
-          echo "Error: The GitHub secret of \"ALGOLIA_CRAWLER_ID\" is not set."
-          exit 1
-
-      - name: Run Algolia Crawler
-        env:
-          # From: https://crawler.algolia.com/admin/user/settings/
-          ALGOLIA_CRAWLER_USER_ID: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
-          ALGOLIA_CRAWLER_API_KEY: ${{ secrets.ALGOLIA_CRAWLER_API_KEY }}
-
-          # From: https://crawler.algolia.com/admin/crawlers/[crawler-id]/settings
-          ALGOLIA_CRAWLER_ID: ${{ secrets.ALGOLIA_CRAWLER_ID }}
-        run: |
-          curl \
-            --silent \
-            --fail \
-            --show-error \
-            --location \
-            --request POST \
-            --header "Content-Type: application/json" \
-            --user $ALGOLIA_CRAWLER_USER_ID:$ALGOLIA_CRAWLER_API_KEY \
-            "https://crawler.algolia.com/api/1/crawlers/$ALGOLIA_CRAWLER_ID/reindex"
-
-  # @template-customization-end
-
-  discord:
-    name: Discord Failure Notification
-    # @template-ignore-next-line
-    needs: [build, lint, deploy_website]
-    if: failure()
-    runs-on: ubuntu-latest
-    steps:
-      - uses: sarisia/actions-status-discord@v1
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          status: failure
-          title: ""
